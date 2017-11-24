@@ -1,4 +1,5 @@
 import sys
+import os
 
 if sys.version_info[0] < 3:
     import got
@@ -8,7 +9,8 @@ import tweepy
 import time
 import datetime as dt
 import pickle
-
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+import utils.CreateApi as connectApi
 
 class Tweet(object):
     def __init__(self, username, tweetId, numRetweet, text, mentions, hashtags, date, link):
@@ -31,7 +33,7 @@ class Retweet(object):
         self.retweet = retweet
 
 
-def getRetweet(api, listaInput, lenLista, pos, list_ret):
+def getRetweetRicorsiva(api, listaInput, lenLista, pos, list_ret):
     if (pos == lenLista):
         return list_ret
     else:
@@ -67,28 +69,52 @@ def getRetweet(api, listaInput, lenLista, pos, list_ret):
                 time.sleep(15 * 60)
             break
 
-    return getRetweet(api, listaInput, lenLista, pos, list_ret)
+    return getRetweetRicorsiva(api, listaInput, lenLista, pos, list_ret)
 
 
-def retweetmain(readList):
+def getRetweet(api, listaInput,lenLista,list_ret):
+
+
+        for i in range(0, lenLista):
+            try:
+                if listaInput[i].numRetweet == 0:
+                    ret = Retweet(listaInput[i].username, '')
+                    list_ret.append(ret)
+
+                    print("pos=" + str(i))
+
+                else:
+                    results = api.retweets(listaInput[i].tweetId)
+                    temp = []
+                    for tweet in results:
+                        temp.append(tweet.user.id)
+
+                    p = Retweet(listaInput[i].username, temp)
+                    list_ret.append(p)
+            except tweepy.TweepError:
+                print('exception raised, waiting 15 minutes')
+                print('(until:', dt.datetime.now() + dt.timedelta(minutes=15), ')')
+                print("check list len" + str(len(list_ret)))
+
+                #list_ret=[]
+                print("check list len dopo scrittura file" + str(len(list_ret)))
+                time.sleep(15 * 60)
+        return list_ret
+
+
+
+def retweetmain(readList,query,start,stop):
     
-    access_token = '926414078935011328-iRSZPgSrTY6L5EvnQpyy8psST5OUH3p'
-    access_secret = '7c053S73c1cLzD66DN8tlq2Re8Y6D80OtntUIFmVaBbb2'
-    consumer_key = 'nt0WesnaMBfLC6NcLdIy6qSGM'
-    consumer_secret = '4kD0rZs1SLObJ2AlFfAtqOaH6wBZWxqFkDWmHnge9b3stbHrve'
 
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_secret)
-
-    api = tweepy.API(auth)
+    api = connectApi.loginApi()
     list_ret = []
     #with open('./pickle/retweet_data.pkl', 'wb') as output:
-    result=getRetweet(api, readList, len(readList), 0, list_ret)
-    with open('./pickle/retweet_data.pkl', 'wb') as output:
+    result=getRetweet(api, readList, len(readList),list_ret)
+    with open('./pickle/retweet'+query+'_'+start+'_'+stop+'_data.pkl', 'wb') as output:
         pickle.dump(result, output, pickle.HIGHEST_PROTOCOL)
-
-
-    with open('./pickle/retweet_data.pkl', 'rb') as input:
+    #getRetweet(api,readList,len(readList),list_ret,query,start,stop);
+    print('finito getRetweet')
+    with open('./pickle/retweet'+query+'_'+start+'_'+stop+'_data.pkl', 'rb') as input:
         retweetList = pickle.load(input)
         for i in range(0, len(retweetList)):
             print (retweetList[i].user)
@@ -102,9 +128,11 @@ def main():
     # printTweet("### Example 1 - Get tweets by username [barackobama]", tweet)
 
     # Example 2 - Get tweets by query search
-
-    tweetCriteria = got.manager.TweetCriteria().setQuerySearch('Regionali Sicilia').setSince("2017-11-01").setUntil(
-        "2017-11-05")
+    query='Sicilia'
+    start="2017-10-01"
+    stop="2017-11-20"
+    tweetCriteria = got.manager.TweetCriteria().setQuerySearch(query).setSince(start).setUntil(
+        stop)
     tweet = got.manager.TweetManager.getTweets(tweetCriteria)
     list = []
     # list.append(tweet)
@@ -112,7 +140,7 @@ def main():
         list.append(Tweet(tweet[t].username, tweet[t].id, tweet[t].retweets, tweet[t].text, tweet[t].mentions,
                           tweet[t].hashtags, tweet[t].date, tweet[t].permalink))
 
-    with open('./pickle/tweet_data.pkl', 'wb') as output:
+    with open('./pickle/tweet'+query+'_'+start+'_'+stop+'_data.pkl', 'wb') as output:
         pickle.dump(list, output, pickle.HIGHEST_PROTOCOL)
 
 
@@ -123,10 +151,10 @@ def main():
         # for i in range(0,len(readList)):
         # print(readList[i].text)
 
-    with open('./pickle/tweet_data.pkl', 'rb') as input:
+    with open('./pickle/tweet'+query+'_'+start+'_'+stop+'_data.pkl', 'rb') as input:
         readList = pickle.load(input)
 
-    retweetmain(readList)
+    retweetmain(readList,query,start,stop)
 
 
 

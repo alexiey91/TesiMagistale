@@ -8,6 +8,23 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import utils.CreateApi as connectApi
 
 
+class countOccTweet(object):
+    def __init__(self, username,count):
+        self.username = username
+        self.count = count
+
+    def __str__(self):
+        return self.username+" "+str(self.count)
+
+
+class countOccReTweet(object):
+    def __init__(self, edge, count):
+        self.edge = edge
+        self.count = count
+
+    def __str__(self):
+        return str(self.edge) + " " + str(self.count)
+
 
 class Retweet(object):
     user = ''
@@ -72,11 +89,20 @@ def getRetweet(api,listaInput,lenLista,pos,list_ret):
 def main() :
     api = connectApi.loginApi()
 
-    with open('./pickle/retweet_data.pkl', 'rb') as input:
-        retweetList = pickle.load(input)
+    #with open('./pickle/retweetRegionali Sicilia_2017-11-01_2017-11-05_data.pkl', 'rb') as input:
+    #    retweetList = pickle.load(input)
+    #    print len(retweetList)
+    #    for i in range(0,len(retweetList)):
+    #        print(retweetList[i].user,retweetList[i].retweet)
+    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/tweetRegionali Sicilia_2017-11-19_2017-11-20_dictionaryReTweet.pkl', 'rb') as handler:
+        Tweet = pickle.load(handler)
+    for x in Tweet:
+        print (Tweet[x])
 
-        for i in range(0,len(retweetList)):
-            print(retweetList[i].user,retweetList[i].retweet)
+    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/tweetRegionali Sicilia_2017-11-19_2017-11-20_dictionaryTweet.pkl', 'rb') as handler:
+        Tweet = pickle.load(handler)
+    for x in Tweet:
+        print (Tweet[x])
 
 if __name__ == '__main__':
     main()
