@@ -1,6 +1,6 @@
+from __future__ import division
 import sys
 import os
-
 if sys.version_info[0] < 3:
     import got
 else:
@@ -52,7 +52,7 @@ class Retweet(object):
 
 
 
-def getRetweet(api, listaInput, lenLista, list_ret,dizionario_retweet,query,start,stop):
+def getRetweet(api, listaInput, lenLista, list_ret,dizionario_tweet,dizionario_retweet,query,start,stop):
     for i in range(0, lenLista):
         try:
             if listaInput[i].numRetweet == 0:
@@ -69,10 +69,13 @@ def getRetweet(api, listaInput, lenLista, list_ret,dizionario_retweet,query,star
                     temp.append(tweet.user.id)
 
                     if not dizionario_retweet.has_key((tweet.user.screen_name,listaInput[i].username)):
-                        dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)] = (countOccReTweet((tweet.user.screen_name,listaInput[i].username), 1))
+                           dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)] = (countOccReTweet((tweet.user.screen_name,listaInput[i].username),
+                                                                                                               1/dizionario_tweet[listaInput[i].username].count))
 
                     else:
-                        dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)].count += 1
+                        Numeratore = (dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)].count/dizionario_tweet[listaInput[i].username].count)+1
+                        dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)].count = Numeratore/dizionario_tweet[listaInput[i].username].count
+                        #print (str(dizionario_tweet[listaInput[i].username].count))
 
                 p = Retweet(listaInput[i].username, temp)
                 list_ret.append(p)
@@ -90,12 +93,12 @@ def getRetweet(api, listaInput, lenLista, list_ret,dizionario_retweet,query,star
     return list_ret
 
 
-def retweetmain(readList, query, start, stop):
+def retweetmain(readList, query, start, stop,dizionario_tweet):
     api = connectApi.loginApi()
     list_ret = []
     dizionario_retweet = {}
     # with open('./pickle/retweet_data.pkl', 'wb') as output:
-    result = getRetweet(api, readList, len(readList), list_ret,dizionario_retweet,query,start,stop)
+    result = getRetweet(api, readList, len(readList), list_ret,dizionario_tweet,dizionario_retweet,query,start,stop)
     with open('./pickle/retweet' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
         pickle.dump(result, output, pickle.HIGHEST_PROTOCOL)
     # getRetweet(api,readList,len(readList),list_ret,query,start,stop);
@@ -115,7 +118,7 @@ def main():
 
     # Example 2 - Get tweets by query search
     query = 'Regionali Sicilia'
-    start = "2017-11-19"
+    start = "2017-10-01"
     stop = "2017-11-20"
     tweetCriteria = got.manager.TweetCriteria().setQuerySearch(query).setSince(start).setUntil(
         stop)
@@ -124,8 +127,9 @@ def main():
     #creo il dizionario con l'oggetto tweetOcc
     dizionario_tweet = {}
     # list.append(tweet)
+    #for t in range(len(tweet)):
     for t in range(len(tweet)):
-
+        print (tweet[t].username,str(tweet[t].retweets), tweet[t].text,str(tweet[t].date))
         list.append(Tweet(tweet[t].username, tweet[t].id, tweet[t].retweets, tweet[t].text, tweet[t].mentions,
                           tweet[t].hashtags, tweet[t].date, tweet[t].permalink))
         if not dizionario_tweet.has_key(tweet[t].username):
@@ -149,7 +153,7 @@ def main():
 
 
 
-    retweetmain(readList, query, start, stop)
+    retweetmain(readList, query, start, stop,dizionario_tweet)
 
 
 if __name__ == '__main__':
