@@ -71,7 +71,7 @@ def getRetweet(api,file,lenFile,pos,list_ret):
 
 def main():
 
-    with open('RegionaliSicilia.csv') as f:
+    with open('sampleTweets.csv') as f:
         lunghezzaFile=sum(1 for _ in f)
 
     print("lunghezzaFile"+str(lunghezzaFile))
@@ -82,7 +82,7 @@ def main():
     api =connectApi.loginApi()
 
     list_ret = []
-    result = getRetweet(api,'RegionaliSicilia.csv',lunghezzaFile,0,list_ret)
+    result = getRetweet(api,'sampleTweets.csv',lunghezzaFile,0,list_ret)
 
     thefile = open('retweet.txt', 'w')
 

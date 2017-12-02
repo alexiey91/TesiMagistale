@@ -1,11 +1,6 @@
 from __future__ import division
 import sys
 import os
-#if sys.version_info[0] < 3:
-
-#    import got as got
-#else:
-#    import got3 as got
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import got
 
@@ -29,6 +24,7 @@ class Tweet(object):
         self.date = date
         self.link = link
 
+
 class countOccTweet(object):
     def __init__(self, username,count):
         self.username = username
@@ -36,6 +32,7 @@ class countOccTweet(object):
 
     def __str__(self):
         return self.username+" "+str(self.count)
+
 
 
 class countOccReTweet(object):
@@ -114,17 +111,21 @@ def retweetmain(readList, query, start, stop,dizionario_tweet):
 
 
 def main():
-    # Example 1 - Get tweets by username
-    # tweetCriteria = got.manager.TweetCriteria().setUsername('barackobama').setMaxTweets(1)
-    # tweet = got.manager.TweetManager.getTweets(tweetCriteria)[0]
 
-    # printTweet("### Example 1 - Get tweets by username [barackobama]", tweet)
-
-    # Example 2 - Get tweets by query search
     query = 'Regionali Sicilia'
     start = "2017-10-01"
-    stop = "2017-11-20"
-    print "Ciao marco"
+    stop = "2017-11-01"
+    #Creo il dizionario per il filtraggio degli hashtag
+    dizionario_hashtag = {}
+    with open('/home/alessandro/PycharmProjects/Tesi/utils/ListaHashtag.txt', 'r') as fileHashtags:
+
+        for line in fileHashtags:
+            if not dizionario_hashtag.has_key(line.strip()):
+                dizionario_hashtag[line] = '#'+line.strip().lower()
+
+    # for x in dizionario_hashtag:
+    #      print(len(dizionario_hashtag))
+    #      print(dizionario_hashtag[x])
 
     tweetCriteria = got.manager.TweetCriteria().setQuerySearch(query).setSince(start).setUntil(
         stop)
@@ -132,18 +133,25 @@ def main():
     list = []
     #creo il dizionario con l'oggetto tweetOcc
     dizionario_tweet = {}
-    # list.append(tweet)
+
     #for t in range(len(tweet)):
     for t in range(len(tweet)):
-        print (tweet[t].username,str(tweet[t].retweets), tweet[t].text,str(tweet[t].date))
-        list.append(Tweet(tweet[t].username, tweet[t].id, tweet[t].retweets, tweet[t].text, tweet[t].mentions,
-                          tweet[t].hashtags, tweet[t].date, tweet[t].permalink))
-        if not dizionario_tweet.has_key(tweet[t].username):
-                dizionario_tweet[tweet[t].username] = (countOccTweet(tweet[t].username,1))
+         print (tweet[t].hashtags)
+         list_hash = tweet[t].hashtags.strip().lower().split(" ")
 
-        else:
+         b3 = [val for val in list_hash if val in dizionario_hashtag.values()]
+
+         if len(b3)==0:
+                continue
+         else:
+            list.append(Tweet(tweet[t].username, tweet[t].id, tweet[t].retweets, str(tweet[t].text), tweet[t].mentions,
+                          tweet[t].hashtags, tweet[t].date, tweet[t].permalink))
+            if not dizionario_tweet.has_key(tweet[t].username):
+                    dizionario_tweet[tweet[t].username] = (countOccTweet(tweet[t].username,1))
+
+            else:
              # dizionario_tweet.update[tweet[t].username](countOccTweet(tweet[t].username,countOccTweet.count+1))
-             dizionario_tweet[tweet[t].username].count += 1
+                 dizionario_tweet[tweet[t].username].count += 1
     with open('./pickle/tweet' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
         pickle.dump(list, output, pickle.HIGHEST_PROTOCOL)
 
@@ -153,13 +161,15 @@ def main():
         #for x in dizionario_tweet:
         #     print (dizionario_tweet[x])
 
-
+    print('Dopo Scritturea PICKLE')
     with open('./pickle/tweet' + query + '_' + start + '_' + stop + '_data.pkl', 'rb') as input:
         readList = pickle.load(input)
 
+        for i in range(0, len(readList)):
+            print(len(readList))
+            print(readList[i].username,readList[i].numRetweet,readList[i].text,readList[i].hashtags)
 
-
-    retweetmain(readList, query, start, stop,dizionario_tweet)
+    #retweetmain(readList, query, start, stop,dizionario_tweet)
 
 
 if __name__ == '__main__':

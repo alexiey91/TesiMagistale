@@ -83,14 +83,14 @@ def getRetweet(api,file,writeFile,lenFile,pos,list_ret):
 
 def main():
 
-    with open('RegionaliSicilia.csv') as f:
+    with open('sampleTweets.csv') as f:
         lunghezzaFile=sum(1 for _ in f)
 
     api = connectApi.loginApi()
     list_ret = []
     thefile = open('retweet2.txt', 'a')
     try:
-         getRetweet(api,'RegionaliSicilia.csv',thefile,lunghezzaFile,0,list_ret)
+         getRetweet(api,'sampleTweets.csv',thefile,lunghezzaFile,0,list_ret)
 
     except RuntimeError:
         print('Eccezione Ricorsione')
@@ -101,7 +101,7 @@ def main():
         if(lunghezzaRetweet < lunghezzaFile):
             print('Eseguo di nuovo la get Retweet, ultima tupla analizzata:'+str(lunghezzaRetweet))
             thefile = open('retweet2.txt', 'a')
-            getRetweet(api, 'RegionaliSicilia.csv', thefile, lunghezzaFile, lunghezzaRetweet,list_ret)
+            getRetweet(api, 'sampleTweets.csv', thefile, lunghezzaFile, lunghezzaRetweet,list_ret)
         else:
             print('Terminato')
         #for item in result:

@@ -63,7 +63,7 @@ def main():
     list.append(tweet)
     # print("lista",list)
     num_tweet = len(tweet)
-    csv = open('RegionaliSicilia.csv', 'w+')
+    csv = open('sampleTweets.csv', 'w+')
     indice =0
     for t in range(len(tweet)):
         try:
