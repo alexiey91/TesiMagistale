@@ -5,6 +5,8 @@ import pprint
 import nltk.classify
 
 
+
+
 # start replaceTwoOrMore
 def replaceTwoOrMore(s):
     # look for 2 or more repetitions of character
@@ -88,7 +90,7 @@ def extract_features(tweet):
 
 
 # Read the tweets one by one and process it
-inpTweets = csv.reader(open('/home/alessandro/PycharmProjects/Tesi/SentimentAnalysis/sampleTweets.csv', 'rb'), delimiter=',', quotechar='|')
+inpTweets = csv.reader(open('/home/alessandro/PycharmProjects/Tesi/SentimentAnalysis/testTweet.csv', 'rb'), delimiter=',', quotechar='|')
 stopWords = getStopWordList('/home/alessandro/PycharmProjects/Tesi/SentimentAnalysis/words_italian.txt')
 count = 0;
 featureList = []
@@ -97,12 +99,13 @@ tweets = []
 for row in inpTweets:
 
     sentiment = row[0]
-    tweet = row[1]
+    tweet = row[1].lower()
     processedTweet = processTweet(tweet)
     featureVector = getFeatureVector(processedTweet, stopWords)
     featureList.extend(featureVector)
     tweets.append((featureVector, sentiment));
 # end loop
+
 
 # Remove featureList duplicates
 featureList = list(set(featureList))
@@ -114,8 +117,26 @@ training_set = nltk.classify.util.apply_features(extract_features, tweets)
 NBClassifier = nltk.NaiveBayesClassifier.train(training_set)
 
 # Test the classifier
-testTweet = 'Congratulazioni al M5stelle per la vittoria'
-processedTestTweet = processTweet(testTweet)
-sentiment = NBClassifier.classify(extract_features(getFeatureVector(processedTestTweet, stopWords)))
+testTweet = 'CENTRODESTRA alla grande'
 
-print "testTweet = %s, sentiment = %s\n" % (testTweet, sentiment)
+#processedTestTweet = processTweet(testTweet.lower())
+#sentiment = NBClassifier.classify(extract_features(getFeatureVector(processedTestTweet, stopWords)))
+
+#print "testTweet = %s, sentiment = %s\n" % (testTweet.lower(), sentiment)
+
+
+def checkPartition(tweetAlfa):
+    processedTestTweet = processTweet(testTweet.lower())
+    sentiment = NBClassifier.classify(extract_features(getFeatureVector(tweetAlfa, stopWords)))
+    print "testTweet = %s, sentiment = %s\n" % (tweetAlfa.lower(), sentiment)
+    return sentiment
+
+
+
+def main():
+    ciao='CENTRODESTRA alla grande'
+    function(ciao)
+
+
+if __name__ == '__main__':
+    main()
