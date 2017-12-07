@@ -27,8 +27,10 @@ dizionario_hashtag = {}
 # #stringa.encode("utf-8")
 # #print(stringa)
 #
-# print(u._unidecode(s))
-
-result=sentiment.checkPartition('Berlusconi: niente tasse')
+# print(u._unidecode(s))x
+x= '#Regionali #Sicilia . #Micari presenta listino e assessori. #Baccei all\u2019 #Economia'
+x= u' '+x.encode('utf-8')
+print(x)
+result=sentiment.checkPartition(str(x).lower())
 
 print result

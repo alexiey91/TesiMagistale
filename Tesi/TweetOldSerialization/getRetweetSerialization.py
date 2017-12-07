@@ -21,31 +21,34 @@ class Tweet(object):
 
 
 class countOccTweet(object):
-    def __init__(self, username,count):
+    def __init__(self, username,count,date):
         self.username = username
         self.count = count
+        self.date = date
 
     def __str__(self):
-        return self.username+" "+str(self.count)
+        return self.username+" "+str(self.count)+" "+str(self.date)
+
 
 
 class countOccReTweet(object):
-    def __init__(self, edge, count):
+    def __init__(self, edge, count,date):
         self.edge = edge
         self.count = count
+        self.date = date
 
     def __str__(self):
-        return str(self.edge) + " " + str(self.count)
-
+        return str(self.edge) + " " + str(self.count)+" "+str(self.date)
 
 class Retweet(object):
     user = ''
     retweet = []
+    date = ''
 
-    def __init__(self,user, retweet):
-
+    def __init__(self, user, retweet,date):
         self.user = user
         self.retweet = retweet
+        self.date = date
 
 
 
@@ -101,18 +104,19 @@ def getRetweet(api,listaInput,lenLista,pos,list_ret):
 def main() :
     api = connectApi.loginApi()
 
-    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/tweetRegionali Sicilia_2017-11-01_2017-11-05_data.pkl', 'rb') as input:
+    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSicilia/tweetYellowRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
         retweetList = pickle.load(input)
         print len(retweetList)
         for i in range(0,len(retweetList)):
-            print(retweetList[i].username,retweetList[i].numRetweet)
-    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/tweetRegionali Sicilia_2017-11-01_2017-11-05_dictionaryReTweet.pkl', 'rb') as handler:
+            print(retweetList[i].username,retweetList[i].text,retweetList[i].numRetweet)
+    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSicilia/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetYellow.pkl', 'rb') as handler:
         Tweet = pickle.load(handler)
     for x in Tweet:
         print (Tweet[x])
 
-    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/tweetRegionali Sicilia_2017-11-01_2017-11-05_dictionaryTweet.pkl', 'rb') as handler:
+    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSicilia/tweetYellowRegionali Sicilia_2017-09-01_2017-09-15_dictionaryTweet.pkl', 'rb') as handler:
         Tweet = pickle.load(handler)
+        print len(Tweet)
     for x in Tweet:
         print (Tweet[x])
 
