@@ -120,7 +120,7 @@ def main():
     print "Start"
     query = 'Regionali Sicilia'
     start = "2017-09-01"
-    stop = "2017-09-15"
+    stop = "2017-11-20"
     #Creo il dizionario per il filtraggio degli hashtag
     dizionario_hashtag = {}
     with open('../utils/ListaHashtag.txt', 'r') as fileHashtags:
