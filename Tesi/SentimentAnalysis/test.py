@@ -90,8 +90,8 @@ def extract_features(tweet):
 
 
 # Read the tweets one by one and process it
-inpTweets = csv.reader(open('/home/alessandro/PycharmProjects/Tesi/SentimentAnalysis/testTweet.csv', 'rb'), delimiter=',', quotechar='|')
-stopWords = getStopWordList('/home/alessandro/PycharmProjects/Tesi/SentimentAnalysis/words_italian.txt')
+inpTweets = csv.reader(open('../SentimentAnalysis/testTweet.csv', 'rb'), delimiter=',', quotechar='|')
+stopWords = getStopWordList('../SentimentAnalysis/words_italian.txt')
 count = 0;
 featureList = []
 tweets = []
@@ -117,7 +117,7 @@ training_set = nltk.classify.util.apply_features(extract_features, tweets)
 NBClassifier = nltk.NaiveBayesClassifier.train(training_set)
 
 # Test the classifier
-testTweet = 'CENTRODESTRA alla grande'
+#testTweet = 'CENTRODESTRA alla grande'
 
 #processedTestTweet = processTweet(testTweet.lower())
 #sentiment = NBClassifier.classify(extract_features(getFeatureVector(processedTestTweet, stopWords)))
@@ -126,16 +126,16 @@ testTweet = 'CENTRODESTRA alla grande'
 
 
 def checkPartition(tweetAlfa):
-    processedTestTweet = processTweet(testTweet.lower())
-    sentiment = NBClassifier.classify(extract_features(getFeatureVector(tweetAlfa, stopWords)))
+    processedTestTweet = processTweet(tweetAlfa.lower())
+    sentiment = NBClassifier.classify(extract_features(getFeatureVector(processedTestTweet, stopWords)))
     print "testTweet = %s, sentiment = %s\n" % (tweetAlfa.lower(), sentiment)
     return sentiment
 
 
 
 def main():
-    ciao='CENTRODESTRA alla grande'
-    function(ciao)
+    ciao='Forza Italia movimento per il futuro '
+    checkPartition(ciao)
 
 
 if __name__ == '__main__':

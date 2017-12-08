@@ -120,7 +120,7 @@ def main():
     print "Start"
     query = 'Regionali Sicilia'
     start = "2017-09-01"
-    stop = "2017-11-20"
+    stop = "2017-09-15"
     #Creo il dizionario per il filtraggio degli hashtag
     dizionario_hashtag = {}
     with open('../utils/ListaHashtag.txt', 'r') as fileHashtags:
@@ -176,18 +176,21 @@ def main():
             elif(sentiment.checkPartition(u._unidecode(tweet[t].text).lower()) == "5stelle"):
                 listRed.append(Tweet(tweet[t].username, tweet[t].id, tweet[t].retweets, tweet[t].text, tweet[t].mentions,
                                      tweet[t].hashtags, tweet[t].date, tweet[t].permalink))
-            if not dizionario_tweet_Red.has_key(tweet[t].username):
-                dizionario_tweet_Red[tweet[t].username] = (countOccTweet(tweet[t].username, 1,tweet[t].date))
-            else:
-                dizionario_tweet_Red[tweet[t].username].count += 1
+                if not dizionario_tweet_Red.has_key(tweet[t].username):
+                    dizionario_tweet_Red[tweet[t].username] = (countOccTweet(tweet[t].username, 1,tweet[t].date))
+                else:
+                    dizionario_tweet_Red[tweet[t].username].count += 1
 
-            if(sentiment.checkPartition(u._unidecode(tweet[t].text).lower()) == "Altro"):
+            elif(sentiment.checkPartition(u._unidecode(tweet[t].text).lower()) == "Altro"):
                 listYellow.append(Tweet(tweet[t].username, tweet[t].id, tweet[t].retweets, tweet[t].text, tweet[t].mentions,
                                      tweet[t].hashtags, tweet[t].date, tweet[t].permalink))
-            if not dizionario_tweet_Yellow.has_key(tweet[t].username):
+                if not dizionario_tweet_Yellow.has_key(tweet[t].username):
                  dizionario_tweet_Yellow[tweet[t].username] = (countOccTweet(tweet[t].username, 1, tweet[t].date))
-            else:
+                else:
                  dizionario_tweet_Yellow[tweet[t].username].count += 1
+
+
+
 
     with open('./pickle/RegionaliSicilia/tweetBlue' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
         pickle.dump(listBlue, output, pickle.HIGHEST_PROTOCOL)
