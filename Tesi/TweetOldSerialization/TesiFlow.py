@@ -34,7 +34,7 @@ class countOccTweet(object):
         self.date = date
 
     def __str__(self):
-        return self.username+" "+str(self.count)+" "+self.date
+        return self.username+" "+str(self.count)+" "+str(self.date)
 
 
 
@@ -45,7 +45,7 @@ class countOccReTweet(object):
         self.date = date
 
     def __str__(self):
-        return str(self.edge) + " " + str(self.count)+" "+self.date
+        return str(self.edge) + " " + str(self.count)+" "+str(self.date)
 
 class Retweet(object):
     user = ''
@@ -54,37 +54,97 @@ class Retweet(object):
 
     def __init__(self, user, retweet,date):
         self.user = user
-        self.retweet = retweet
+        self.retweet=retweet
         self.date = date
 
 
+# OLD
+# def getRetweet(api, listaInput, lenLista, list_ret,dizionario_tweet,dizionario_retweet,query,start,stop,char):
+#     for i in range(0, lenLista):
+#         try:
+#             print("num",listaInput[i].numRetweet)
+#             if listaInput[i].numRetweet == 0 or listaInput[i].numRetweet == '':
+#                 print("ola")
+#                 ret = Retweet(listaInput[i].username, '',listaInput[i].date)
+#                 list_ret.append(ret)
+#                 if listaInput[i].username == "marisaLaDestra":
+#                     print("MARISA NELL'if")
+#                 print("pos=" + str(i))
+#
+#             else:
+#                 results = api.retweets(listaInput[i].tweetId)
+#                 temp = []
+#                 i=0
+#                 if listaInput[i].username == "marisaLaDestra":
+#                     print("MARISA NELL'else")
+#                 for tweet in results:
+#                     if listaInput[i].username == "marisaLaDestra":
+#                         print("MARISA NELL'else")
+#                     temp.append(tweet.user.screen_name)
+#                     print("tweet",i,tweet.user.screen_name,listaInput[i].username)
+#                     if not dizionario_retweet.has_key((tweet.user.screen_name,listaInput[i].username)):
+#                            dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)] = (countOccReTweet((tweet.user.screen_name,listaInput[i].username),
+#                                                                                                                1/dizionario_tweet[listaInput[i].username].count,listaInput[i].date))
+#                            i = i+1
+#
+#                     else:
+#                         Numeratore = (dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)].count/dizionario_tweet[listaInput[i].username].count)+1
+#                         dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)].count = Numeratore/dizionario_tweet[listaInput[i].username].count
+#                         #print (str(dizionario_tweet[listaInput[i].username].count))
+#                         i=i+1
+#
+#                 p = Retweet(listaInput[i].username, temp,listaInput[i].date)
+#                 list_ret.append(p)
+#         except tweepy.TweepError:
+#             print('exception raised, waiting 15 minutes')
+#             print('(until:', dt.datetime.now() + dt.timedelta(minutes=15), ')')
+#             print("check list len" + str(len(list_ret)))
+#             print("check list len dopo scrittura file" + str(len(list_ret)))
+#             time.sleep(15 * 60)
+#
+#     print('scrivo su pickle il dizionario ottenuto'+char)
+#     with open('./pickle/RegionaliSiciliaTest/tweet' + query + '_' + start + '_' + stop + '_dictionaryReTweet'+char+'.pkl', 'wb') as output:
+#         pickle.dump(dizionario_retweet,output, pickle.HIGHEST_PROTOCOL)
+#     print ('fatto')
+#     return list_ret
+
 
 def getRetweet(api, listaInput, lenLista, list_ret,dizionario_tweet,dizionario_retweet,query,start,stop,char):
-    for i in range(0, lenLista):
+    for i in listaInput:
         try:
-            if listaInput[i].numRetweet == 0:
-                ret = Retweet(listaInput[i].username, '',listaInput[i].date)
+            print("num",i.numRetweet)
+            if i.numRetweet == 0 or i.numRetweet == '':
+                print("ola")
+                ret = Retweet(i.username, '',i.date)
                 list_ret.append(ret)
-
-                print("pos=" + str(i))
+                if i.username == "marisaLaDestra":
+                    print("MARISA NELL'if")
+                #print("pos=", i)
 
             else:
-                results = api.retweets(listaInput[i].tweetId)
+                results = api.retweets(i.tweetId)
                 temp = []
-
+                k=0
+                if i.username == "marisaLaDestra":
+                    print("MARISA NELL'else")
                 for tweet in results:
-                    temp.append(tweet.user.id)
 
-                    if not dizionario_retweet.has_key((tweet.user.screen_name,listaInput[i].username)):
-                           dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)] = (countOccReTweet((tweet.user.screen_name,listaInput[i].username),
-                                                                                                               1/dizionario_tweet[listaInput[i].username].count,listaInput[i].date))
+                    print("tweet",k,tweet.user.screen_name,i.username)
+                    if not dizionario_retweet.has_key((tweet.user.screen_name,i.username)):
+                           dizionario_retweet[(tweet.user.screen_name,i.username)] = (countOccReTweet((tweet.user.screen_name,i.username),
+                                                                                                               1/dizionario_tweet[i.username].count,i.date))
+                           temp.append(tweet.user.screen_name)
+                           k = k+1
 
                     else:
-                        Numeratore = (dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)].count/dizionario_tweet[listaInput[i].username].count)+1
-                        dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)].count = Numeratore/dizionario_tweet[listaInput[i].username].count
+                        Numeratore = (dizionario_retweet[(tweet.user.screen_name,i.username)].count/dizionario_tweet[i.username].count)+1
+                        dizionario_retweet[(tweet.user.screen_name,i.username)].count = Numeratore/dizionario_tweet[i.username].count
                         #print (str(dizionario_tweet[listaInput[i].username].count))
+                        temp.append(tweet.user.screen_name)
+                        k=k+1
 
-                p = Retweet(listaInput[i].username, temp,listaInput[i].date)
+                p = Retweet(i.username,temp,i.date)
+                temp=[]
                 list_ret.append(p)
         except tweepy.TweepError:
             print('exception raised, waiting 15 minutes')
@@ -93,11 +153,12 @@ def getRetweet(api, listaInput, lenLista, list_ret,dizionario_tweet,dizionario_r
             print("check list len dopo scrittura file" + str(len(list_ret)))
             time.sleep(15 * 60)
 
-    print('scrivo su pickle il dizionario ottenuto')
-    with open('./pickle/RegionaliSicilia/tweet' + query + '_' + start + '_' + stop + '_dictionaryReTweet'+char+'.pkl', 'wb') as output:
+    print('scrivo su pickle il dizionario ottenuto'+char)
+    with open('./pickle/RegionaliSiciliaTest/tweet' + query + '_' + start + '_' + stop + '_dictionaryReTweet'+char+'.pkl', 'wb') as output:
         pickle.dump(dizionario_retweet,output, pickle.HIGHEST_PROTOCOL)
     print ('fatto')
     return list_ret
+
 
 
 def retweetmain(readList, query, start, stop,dizionario_tweet,char):
@@ -106,11 +167,11 @@ def retweetmain(readList, query, start, stop,dizionario_tweet,char):
     dizionario_retweet = {}
     # with open('./pickle/retweet_data.pkl', 'wb') as output:
     result = getRetweet(api, readList, len(readList), list_ret,dizionario_tweet,dizionario_retweet,query,start,stop,char)
-    with open('./pickle/RegionaliSicilia/retweet'+char+ query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+    with open('./pickle/RegionaliSiciliaTest/retweet'+char+ query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
         pickle.dump(result, output, pickle.HIGHEST_PROTOCOL)
     # getRetweet(api,readList,len(readList),list_ret,query,start,stop);
     print('finito getRetweet')
-    with open('./pickle/RegionaliSicilia/retweet'+char + query + '_' + start + '_' + stop + '_data.pkl', 'rb') as input:
+    with open('./pickle/RegionaliSiciliaTest/retweet'+char + query + '_' + start + '_' + stop + '_data.pkl', 'rb') as input:
         retweetList = pickle.load(input)
         for i in range(0, len(retweetList)):
             print (retweetList[i].user)
@@ -192,28 +253,28 @@ def main():
 
 
 
-    with open('./pickle/RegionaliSicilia/tweetBlue' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+    with open('./pickle/RegionaliSiciliaTest/tweetBlue' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
         pickle.dump(listBlue, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSicilia/tweetBlue' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
+    with open('./pickle/RegionaliSiciliaTest/tweetBlue' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
         pickle.dump(dizionario_tweet_Blue, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSicilia/tweetRed' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+    with open('./pickle/RegionaliSiciliaTest/tweetRed' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
             pickle.dump(listRed, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSicilia/tweetRed' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
+    with open('./pickle/RegionaliSiciliaTest/tweetRed' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
             pickle.dump(dizionario_tweet_Red, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSicilia/tweetYellow' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+    with open('./pickle/RegionaliSiciliaTest/tweetYellow' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
             pickle.dump(listYellow, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSicilia/tweetYellow' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
+    with open('./pickle/RegionaliSiciliaTest/tweetYellow' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
             pickle.dump(dizionario_tweet_Yellow, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSicilia/tweetAll' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+    with open('./pickle/RegionaliSiciliaTest/tweetAll' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
         pickle.dump(list, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSicilia/tweetAll' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl',
+    with open('./pickle/RegionaliSiciliaTest/tweetAll' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl',
               'wb') as output:
         pickle.dump(dizionario_tweet, output, pickle.HIGHEST_PROTOCOL)
 
@@ -232,7 +293,7 @@ def main():
     retweetmain(listBlue, query, start, stop, dizionario_tweet_Blue, "Blue")
     retweetmain(listYellow, query, start, stop, dizionario_tweet_Yellow, "Yellow")
     retweetmain(list, query, start, stop, dizionario_tweet, "All")
-    with open('./pickle/RegionaliSicilia/Finito'+str(dt.datetime.now()),"wb") as output:
+    with open('./pickle/RegionaliSiciliaTest/Finito'+str(dt.datetime.now()),"wb") as output:
         pickle.dump(str(dt.datetime.now),output,pickle.HIGHEST_PROTOCOL)
     print "Finish"
 if __name__ == '__main__':

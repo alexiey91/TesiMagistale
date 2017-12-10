@@ -1,0 +1,9 @@
+mat[0] senza pesi su arco con grafo non diretto:
+[[ 0.015  0.015  0.015  0.015  0.015  0.015  0.865  0.015  0.015  0.015]]
+
+mat[0] senza pesi su arco grafo diretto:
+[ 0.015  0.015  0.015  0.015  0.015  0.015  0.865  0.015  0.015  0.015]
+
+
+mat [0] con pesi(prob retweet) su arco grafo diretto:
+[[ 0.015  0.015  0.015  0.015  0.015  0.015  0.865  0.015  0.015  0.015]]

@@ -102,23 +102,23 @@ def getRetweet(api,listaInput,lenLista,pos,list_ret):
 
 
 def main() :
-    api = connectApi.loginApi()
+    #api = connectApi.loginApi()
 
-    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSicilia/tweetYellowRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetYellowRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
         retweetList = pickle.load(input)
         print len(retweetList)
-        for i in range(0,len(retweetList)):
-            print(retweetList[i].username,retweetList[i].text,retweetList[i].numRetweet)
-    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSicilia/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetYellow.pkl', 'rb') as handler:
-        Tweet = pickle.load(handler)
-    for x in Tweet:
-        print (Tweet[x])
-
-    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSicilia/tweetYellowRegionali Sicilia_2017-09-01_2017-09-15_dictionaryTweet.pkl', 'rb') as handler:
-        Tweet = pickle.load(handler)
-        print len(Tweet)
-    for x in Tweet:
-        print (Tweet[x])
+        for i in retweetList:
+            print(i.username,i.text)
+    # with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSiciliaPc/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetYellow.pkl', 'rb') as handler:
+    #     Tweet = pickle.load(handler)
+    # for x in Tweet:
+    #     print (Tweet[x])
+    #
+    # with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSiciliaPc/retweetRedRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as handler:
+    #     Tweet = pickle.load(handler)
+    #     print len("ret")
+    # for x in Tweet:
+    #     print (Tweet[x])
 
 if __name__ == '__main__':
     main()
