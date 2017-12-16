@@ -30,6 +30,13 @@ class countOccReTweet(object):
     def __str__(self):
         return str(self.edge) + " " + str(self.count)+" "+str(self.date)
 
+
+
+'''
+    @param retweetList: is the list of Nodes with retweet references of one partition of Graph 
+    @param probDiz: is the dictionary with the retweet probability  
+    @return DiGraph with weight on Edges as retweet probability
+'''
 def createGraph(retweetList,probDiz):
     G = nx.DiGraph()
     #print(retweetList[1][1])
@@ -49,7 +56,10 @@ def createGraph(retweetList,probDiz):
     return G
 
 
-
+'''
+    @param retweetList: is the list of Nodes with retweet references of one partition of Graph 
+    @return Graph without weight on Edges
+'''
 
 def createUndirectGraph(retweetList):
     G = nx.Graph()
@@ -69,6 +79,10 @@ def createUndirectGraph(retweetList):
 
     return G
 
+'''
+    @param retweetList: is the list of Nodes with retweet references of one partition of Graph 
+    @return DiGraph without weight on Edges
+'''
 
 def createDirectNoWeightGraph(retweetList):
     G = nx.DiGraph()
@@ -88,6 +102,12 @@ def createDirectNoWeightGraph(retweetList):
 
     return G
 
+
+'''
+    @param lista_ret: is the list of Nodes of one partition of Graph 
+    @return Dictionary with key as nodes and value nodes of partition (Red/Blue) of Graph   
+'''
+
 def NodeDict(lista_ret):
     dizionarioNodi= {}
     for i in range (0,len(lista_ret)):
@@ -99,6 +119,13 @@ def NodeDict(lista_ret):
                         dizionarioNodi[lista_ret[i].retweet[j]] = lista_ret[i].retweet[j]
 
     return dizionarioNodi
+
+
+'''
+    @param nodeList: is the list of Nodes of Graph
+    @param Dict: is the dicitionary of Nodes of Red or Blue parts
+    @return list of position of nodes for Red or Blue partition of the graph
+'''
 
 def PosNode(nodeList,Dict):
     list_pos=[]
@@ -112,6 +139,12 @@ def PosNode(nodeList,Dict):
            x= x+1
 
     return list_pos
+
+'''
+    @param nodeList: is the list of Nodes of Graph
+    @param Dict: is the dicitionary of Nodes of Red or Blue parts
+    @return dictionary with key as node and value the position of node (in Blue or Red partition) in the graph
+'''
 
 def PosNodeDizionario(nodeList,Dict):
     list_pos={}
@@ -127,6 +160,11 @@ def PosNodeDizionario(nodeList,Dict):
     return list_pos
 
 
+'''
+    @param list_ret: is the list of Nodes with retweet references
+    @param dizNodi: is the dicitionary of Nodes 
+    @return update the dictionary of Red or Blue group from a list, it use to correct eventual error of machine learning
+'''
 
 def UpdateNode(list_ret,dizNodi):
         for i in range (0,len(list_ret)):
@@ -138,10 +176,18 @@ def UpdateNode(list_ret,dizNodi):
             else :
                 continue
 
-        #return dizNodi
 
 
-def Polarization(p_array,posRed,posBlue,numNodes,matriceProbRet):
+'''
+    @param p_array: is the Google Matrix of transaction of Graph as an array
+    @param posRed: is the list of position for Red node of Graph
+    @param posBlue: is the list of position for Blue node of Graph
+    @param numNodes: is the number of Nodes of graph
+    @param matrixProbRet: is the matrix of retweet probability of edges
+    @return the dictionary of Polarization for all nodes of the Graph
+'''
+
+def Polarization(p_array,posRed,posBlue,numNodes,matrixProbRet):
         DizPolarization = {}
         for i in range(0,numNodes):
             sumRed = 0
@@ -149,10 +195,10 @@ def Polarization(p_array,posRed,posBlue,numNodes,matriceProbRet):
             for j in range(0,numNodes):
                 if j in posRed:
 
-                    sumRed= sumRed + (p_array[i][j]*matriceProbRet[i][j])
+                    sumRed= sumRed + (p_array[i][j])
                     #print("sumRed=",sumRed,"i=",i,"j",j)
                 elif j in posBlue:
-                    sumBlue = sumBlue + (p_array[i][j]*matriceProbRet[i][j])
+                    sumBlue = sumBlue + (p_array[i][j])
                     #print "sumBlue=",sumBlue,"i=",i,"j",j
                 else:
                     continue
@@ -170,57 +216,149 @@ def Polarization(p_array,posRed,posBlue,numNodes,matriceProbRet):
 
         return DizPolarization
 
+'''
+    @param probDiz: is the dictionary about the probability of retweet 
+    @param DizPosRed: is the dictionary with key as Node and value position in the Graph for Red group
+    @param DizPosBlue: is the dictionary with key as Node and value position in the Graph for Red group
+    @param listNode: is the list of Node with user Retweet
+    @param G: is the graph
+    @return the matrix of edge with probabbility retweet
+'''
 
 
-def matrixProbRet(probDiz,DizPosRed,DizPosBlue,listaNodi,G):
+def matrixProbRet(probDiz,DizPosRed,DizPosBlue,listNode,G):
     #creo una matrice NxN in base al numero di nodi
     matrice=[[0 for x in range(len(G.nodes()))] for y in range(len(G.nodes()))]
    # print(matrice,len(listaNodi),len(G.node()))
-    for i in range (0,len(listaNodi)):
-        if (len(listaNodi[i].retweet) == 0 or listaNodi[i].retweet == None):
-           #se ho nodi isolati imposto la riga tutta a zero sia se Blu che rosso
-           #for j in range(0,len(listaNodi)):
-           #   matrice[i][j]=0
+    for i in range (0,len(listNode)):
+        if (len(listNode[i].retweet) == 0 or listNode[i].retweet == None):
+
             continue
         else:
-            for j in range(0, len(listaNodi[i].retweet)):
+            for j in range(0, len(listNode[i].retweet)):
                 # print(retweetList[i].retweet[j],retweetList[i].user)
-                if probDiz.has_key((listaNodi[i].retweet[j], listaNodi[i].user)):
-                    if DizPosBlue.has_key(listaNodi[i].user) and DizPosBlue.has_key(listaNodi[i].retweet[j]):
+                if probDiz.has_key((listNode[i].retweet[j], listNode[i].user)):
+                    if DizPosBlue.has_key(listNode[i].user) and DizPosBlue.has_key(listNode[i].retweet[j]):
                         #print("ciao",DizPosBlue.get(listaNodi[i].retweet[j]),DizPosBlue.get(listaNodi[i].user),probDiz.get((listaNodi[i].retweet[j], listaNodi[i].user)))
-                        matrice[DizPosBlue.get(listaNodi[i].retweet[j])][DizPosBlue.get(listaNodi[i].user)] = \
-                            probDiz.get((listaNodi[i].retweet[j], listaNodi[i].user))
+                        matrice[DizPosBlue.get(listNode[i].retweet[j])][DizPosBlue.get(listNode[i].user)] = \
+                            probDiz.get((listNode[i].retweet[j], listNode[i].user))
 
-                    elif DizPosRed.has_key(listaNodi[i].user) and DizPosRed.has_key(listaNodi[i].retweet[j]):
-                        matrice[DizPosRed.get(listaNodi[i].retweet[j])][DizPosRed.get(listaNodi[i].user)] = \
-                            probDiz.get((listaNodi[i].retweet[j], listaNodi[i].user))
+                    elif DizPosRed.has_key(listNode[i].user) and DizPosRed.has_key(listNode[i].retweet[j]):
+                        matrice[DizPosRed.get(listNode[i].retweet[j])][DizPosRed.get(listNode[i].user)] = \
+                            probDiz.get((listNode[i].retweet[j], listNode[i].user))
 
     return matrice
 
+'''
+    @param PolarDict: is the dictionary of Polarization of Graph
+    @param Graph: is a diGraph
+    @param node_Blue: is the dictionary of node in Blue group from graph
+    @param node_Red: is the dictionary of node in Red group from graph
+    @return the list of label of Polarization to draw into the graph nodes
+'''
+
+def labelPolarization(PolarDict, Graph, node_Blue, node_Red):
+    labels = {}
+    k = 0
+    for i in Graph.nodes():
+        if PolarDict.has_key(k):
+            if Graph.out_degree(i) == 0:
+                if i in node_Blue:
+                    labels[i] = str(1.0)
+                elif i in node_Red:
+                    labels[i] = str(-1.0)
+                else:
+                    labels[i] = PolarDict.get(k)
+
+            else:
+                labels[i] = PolarDict.get(k)
+            k = k + 1
+        else:
+            k = k + 1
+
+    return labels
+
+
+'''
+    @param Graph: is a diGraph
+    @param node_Blue: is the dictionary of node position in Blue group from graph
+    @param node_Red: is the dictionary of node position in Red group from graph
+    @return the list of color of all nodes graph
+'''
+
+def colorNode(Graph,node_Blue,node_Red):
+    node_color_with_partition = []
+    for i in Graph.nodes():
+        if i in node_Blue:
+            node_color_with_partition.append('Blue')
+        elif i in node_Red:
+            node_color_with_partition.append("Red")
+        else:
+            node_color_with_partition.append("grey")
+    return node_color_with_partition
+
+
+'''
+    @param G: is a diGraph
+    @param dictNodeBlue: is the dictionary of node position in Blue group from graph
+    @param dictNodeRed: is the dictionary of node position in Red group from graph
+    @return the list of polarization of node Elite and Listener
+'''
+def setFirstPolarization(G,dictNodeBlue,dictNodeRed):
+    listPolarization=[]
+    for i in G.nodes():
+        if G.in_degree(i) >0:
+            if dictNodeBlue.has_key(i):
+                listPolarization.append(+1.)
+            elif dictNodeRed.has_key(i):
+                listPolarization.append(-1.)
+            else:
+                listPolarization.append(0.)
+        else:
+            listPolarization.append(0.)
+
+    return listPolarization
+
+
+def opinionPolarization(G,attr_mat,firstPol,nodeList):
+    newPol=[]
+    for i in range(0,len(firstPol)):
+        sum=0.
+        for j in range(0,len(nodeList)):
+            sum= sum+ (attr_mat[i][j]*firstPol[j])
+            print("sum",i," ",sum)
+
+        #dangling
+        if G.out_degree(nodeList[i])==0 and sum ==0:
+            newPol.append(firstPol[i])
+        else:
+            newPol.append(sum/float("{0:.2f}".format(G.out_degree(nodeList[i]))))
+
+    return newPol
 
 def main():
     # Leggo il file pickle dei retweet
     # Costruisco un grafo con networkx partendo dai dati ottenuti
-    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/retweetBlueRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/retweetBlueRegionali Sicilia_2017-09-01_2017-09-02_data.pkl', 'rb') as input:
         retweetList = pickle.load(input)
     #List = retweetList
-    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/retweetRedRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/retweetRedRegionali Sicilia_2017-09-01_2017-09-02_data.pkl', 'rb') as input:
         retweetListRed = pickle.load(input)
-    with open ('../TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetBlue.pkl', 'rb') as input:
+    with open ('../TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetRegionali Sicilia_2017-09-01_2017-09-02_dictionaryReTweetBlue.pkl', 'rb') as input:
         probRetBlue = pickle.load(input)
-    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetRed.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetRegionali Sicilia_2017-09-01_2017-09-02_dictionaryReTweetRed.pkl','rb') as input:
         probRetRed = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetYellow.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetRegionali Sicilia_2017-09-01_2017-09-02_dictionaryReTweetYellow.pkl','rb') as input:
         probYellowGraph = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/retweetYellowRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/retweetYellowRegionali Sicilia_2017-09-01_2017-09-02_data.pkl', 'rb') as input:
         retweetListYellow = pickle.load(input)
 
     List=[]
     for i in retweetList:
         #ret= Retweet(retweetList[i].user,retweetList[i].retweet, retweetList[i].date)
-        print("Blue",i.user,i.retweet, i.date)
+        #print("Blue",i.user,i.retweet, i.date)
         List.append(i)
     for i in retweetListRed:
         #print("Red",i.user,i.retweet, i.date)
@@ -236,7 +374,7 @@ def main():
     for i in  probRetBlue:
         #print(i.edge,i.count)
         #prob = countOccReTweet(probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
-        print("Blue",probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
+        #print("Blue",probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
         if not DizPesi.has_key(probRetBlue[i].edge):
             DizPesi[probRetBlue[i].edge]= probRetBlue[i].count
 
@@ -254,7 +392,7 @@ def main():
     nodi_Red = NodeDict(retweetListRed)
     nodi_Yellow = NodeDict(retweetListYellow)
     #print nodi_Blue
-    #G = createDirectNoWeightGraph(List)
+    #G = createUndirectGraph(List)
     G = createGraph(List,DizPesi)
     size_node_degree= []
 
@@ -268,10 +406,11 @@ def main():
     posizioneYellow = PosNode(G.nodes(),nodi_Yellow)
     dizPosizioneBlue=PosNodeDizionario(G.nodes,nodi_Blue)
     dizPosizioneRed=PosNodeDizionario(G.nodes,nodi_Red)
-
+    dizPosizioneYellow = PosNodeDizionario(G.nodes,nodi_Yellow);
     print("Nodi=",G.nodes())
     print("DizPosBlue",dizPosizioneBlue)
     print("DizPosRed",dizPosizioneRed)
+    print("DizPosYelloq",dizPosizioneYellow)
     #print("Edge=",G.edges(data='weight'))
     #print("posRed",posizioneRed)
     #print ("posBlue",posizioneBlue)
@@ -280,33 +419,42 @@ def main():
 
     matriceProbRetweet= matrixProbRet(DizPesi,dizPosizioneRed,dizPosizioneBlue,List,G)
 
-    # print "matriceProbRetweet=",matriceProbRetweet
-    # print "riga 9",matriceProbRetweet[9]
-    # print "riga 20", matriceProbRetweet[20]
-    # print("riga 18",matriceProbRetweet[18])
-    # print "riga 32",matriceProbRetweet[32]
-    # print ("riga 25",matriceProbRetweet[25])
-    # print ("riga 27",matriceProbRetweet[27])
-    # print ("riga 19",matriceProbRetweet[19])
-    # print ("riga 17",matriceProbRetweet[17])
-    # print ("riga 0",matriceProbRetweet[0])
-    # print ("riga 15",matriceProbRetweet[15])
+    #List of Polarization of Elite and Listener
+    firstPolar= setFirstPolarization(G,dizPosizioneBlue,dizPosizioneRed)
+
+    print "Passo 0 di polarizzazione ",firstPolar
+
+    dictFirstPol = {}
+    x = 0
+    for i in G.nodes():
+
+        if not dictFirstPol.has_key(i):
+            dictFirstPol[i] = firstPolar[x]
+            x = x + 1
 
 
-    #dumping vector della matrice
-    array={}
-    for i in range(0,len(G.nodes())):
-        array[i]=0
+    list = []
+    for i in G.nodes():
+        list.append(i)
 
 
-    for r in  posizioneRed:
-        array[r] = -(1/len(G.nodes()))
+    #matrice di adiacenza partendo dalla lista dei nodi
+    mat_attr=nx.attr_matrix(G,rc_order=list)
+    #print(mat_attr[1])
 
-    for b in posizioneBlue:
-        array[b] = 1/len(G.nodes())
+    at_array=np.array(mat_attr)
 
+    newPol=opinionPolarization(G,at_array,firstPolar,list)
 
-    #print(array)
+    dictPol={}
+    x=0
+    for i in G.nodes():
+
+        if not dictPol.has_key(i):
+            dictPol[i]=newPol[x]
+            x=x+1
+
+   #settare i vertici dangling
     matrice=nx.google_matrix(G,alpha=1)
     p_array = np.array(matrice)
 
@@ -317,72 +465,33 @@ def main():
     count =0;
     for i in range(0,len(p_array)):
         if i in posizioneBlue:
-            sumBlue = sumBlue + p_array[32][i]*matriceProbRetweet[32][i]
+            sumBlue = sumBlue + p_array[15][i]
             count = count+1
 
         elif i in posizioneRed:
-            sumRed = sumRed +  p_array[32][i]*p_array[32][i]*matriceProbRetweet[32][i]
+            sumRed = sumRed +  p_array[15][i]
             # print "sumBlue=",sumBlue,"i=",i,"j",j
         elif i in posizioneYellow:
-            sumYellow= sumYellow + p_array[32][i]*p_array[32][i]*matriceProbRetweet[32][i]
+            sumYellow= sumYellow + p_array[15][i]
 
-    #print p_array[32],"sumBlue",sumBlue,"sumRed",sumRed,"sumYellow",sumYellow,count,len(posizioneBlue)
-
-    mat = nx.google_matrix(G)
-    #print("matrice",mat[98])
+    #print p_array[15],"sumBlue",sumBlue,"sumRed",sumRed,"sumYellow",sumYellow,count,len(posizioneBlue),mat_attr
 
 
-
-    #partition = community.best_partition(G)
-
+    #partition = community.induced_graph(G)
+    #print(partition)
     #size = float(len(set(partition.values())))
 
     count = 0.
     #cambio i colori dei nodi a seconda del loro grado
-    node_color = []
     Polar = Polarization(p_array,posizioneRed,posizioneBlue,len(G.nodes),matriceProbRetweet)
 
-    #funziona con i grafi senza partitioning
-    for i in range(0,len(G.nodes())):
-
-        if i in posizioneBlue:
-           # print i,"yellow",list[i]
-            node_color.append('Blue')
-        elif i in posizioneRed:
-            # print i,"red",list[i]
-             node_color.append('red')
-        else:
-            node_color.append('grey')
-
     #funziona con la partizione
-    node_color_with_partition=[]
-    for i in G.nodes():
-        if i in nodi_Blue:
-            node_color_with_partition.append('Blue')
-        elif i in nodi_Red:
-            node_color_with_partition.append("Red")
-        else:
-            node_color_with_partition.append("grey")
-
-    labels={}
-    k=0
-    for i in G.nodes():
-        if Polar.has_key(k):
-            if G.out_degree(i) == 0:
-                if i in nodi_Blue:
-                 labels[i] = str(1.0)
-                elif i in nodi_Red:
-                    labels[i]= str(-1.0)
-                else:
-                    labels[i] = Polar.get(k)
-
-            else:
-                labels[i]=Polar.get(k)
-            k = k+1
-        else:
-            k=k+1
+    node_color= colorNode(G,nodi_Blue,nodi_Red)
 
 
+
+
+    labels= labelPolarization(Polar,G,nodi_Blue,nodi_Red)
     # for node in G.nodes():
     #     print node
     #     if G.degree(node) == 7:
@@ -410,21 +519,26 @@ def main():
     #     count = count + 1.
     #     x=0
     #     for nodes in partition.keys():
-    #         print "nodes",nodes
+    #        # print "nodes",nodes
     #         if partition[nodes] == com :
     #             list_nodes.append(nodes)
 
 
     #con la partizione
-    #nx.draw_networkx_nodes(G, pos ,list_nodes,with_labels=False,node_color=node_color_with_partition)
+    #nx.draw_networkx_nodes(G, pos ,list_nodes,with_labels=False,node_color=node_color)
 
     nx.draw_networkx_nodes(G, pos ,G.nodes(),with_labels=True,node_color=node_color)
 
     nx.draw_networkx_edges(G, pos, alpha=0.5,edge_color='b')
 
-    nx.draw_networkx_labels(G, pos,labels,font_size=12)
+    nx.draw_networkx_labels(G, pos,dictPol,font_size=8)
+
+    plt.savefig("GraphPol.png", format="PNG")
 
     plt.show()
+
+
+
 
 if __name__ == '__main__':
     main()
