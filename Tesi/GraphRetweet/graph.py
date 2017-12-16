@@ -57,7 +57,7 @@ def createUndirectGraph(retweetList):
     for i in range(0,len(retweetList)):
        # print ("pos" + str(i)+"username="+ retweetList[i].user +"ret="+str(retweetList[i].retweet))
         if(  len(retweetList[i].retweet)==0 or  retweetList[i].retweet == None ):
-            G.add_node(retweetList[i].user,color='green')
+            G.add_node(retweetList[i].user)
 
         else:
             for j in range(0,len(retweetList[i].retweet)):
@@ -76,7 +76,7 @@ def createDirectNoWeightGraph(retweetList):
     for i in range(0,len(retweetList)):
        # print ("pos" + str(i)+"username="+ retweetList[i].user +"ret="+str(retweetList[i].retweet))
         if(  len(retweetList[i].retweet)==0 or  retweetList[i].retweet == None ):
-            G.add_node(retweetList[i].user,color='green')
+            G.add_node(retweetList[i].user)
 
         else:
             for j in range(0,len(retweetList[i].retweet)):
@@ -107,32 +107,95 @@ def PosNode(nodeList,Dict):
        if Dict.has_key(i):
           list_pos.append(x)
           x= x+1
+          #print(i,"pos=",x-1)
        else:
            x= x+1
 
     return list_pos
 
-def Polarization(matrix,posRed,posBlue,numNodes):
+def PosNodeDizionario(nodeList,Dict):
+    list_pos={}
+    x=0
+    for i in nodeList:
+       if Dict.has_key(i):
+          list_pos[i]=x
+          x= x+1
+          #print(i,"pos=",x-1)
+       else:
+           x= x+1
+
+    return list_pos
+
+
+
+def UpdateNode(list_ret,dizNodi):
+        for i in range (0,len(list_ret)):
+            if  dizNodi.has_key(list_ret[i].user):
+             if list_ret[i].retweet != 0 or list_ret[i].retweet != None:
+                for j in range(0, len(list_ret[i].retweet)):
+                 if not dizNodi.has_key(list_ret[i].retweet[j]):
+                        dizNodi[list_ret[i].retweet[j]] = list_ret[i].retweet[j]
+            else :
+                continue
+
+        #return dizNodi
+
+
+def Polarization(p_array,posRed,posBlue,numNodes,matriceProbRet):
         DizPolarization = {}
         for i in range(0,numNodes):
             sumRed = 0
             sumBlue = 0
             for j in range(0,numNodes):
                 if j in posRed:
-                    sumRed= sumRed + matrix.item(i*numNodes +j)
+
+                    sumRed= sumRed + (p_array[i][j]*matriceProbRet[i][j])
                     #print("sumRed=",sumRed,"i=",i,"j",j)
                 elif j in posBlue:
-                    sumBlue = sumBlue + matrix.item(i*numNodes +j)
+                    sumBlue = sumBlue + (p_array[i][j]*matriceProbRet[i][j])
                     #print "sumBlue=",sumBlue,"i=",i,"j",j
+                else:
+                    continue
+
             if not DizPolarization.has_key(i):
                 if sumBlue == 0 and sumRed ==0:
                     DizPolarization[i] = str(0)
                 else:
-                    DizPolarization[i]=str(float("{0:.2f}".format(sumBlue-sumRed)))
+                    if(min(1,sumBlue-sumRed)==1):
+                     DizPolarization[i]=str(1.0)
+                    elif (max(-1,sumBlue-sumRed)== -1):
+                     DizPolarization[i]=str(-1.0)
+                    else:
+                     DizPolarization[i]=str(float("{0:.2f}".format(sumBlue-sumRed)))
 
         return DizPolarization
 
 
+
+def matrixProbRet(probDiz,DizPosRed,DizPosBlue,listaNodi,G):
+    #creo una matrice NxN in base al numero di nodi
+    matrice=[[0 for x in range(len(G.nodes()))] for y in range(len(G.nodes()))]
+   # print(matrice,len(listaNodi),len(G.node()))
+    for i in range (0,len(listaNodi)):
+        if (len(listaNodi[i].retweet) == 0 or listaNodi[i].retweet == None):
+           #se ho nodi isolati imposto la riga tutta a zero sia se Blu che rosso
+           #for j in range(0,len(listaNodi)):
+           #   matrice[i][j]=0
+            continue
+        else:
+            for j in range(0, len(listaNodi[i].retweet)):
+                # print(retweetList[i].retweet[j],retweetList[i].user)
+                if probDiz.has_key((listaNodi[i].retweet[j], listaNodi[i].user)):
+                    if DizPosBlue.has_key(listaNodi[i].user) and DizPosBlue.has_key(listaNodi[i].retweet[j]):
+                        #print("ciao",DizPosBlue.get(listaNodi[i].retweet[j]),DizPosBlue.get(listaNodi[i].user),probDiz.get((listaNodi[i].retweet[j], listaNodi[i].user)))
+                        matrice[DizPosBlue.get(listaNodi[i].retweet[j])][DizPosBlue.get(listaNodi[i].user)] = \
+                            probDiz.get((listaNodi[i].retweet[j], listaNodi[i].user))
+
+                    elif DizPosRed.has_key(listaNodi[i].user) and DizPosRed.has_key(listaNodi[i].retweet[j]):
+                        matrice[DizPosRed.get(listaNodi[i].retweet[j])][DizPosRed.get(listaNodi[i].user)] = \
+                            probDiz.get((listaNodi[i].retweet[j], listaNodi[i].user))
+
+    return matrice
 
 
 def main():
@@ -171,9 +234,9 @@ def main():
     DizPesi={}
 
     for i in  probRetBlue:
-        print(i)
+        #print(i.edge,i.count)
         #prob = countOccReTweet(probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
-        #print("Blue",probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
+        print("Blue",probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
         if not DizPesi.has_key(probRetBlue[i].edge):
             DizPesi[probRetBlue[i].edge]= probRetBlue[i].count
 
@@ -189,35 +252,95 @@ def main():
     #print(DizPesi)
     nodi_Blue= NodeDict(retweetList)
     nodi_Red = NodeDict(retweetListRed)
-    print nodi_Blue
-    #G = createUndirectGraph(List)
+    nodi_Yellow = NodeDict(retweetListYellow)
+    #print nodi_Blue
+    #G = createDirectNoWeightGraph(List)
     G = createGraph(List,DizPesi)
     size_node_degree= []
 
 
+    UpdateNode(retweetListYellow,nodi_Blue)
+    UpdateNode(retweetListYellow,nodi_Red)
+    #print(test)
+
     posizioneBlue = PosNode(G.nodes(),nodi_Blue)
     posizioneRed = PosNode(G.nodes(),nodi_Red)
-   # print("Nodi=",G.nodes())
+    posizioneYellow = PosNode(G.nodes(),nodi_Yellow)
+    dizPosizioneBlue=PosNodeDizionario(G.nodes,nodi_Blue)
+    dizPosizioneRed=PosNodeDizionario(G.nodes,nodi_Red)
+
+    print("Nodi=",G.nodes())
+    print("DizPosBlue",dizPosizioneBlue)
+    print("DizPosRed",dizPosizioneRed)
     #print("Edge=",G.edges(data='weight'))
-    print("posRed",posizioneRed)
-    print ("posBlue",posizioneBlue)
-    print(G.nodes())
+    #print("posRed",posizioneRed)
+    #print ("posBlue",posizioneBlue)
+    #print(G.nodes())
     #print("Differenze All-blue",G.nodes()-posizioneBlue)
-    #matrice=nx.attr_matrix(G)
+
+    matriceProbRetweet= matrixProbRet(DizPesi,dizPosizioneRed,dizPosizioneBlue,List,G)
+
+    # print "matriceProbRetweet=",matriceProbRetweet
+    # print "riga 9",matriceProbRetweet[9]
+    # print "riga 20", matriceProbRetweet[20]
+    # print("riga 18",matriceProbRetweet[18])
+    # print "riga 32",matriceProbRetweet[32]
+    # print ("riga 25",matriceProbRetweet[25])
+    # print ("riga 27",matriceProbRetweet[27])
+    # print ("riga 19",matriceProbRetweet[19])
+    # print ("riga 17",matriceProbRetweet[17])
+    # print ("riga 0",matriceProbRetweet[0])
+    # print ("riga 15",matriceProbRetweet[15])
+
+
+    #dumping vector della matrice
+    array={}
+    for i in range(0,len(G.nodes())):
+        array[i]=0
+
+
+    for r in  posizioneRed:
+        array[r] = -(1/len(G.nodes()))
+
+    for b in posizioneBlue:
+        array[b] = 1/len(G.nodes())
+
+
+    #print(array)
+    matrice=nx.google_matrix(G,alpha=1)
+    p_array = np.array(matrice)
+
+    #print matrice,len(matrice),matrice[131]
+    sumBlue=0.
+    sumRed = 0.
+    sumYellow =0.
+    count =0;
+    for i in range(0,len(p_array)):
+        if i in posizioneBlue:
+            sumBlue = sumBlue + p_array[32][i]*matriceProbRetweet[32][i]
+            count = count+1
+
+        elif i in posizioneRed:
+            sumRed = sumRed +  p_array[32][i]*p_array[32][i]*matriceProbRetweet[32][i]
+            # print "sumBlue=",sumBlue,"i=",i,"j",j
+        elif i in posizioneYellow:
+            sumYellow= sumYellow + p_array[32][i]*p_array[32][i]*matriceProbRetweet[32][i]
+
+    #print p_array[32],"sumBlue",sumBlue,"sumRed",sumRed,"sumYellow",sumYellow,count,len(posizioneBlue)
 
     mat = nx.google_matrix(G)
-    #print("matrice",matrice)
+    #print("matrice",mat[98])
 
 
 
-   #partition = community.best_partition(G)
+    #partition = community.best_partition(G)
 
-   # size = float(len(set(partition.values())))
+    #size = float(len(set(partition.values())))
 
     count = 0.
     #cambio i colori dei nodi a seconda del loro grado
     node_color = []
-    Polar = Polarization(mat,posizioneRed,posizioneBlue,len(G.nodes))
+    Polar = Polarization(p_array,posizioneRed,posizioneBlue,len(G.nodes),matriceProbRetweet)
 
     #funziona con i grafi senza partitioning
     for i in range(0,len(G.nodes())):
@@ -245,8 +368,16 @@ def main():
     k=0
     for i in G.nodes():
         if Polar.has_key(k):
+            if G.out_degree(i) == 0:
+                if i in nodi_Blue:
+                 labels[i] = str(1.0)
+                elif i in nodi_Red:
+                    labels[i]= str(-1.0)
+                else:
+                    labels[i] = Polar.get(k)
 
-            labels[i]=Polar.get(k)
+            else:
+                labels[i]=Polar.get(k)
             k = k+1
         else:
             k=k+1
@@ -287,7 +418,7 @@ def main():
     #con la partizione
     #nx.draw_networkx_nodes(G, pos ,list_nodes,with_labels=False,node_color=node_color_with_partition)
 
-    nx.draw_networkx_nodes(G, pos ,G.nodes(),with_labels=False,node_color=node_color)
+    nx.draw_networkx_nodes(G, pos ,G.nodes(),with_labels=True,node_color=node_color)
 
     nx.draw_networkx_edges(G, pos, alpha=0.5,edge_color='b')
 
