@@ -178,7 +178,7 @@ def retweetmain(readList, query, start, stop,dizionario_tweet,char):
 def main():
     print "Start"
     query = 'Regionali Sicilia'
-    start = "2017-09-15"
+    start = "2017-09-01"
     stop = "2017-11-20"
     #Creo il dizionario per il filtraggio degli hashtag
     dizionario_hashtag = {}
