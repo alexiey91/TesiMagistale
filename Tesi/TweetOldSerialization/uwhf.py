@@ -34,3 +34,7 @@ print(x)
 result=sentiment.checkPartition(str(x).lower())
 
 print result
+
+number= divmod(401,20)
+
+print("numeber",number," number[0]",number[0])

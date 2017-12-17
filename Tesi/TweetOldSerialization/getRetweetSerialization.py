@@ -104,11 +104,11 @@ def getRetweet(api,listaInput,lenLista,pos,list_ret):
 def main() :
     #api = connectApi.loginApi()
 
-    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetYellowRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/EutanasiaTest/tweetAlleutanasia_2017-12-01_2017-12-14_data.pkl', 'rb') as input:
         retweetList = pickle.load(input)
         print len(retweetList)
         for i in retweetList:
-            print(i.username,i.text)
+            print(i.username,i.text,i.numRetweet)
     # with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSiciliaPc/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetYellow.pkl', 'rb') as handler:
     #     Tweet = pickle.load(handler)
     # for x in Tweet:

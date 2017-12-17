@@ -43,7 +43,7 @@ def createGraph(retweetList,probDiz):
     for i in range(0,len(retweetList)):
        # print ("pos" + str(i)+"username="+ retweetList[i].user +"ret="+str(retweetList[i].retweet))
         if(  len(retweetList[i].retweet)==0 or  retweetList[i].retweet == None ):
-         #   G.add_node(retweetList[i].user,color='green')
+           # G.add_node(retweetList[i].user,color='green')
          continue
 
         else:
@@ -355,23 +355,36 @@ def opinionPolarization(G,attr_mat,firstPol,nodeList):
 
     return newPol
 
+
+def opinionPolarizationDict(G,attr_mat,firstPol,nodeList):
+    dict={}
+    number= divmod(len(nodeList),20)
+    #print(len(nodeList),"div=",number[0])
+    for i in range(0,number[0]):
+        if i ==0:
+            dict[i]=firstPol
+        else:
+            dict[i]=opinionPolarization(G,attr_mat,dict.get(i-1),nodeList)
+
+    return dict
+
 def main():
     # Leggo il file pickle dei retweet
     # Costruisco un grafo con networkx partendo dai dati ottenuti
-    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/retweetBlueRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTestAWS/retweetBlueRegionali Sicilia_2017-09-01_2017-11-20_data.pkl', 'rb') as input:
         retweetList = pickle.load(input)
     #List = retweetList
-    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/retweetRedRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTestAWS/retweetRedRegionali Sicilia_2017-09-01_2017-11-20_data.pkl', 'rb') as input:
         retweetListRed = pickle.load(input)
-    with open ('../TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetBlue.pkl', 'rb') as input:
+    with open ('../TweetOldSerialization/pickle/RegionaliSiciliaTestAWS/tweetRegionali Sicilia_2017-09-01_2017-11-20_dictionaryReTweetBlue.pkl', 'rb') as input:
         probRetBlue = pickle.load(input)
-    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetRed.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTestAWS/tweetRegionali Sicilia_2017-09-01_2017-11-20_dictionaryReTweetRed.pkl','rb') as input:
         probRetRed = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetYellow.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTestAWS/tweetRegionali Sicilia_2017-09-01_2017-11-20_dictionaryReTweetYellow.pkl','rb') as input:
         probYellowGraph = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTest/retweetYellowRegionali Sicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/RegionaliSiciliaTestAWS/retweetYellowRegionali Sicilia_2017-09-01_2017-11-20_data.pkl', 'rb') as input:
         retweetListYellow = pickle.load(input)
 
     List=[]
@@ -436,7 +449,7 @@ def main():
     #print(G.nodes())
     #print("Differenze All-blue",G.nodes()-posizioneBlue)
 
-    matriceProbRetweet= matrixProbRet(DizPesi,dizPosizioneRed,dizPosizioneBlue,List,G)
+    #matriceProbRetweet= matrixProbRet(DizPesi,dizPosizioneRed,dizPosizioneBlue,List,G)
 
     #List of Polarization of Elite and Listener
     firstPolar= setFirstPolarization(G,dizPosizioneBlue,dizPosizioneRed)
@@ -475,64 +488,68 @@ def main():
             x=x+1
 
    #settare i vertici dangling
-    matrice=nx.google_matrix(G,alpha=1)
-    p_array = np.array(matrice)
+    #matrice=nx.google_matrix(G,alpha=1)
+    #p_array = np.array(matrice)
 
     #print matrice,len(matrice),matrice[131]
-    sumBlue=0.
-    sumRed = 0.
-    sumYellow =0.
-    count =0;
-    for i in range(0,len(p_array)):
-        if i in posizioneBlue:
-            sumBlue = sumBlue + p_array[15][i]
-            count = count+1
-
-        elif i in posizioneRed:
-            sumRed = sumRed +  p_array[15][i]
-            # print "sumBlue=",sumBlue,"i=",i,"j",j
-        elif i in posizioneYellow:
-            sumYellow= sumYellow + p_array[15][i]
+    # sumBlue=0.
+    # sumRed = 0.
+    # sumYellow =0.
+    # count =0;
+    # for i in range(0,len(p_array)):
+    #     if i in posizioneBlue:
+    #         sumBlue = sumBlue + p_array[15][i]
+    #         count = count+1
+    #
+    #     elif i in posizioneRed:
+    #         sumRed = sumRed +  p_array[15][i]
+    #         # print "sumBlue=",sumBlue,"i=",i,"j",j
+    #     elif i in posizioneYellow:
+    #         sumYellow= sumYellow + p_array[15][i]
 
     #print p_array[15],"sumBlue",sumBlue,"sumRed",sumRed,"sumYellow",sumYellow,count,len(posizioneBlue),mat_attr
 
 
     partition = community.best_partition(G.to_undirected())
     print(partition)
+
+    print(len(G.nodes))
     #size = float(len(set(partition.values())))
 
     count = 0.
     #cambio i colori dei nodi a seconda del loro grado
-    Polar = Polarization(p_array,posizioneRed,posizioneBlue,len(G.nodes),matriceProbRetweet)
+    #Polar = Polarization(p_array,posizioneRed,posizioneBlue,len(G.nodes),matriceProbRetweet)
 
     #funziona con la partizione
     node_color= colorNode(G,nodi_Blue,nodi_Red)
 
-    node_colorPol= colorNodePol(len(G.nodes()),newPol)
+    #node_colorPol= colorNodePol(len(G.nodes()),newPol)
 
 
+    testdict=opinionPolarizationDict(G,at_array,firstPolar,list)
+    #print(testdict)
+    list_lastPol=testdict.get(len(testdict)-1)
+    #print(list_lastPol)
+    #print(set(testdict[1]))
+    node_colorPol=colorNodePol(len(G.nodes()),list_lastPol)
 
-    labels= labelPolarization(Polar,G,nodi_Blue,nodi_Red)
-    # for node in G.nodes():
-    #     print node
-    #     if G.degree(node) == 7:
-    #         node_color[node]='yellow'
-    #     else:
-    #         node_color[node]='red'
-   #cambio l size dei nodi in basi al grado del nodo
-    # size_node=[]
-    # for node in G:
-    #     if G.degree(node) > 10:
-    #         size_node.append(30)
-    #     elif G.degree(node) >5 & G.degree(node) <= 10:
-    #         size_node.append(8)
-    #     elif G.degree(node) >1 & G.degree(node) <= 5:
-    #         size_node.append(6)
-    #     else:
-    #         size_node.append(4)
+    test = {}
+    x = 0
+    for i in G.nodes():
+
+        if not testdict.has_key(i):
+            test[i] = testdict.get(len(testdict)-1)[x]
+            x = x + 1
 
 
-   # nx.draw(G,pos,nodelist=G.nodes,node_size=20, node_color=node_color, with_labels=True)
+    for i in range(0,len(testdict)):
+        if i+1 == (len(testdict)-1):
+            break
+        print("i",i,"j",i+1," simili=", set(testdict[i])==set(testdict[i+1]))
+
+
+    #labels= labelPolarization(Polar,G,nodi_Blue,nodi_Red)
+
     pos = nx.spring_layout(G)
   #Per la partizione
     # list_nodes=[]
@@ -548,13 +565,13 @@ def main():
     #con la partizione
     #nx.draw_networkx_nodes(G, pos ,list_nodes,with_labels=False,node_color=node_color)
 
-    nx.draw_networkx_nodes(G, pos ,G.nodes(),with_labels=True,node_color=node_color)
+    nx.draw_networkx_nodes(G, pos ,G.nodes(),with_labels=True,node_color=node_colorPol)
 
     nx.draw_networkx_edges(G, pos, alpha=0.5,edge_color='b')
 
-    nx.draw_networkx_labels(G, pos,dictPol,font_size=8)
+    nx.draw_networkx_labels(G, pos,test,font_size=8)
 
-    plt.savefig("GraphPolBest15day.png", format="PNG")
+    plt.savefig("TestDizPol.png", format="PNG")
 
     plt.show()
 
