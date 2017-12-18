@@ -287,8 +287,8 @@ def main():
     #         print(len(readList))
     #         print(readList[i].username,readList[i].numRetweet,readList[i].text,readList[i].hashtags)
 
-    #retweetmain(listRed, query, start, stop,dizionario_tweet_Red,"Red")
-    #retweetmain(listBlue, query, start, stop, dizionario_tweet_Blue, "Blue")
+    retweetmain(listRed, query, start, stop,dizionario_tweet_Red,"Red")
+    retweetmain(listBlue, query, start, stop, dizionario_tweet_Blue, "Blue")
     #retweetmain(listYellow, query, start, stop, dizionario_tweet_Yellow, "Yellow")
     retweetmain(list, query, start, stop, dizionario_tweet, "All")
     with open('./pickle/EutanasiaTestAWS/Finito'+str(dt.datetime.now()),"wb") as output:
