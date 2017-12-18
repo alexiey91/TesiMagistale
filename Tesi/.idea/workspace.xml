@@ -11,11 +11,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="graphSicilia.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GraphRetweet/graphSicilia.py">
+      <file leaf-file-name="getRetweetSerialization.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TweetOldSerialization/getRetweetSerialization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-517">
-              <caret line="514" column="0" lean-forward="false" selection-start-line="514" selection-start-column="0" selection-end-line="514" selection-end-column="0" />
+            <state relative-caret-position="1500">
+              <caret line="106" column="135" lean-forward="false" selection-start-line="106" selection-start-column="135" selection-end-line="106" selection-end-column="135" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graphBioTestamento.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GraphRetweet/graphBioTestamento.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="87">
+              <caret line="345" column="16" lean-forward="false" selection-start-line="345" selection-start-column="16" selection-end-line="345" selection-end-column="16" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -23,81 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eutanasiaTweet.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SentimentAnalysis/eutanasiaTweet.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="191" column="129" lean-forward="false" selection-start-line="191" selection-start-column="129" selection-end-line="191" selection-end-column="129" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TesiFlow.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TweetOldSerialization/TesiFlow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="225" column="0" lean-forward="true" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getRetweetSerialization.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TweetOldSerialization/getRetweetSerialization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="106" column="135" lean-forward="false" selection-start-line="106" selection-start-column="135" selection-end-line="106" selection-end-column="135" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createTweetSerialization.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TweetOldSerialization/createTweetSerialization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="271" column="66" lean-forward="false" selection-start-line="271" selection-start-column="66" selection-end-line="271" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SentimentAnalysis/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="92" column="59" lean-forward="false" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListaHashtagEutanasia.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ListaHashtagEutanasia.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/ListaHashtagEutanasia.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
               <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="uwhf.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TweetOldSerialization/uwhf.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListaHashtag.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/ListaHashtag.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="51" column="3" lean-forward="false" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -114,7 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>_AT</find>
       <find>polve</find>
       <find>@Musumeci_Staff uomo adatto</find>
       <find>Meloni</find>
@@ -140,10 +79,11 @@
       <find>1)</find>
       <find>meloni</find>
       <find>renata</find>
-      <find>11-20</find>
       <find>SiciliaTest</find>
       <find>Regionali</find>
       <find>EutanasiaTest</find>
+      <find>RegionaliSiciliaTest</find>
+      <find>11-20</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -152,6 +92,8 @@
       <replace>09-15</replace>
       <replace>SiciliaTestAWS</replace>
       <replace>EutanasiaTestAWS</replace>
+      <replace>EutanasiaTest</replace>
+      <replace>12-17</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -204,10 +146,11 @@
         <option value="$PROJECT_DIR$/TweetOldSerialization/createTweetSerializationDic.py" />
         <option value="$PROJECT_DIR$/TweetOldSerialization/createTweetSerialization.py" />
         <option value="$PROJECT_DIR$/SentimentAnalysis/test.py" />
+        <option value="$PROJECT_DIR$/GraphRetweet/graphBioTestamento.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1" />
     <option name="y" value="25" />
     <option name="width" value="1368" />
@@ -247,6 +190,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,7 +202,30 @@
             <path>
               <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tesi" type="462c0819:PsiDirectoryNode" />
+              <item name="GraphRetweet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tesi" type="462c0819:PsiDirectoryNode" />
               <item name="SentimentAnalysis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tesi" type="462c0819:PsiDirectoryNode" />
+              <item name="TweetOldSerialization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tesi" type="462c0819:PsiDirectoryNode" />
+              <item name="TweetOldSerialization" type="462c0819:PsiDirectoryNode" />
+              <item name="pickle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tesi" type="462c0819:PsiDirectoryNode" />
+              <item name="TweetOldSerialization" type="462c0819:PsiDirectoryNode" />
+              <item name="pickle" type="462c0819:PsiDirectoryNode" />
+              <item name="EutanasiaTestAWS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
@@ -268,25 +236,23 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SentimentAnalysis" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/Utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$/SentimentAnalysis" />
       <recent name="$PROJECT_DIR$/TweetOld" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/prova/TestDblb" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/SentimentAnalysis" />
-      <recent name="$PROJECT_DIR$/utils" />
-      <recent name="$PROJECT_DIR$/Utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -301,25 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.getRetweetSerialization">
-    <configuration name="TesiFlow" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TweetOldSerialization" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Tesi" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TweetOldSerialization/TesiFlow.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.graphBioTestamento">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -392,6 +340,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="graphBioTestamento" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GraphRetweet" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Tesi" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GraphRetweet/graphBioTestamento.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="uwhf" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -420,20 +386,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="test" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="test" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -483,20 +435,34 @@
       <option name="_new_target" value="&quot;&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.uwhf" />
       <item index="1" class="java.lang.String" itemvalue="Python.getRetweetSerialization" />
       <item index="2" class="java.lang.String" itemvalue="Python.graph" />
-      <item index="3" class="java.lang.String" itemvalue="Python.TesiFlow" />
-      <item index="4" class="java.lang.String" itemvalue="Python.createTweetSerialization" />
+      <item index="3" class="java.lang.String" itemvalue="Python.createTweetSerialization" />
+      <item index="4" class="java.lang.String" itemvalue="Python.graphBioTestamento" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.getRetweetSerialization" />
-        <item index="1" class="java.lang.String" itemvalue="Python.createTweetSerialization" />
-        <item index="2" class="java.lang.String" itemvalue="Python.graph" />
-        <item index="3" class="java.lang.String" itemvalue="Python.uwhf" />
-        <item index="4" class="java.lang.String" itemvalue="Python.TesiFlow" />
+        <item index="0" class="java.lang.String" itemvalue="Python.graphBioTestamento" />
+        <item index="1" class="java.lang.String" itemvalue="Python.getRetweetSerialization" />
+        <item index="2" class="java.lang.String" itemvalue="Python.createTweetSerialization" />
+        <item index="3" class="java.lang.String" itemvalue="Python.graph" />
+        <item index="4" class="java.lang.String" itemvalue="Python.uwhf" />
       </list>
     </recent_temporary>
   </component>
@@ -517,13 +483,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="25" width="1368" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19180088" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3658915" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3658915" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3658915" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -556,13 +521,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TweetOld/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="56" column="3" lean-forward="false" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prova/TestDblb/dblpParseXml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -802,13 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/credential.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="74" lean-forward="false" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GraphRetweet/GraphFirstPolBestSettembreNovembre.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -826,47 +777,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/ListaHashtag.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
+        <state relative-caret-position="765">
           <caret line="51" column="3" lean-forward="false" selection-start-line="51" selection-start-column="3" selection-end-line="51" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/ListaHashtagEutanasia.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SentimentAnalysis/eutanasiaTweet.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="2865">
           <caret line="191" column="129" lean-forward="false" selection-start-line="191" selection-start-column="129" selection-end-line="191" selection-end-column="129" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GraphRetweet/graphSicilia.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-517">
-          <caret line="514" column="0" lean-forward="false" selection-start-line="514" selection-start-column="0" selection-end-line="514" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TweetOldSerialization/getRetweetSerialization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="1500">
           <caret line="106" column="135" lean-forward="false" selection-start-line="106" selection-start-column="135" selection-end-line="106" selection-end-column="135" />
           <folding />
         </state>
@@ -876,22 +808,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="298" column="0" lean-forward="true" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TweetOldSerialization/createTweetSerialization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4035">
+          <caret line="271" column="66" lean-forward="false" selection-start-line="271" selection-start-column="66" selection-end-line="271" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TweetOldSerialization/TesiFlow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="225" column="0" lean-forward="true" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+        <state relative-caret-position="3345">
+          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TweetOldSerialization/createTweetSerialization.py">
+    <entry file="file://$PROJECT_DIR$/utils/credential.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="271" column="66" lean-forward="false" selection-start-line="271" selection-start-column="66" selection-end-line="271" selection-end-column="66" />
+        <state relative-caret-position="60">
+          <caret line="4" column="74" lean-forward="false" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
           <folding />
         </state>
       </provider>
@@ -900,6 +839,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="92" column="59" lean-forward="false" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraphRetweet/graphSicilia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="514" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="581" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#31#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraphRetweet/graphBioTestamento.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="345" column="16" lean-forward="false" selection-start-line="345" selection-start-column="16" selection-end-line="345" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/ListaHashtagEutanasia.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
