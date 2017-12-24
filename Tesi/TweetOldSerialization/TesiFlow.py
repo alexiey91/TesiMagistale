@@ -3,7 +3,6 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import got
-
 import tweepy
 import time
 import datetime as dt
@@ -152,7 +151,7 @@ def getRetweet(api, listaInput, lenLista, list_ret,dizionario_tweet,dizionario_r
             time.sleep(15 * 60)
 
     print('scrivo su pickle il dizionario ottenuto'+char)
-    with open('./pickle/RegionaliSiciliaTestAWS/tweet' + query + '_' + start + '_' + stop + '_dictionaryReTweet'+char+'.pkl', 'wb') as output:
+    with open('./pickle/'+query+'TestAWS/tweet' + query + '_' + start + '_' + stop + '_dictionaryReTweet'+char+'.pkl', 'wb') as output:
         pickle.dump(dizionario_retweet,output, pickle.HIGHEST_PROTOCOL)
     print ('fatto')
     return list_ret
@@ -165,11 +164,11 @@ def retweetmain(readList, query, start, stop,dizionario_tweet,char):
     dizionario_retweet = {}
     # with open('./pickle/retweet_data.pkl', 'wb') as output:
     result = getRetweet(api, readList, len(readList), list_ret,dizionario_tweet,dizionario_retweet,query,start,stop,char)
-    with open('./pickle/RegionaliSiciliaTestAWS/retweet'+char+ query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+    with open('./pickle/'+query+'TestAWS/retweet'+char+ query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
         pickle.dump(result, output, pickle.HIGHEST_PROTOCOL)
     # getRetweet(api,readList,len(readList),list_ret,query,start,stop);
     print('finito getRetweet')
-    with open('./pickle/RegionaliSiciliaTestAWS/retweet'+char + query + '_' + start + '_' + stop + '_data.pkl', 'rb') as input:
+    with open('./pickle/'+query+'TestAWS/retweet'+char + query + '_' + start + '_' + stop + '_data.pkl', 'rb') as input:
         retweetList = pickle.load(input)
         for i in range(0, len(retweetList)):
             print (retweetList[i].user)
@@ -177,21 +176,23 @@ def retweetmain(readList, query, start, stop,dizionario_tweet,char):
 
 def main():
     print "Start"
-    query = 'Regionali Sicilia'
+    query = '#'+sys.argv[1]
+    print (query)
     start = "2017-09-01"
-    stop = "2017-11-20"
+    stop = "2017-12-20"
     #Creo il dizionario per il filtraggio degli hashtag
-    dizionario_hashtag = {}
-    with open('../utils/ListaHashtag.txt', 'r') as fileHashtags:
-
-        for line in fileHashtags:
-            if not dizionario_hashtag.has_key(line.strip()):
-                dizionario_hashtag[line] = '#'+line.strip().lower()
+    # dizionario_hashtag = {}
+    # with open('../utils/ListaHashtag.txt', 'r') as fileHashtags:
+    #
+    #     for line in fileHashtags:
+    #         if not dizionario_hashtag.has_key(line.strip()):
+    #             dizionario_hashtag[line] = '#'+line.strip().lower()
 
     # for x in dizionario_hashtag:
     #      print(len(dizionario_hashtag))
     #      print(dizionario_hashtag[x])
-
+    if not os.path.exists('pickle/'+query+'TestAWS'):
+        os.makedirs('pickle/'+query+'TestAWS')
     tweetCriteria = got.manager.TweetCriteria().setQuerySearch(query).setSince(start).setUntil(
         stop)
     tweet = got.manager.TweetManager.getTweets(tweetCriteria)
@@ -206,14 +207,15 @@ def main():
     dizionario_tweet_Yellow = {}
     #for t in range(len(tweet)):
     for t in range(len(tweet)):
-        print (tweet[t].hashtags)
-        list_hash = tweet[t].hashtags.strip().lower().split(" ")
 
-        b3 = [val for val in list_hash if val in dizionario_hashtag.values()]
-
-        if len(b3)==0:
-            continue
-        else:
+        # print (tweet[t].hashtags)
+        # list_hash = tweet[t].hashtags.strip().lower().split(" ")
+        #
+        # b3 = [val for val in list_hash if val in dizionario_hashtag.values()]
+        #
+        # if len(b3)==0:
+        #     continue
+        # else:
             list.append(Tweet(tweet[t].username, tweet[t].id, tweet[t].retweets, tweet[t].text, tweet[t].mentions,
                                      tweet[t].hashtags, tweet[t].date, tweet[t].permalink))
 
@@ -251,28 +253,28 @@ def main():
 
 
 
-    with open('./pickle/RegionaliSiciliaTestAWS/tweetBlue' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+    with open('./pickle/'+query+'TestAWS/tweetBlue' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
         pickle.dump(listBlue, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSiciliaTestAWS/tweetBlue' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
+    with open('./pickle/'+query+'TestAWS/tweetBlue' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
         pickle.dump(dizionario_tweet_Blue, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSiciliaTestAWS/tweetRed' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+    with open('./pickle/'+query+'TestAWS/tweetRed' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
             pickle.dump(listRed, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSiciliaTestAWS/tweetRed' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
+    with open('./pickle/'+query+'TestAWS/tweetRed' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
             pickle.dump(dizionario_tweet_Red, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSiciliaTestAWS/tweetYellow' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+    with open('./pickle/'+query+'TestAWS/tweetYellow' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
             pickle.dump(listYellow, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSiciliaTestAWS/tweetYellow' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
+    with open('./pickle/'+query+'TestAWS/tweetYellow' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl', 'wb') as output:
             pickle.dump(dizionario_tweet_Yellow, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSiciliaTestAWS/tweetAll' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+    with open('./pickle/'+query+'TestAWS/tweetAll' + query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
         pickle.dump(list, output, pickle.HIGHEST_PROTOCOL)
 
-    with open('./pickle/RegionaliSiciliaTestAWS/tweetAll' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl',
+    with open('./pickle/'+query+'TestAWS/tweetAll' + query + '_' + start + '_' + stop + '_dictionaryTweet.pkl',
               'wb') as output:
         pickle.dump(dizionario_tweet, output, pickle.HIGHEST_PROTOCOL)
 
@@ -291,7 +293,7 @@ def main():
     retweetmain(listBlue, query, start, stop, dizionario_tweet_Blue, "Blue")
     retweetmain(listYellow, query, start, stop, dizionario_tweet_Yellow, "Yellow")
     retweetmain(list, query, start, stop, dizionario_tweet, "All")
-    with open('./pickle/RegionaliSiciliaTestAWS/Finito'+str(dt.datetime.now()),"wb") as output:
+    with open('./pickle/'+query+'TestAWS/Finito'+str(dt.datetime.now()),"wb") as output:
         pickle.dump(str(dt.datetime.now),output,pickle.HIGHEST_PROTOCOL)
     print "Finish"
 if __name__ == '__main__':

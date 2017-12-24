@@ -22,6 +22,7 @@ def printTweet(descr, t):
     print("Hashtags: %s\n" % t.hashtags)
     print("Date: %s\n" % t.date)
     print("Permaling: %s\n" % t.permalink)
+    print("Geo: %s\n" % t.geo)
 
 def retriveRetweetId(t):
     api = connectApi.loginApi()
@@ -44,9 +45,9 @@ def retriveRetweetId(t):
 def createLine(t):
 
     if "," not in t.text:
-        linea = t.username +","+ str(t.id) +","+str(t.retweets)+","+t.text.encode('utf-8')+","+ t.mentions.encode('utf-8') +","+ t.hashtags.encode('utf-8') +","+str(t.date) + ","+str(t.permalink)+"\n"
+        linea = t.username +","+ str(t.id) +","+str(t.retweets)+","+t.text.encode('utf-8')+","+ t.mentions.encode('utf-8') +","+ t.hashtags.encode('utf-8') +","+str(t.date) + ","+str(t.geo)+","+str(t.permalink)+"\n"
     else:
-        linea = t.username +","+ str(t.id) + ","+str(t.retweets)+","+t.text.replace(",","").encode('utf-8')+","+ t.mentions.encode('utf-8') +","+ t.hashtags.encode('utf-8') +","+str(t.date) + ","+str(t.permalink)+"\n"
+        linea = t.username +","+ str(t.id) + ","+str(t.retweets)+","+t.text.replace(",","").encode('utf-8')+","+ t.mentions.encode('utf-8') +","+ t.hashtags.encode('utf-8') +","+str(t.date) +","+str(t.geo)+ ","+str(t.permalink)+"\n"
 
 
     return linea
@@ -57,7 +58,7 @@ def main():
 
 
     tweetCriteria = got.manager.TweetCriteria().setQuerySearch('Regionali Sicilia').setSince("2017-11-01").setUntil(
-        "2017-11-05")
+        "2017-11-02")
     tweet = got.manager.TweetManager.getTweets(tweetCriteria)
     list = []
     list.append(tweet)

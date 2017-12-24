@@ -423,34 +423,16 @@ def main():
     #print(DizPesi)
     nodi_Blue= NodeDict(retweetList)
     nodi_Red = NodeDict(retweetListRed)
-    #nodi_Yellow = NodeDict(retweetListYellow)
-    #print nodi_Blue
-    #G = createUndirectGraph(List)
+
     G = createGraph(List,DizPesi)
     size_node_degree= []
 
-
-    #UpdateNode(retweetListYellow,nodi_Blue)
-    #UpdateNode(retweetListYellow,nodi_Red)
-    #print(test)
 
     posizioneBlue = PosNode(G.nodes(),nodi_Blue)
     posizioneRed = PosNode(G.nodes(),nodi_Red)
     #posizioneYellow = PosNode(G.nodes(),nodi_Yellow)
     dizPosizioneBlue=PosNodeDizionario(G.nodes,nodi_Blue)
     dizPosizioneRed=PosNodeDizionario(G.nodes,nodi_Red)
-   # dizPosizioneYellow = PosNodeDizionario(G.nodes,nodi_Yellow);
-    # print("Nodi=",G.nodes())
-    # print("DizPosBlue",dizPosizioneBlue)
-    # print("DizPosRed",dizPosizioneRed)
-    # print("DizPosYelloq",dizPosizioneYellow)
-    #print("Edge=",G.edges(data='weight'))
-    #print("posRed",posizioneRed)
-    #print ("posBlue",posizioneBlue)
-    #print(G.nodes())
-    #print("Differenze All-blue",G.nodes()-posizioneBlue)
-
-    #matriceProbRetweet= matrixProbRet(DizPesi,dizPosizioneRed,dizPosizioneBlue,List,G)
 
     #List of Polarization of Elite and Listener
     firstPolar= setFirstPolarization(G,dizPosizioneBlue,dizPosizioneRed)
@@ -474,7 +456,6 @@ def main():
 
     #matrice di adiacenza partendo dalla lista dei nodi
     mat_attr=nx.attr_matrix(G,rc_order=list)
-    #print(mat_attr[1])
 
     at_array=np.array(mat_attr)
 
@@ -488,33 +469,8 @@ def main():
             dictPol[i]=newPol[x]
             x=x+1
 
-   #settare i vertici dangling
-    #matrice=nx.google_matrix(G,alpha=1)
-    #p_array = np.array(matrice)
-
-    #print matrice,len(matrice),matrice[131]
-    # sumBlue=0.
-    # sumRed = 0.
-    # sumYellow =0.
-    # count =0;
-    # for i in range(0,len(p_array)):
-    #     if i in posizioneBlue:
-    #         sumBlue = sumBlue + p_array[15][i]
-    #         count = count+1
-    #
-    #     elif i in posizioneRed:
-    #         sumRed = sumRed +  p_array[15][i]
-    #         # print "sumBlue=",sumBlue,"i=",i,"j",j
-    #     elif i in posizioneYellow:
-    #         sumYellow= sumYellow + p_array[15][i]
-
-    #print p_array[15],"sumBlue",sumBlue,"sumRed",sumRed,"sumYellow",sumYellow,count,len(posizioneBlue),mat_attr
-
 
     partition = community.best_partition(G.to_undirected())
-    #print(partition)
-
-    #print(len(G.nodes))
     #size = float(len(set(partition.values())))
 
     count = 0.

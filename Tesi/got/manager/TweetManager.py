@@ -45,6 +45,7 @@ class TweetManager:
 				
 				geo = ''
 				geoSpan = tweetPQ('span.Tweet-geo')
+
 				if len(geoSpan) > 0:
 					geo = geoSpan.attr('title')
 				

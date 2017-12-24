@@ -398,8 +398,8 @@ def main():
         #print("RED",retweetListRed[i].user,retweetListRed[i].retweet, retweetListRed[i].date)
         List.append(i)
 
-    for i in retweetListYellow:
-        List.append(i)
+    # for i in retweetListYellow:
+    #     List.append(i)
 
     DizPesi={}
 
@@ -416,13 +416,13 @@ def main():
         if not DizPesi.has_key(probRetRed[i].edge):
             DizPesi[probRetRed[i].edge]= probRetRed[i].count
 
-    for i in probYellowGraph:
-        if not DizPesi.has_key(probYellowGraph[i].edge):
-            DizPesi[probYellowGraph[i].edge]= probYellowGraph[i].count
+    # for i in probYellowGraph:
+    #     if not DizPesi.has_key(probYellowGraph[i].edge):
+    #         DizPesi[probYellowGraph[i].edge]= probYellowGraph[i].count
     #print(DizPesi)
     nodi_Blue= NodeDict(retweetList)
     nodi_Red = NodeDict(retweetListRed)
-    nodi_Yellow = NodeDict(retweetListYellow)
+    #nodi_Yellow = NodeDict(retweetListYellow)
     #print nodi_Blue
     #G = createUndirectGraph(List)
     G = createGraph(List,DizPesi)
@@ -435,10 +435,10 @@ def main():
 
     posizioneBlue = PosNode(G.nodes(),nodi_Blue)
     posizioneRed = PosNode(G.nodes(),nodi_Red)
-    posizioneYellow = PosNode(G.nodes(),nodi_Yellow)
+    #posizioneYellow = PosNode(G.nodes(),nodi_Yellow)
     dizPosizioneBlue=PosNodeDizionario(G.nodes,nodi_Blue)
     dizPosizioneRed=PosNodeDizionario(G.nodes,nodi_Red)
-    dizPosizioneYellow = PosNodeDizionario(G.nodes,nodi_Yellow);
+    #dizPosizioneYellow = PosNodeDizionario(G.nodes,nodi_Yellow);
     # print("Nodi=",G.nodes())
     # print("DizPosBlue",dizPosizioneBlue)
     # print("DizPosRed",dizPosizioneRed)
@@ -571,7 +571,7 @@ def main():
 
     nx.draw_networkx_labels(G, pos,test,font_size=8)
 
-    plt.savefig("TestDizPol.png", format="PNG")
+    plt.savefig("../Test/Sicilia/PolSenzaY.png", format="PNG")
 
     plt.show()
 
