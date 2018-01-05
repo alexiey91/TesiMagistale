@@ -32,6 +32,9 @@ class countOccTweet(object):
 
 
 class countOccReTweet(object):
+    edge=''
+    count=0
+    date=''
     def __init__(self, edge, count,date):
         self.edge = edge
         self.count = count
@@ -39,6 +42,7 @@ class countOccReTweet(object):
 
     def __str__(self):
         return str(self.edge) + " " + str(self.count)+" "+str(self.date)
+
 
 class Retweet(object):
     user = ''
@@ -104,11 +108,12 @@ def getRetweet(api,listaInput,lenLista,pos,list_ret):
 def main() :
     #api = connectApi.loginApi()
 
-    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/EutanasiaTest/tweetAlleutanasia_2017-12-01_2017-12-14_data.pkl', 'rb') as input:
+    with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-09-15_dictionaryReTweetRed.pkl', 'rb') as input:
         retweetList = pickle.load(input)
         print len(retweetList)
         for i in retweetList:
-            print(i.username,i.text,i.numRetweet)
+         prob = countOccReTweet(retweetList[i].edge, retweetList[i].count, retweetList[i].date)
+         print("Blue",prob.edge, prob.count, prob.date)
     # with open('/home/alessandro/PycharmProjects/Tesi/TweetOldSerialization/pickle/RegionaliSiciliaPc/tweetRegionali Sicilia_2017-09-01_2017-09-15_dictionaryReTweetYellow.pkl', 'rb') as handler:
     #     Tweet = pickle.load(handler)
     # for x in Tweet:

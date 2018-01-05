@@ -1,239 +1,192 @@
-mat[0] senza pesi su arco con grafo non diretto:
-[[ 0.015  0.015  0.015  0.015  0.015  0.015  0.865  0.015  0.015  0.015]]
+LIST=
+('Blue', 'Siracusa_Online', '', datetime.datetime(2017, 9, 13, 18, 38, 56))
+('Blue', 'OpenGDB', '', datetime.datetime(2017, 9, 13, 1, 3, 9))
+('Blue', 'OpenGDB', '', datetime.datetime(2017, 9, 12, 14, 8, 59))
+('Blue', 'siculindignati', [u'CloBonfardino', u'MimmoDagna', u'SicilyisI', u'siciliasveglia', u'beppevicari', u'jophx', u'angelofullone1', u'waltergianno'], datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', 'OpenGDB', '', datetime.datetime(2017, 9, 10, 18, 58, 32))
+('Blue', 'OpenGDB', '', datetime.datetime(2017, 9, 5, 12, 54, 16))
+('Blue', 'OpenGDB', '', datetime.datetime(2017, 9, 4, 20, 24, 18))
+('Blue', 'siculindignati', [u'siciliasveglia', u'jophx', u'beppevicari', u'waltergianno'], datetime.datetime(2017, 9, 4, 12, 26, 27))
+('Blue', 'OpenGDB', [u'Luca_Imp79'], datetime.datetime(2017, 9, 1, 22, 48, 12))
+('Blue', 'beppevicari', '', datetime.datetime(2017, 9, 1, 13, 3, 55))
+('Red', 'sevenseasmarina', '', datetime.datetime(2017, 9, 10, 14, 46))
+('Red', 'claudioreale', [u'giubi7'], datetime.datetime(2017, 9, 8, 15, 33, 6))
 
-mat[0] senza pesi su arco grafo diretto:
-[ 0.015  0.015  0.015  0.015  0.015  0.015  0.865  0.015  0.015  0.015]
-
-
-mat [0] con pesi(prob retweet) su arco grafo diretto:
-[[ 0.015  0.015  0.015  0.015  0.015  0.015  0.865  0.015  0.015  0.015]]
-
-
-
-('ggv84', 'pos=', 6)
-('KeepWalter', 'pos=', 15)
-('GDS_it', 'pos=', 23)
-(u'tranellio', 'pos=', 32)
-('francusu', 'pos=', 33)
-(u'RenzoSpada1', 'pos=', 36)
-(u'6ReTwitt', 'pos=', 51)
-(u'UglRM', 'pos=', 53)
-(u'Piu_Italia', 'pos=', 57)
-(u'Per_Italia', 'pos=', 60)
-(u'_AT76', 'pos=', 61)
-(u'M__Guerrieri', 'pos=', 69)
-(u'77Freddo', 'pos=', 86)
-('renatapolverini', 'pos=', 98)
-(u'mnstorrita', 'pos=', 99)
-(u'ciccio1274', 'pos=', 106)
-(u'MasucciCarlo', 'pos=', 108)
-(u'PerItalia', 'pos=', 109)
-('destradipopolo', 'pos=', 122)
-(u'emmazanni', 'pos=', 126)
-('marisaLaDestra', 'pos=', 131)
-(u'UBrignone', 'pos=', 139)
-(u'Rebelli0n2k', 'pos=', 170)
-(u'engelgal', 'pos=', 173)
-(u'SocciarelloCarl', 'pos=', 188)
-('UdcIta', 'pos=', 211)
-(u'MauroAnnunziata', 'pos=', 217)
-('nessunoindietro', 'pos=', 222)
-(u'menelaolemanine', 'pos=', 230)
-(u'WH_Beveridge', 'pos=', 233)
-('messinaora', 'pos=', 249)
-(u'PaolaTacconi', 'pos=', 252)
-('mlsSartorio', 'pos=', 254)
-(u'soleterramare', 'pos=', 263)
-(u'Ori254', 'pos=', 268)
-(u'L_Cesa', 'pos=', 270)
-('zazoomblog', 'pos=', 282)
-(u'GiovanniCalcara', 'pos=', 288)
-(u'Tanaquilla2', 'pos=', 289)
-('ilSicilia', 'pos=', 292)
-('oknosureddit', 'pos=', 299)
-(u'UdcWebTv', 'pos=', 308)
-('MiccoliGiuseppe', 'pos=', 318)
-('10notizie', 'pos=', 339)
-(u'SoniaGrotto', 'pos=', 351)
-(u'rita_angelis', 'pos=', 362)
-(u'VelisGustavo', 'pos=', 373)
-('Udc_Sicilia', 'pos=', 380)
-(u'UdcVeneto', 'pos=', 386)
-('MNS_nazionale', 'pos=', 387)
-('marcoga', 'pos=', 388)
-(u'forza_italia', 'pos=', 392)
-(u'MarioMagno7', 'pos=', 393)
-(u'FedericoCaland4', 'pos=', 1)
-(u'Cosi49Cosimo', 'pos=', 5)
-(u'InfolabLeone', 'pos=', 7)
-(u'Snoopy16466', 'pos=', 9)
-(u'merimascherpa', 'pos=', 13)
-(u'pinomarte168', 'pos=', 19)
-(u'Danae0308', 'pos=', 21)
-('TommasoWom7', 'pos=', 29)
-(u'VaiVieni', 'pos=', 31)
-(u'decontentabile', 'pos=', 37)
-(u'BabbaiFabry', 'pos=', 39)
-(u'marinellafly12', 'pos=', 41)
-(u'RobyvrRoberto', 'pos=', 45)
-(u'mariadmarzano', 'pos=', 47)
-('Nebrodinotizie', 'pos=', 48)
-(u'Subclivium', 'pos=', 49)
-(u'MaOcchipinti', 'pos=', 55)
-(u'nuzzolo51', 'pos=', 58)
-(u'BertiatoRoberto', 'pos=', 59)
-(u'Stefano02395205', 'pos=', 62)
-(u'micheladania', 'pos=', 64)
-(u'bournetw', 'pos=', 65)
-(u'ragazzodimatera', 'pos=', 66)
-(u'70giovanni', 'pos=', 67)
-(u'incaxxatonero', 'pos=', 71)
-('albegiorvalanga', 'pos=', 72)
-('adpucci', 'pos=', 77)
-(u'skipper_66', 'pos=', 79)
-('rossellavilardi', 'pos=', 82)
-(u'Grace_1207', 'pos=', 83)
-(u'CarmelaEmma', 'pos=', 87)
-('marcomiscio', 'pos=', 89)
-(u'Giustizia47Vera', 'pos=', 91)
-(u'beniamino_di', 'pos=', 92)
-('GiammarioDiB', 'pos=', 95)
-(u'ceciliavalent12', 'pos=', 100)
-(u'marino29b', 'pos=', 101)
-('rep_palermo', 'pos=', 102)
-(u'kickmyballs222', 'pos=', 103)
-(u'julesbeton', 'pos=', 105)
-(u'misspassinella1', 'pos=', 107)
-(u'Infinity_999', 'pos=', 110)
-(u'AldoGips', 'pos=', 116)
-(u'avanti_xxx', 'pos=', 117)
-(u'filotesa', 'pos=', 121)
-(u'salvofavara', 'pos=', 124)
-('larampait', 'pos=', 133)
-(u'imbizzarrito', 'pos=', 134)
-(u'HbXNyNyaUDJM3uE', 'pos=', 141)
-(u'luigibagnato', 'pos=', 142)
-('LabParlamento', 'pos=', 144)
-(u'lentinivince', 'pos=', 145)
-(u'claudiosgarigli', 'pos=', 146)
-(u'RealTimeNews__', 'pos=', 148)
-(u'roberto23159', 'pos=', 149)
-(u'gstelluti', 'pos=', 153)
-(u'Roberto23SV', 'pos=', 158)
-(u'Serenel73', 'pos=', 159)
-(u'incazzatissimo1', 'pos=', 160)
-(u'gjscco', 'pos=', 161)
-(u'ivo0611', 'pos=', 163)
-(u'carlodp47864', 'pos=', 166)
-(u'piani_a', 'pos=', 167)
-('vincengiove', 'pos=', 168)
-('grillo_parla', 'pos=', 174)
-(u'Drusylla_75', 'pos=', 175)
-(u'PALMAMOLLO', 'pos=', 179)
-(u'pentotaldoll', 'pos=', 183)
-('notiveri', 'pos=', 185)
-(u'jerrardino', 'pos=', 186)
-(u'theskindesigner', 'pos=', 187)
-(u'VitoGulli', 'pos=', 192)
-(u'AntonioRandazz5', 'pos=', 194)
-(u'BettazziFranco', 'pos=', 195)
-(u'ufogufo', 'pos=', 196)
-(u'demian_yexil', 'pos=', 200)
-(u'EnricoAncillott', 'pos=', 201)
-(u'Amedeo111960', 'pos=', 203)
-(u'MazzuAlessandro', 'pos=', 207)
-(u'tuziorista', 'pos=', 208)
-(u'NegliaGio', 'pos=', 209)
-(u'LorenzoMiglior1', 'pos=', 215)
-(u'Laura_Rocci', 'pos=', 218)
-(u'366daniele', 'pos=', 219)
-(u'liviofiorillo', 'pos=', 221)
-(u'roberto_carboni', 'pos=', 223)
-(u'LelloEsposito5', 'pos=', 228)
-(u'largociospe', 'pos=', 229)
-(u'AntonioFraschi', 'pos=', 232)
-(u'Angel5stars', 'pos=', 234)
-(u'fabryegio', 'pos=', 235)
-(u'utor34', 'pos=', 238)
-('Mauro_Boccia', 'pos=', 241)
-(u'ilGrillodiPA', 'pos=', 243)
-('Bart1705', 'pos=', 245)
-(u'walterdariz', 'pos=', 248)
-('marionecomix', 'pos=', 251)
-(u'PaolaTacconi', 'pos=', 252)
-(u'francor71282755', 'pos=', 255)
-(u'cutolotto', 'pos=', 256)
-(u'bubbasaur', 'pos=', 258)
-(u'saldabarre1', 'pos=', 259)
-(u'JohnHard3', 'pos=', 261)
-(u'Marcell01010589', 'pos=', 262)
-(u'Massimo27355129', 'pos=', 265)
-(u'Ori254', 'pos=', 268)
-(u'slavina6', 'pos=', 269)
-('rcatania68', 'pos=', 271)
-(u'mameli54', 'pos=', 275)
-(u'AntoMorly', 'pos=', 279)
-(u'ElisabettaDAle1', 'pos=', 280)
-(u'doloresebasta', 'pos=', 281)
-(u'piranio80', 'pos=', 283)
-(u'annagrossi3', 'pos=', 286)
-(u'proudman811', 'pos=', 287)
-(u'PaoloX68', 'pos=', 290)
-(u'seiosenoi', 'pos=', 291)
-(u'meg_abn', 'pos=', 293)
-(u'mimiartino', 'pos=', 294)
-(u'MovPopulistaIta', 'pos=', 297)
-(u'osannacremonesi', 'pos=', 298)
-(u'loureiro1966', 'pos=', 301)
-(u'BPtobia', 'pos=', 302)
-(u'lucioconte53', 'pos=', 303)
-(u'giulioenrico', 'pos=', 307)
-(u'serenel14278447', 'pos=', 309)
-(u'Paolo73221905', 'pos=', 310)
-(u'simone0781', 'pos=', 313)
-(u'rosa857', 'pos=', 314)
-(u'ginocalcinotto', 'pos=', 315)
-(u'ElIndoChaparral', 'pos=', 320)
-(u'aldifederiko', 'pos=', 322)
-(u'igsammarco', 'pos=', 327)
-(u'repubblica', 'pos=', 328)
-(u'antony220970', 'pos=', 329)
-('NuovoSud', 'pos=', 332)
-('ignaziocorrao', 'pos=', 334)
-(u'fifranzo', 'pos=', 335)
-(u'pierdario', 'pos=', 337)
-('giusmo1', 'pos=', 338)
-(u'punto_effe', 'pos=', 340)
-('uzupetru', 'pos=', 341)
-(u'atestaltasempre', 'pos=', 342)
-('fernandomadonia', 'pos=', 344)
-('luisaloffredo28', 'pos=', 348)
-(u'alvarofiucci1', 'pos=', 350)
-(u'pantanac', 'pos=', 355)
-(u'sadape54', 'pos=', 357)
-(u'Beppesardinia', 'pos=', 363)
-(u'esisley', 'pos=', 368)
-(u'RenatoCuttitta', 'pos=', 369)
-(u'RPRESTIPINO', 'pos=', 374)
-(u'elisabettap38', 'pos=', 377)
-('TgLa7', 'pos=', 378)
-('zecca_la', 'pos=', 382)
-('tweetpolitica', 'pos=', 384)
-(u'Claudiabrunett', 'pos=', 391)
-('lucianoaforte', 'pos=', 394)
-(u'alessiobalbi', 'pos=', 395)
-(u'pitoneanto', 'pos=', 397)
-(u'CelliLuana', 'pos=', 398)
-(u'mauriziogetuli', 'pos=', 399)
-('Lavocesociale', 'pos=', 400)
+Diz=
+('Blue', (u'jophx', 'siculindignati'), 2, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'siciliasveglia', 'siculindignati'), 2, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'beppevicari', 'siculindignati'), 2, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'waltergianno', 'siculindignati'), 2, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'SicilyisI', 'siculindignati'), 1, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'MimmoDagna', 'siculindignati'), 1, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'angelofullone1', 'siculindignati'), 1, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'Luca_Imp79', 'OpenGDB'), 1, datetime.datetime(2017, 9, 1, 22, 48, 12))
+('Blue', (u'CloBonfardino', 'siculindignati'), 1, datetime.datetime(2017, 9, 11, 12, 32, 21))
+#('RED', (u'jophx', 'siculindignati'), 1, datetime.datetime(2017, 9, 12, 15, 11))
+#('RED', (u'siciliasveglia', 'siculindignati'), 1, datetime.datetime(2017, 9, 12, 15, 11))
+('RED', (u'giubi7', 'claudioreale'), 1, datetime.datetime(2017, 9, 8, 15, 33, 6))
+#('RED', (u'SicilyisI', 'siculindignati'), 1, datetime.datetime(2017, 9, 12, 15, 11))
+#('RED', (u'beppevicari', 'siculindignati'), 1, datetime.datetime(2017, 9, 12, 15, 11))
+#('RED', (u'CloBonfardino', 'siculindignati'), 1, datetime.datetime(2017, 9, 12, 15, 11))
 
 
-('ciao', 32, 15)
-('ciao', 20, 15)
-('ciao', 18, 15)
-('ciao', 9, 15)
-('ciao', 25, 27)
+'pesi archi', {(u'jophx', 'siculindignati'): 1.0, (u'siciliasveglia', 'siculindignati'): 1.0, (u'giubi7', 'claudioreale'): 1.0,
+               (u'waltergianno', 'siculindignati'): 1.0, (u'SicilyisI', 'siculindignati'): 1.0, (u'MimmoDagna', 'siculindignati'): 1.0,
+               (u'angelofullone1', 'siculindignati'): 1.0, (u'Luca_Imp79', 'OpenGDB'): 1.0, (u'beppevicari', 'siculindignati'): 1.0,
+               (u'CloBonfardino', 'siculindignati'): 1.0})
 
+ ('dictgetProbRandom', {u'beppevicari': [1.0], u'Luca_Imp79': [1.0], u'angelofullone1': [1.0], 'siculindignati': [], u'SicilyisI': [1.0],
+                        u'waltergianno': [1.0], u'giubi7': [1.0], 'OpenGDB': [], u'jophx': [1.0], u'siciliasveglia': [1.0], u'MimmoDagna': [1.0],
+                        u'CloBonfardino': [1.0], 'claudioreale': []})
 
-Passo 0 di polarizzazione  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-Passo 0 di polarizzazione  [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+beppevicari
+('tempBlue', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbBlue [0.5, 0.5]
+successorNodeBlue siculindignati
+qui
+fine Blue 1.0
+('tempRed', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbRed [0.5, 0.5]
+successorNodeRed siculindignati
+i 0
+ELSE= 0.5 [u'beppevicari', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+SuccessorNode non in listRed
+Fine red 0.0
+resultBlue[0] ListaBlue visitate [u'beppevicari', 'siculindignati']
+ListaRed visitate [u'beppevicari', 'siculindignati']
+diffPol 1.0
+Luca_Imp79
+('tempBlue', u'Luca_Imp79')
+('i', 0)
+Vicini ['OpenGDB']
+ListProbBlue [1.0]
+successorNodeBlue OpenGDB
+qui
+fine Blue 1.0
+('tempRed', u'Luca_Imp79')
+('i', 0)
+Vicini ['OpenGDB']
+ListProbRed [1.0]
+successorNodeRed OpenGDB
+i 0
+ELSE= 1.0 [u'Luca_Imp79', 'OpenGDB']
+('tempRed', 'OpenGDB')
+('i', 1)
+Vicini []
+SuccessorNode non in listRed
+Fine red 0.0
+resultBlue[0] ListaBlue visitate [u'Luca_Imp79', 'OpenGDB']
+ListaRed visitate [u'Luca_Imp79', 'OpenGDB']
+diffPol 1.0
+angelofullone1
+('tempBlue', u'angelofullone1')
+('i', 0)
+Vicini ['siculindignati']
+ListProbBlue [1.0]
+successorNodeBlue siculindignati
+qui
+fine Blue 1.0
+('tempRed', u'angelofullone1')
+('i', 0)
+Vicini ['siculindignati']
+ListProbRed [1.0]
+successorNodeRed siculindignati
+i 0
+ELSE= 1.0 [u'angelofullone1', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+SuccessorNode non in listRed
+Fine red 0.0
+resultBlue[0] ListaBlue visitate [u'angelofullone1', 'siculindignati']
+ListaRed visitate [u'angelofullone1', 'siculindignati']
+diffPol 1.0
+claudioreale
+('tempBlue', 'claudioreale')
+('i', 0)
+Vicini []
+i==0
+fine Blue 1.0
+('tempRed', 'claudioreale')
+('i', 0)
+Vicini []
+i==0
+Fine red 1.0
+resultBlue[0] ListaBlue visitate ['claudioreale']
+ListaRed visitate ['claudioreale']
+diffPol 0.0
+SicilyisI
+('tempBlue', u'SicilyisI')
+('i', 0)
+Vicini ['siculindignati']
+ListProbBlue [1.0]
+successorNodeBlue siculindignati
+qui
+fine Blue 1.0
+('tempRed', u'SicilyisI')
+('i', 0)
+Vicini ['siculindignati']
+ListProbRed [1.0]
+successorNodeRed siculindignati
+i 0
+ELSE= 1.0 [u'SicilyisI', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+SuccessorNode non in listRed
+Fine red 0.0
+resultBlue[0] ListaBlue visitate [u'SicilyisI', 'siculindignati']
+ListaRed visitate [u'SicilyisI', 'siculindignati']
+diffPol 1.0
+waltergianno
+('tempBlue', u'waltergianno')
+('i', 0)
+Vicini ['siculindignati']
+ListProbBlue [1.0]
+successorNodeBlue siculindignati
+qui
+fine Blue 1.0
+('tempRed', u'waltergianno')
+('i', 0)
+Vicini ['siculindignati']
+ListProbRed [1.0]
+successorNodeRed siculindignati
+i 0
+ELSE= 1.0 [u'waltergianno', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+SuccessorNode non in listRed
+Fine red 0.0
+resultBlue[0] ListaBlue visitate [u'waltergianno', 'siculindignati']
+ListaRed visitate [u'waltergianno', 'siculindignati']
+diffPol 1.0
+giubi7
+('tempBlue', u'giubi7')
+('i', 0)
+Vicini ['claudioreale']
+ListProbBlue [1.0]
+successorNodeBlue claudioreale
+i 0
+ELSE= 1.0 [u'giubi7', 'claudioreale']
+claudioreale
+('tempBlue', 'claudioreale')
+('i', 1)
+Vicini []
+SuccessorNode non in listBlue
+fine Blue 0.0
+('tempRed', u'giubi7')
+('i', 0)
+Vicini ['claudioreale']
+ListProbRed [1.0]
+successorNodeRed claudioreale
+qui
+Fine red 1.0
+resultBlue[0] ListaBlue visitate

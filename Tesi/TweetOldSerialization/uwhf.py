@@ -1,5 +1,7 @@
 import sys,os
 import unidecode as u
+import  numpy as np
+import random
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import SentimentAnalysis.test as sentiment
 dizionario_hashtag = {}
@@ -28,13 +30,18 @@ dizionario_hashtag = {}
 # #print(stringa)
 #
 # print(u._unidecode(s))x
-x= '#Regionali #Sicilia . #Micari presenta listino e assessori. #Baccei all\u2019 #Economia'
-x= u' '+x.encode('utf-8')
-print(x)
-result=sentiment.checkPartition(str(x).lower())
+# x= '#Palermo - 15 settembre Nello #Musumeci #Diventer\xe0Bellissima #Sicilia2017 #elesicilia #regionali2017 #Sicilia #13settembre pic.twitter.com/Zcir1ttkZ3'
+# #x= u' '+x.encode('utf-8')
+# #print(x)
+# result=sentiment.checkPartition(str(x).lower())
+#
+# print result
 
-print result
 
-number= divmod(401,20)
+aa_milne_arr = ['pooh']
+print "np=",np.random.choice(aa_milne_arr,1, p=[1.0])[0]
 
-print("numeber",number," number[0]",number[0])
+neighbors = ['ciao','cane','ola']
+random_num = random.randint(0,len(aa_milne_arr)-1 );
+starting_node = aa_milne_arr[random_num];
+print(random_num,"nodo=",starting_node)

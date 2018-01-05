@@ -90,7 +90,7 @@ def extract_features(tweet):
 
 
 # Read the tweets one by one and process it
-inpTweets = csv.reader(open('../SentimentAnalysis/eutanasiaTweet.csv', 'rb'), delimiter=',', quotechar='|')
+inpTweets = csv.reader(open('../SentimentAnalysis/testTweet.csv', 'rb'), delimiter=',', quotechar='|')
 stopWords = getStopWordList('../SentimentAnalysis/words_italian.txt')
 count = 0;
 featureList = []
@@ -135,7 +135,7 @@ def checkPartition(tweetAlfa):
 
 def main():
     ciao='Forza Italia movimento per il futuro '
-    checkPartition(ciao)
+    #checkPartition(ciao)
 
 
 if __name__ == '__main__':
