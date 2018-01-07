@@ -459,6 +459,23 @@ def dictDegreeNodePart(G,partition):
    # newA = dict(sorted(dictDegree.iteritems(), key=dictDegree.get, reverse=True)[:5])
     newA=heapq.nlargest(5, dictDegree, key=dictDegree.get)
     return newA;
+
+def dictDegreeDiscendent(G,node,partition):
+    dictDegree = {}
+    disc= nx.descendants(G,node)
+    for i in disc:
+        if partition.has_key(i):
+            dictDegree[i] = G.in_degree(i)
+
+    # newA = dict(sorted(dictDegree.iteritems(), key=dictDegree.get, reverse=True)[:5])
+    newA = heapq.nlargest(5, dictDegree, key=dictDegree.get)
+    print newA
+    return newA;
+
+def release_list(a):
+   del a[:]
+   del a
+
 #EdgeProb e' il dizionario di ogni nodo con la lista delle probabilita
 #DizProbRet sono gli archi come chiave con le prob di retweet
 def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree,num_walk,Red,Blue,EdgeProb,DizProbRet):
@@ -471,118 +488,151 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
     counterPolRed = 1.
     visited_nodeBlue = []
     counterPolBlue = 1.
+    restartBlue= True
+    restartRed = True
     '''
     numero di tentantivi per raggiungere il nodo i e' il contatore dei passi verso i nodi di grado max blue
     '''
     print startnode
-    for i in range(0,num_walk):
-        print("tempBlue", tempBlue)
-        print("i", i)
-        if i== 0:
-            visited_nodeBlue.append(tempBlue)
-        #ListNeighbours = G.neighbors(tempBlue)
-        ListNeighboursBlue = getListNeighbour(G,tempBlue)
-        print "Vicini",ListNeighboursBlue
-        if bool(ListNeighboursBlue) == False:
-            if i==0:
-                print("i==0")
-                counterPolBlue = 1.
-                resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
-                break
+    while restartBlue:
+        restartBlue= False
+        for i in range(0,num_walk):
+            print("tempBlue", tempBlue)
+            print("i", i)
 
-            elif successorNodeBlue not in listNodeBlueDegree:
-                print("SuccessorNode non in listBlue")
+            if bool(listNodeBlueDegree)== False:
                 counterPolBlue = 0.
-                resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
+                resultBlue[startnode] = (counterPolBlue,visited_nodeBlue)
                 break
+            if i== 0:
+                visited_nodeBlue.append(tempBlue)
+            #ListNeighbours = G.neighbors(tempBlue)
+            ListNeighboursBlue = getListNeighbour(G,tempBlue)
+            print "Vicini",ListNeighboursBlue
+            if bool(ListNeighboursBlue) == False:
+                if i==0:
+                    print("i==0")
+                    counterPolBlue = 1.
+                    resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
+                    break
+
+                elif successorNodeBlue not in listNodeBlueDegree:
+                    print("SuccessorNode non in listBlue",i,counterPolBlue,tempBlue,visited_nodeBlue)
+                    #counterPolBlue = 0.
+                    #resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
+                    #break
+                    counterPolBlue = 0.
+                    tempBlue = startnode
+                    release_list(visited_nodeBlue)
+                    print "Ricomincio",i,counterPolBlue,tempBlue,visited_nodeBlue
+                    restartBlue = True
+                    break
+
+
+                else:
+                    print("successore blue esco")
+                    resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
+                    break
+
             else:
-                print("successore blue esco")
-                resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
-                break
-            break
-        else:
-            ListProbBlue = getProbRandomNeighbour(G,tempBlue,DizProbRet)
-            print "ListProbBlue", ListProbBlue
+                ListProbBlue = getProbRandomNeighbour(G,tempBlue,DizProbRet)
+                print "ListProbBlue", ListProbBlue
 
-            successorNodeBlue=np.random.choice(ListNeighboursBlue, 1, p=ListProbBlue)[0]
-            #successorNode = ListNeighbours[randomNode]
-            print "successorNodeBlue" ,successorNodeBlue
+                successorNodeBlue=np.random.choice(ListNeighboursBlue, 1, p=ListProbBlue)[0]
+                #successorNode = ListNeighbours[randomNode]
+                print "successorNodeBlue" ,successorNodeBlue
 
-            if successorNodeBlue in listNodeBlueDegree:
-                print "Succesore in lista DegreeBlue"
-                visited_nodeBlue.append(successorNodeBlue)
+                if successorNodeBlue in listNodeBlueDegree:
+                    print "Succesore in lista DegreeBlue"
+                    visited_nodeBlue.append(successorNodeBlue)
 
-                resultBlue[startnode]=(counterPolBlue,visited_nodeBlue)
-                break
-
-            elif i == num_walk:
-                print "dentro i = numWalk", i
-                if successorNodeBlue not in listNodeBlueDegree:
-                    counterPolBlue= 0.
                     resultBlue[startnode]=(counterPolBlue,visited_nodeBlue)
-            else:
-                print "i", i
-                if tempBlue != successorNodeBlue:
-                   visited_nodeBlue.append(successorNodeBlue)
-                print  "ELSEBlue=", DizProbRet[(tempBlue, successorNodeBlue)], visited_nodeBlue
-                #counterPolBlue=counterPolBlue*EdgeProb[(tempBlue,successorNode)]
-                counterPolBlue=counterPolBlue*DizProbRet[(tempBlue,successorNodeBlue)]
-                tempBlue = successorNodeBlue
-                print tempBlue
+                    break
 
-    print "fine Blue"
+                elif i == num_walk:
+                        print "dentro i = numWalk", i
+                        if successorNodeBlue not in listNodeBlueDegree:
+                            counterPolBlue= 1.
+                            resultBlue[startnode]=(counterPolBlue,visited_nodeBlue)
+                else:
+                    print "i", i
+                    if tempBlue != successorNodeBlue:
+                        visited_nodeBlue.append(successorNodeBlue)
+                    print  "ELSEBlue=", DizProbRet[(tempBlue, successorNodeBlue)], visited_nodeBlue
+                    #counterPolBlue=counterPolBlue*EdgeProb[(tempBlue,successorNode)]
+                    counterPolBlue=counterPolBlue*DizProbRet[(tempBlue,successorNodeBlue)]
+                    tempBlue = successorNodeBlue
+                    print tempBlue
 
-    for i in range(0,num_walk):
-        print("tempRed",tempRed)
-        print("i",i)
-        if i== 0:
-            visited_nodeRed.append(tempRed)
-        #ListNeighbours = G.neighbors(tempBlue)
-        ListNeighboursRed = getListNeighbour(G,tempRed)
-        print "Vicini",ListNeighboursRed
-        if bool(ListNeighboursRed) == False:
-            if i==0:
-                print("i==0")
-                counterPolRed = 1.
-                resultRed[startnode] = (counterPolRed, visited_nodeRed)
-                break
-            elif successorNodeRed not in listNodeRedDegree:
-                print("SuccessorNode non in listRed")
+    print "fine Blue",counterPolBlue
+    while restartRed:
+        restartRed= False
+        for i in range(0,num_walk):
+            print("tempRed",tempRed)
+            print("i",i)
+            if i== 0:
+                visited_nodeRed.append(tempRed)
+
+            if bool(listNodeRedDegree)== False:
                 counterPolRed = 0.
-                resultRed[startnode] = (counterPolRed, visited_nodeRed)
+                resultBlue[startnode] = (counterPolRed,visited_nodeRed)
                 break
+            #ListNeighbours = G.neighbors(tempBlue)
+            ListNeighboursRed = getListNeighbour(G,tempRed)
+            print "Vicini",ListNeighboursRed
+            if bool(ListNeighboursRed) == False:
+                if i==0:
+                    print("i==0")
+                    counterPolRed = 1.
+                    resultRed[startnode] = (counterPolRed, visited_nodeRed)
+                    break
+                elif successorNodeRed not in listNodeRedDegree:
+                    print("SuccessorNode non in listRed",i,counterPolRed,tempRed,visited_nodeRed)
+                    #counterPolRed = 0.
+                    #resultRed[startnode] = (counterPolRed, visited_nodeRed)
+                    #break
+                    counterPolRed = 1.
+                    tempRed = startnode
+                    release_list(visited_nodeRed)
+                    print "Ricomincio", i, counterPolRed, tempRed, visited_nodeRed
+                    restartRed = True
+
+                else:
+                    print()
+                    resultRed[startnode] = (counterPolRed, visited_nodeRed)
+                    break
             else:
-                print()
-                resultRed[startnode] = (counterPolRed, visited_nodeRed)
-                break
-        else:
-            ListProbRed = getProbRandomNeighbour(G,tempRed,DizProbRet)
-            print "ListProbRed",ListProbRed
-            successorNodeRed=np.random.choice(ListNeighboursRed, 1, p=ListProbRed)[0]
-            #successorNode = ListNeighbours[randomNode]
-            print "successorNodeRed" ,successorNodeRed
-            if successorNodeRed in listNodeRedDegree:
-                print "qui"
-                visited_nodeRed.append(successorNodeRed)
-
-                resultRed[startnode]=(counterPolRed,visited_nodeRed)
-                break
-
-            elif i == num_walk:
-                print "dentro i = ",i
-                if successorNodeRed not in listNodeRedDegree:
-                    counterPolRed= 0.
-                    resultRed[startnode]=(counterPolRed,visited_nodeRed)
-
-            else:
-                print "i",i
-                if tempRed != successorNodeRed:
+                ListProbRed = getProbRandomNeighbour(G,tempRed,DizProbRet)
+                print "ListProbRed",ListProbRed
+                successorNodeRed=np.random.choice(ListNeighboursRed, 1, p=ListProbRed)[0]
+                #successorNode = ListNeighbours[randomNode]
+                print "successorNodeRed" ,successorNodeRed
+                if successorNodeRed in listNodeRedDegree:
+                    print "Succesore in lista DegreeRed"
                     visited_nodeRed.append(successorNodeRed)
 
-                print  "ELSERed=",DizProbRet[(tempRed,successorNodeRed)],visited_nodeRed
-                #counterPolRed=counterPolRed*EdgeProb[(tempRed,successorNode)]
-                counterPolRed = counterPolRed * DizProbRet[(tempRed, successorNodeRed)]
-                tempRed = successorNodeRed
+                    resultRed[startnode]=(counterPolRed,visited_nodeRed)
+                    break
+
+                elif i == num_walk:
+                    print "dentro i = ",i
+                    if successorNodeRed not in listNodeRedDegree:
+                        counterPolRed= 0.
+                        resultRed[startnode]=(counterPolRed,visited_nodeRed)
+
+
+                else:
+                    print "i",i
+                    if tempRed != successorNodeRed:
+                        visited_nodeRed.append(successorNodeRed)
+
+                    print  "ELSERed=",DizProbRet[(tempRed,successorNodeRed)],visited_nodeRed
+                    #counterPolRed=counterPolRed*EdgeProb[(tempRed,successorNode)]
+                    counterPolRed = counterPolRed * DizProbRet[(tempRed, successorNodeRed)]
+                    tempRed = successorNodeRed
+
+
+
     print "Fine red",counterPolRed
     print "resultBlue[0]",
     print "ListaBlue visitate",resultBlue[startnode]
@@ -671,8 +721,10 @@ def main():
     G = createDirectNoWeightGraph(List)
     size_node_degree= []
     G.add_edge(u'beppevicari', 'claudioreale')
+    #G.add_edge('claudioreale','OpenGDB')
 
     DizPesi[(u'beppevicari', 'claudioreale')]=2
+    #DizPesi[('claudioreale','OpenGDB')]=2
     NumberRetweetDiz = getAllWeightEdge(DizPesi)
     #print NumberRetweetDiz
     UpdateNode(retweetListYellow,nodi_Blue)
@@ -827,13 +879,17 @@ def main():
     dictDegreeBlue= dictDegreeNodePart(G,nodi_Blue)
     print "ListaNodiGradiBlu",dictDegreeBlue
 
-    dictDegreeRed = dictDegreeNodePart(G,nodi_Red)
-    result=[]
-    for i in G.nodes():
-        for j in range(0,5):
-          result.append((j,performRandomWalkSingleNode(G,i,dictDegreeBlue,dictDegreeRed,10,'','',dictTest,edgeWeightLabel)))
-          #print "result",result
 
+    dictDegreeRed = dictDegreeNodePart(G,nodi_Red)
+    result={}
+    for i in G.nodes():
+        print nx.descendants(G, i)
+        dictDegreeDiscRed = dictDegreeDiscendent(G,i,nodi_Red)
+        dictDegreeDiscBlue = dictDegreeDiscendent(G,i,nodi_Blue)
+        #for j in range(0,5):
+         #result.append((j,performRandomWalkSingleNode(G,i,dictDegreeBlue,dictDegreeRed,10,'','',dictTest,edgeWeightLabel)))
+          #print "result",result
+        result[i]= performRandomWalkSingleNode(G,i,dictDegreeDiscBlue,dictDegreeDiscRed,10,"","",dictTest,edgeWeightLabel)
         break
 
     print result,len(result)
