@@ -502,7 +502,7 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
 
             if bool(listNodeBlueDegree)== False:
                 counterPolBlue = 0.
-                resultBlue[startnode] = (counterPolBlue,visited_nodeBlue)
+                resultBlue[startnode] = (counterPolBlue,"nessunBlue")
                 break
             if i== 0:
                 visited_nodeBlue.append(tempBlue)
@@ -575,7 +575,7 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
 
             if bool(listNodeRedDegree)== False:
                 counterPolRed = 0.
-                resultBlue[startnode] = (counterPolRed,visited_nodeRed)
+                resultRed[startnode] = (counterPolRed,"Nessun Red")
                 break
             #ListNeighbours = G.neighbors(tempBlue)
             ListNeighboursRed = getListNeighbour(G,tempRed)
@@ -890,7 +890,7 @@ def main():
          #result.append((j,performRandomWalkSingleNode(G,i,dictDegreeBlue,dictDegreeRed,10,'','',dictTest,edgeWeightLabel)))
           #print "result",result
         result[i]= performRandomWalkSingleNode(G,i,dictDegreeDiscBlue,dictDegreeDiscRed,10,"","",dictTest,edgeWeightLabel)
-        break
+        #break
 
     print result,len(result)
     nx.draw_networkx_nodes(G, pos ,G.nodes(),with_labels=True,node_color=node_color)
