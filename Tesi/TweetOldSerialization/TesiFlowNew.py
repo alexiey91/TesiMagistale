@@ -177,10 +177,10 @@ def retweetmain(readList, query, start, stop,dizionario_tweet,char):
 
 def main():
     print "Start"
-    query = '#EleSicilia'
+    query = '#' + sys.argv[1]
     print (query)
     start = "2017-09-01"
-    stop = "2017-09-15"
+    stop = "2017-12-20"
     #Creo il dizionario per il filtraggio degli hashtag
     # dizionario_hashtag = {}
     # with open('../utils/ListaHashtag.txt', 'r') as fileHashtags:
