@@ -384,7 +384,7 @@ def main():
     with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetYellow.pkl','rb') as input:
         probYellowGraph = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetAll#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetYellow#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
         retweetListYellow = pickle.load(input)
 
     List=[]
@@ -528,7 +528,8 @@ def main():
 
 
     testdict=opinionPolarizationDict(G,at_array,firstPolar,list)
-    #print(testdict)
+
+    print("testdict ",testdict)
     list_lastPol=testdict.get(len(testdict)-1)
     #print(list_lastPol)
     #print(set(testdict[1]))
@@ -569,7 +570,7 @@ def main():
     nx.draw_networkx_nodes(G, pos ,G.nodes(),with_labels=True,node_color=node_colorPol)
 
     nx.draw_networkx_edges(G, pos, alpha=0.5,edge_color='b')
-
+    print test
     nx.draw_networkx_labels(G, pos,test,font_size=8)
 
     plt.savefig("../Test/Sicilia/PolSenzaY.png", format="PNG")

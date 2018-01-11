@@ -2,6 +2,7 @@ import sys,os
 import unidecode as u
 import  numpy as np
 import random
+import math
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import SentimentAnalysis.test as sentiment
 dizionario_hashtag = {}
@@ -45,3 +46,6 @@ neighbors = ['ciao','cane','ola']
 random_num = random.randint(0,len(aa_milne_arr)-1 );
 starting_node = aa_milne_arr[random_num];
 print(random_num,"nodo=",starting_node)
+
+x = math.sqrt(99);
+print math.sqrt(99) , int(x)

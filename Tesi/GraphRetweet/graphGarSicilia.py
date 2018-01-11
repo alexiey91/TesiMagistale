@@ -6,6 +6,7 @@ import community
 import numpy as np
 import operator
 import heapq
+import math
 
 
 nodi_isolati = []
@@ -133,7 +134,7 @@ def createDirectNoWeightGraph(retweetList):
 def NodeDict(lista_ret):
     dizionarioNodi= {}
     for i in range (0,len(lista_ret)):
-        if not  dizionarioNodi.has_key(lista_ret[i].user):
+        if not  dizionarioNodi.has_key(lista_ret[i].user) :
             dizionarioNodi[lista_ret[i].user] = lista_ret[i].user
         if lista_ret[i].retweet != 0 or lista_ret[i].retweet != None:
                 dizionarioNodi[lista_ret[i].user] = lista_ret[i].user
@@ -145,6 +146,10 @@ def NodeDict(lista_ret):
 
     return dizionarioNodi
 
+def NodeDictDel(Dict1,Dict2):
+    for i in Dict1:
+        if Dict2.has_key(i):
+            del Dict2[i]
 
 '''
     @param nodeList: is the list of Nodes of Graph
@@ -402,8 +407,30 @@ def setWeightEdge(G,DizWeightTot,Dictionary):
 def deleteList(List1,List2):
     for i in List1:
         for j in List2:
+
             if i.user == j.user:
-                List2.remove(j)
+
+                if i.user == u'chiesa_stefano':
+                    print("trovato")
+                    List2.remove(j)
+                else:
+
+                 List2.remove(j)
+
+
+def deleteList2( List1,List2):
+    for el in List1:
+      #print(el.user)
+      x=list(filter(lambda a: a.user != el.user, List2))
+    List2=x
+    return List2
+
+def deleteList3 ( List1,List2):
+    for i in List1:
+        result = [c for c in List2 if c.user == i.user]
+        #print("Result",result)
+    return result
+
 
 
 def getAllWeightEdge(DizPesi):
@@ -469,7 +496,7 @@ def dictDegreeDiscendent(G,node,partition):
 
     # newA = dict(sorted(dictDegree.iteritems(), key=dictDegree.get, reverse=True)[:5])
     newA = heapq.nlargest(5, dictDegree, key=dictDegree.get)
-    print newA
+   # print newA
     return newA;
 
 def release_list(a):
@@ -517,14 +544,15 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
                     break
 
                 elif successorNodeBlue not in listNodeBlueDegree:
-                    print("SuccessorNode non in listBlue",i,counterPolBlue,tempBlue,visited_nodeBlue)
+                    print("SuccessorNode non in listBlue",i,counterPolBlue,tempBlue,visited_nodeBlue,successorNodeBlue)
                     #counterPolBlue = 0.
                     #resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
                     #break
-                    counterPolBlue = 0.
+                    counterPolBlue = 1.
                     tempBlue = startnode
+                    successorNodeBlue = None
                     release_list(visited_nodeBlue)
-                    print "Ricomincio",i,counterPolBlue,tempBlue,visited_nodeBlue
+                    print "Ricomincio",i,counterPolBlue,tempBlue,visited_nodeBlue,successorNodeBlue
                     restartBlue = True
                     break
 
@@ -544,6 +572,7 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
 
                 if successorNodeBlue in listNodeBlueDegree:
                     print "Succesore in lista DegreeBlue"
+                    counterPolBlue = counterPolBlue * DizProbRet[(tempBlue, successorNodeBlue)]
                     visited_nodeBlue.append(successorNodeBlue)
 
                     resultBlue[startnode]=(counterPolBlue,visited_nodeBlue)
@@ -587,18 +616,20 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
                     resultRed[startnode] = (counterPolRed, visited_nodeRed)
                     break
                 elif successorNodeRed not in listNodeRedDegree:
-                    print("SuccessorNode non in listRed",i,counterPolRed,tempRed,visited_nodeRed)
+                    print("SuccessorNode non in listRed",i,counterPolRed,tempRed,visited_nodeRed,successorNodeRed)
                     #counterPolRed = 0.
                     #resultRed[startnode] = (counterPolRed, visited_nodeRed)
                     #break
                     counterPolRed = 1.
                     tempRed = startnode
+                    successorNodeRed= None
                     release_list(visited_nodeRed)
-                    print "Ricomincio", i, counterPolRed, tempRed, visited_nodeRed
+                    print "Ricomincio", i, counterPolRed, tempRed, visited_nodeRed,successorNodeRed
                     restartRed = True
+                    break
 
                 else:
-                    print()
+                    #print()
                     resultRed[startnode] = (counterPolRed, visited_nodeRed)
                     break
             else:
@@ -609,6 +640,8 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
                 print "successorNodeRed" ,successorNodeRed
                 if successorNodeRed in listNodeRedDegree:
                     print "Succesore in lista DegreeRed"
+                    counterPolRed = counterPolRed * DizProbRet[(tempRed, successorNodeRed)]
+
                     visited_nodeRed.append(successorNodeRed)
 
                     resultRed[startnode]=(counterPolRed,visited_nodeRed)
@@ -634,40 +667,86 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
 
 
     print "Fine red",counterPolRed
-    print "resultBlue[0]",
-    print "ListaBlue visitate",resultBlue[startnode]
-    print "ListaRed visitate",resultRed[startnode]
+    #print "resultBlue[0]",
+    #print "ListaBlue visitate",resultBlue[startnode]
+   # print "ListaRed visitate",resultRed[startnode]
     diffPol = resultBlue[startnode][0]-resultRed[startnode][0]
-    print "diffPol",diffPol
+    #print "diffPol",diffPol
+    if diffPol == 0.0 and resultBlue[startnode][1]=='nessunBlue' and resultRed[startnode][1]== 'Nessun Red':
+            if Red.has_key(startnode):
+                diffPol = -1.0
+            else:
+                diffPol = 1.0
+
     resultPol[startnode]=(diffPol,resultBlue[startnode][1],resultRed[startnode][1])
 
     return resultPol
 
 
 
+def nodeColorGar(G,dizPolarGar,dizMerge):
+    list=[]
+    for i in G.nodes():
+    #for i in dizMerge:
+        if dizPolarGar.has_key(i):
+            x= dizPolarGar[i][i][0]
+            if x > 0. :
+                list.append("blue")
+            elif x < 0. :
+                list.append("red")
+            else:
+                list.append("grey")
+        else:
+            print "Error"
+
+    return list
+
+
+def nodeLaberGar(G,dizPolarGar):
+    pol={}
+
+    for i in G.nodes():
+        if  dizPolarGar.has_key(i):
+            pol[i] = dizPolarGar[i][i][0]
+
+        else:
+            print "Error"
+
+
+    return pol
+
+
+def merge_two_dicts(x, y):
+    z = x.copy()   # start with x's keys and values
+    z.update(y)    # modifies z with y's keys and values & returns None
+    return z
 
 
 def main():
     # Leggo il file pickle dei retweet
     # Costruisco un grafo con networkx partendo dai dati ottenuti
-    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetBlue#EleSicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWSLocal/retweetBlue#EleSicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
         retweetList = pickle.load(input)
+
     #List = retweetList
-    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetRed#EleSicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWSLocal/retweetRed#EleSicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
         retweetListRed = pickle.load(input)
-    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-09-15_dictionaryReTweetBlue.pkl', 'rb') as input:
+    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWSLocal/tweet#EleSicilia_2017-09-01_2017-09-15_dictionaryReTweetBlue.pkl', 'rb') as input:
         probRetBlue = pickle.load(input)
-    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-09-15_dictionaryReTweetRed.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWSLocal/tweet#EleSicilia_2017-09-01_2017-09-15_dictionaryReTweetRed.pkl','rb') as input:
         probRetRed = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-09-15_dictionaryReTweetYellow.pkl','rb') as input:
-        probYellowGraph = pickle.load(input)
+    #with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetYellow.pkl','rb') as input:
+    #    probYellowGraph = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetYellow#EleSicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWSLocal/retweetYellow#EleSicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
         retweetListYellow = pickle.load(input)
 
+    #print deleteList2(retweetList,retweetListRed)[0].user
+    #retweetListRed = deleteList2(retweetList,retweetListRed)
     deleteList(retweetList,retweetListRed)
 
+    print "Fine Delete"
     List=[]
     for i in retweetList:
         #ret= Retweet(retweetList[i].user,retweetList[i].retweet, retweetList[i].date)
@@ -713,22 +792,26 @@ def main():
     nodi_Blue= NodeDict(retweetList)
     nodi_Red = NodeDict(retweetListRed)
     #nodi_Yellow = NodeDict(retweetListYellow)
-    print ("Blue",nodi_Blue,len(nodi_Blue))
-    print ("Red", nodi_Red,len(nodi_Blue))
+   # print ("Blue",nodi_Blue,len(nodi_Blue))
+   # print ("Red", nodi_Red,len(nodi_Blue))
     #G = createUndirectGraph(List)
     DizionarioPesiArchi={}
     #G = createGraph(List,DizPesi,DizionarioPesiArchi)
     G = createDirectNoWeightGraph(List)
     size_node_degree= []
     G.add_edge(u'beppevicari', 'claudioreale')
-    #G.add_edge('claudioreale','OpenGDB')
+   # G.add_edge('claudioreale','OpenGDB')
 
-    DizPesi[(u'beppevicari', 'claudioreale')]=2
+    DizPesi[(u'beppevicari', 'claudioreale')]=1
     #DizPesi[('claudioreale','OpenGDB')]=2
     NumberRetweetDiz = getAllWeightEdge(DizPesi)
     #print NumberRetweetDiz
     UpdateNode(retweetListYellow,nodi_Blue)
     UpdateNode(retweetListYellow,nodi_Red)
+
+    NodeDictDel(nodi_Blue,nodi_Red)
+    print ("Blue", nodi_Blue, len(nodi_Blue))
+    print ("Red", nodi_Red, len(nodi_Blue))
 
     setWeightEdge(G, NumberRetweetDiz, DizPesi)
     #print(test)
@@ -738,10 +821,13 @@ def main():
     #posizioneYellow = PosNode(G.nodes(),nodi_Yellow)
     dizPosizioneBlue=PosNodeDizionario(G.nodes,nodi_Blue)
     dizPosizioneRed=PosNodeDizionario(G.nodes,nodi_Red)
+
+    dizMerge = merge_two_dicts(dizPosizioneBlue, dizPosizioneRed)
     #dizPosizioneYellow = PosNodeDizionario(G.nodes,nodi_Yellow);
     # print("Nodi=",G.nodes())
     print("DizPosBlue",dizPosizioneBlue)
     print("DizPosRed",dizPosizioneRed)
+    print("DizMerge",dizMerge,len(dizMerge))
     # print("DizPosYelloq",dizPosizioneYellow)
     #print("Edge=",G.edges(data='weight'))
     #print("posRed",posizioneRed)
@@ -874,30 +960,41 @@ def main():
         if not dictTest.has_key(i):
             dictTest[i]= getProbRandomNeighbour(G,i,edgeWeightLabel)
 
-    print("dictgetProbRandom",dictTest)
+   # print("dictgetProbRandom",dictTest)
 
     dictDegreeBlue= dictDegreeNodePart(G,nodi_Blue)
-    print "ListaNodiGradiBlu",dictDegreeBlue
+   # print "ListaNodiGradiBlu",dictDegreeBlue
 
-
+    #rint len(G.nodes()),math.sqrt(len(G.nodes())) , int(math.sqrt(len(G.nodes())))
     dictDegreeRed = dictDegreeNodePart(G,nodi_Red)
     result={}
     for i in G.nodes():
-        print nx.descendants(G, i)
-        dictDegreeDiscRed = dictDegreeDiscendent(G,i,nodi_Red)
-        dictDegreeDiscBlue = dictDegreeDiscendent(G,i,nodi_Blue)
-        #for j in range(0,5):
-         #result.append((j,performRandomWalkSingleNode(G,i,dictDegreeBlue,dictDegreeRed,10,'','',dictTest,edgeWeightLabel)))
-          #print "result",result
-        result[i]= performRandomWalkSingleNode(G,i,dictDegreeDiscBlue,dictDegreeDiscRed,10,"","",dictTest,edgeWeightLabel)
-        #break
+         #if i == u'beppevicari':
+       # print nx.descendants(G, i)
+            dictDegreeDiscRed = dictDegreeDiscendent(G,i,nodi_Red)
+            dictDegreeDiscBlue = dictDegreeDiscendent(G,i,nodi_Blue)
+            print dictDegreeDiscRed
+            print dictDegreeDiscBlue
+
+            result[i]= performRandomWalkSingleNode(G,i,dictDegreeDiscBlue,dictDegreeDiscRed,int(math.sqrt(len(G.nodes()))),nodi_Red,"",dictTest,edgeWeightLabel)
+         #    break
+         # else:
+         #    continue
+
 
     print result,len(result)
-    nx.draw_networkx_nodes(G, pos ,G.nodes(),with_labels=True,node_color=node_color)
 
-    nx.draw_networkx_edges(G, pos,edge_labels=edgeWeightLabel,font_size=10,edge_color='b')
+    listColorGar = nodeColorGar(G,result,dizMerge)
+    dictLabelGar={}
+    dictLabelGar = nodeLaberGar(G,result)
+    print(dictLabelGar)
+    nx.draw_networkx_nodes(G, pos, G.nodes(), with_labels=True , node_color=listColorGar)
 
-    nx.draw_networkx_labels(G, pos,font_size=8)
+    nx.draw_networkx_edges(G, pos, edge_color='b')
+
+    nx.draw_networkx_labels(G, pos, dictLabelGar, font_size=8)
+    #nx.draw_networkx_labels(G, pos, font_size=8)
+
 
     plt.savefig("../Test/Sicilia/PolSenzaY.png", format="PNG")
 

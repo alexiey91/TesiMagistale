@@ -190,3 +190,106 @@ successorNodeRed claudioreale
 qui
 Fine red 1.0
 resultBlue[0] ListaBlue visitate
+
+
+
+
+
+NOdi grado Max
+RED ['claudioreale']
+BLUE ['siculindignati']
+
+
+beppevicari
+('tempBlue', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbBlue [0.6666666666666666, 0.3333333333333333]
+successorNodeBlue siculindignati
+Succesore in lista DegreeBlue
+fine Blue 0.666666666667
+('tempRed', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbRed [0.6666666666666666, 0.3333333333333333]
+successorNodeRed siculindignati
+i 0
+ELSERed= 0.666666666667 [u'beppevicari', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+('SuccessorNode non in listRed', 1, 0.6666666666666666, 'siculindignati', [u'beppevicari', 'siculindignati'])
+Ricomincio 1 1.0 beppevicari []
+('tempRed', u'beppevicari')
+('i', 2)
+Vicini ['siculindignati', 'claudioreale']
+ListProbRed [0.6666666666666666, 0.3333333333333333]
+successorNodeRed siculindignati
+i 2
+ELSERed= 0.666666666667 ['siculindignati']
+('tempRed', 'siculindignati')
+('i', 0)
+Vicini []
+i==0
+Fine red 1.0
+{u'beppevicari': {u'beppevicari': (-0.33333333333333337, [u'beppevicari', 'siculindignati'], ['siculindignati', 'siculindignati'])}} 1
+
+
+
+['claudioreale']
+['siculindignati']
+beppevicari
+('tempBlue', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbBlue [0.6666666666666666, 0.3333333333333333]
+successorNodeBlue siculindignati
+Succesore in lista DegreeBlue
+fine Blue 0.666666666667
+
+
+('tempRed', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbRed [0.6666666666666666, 0.3333333333333333]
+successorNodeRed siculindignati
+i 0
+ELSERed= 0.666666666667 [u'beppevicari', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+('SuccessorNode non in listRed', 1, 0.6666666666666666, 'siculindignati', [u'beppevicari', 'siculindignati'], 'siculindignati')
+Ricomincio 1 1.0 beppevicari []
+('tempRed', u'beppevicari')
+('i', 2)
+Vicini ['siculindignati', 'claudioreale']
+ListProbRed [0.6666666666666666, 0.3333333333333333]
+successorNodeRed siculindignati
+i 2
+ELSERed= 0.666666666667 ['siculindignati']
+('tempRed', 'siculindignati')
+('i', 0)
+Vicini []
+i==0
+Fine red 1.0
+{u'beppevicari': {u'beppevicari': (-0.33333333333333337, [u'beppevicari', 'siculindignati'], ['siculindignati', 'siculindignati'])}} 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
