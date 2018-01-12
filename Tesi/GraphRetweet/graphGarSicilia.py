@@ -463,6 +463,21 @@ def getProbRandomNeighbour(G,node,DizProbRet):
 
                 arrProb.append(DizProbRet[j])
 
+
+        if sum(arrProb) < 1.0:
+            arrProb[len(arrProb)-1] = arrProb[len(arrProb)-1]+ (1-sum(arrProb))
+
+        elif sum(arrProb) > 1.0:
+            index, value = max(enumerate(arrProb), key=operator.itemgetter(1))
+            somma = 0.
+            for i in range(0,len(arrProb)):
+              if i!= index:
+               somma = somma + arrProb[i]
+
+            arrProb[index]= 1-somma
+
+
+
     return arrProb;
 
 
@@ -520,12 +535,12 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
     '''
     numero di tentantivi per raggiungere il nodo i e' il contatore dei passi verso i nodi di grado max blue
     '''
-    print startnode
+    #print startnode
     while restartBlue:
         restartBlue= False
         for i in range(0,num_walk):
-            print("tempBlue", tempBlue)
-            print("i", i)
+            #print("tempBlue", tempBlue)
+            #print("i", i)
 
             if bool(listNodeBlueDegree)== False:
                 counterPolBlue = 0.
@@ -533,113 +548,125 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
                 break
             if i== 0:
                 visited_nodeBlue.append(tempBlue)
-            #ListNeighbours = G.neighbors(tempBlue)
+
             ListNeighboursBlue = getListNeighbour(G,tempBlue)
-            print "Vicini",ListNeighboursBlue
+            #print "Vicini",ListNeighboursBlue
             if bool(ListNeighboursBlue) == False:
                 if i==0:
-                    print("i==0")
+                    #print("i==0")
                     counterPolBlue = 1.
                     resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
                     break
 
                 elif successorNodeBlue not in listNodeBlueDegree:
-                    print("SuccessorNode non in listBlue",i,counterPolBlue,tempBlue,visited_nodeBlue,successorNodeBlue)
-                    #counterPolBlue = 0.
-                    #resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
-                    #break
+                    #print("SuccessorNode non in listBlue",i,counterPolBlue,tempBlue,visited_nodeBlue,successorNodeBlue)
+
                     counterPolBlue = 1.
                     tempBlue = startnode
                     successorNodeBlue = None
                     release_list(visited_nodeBlue)
-                    print "Ricomincio",i,counterPolBlue,tempBlue,visited_nodeBlue,successorNodeBlue
+                    #print "Ricomincio",i,counterPolBlue,tempBlue,visited_nodeBlue,successorNodeBlue
                     restartBlue = True
                     break
 
 
                 else:
-                    print("successore blue esco")
+                    #print("successore blue esco")
+                    counterPolBlue = counterPolBlue * DizProbRet[(tempBlue, successorNodeBlue)]
                     resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
                     break
 
             else:
                 ListProbBlue = getProbRandomNeighbour(G,tempBlue,DizProbRet)
-                print "ListProbBlue", ListProbBlue
+                #print "ListProbBlue", ListProbBlue
 
                 successorNodeBlue=np.random.choice(ListNeighboursBlue, 1, p=ListProbBlue)[0]
-                #successorNode = ListNeighbours[randomNode]
-                print "successorNodeBlue" ,successorNodeBlue
+                #print "successorNodeBlue" ,successorNodeBlue
 
                 if successorNodeBlue in listNodeBlueDegree:
-                    print "Succesore in lista DegreeBlue"
+                    #print "Succesore in lista DegreeBlue"
                     counterPolBlue = counterPolBlue * DizProbRet[(tempBlue, successorNodeBlue)]
                     visited_nodeBlue.append(successorNodeBlue)
 
                     resultBlue[startnode]=(counterPolBlue,visited_nodeBlue)
                     break
 
-                elif i == num_walk:
-                        print "dentro i = numWalk", i
+                elif i == num_walk-1:
+                        #print "dentro i = numWalk", i
                         if successorNodeBlue not in listNodeBlueDegree:
-                            counterPolBlue= 1.
-                            resultBlue[startnode]=(counterPolBlue,visited_nodeBlue)
+                            # counterPolBlue= 1.
+                            # resultBlue[startnode]=(counterPolBlue,visited_nodeBlue)
+                            counterPolBlue = 1.
+                            tempBlue = startnode
+                            successorNodeBlue = None
+                            release_list(visited_nodeBlue)
+                            #print "Ricomincio numwalk Blue", i, counterPolBlue, tempBlue, visited_nodeBlue, successorNodeBlue
+                            restartBlue = True
+                            break
+
+                        else:
+                            counterPolBlue = counterPolBlue * DizProbRet[(tempBlue, successorNodeBlue)]
+                            visited_nodeBlue.append(successorNodeBlue)
+
+                            resultBlue[startnode] = (counterPolBlue, visited_nodeBlue)
                 else:
-                    print "i", i
+                    #print "i", i
                     if tempBlue != successorNodeBlue:
                         visited_nodeBlue.append(successorNodeBlue)
-                    print  "ELSEBlue=", DizProbRet[(tempBlue, successorNodeBlue)], visited_nodeBlue
-                    #counterPolBlue=counterPolBlue*EdgeProb[(tempBlue,successorNode)]
+                    #print  "ELSEBlue=", DizProbRet[(tempBlue, successorNodeBlue)], visited_nodeBlue
+
                     counterPolBlue=counterPolBlue*DizProbRet[(tempBlue,successorNodeBlue)]
                     tempBlue = successorNodeBlue
-                    print tempBlue
+                    #print tempBlue
 
-    print "fine Blue",counterPolBlue
+    #print "fine Blue",counterPolBlue
     while restartRed:
         restartRed= False
         for i in range(0,num_walk):
-            print("tempRed",tempRed)
-            print("i",i)
+            #print("tempRed",tempRed)
+            #print("i",i)
             if i== 0:
                 visited_nodeRed.append(tempRed)
 
             if bool(listNodeRedDegree)== False:
+                #print("nessun listNodeRedDegree")
                 counterPolRed = 0.
                 resultRed[startnode] = (counterPolRed,"Nessun Red")
                 break
-            #ListNeighbours = G.neighbors(tempBlue)
+
             ListNeighboursRed = getListNeighbour(G,tempRed)
-            print "Vicini",ListNeighboursRed
+            #print "Vicini",ListNeighboursRed
             if bool(ListNeighboursRed) == False:
                 if i==0:
-                    print("i==0")
+                    #print("i==0")
                     counterPolRed = 1.
                     resultRed[startnode] = (counterPolRed, visited_nodeRed)
                     break
                 elif successorNodeRed not in listNodeRedDegree:
-                    print("SuccessorNode non in listRed",i,counterPolRed,tempRed,visited_nodeRed,successorNodeRed)
-                    #counterPolRed = 0.
-                    #resultRed[startnode] = (counterPolRed, visited_nodeRed)
-                    #break
+                    #print("SuccessorNode non in listRed",i,counterPolRed,tempRed,visited_nodeRed,successorNodeRed)
+
+
                     counterPolRed = 1.
                     tempRed = startnode
                     successorNodeRed= None
-                    release_list(visited_nodeRed)
-                    print "Ricomincio", i, counterPolRed, tempRed, visited_nodeRed,successorNodeRed
+                    #print "Ricomincio", i, counterPolRed, tempRed, visited_nodeRed,successorNodeRed
                     restartRed = True
+                    release_list(visited_nodeRed)
                     break
 
                 else:
-                    #print()
+                    #print("successore rosso esco")
+                    counterPolRed = counterPolRed * DizProbRet[(tempRed, successorNodeRed)]
                     resultRed[startnode] = (counterPolRed, visited_nodeRed)
                     break
             else:
                 ListProbRed = getProbRandomNeighbour(G,tempRed,DizProbRet)
-                print "ListProbRed",ListProbRed
+                #print "ListProbRed",ListProbRed
                 successorNodeRed=np.random.choice(ListNeighboursRed, 1, p=ListProbRed)[0]
-                #successorNode = ListNeighbours[randomNode]
-                print "successorNodeRed" ,successorNodeRed
+
+                #print "successorNodeRed" ,successorNodeRed
                 if successorNodeRed in listNodeRedDegree:
-                    print "Succesore in lista DegreeRed"
+                    #print "Succesore in lista DegreeRed"
                     counterPolRed = counterPolRed * DizProbRet[(tempRed, successorNodeRed)]
 
                     visited_nodeRed.append(successorNodeRed)
@@ -647,31 +674,41 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
                     resultRed[startnode]=(counterPolRed,visited_nodeRed)
                     break
 
-                elif i == num_walk:
-                    print "dentro i = ",i
+                elif i == num_walk-1:
+                    #print "dentro i = ",i
                     if successorNodeRed not in listNodeRedDegree:
-                        counterPolRed= 0.
-                        resultRed[startnode]=(counterPolRed,visited_nodeRed)
-
+                        # counterPolRed= 0.
+                        # resultRed[startnode]=(counterPolRed,visited_nodeRed)
+                        counterPolRed = 1.
+                        tempRed = startnode
+                        successorNodeRed = None
+                        #print "Ricomincio dopo num_walk passi", i, counterPolRed, tempRed, visited_nodeRed, successorNodeRed
+                        restartRed = True
+                        release_list(visited_nodeRed)
+                        break
+                    else:
+                        counterPolRed = counterPolRed * DizProbRet[(tempRed, successorNodeRed)]
+                        visited_nodeRed.append(successorNodeRed)
+                        resultRed[startnode] = (counterPolRed, visited_nodeRed)
+                        #print("ultimo passo")
 
                 else:
-                    print "i",i
+                    #print "i",i
                     if tempRed != successorNodeRed:
                         visited_nodeRed.append(successorNodeRed)
 
-                    print  "ELSERed=",DizProbRet[(tempRed,successorNodeRed)],visited_nodeRed
-                    #counterPolRed=counterPolRed*EdgeProb[(tempRed,successorNode)]
+                    #print  "ELSERed=",DizProbRet[(tempRed,successorNodeRed)],visited_nodeRed
                     counterPolRed = counterPolRed * DizProbRet[(tempRed, successorNodeRed)]
                     tempRed = successorNodeRed
 
 
 
-    print "Fine red",counterPolRed
-    #print "resultBlue[0]",
-    #print "ListaBlue visitate",resultBlue[startnode]
-   # print "ListaRed visitate",resultRed[startnode]
+    #print "Fine red",counterPolRed
+    # print "Blue",resultBlue[startnode][0]
+    # print "Red",counterPolRed, successorNodeRed, resultRed[startnode][0]
+
     diffPol = resultBlue[startnode][0]-resultRed[startnode][0]
-    #print "diffPol",diffPol
+
     if diffPol == 0.0 and resultBlue[startnode][1]=='nessunBlue' and resultRed[startnode][1]== 'Nessun Red':
             if Red.has_key(startnode):
                 diffPol = -1.0
@@ -707,7 +744,11 @@ def nodeLaberGar(G,dizPolarGar):
 
     for i in G.nodes():
         if  dizPolarGar.has_key(i):
-            pol[i] = dizPolarGar[i][i][0]
+            #pol[i] = dizPolarGar[i][i][0]
+            if dizPolarGar[i][i][0] == 0.0 or dizPolarGar[i][i][0] == 1.0 or dizPolarGar[i][i][0] == -1.0 :
+                pol[i] = dizPolarGar[i][i][0]
+            else:
+                 pol[i]= "{0:.2f}".format(round(dizPolarGar[i][i][0],2))
 
         else:
             print "Error"
@@ -722,33 +763,89 @@ def merge_two_dicts(x, y):
     return z
 
 
+def mergeListPartition(hashtag,color):
+
+    with open('../TweetOldSerialization/pickle/#'+hashtag[0]+'/retweet'+color+'#'+hashtag[0]+'_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
+        retweetList = pickle.load(input)
+
+    with open('../TweetOldSerialization/pickle/#'+hashtag[1]+'TestAWS/retweet'+color+'#'+hashtag[1]+'_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
+        retweetList2 = pickle.load(input)
+    for i in retweetList2:
+        retweetList.append(i)
+    release_list(retweetList2)
+
+    with open('../TweetOldSerialization/pickle/#'+hashtag[2]+'TestAWS/retweet' + color + '#'+hashtag[2]+'_2017-09-01_2017-12-20_data.pkl',
+            'rb') as input:
+        retweetList3 = pickle.load(input)
+    for i in retweetList3:
+        retweetList.append(i)
+    release_list(retweetList3)
+    with open('../TweetOldSerialization/pickle/#'+hashtag[3]+'TestAWS/retweet' + color + '#'+hashtag[3]+'_2017-09-01_2017-12-20_data.pkl',
+            'rb') as input:
+        retweetList4 = pickle.load(input)
+    for i in retweetList4:
+        retweetList.append(i)
+    release_list(retweetList4)
+
+    return retweetList
+
+def mergeProbDicPartition(color):
+    probFull={}
+    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweet'+color+'.pkl', 'rb') as input:
+        probRetBlue = pickle.load(input)
+
+    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTwee'+color+'.pkl', 'rb') as input:
+        probRetBlue2 = pickle.load(input)
+    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweet'+color+'.pkl', 'rb') as input:
+        probRetBlue3 = pickle.load(input)
+    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweet'+color+'.pkl', 'rb') as input:
+        probRetBlue4 = pickle.load(input)
+
+
 def main():
     # Leggo il file pickle dei retweet
     # Costruisco un grafo con networkx partendo dai dati ottenuti
-    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWSLocal/retweetBlue#EleSicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
-        retweetList = pickle.load(input)
-
-    #List = retweetList
-    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWSLocal/retweetRed#EleSicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
-        retweetListRed = pickle.load(input)
-    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWSLocal/tweet#EleSicilia_2017-09-01_2017-09-15_dictionaryReTweetBlue.pkl', 'rb') as input:
-        probRetBlue = pickle.load(input)
-    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWSLocal/tweet#EleSicilia_2017-09-01_2017-09-15_dictionaryReTweetRed.pkl','rb') as input:
-        probRetRed = pickle.load(input)
-
-    #with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetYellow.pkl','rb') as input:
-    #    probYellowGraph = pickle.load(input)
-
-    with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWSLocal/retweetYellow#EleSicilia_2017-09-01_2017-09-15_data.pkl', 'rb') as input:
-        retweetListYellow = pickle.load(input)
+    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetBlue#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
+    #     retweetList = pickle.load(input)
+    #
+    # #List = retweetList
+    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetRed#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
+    #     retweetListRed = pickle.load(input)
+    # with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetBlue.pkl', 'rb') as input:
+    #     probRetBlue = pickle.load(input)
+    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetRed.pkl','rb') as input:
+    #     probRetRed = pickle.load(input)
+    #
+    # #with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetYellow.pkl','rb') as input:
+    # #    probYellowGraph = pickle.load(input)
+    #
+    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetYellow#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
+    #     retweetListYellow = pickle.load(input)
 
     #print deleteList2(retweetList,retweetListRed)[0].user
     #retweetListRed = deleteList2(retweetList,retweetListRed)
-    deleteList(retweetList,retweetListRed)
+    #deleteList(retweetList,retweetListRed)
+
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/retweetListBlue.pkl','rb') as input:
+     retweetListBlue = pickle.load(input)
+
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/retweetListRed.pkl','rb') as input:
+     retweetListRed = pickle.load(input)
+
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/retweetListYellow.pkl','rb') as input:
+     retweetListYellow = pickle.load(input)
+
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/probRetBlue.pkl','rb') as input:
+     probRetBlue = pickle.load(input)
+
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/probRetRed.pkl','rb') as input:
+     probRetRed = pickle.load(input)
+
+
 
     print "Fine Delete"
     List=[]
-    for i in retweetList:
+    for i in retweetListBlue:
         #ret= Retweet(retweetList[i].user,retweetList[i].retweet, retweetList[i].date)
        # print("Blue",i.user,i.retweet, i.date)
         List.append(i)
@@ -769,17 +866,25 @@ def main():
         #print('Blue',i.edge,i.count)
         #prob = countOccReTweet(probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
        # print("Blue",probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
-        if not DizPesi.has_key(probRetBlue[i].edge):
-            DizPesi[probRetBlue[i].edge]= probRetBlue[i].count
-        else:
-            continue
+       #  if not DizPesi.has_key(probRetBlue[i].edge):
+       #      DizPesi[probRetBlue[i].edge]= probRetBlue[i].count
+       #  else:
+       #      continue
+          if not DizPesi.has_key(i):
+              DizPesi[i]= probRetBlue[i]
+          else:
+              continue
 
     for i in probRetRed:
        # prob = countOccReTweet(probRetRed[i].edge, probRetRed[i].count, probRetRed[i].date)
         #print("RED",probRetRed[i].edge, probRetRed[i].count, probRetRed[i].date)
-        if not DizPesi.has_key(probRetRed[i].edge):
-            DizPesi[probRetRed[i].edge]= probRetRed[i].count
-        else:
+        # if not DizPesi.has_key(probRetRed[i].edge):
+        #     DizPesi[probRetRed[i].edge]= probRetRed[i].count
+        # else:
+        #     continue
+         if not DizPesi.has_key(i):
+          DizPesi[i] = probRetRed[i]
+         else:
             continue
 
     # for i in probYellowGraph:
@@ -789,7 +894,7 @@ def main():
 
     #deleteProbDiz(DizPesi)
     #print("DizPesi",DizPesi,len(DizPesi))
-    nodi_Blue= NodeDict(retweetList)
+    nodi_Blue= NodeDict(retweetListBlue)
     nodi_Red = NodeDict(retweetListRed)
     #nodi_Yellow = NodeDict(retweetListYellow)
    # print ("Blue",nodi_Blue,len(nodi_Blue))
@@ -799,10 +904,10 @@ def main():
     #G = createGraph(List,DizPesi,DizionarioPesiArchi)
     G = createDirectNoWeightGraph(List)
     size_node_degree= []
-    G.add_edge(u'beppevicari', 'claudioreale')
+    #G.add_edge(u'beppevicari', 'claudioreale')
    # G.add_edge('claudioreale','OpenGDB')
 
-    DizPesi[(u'beppevicari', 'claudioreale')]=1
+    #DizPesi[(u'beppevicari', 'claudioreale')]=1
     #DizPesi[('claudioreale','OpenGDB')]=2
     NumberRetweetDiz = getAllWeightEdge(DizPesi)
     #print NumberRetweetDiz
@@ -810,8 +915,8 @@ def main():
     UpdateNode(retweetListYellow,nodi_Red)
 
     NodeDictDel(nodi_Blue,nodi_Red)
-    print ("Blue", nodi_Blue, len(nodi_Blue))
-    print ("Red", nodi_Red, len(nodi_Blue))
+    #print ("Blue", nodi_Blue, len(nodi_Blue))
+    #print ("Red", nodi_Red, len(nodi_Blue))
 
     setWeightEdge(G, NumberRetweetDiz, DizPesi)
     #print(test)
@@ -825,9 +930,9 @@ def main():
     dizMerge = merge_two_dicts(dizPosizioneBlue, dizPosizioneRed)
     #dizPosizioneYellow = PosNodeDizionario(G.nodes,nodi_Yellow);
     # print("Nodi=",G.nodes())
-    print("DizPosBlue",dizPosizioneBlue)
-    print("DizPosRed",dizPosizioneRed)
-    print("DizMerge",dizMerge,len(dizMerge))
+    #print("DizPosBlue",dizPosizioneBlue)
+    #print("DizPosRed",dizPosizioneRed)
+    #print("DizMerge",dizMerge,len(dizMerge))
     # print("DizPosYelloq",dizPosizioneYellow)
     #print("Edge=",G.edges(data='weight'))
     #print("posRed",posizioneRed)
@@ -912,9 +1017,9 @@ def main():
     #node_colorPol= colorNodePol(len(G.nodes()),newPol)
 
 
-    testdict=opinionPolarizationDict(G,at_array,firstPolar,list)
+    #testdict=opinionPolarizationDict(G,at_array,firstPolar,list)
     #print(testdict)
-    list_lastPol=testdict.get(len(testdict)-1)
+    #list_lastPol=testdict.get(len(testdict)-1)
     #print(list_lastPol)
     #print(set(testdict[1]))
    # node_colorPol=colorNodePol(len(G.nodes()),list_lastPol)
@@ -960,23 +1065,25 @@ def main():
         if not dictTest.has_key(i):
             dictTest[i]= getProbRandomNeighbour(G,i,edgeWeightLabel)
 
-   # print("dictgetProbRandom",dictTest)
+    print("dictgetProbRandom",dictTest)
 
-    dictDegreeBlue= dictDegreeNodePart(G,nodi_Blue)
+    #dictDegreeBlue= dictDegreeNodePart(G,nodi_Blue)
    # print "ListaNodiGradiBlu",dictDegreeBlue
 
     #rint len(G.nodes()),math.sqrt(len(G.nodes())) , int(math.sqrt(len(G.nodes())))
-    dictDegreeRed = dictDegreeNodePart(G,nodi_Red)
+    #dictDegreeRed = dictDegreeNodePart(G,nodi_Red)
     result={}
+    nodo=0
     for i in G.nodes():
-         #if i == u'beppevicari':
+         #if i == u'Lovesynethla':
        # print nx.descendants(G, i)
             dictDegreeDiscRed = dictDegreeDiscendent(G,i,nodi_Red)
             dictDegreeDiscBlue = dictDegreeDiscendent(G,i,nodi_Blue)
-            print dictDegreeDiscRed
-            print dictDegreeDiscBlue
-
+            #print dictDegreeDiscRed
+            #print dictDegreeDiscBlue
+            print nodo
             result[i]= performRandomWalkSingleNode(G,i,dictDegreeDiscBlue,dictDegreeDiscRed,int(math.sqrt(len(G.nodes()))),nodi_Red,"",dictTest,edgeWeightLabel)
+            nodo = nodo +1
          #    break
          # else:
          #    continue
@@ -988,9 +1095,9 @@ def main():
     dictLabelGar={}
     dictLabelGar = nodeLaberGar(G,result)
     print(dictLabelGar)
-    nx.draw_networkx_nodes(G, pos, G.nodes(), with_labels=True , node_color=listColorGar)
+    nx.draw_networkx_nodes(G, pos, G.nodes(),node_size=150 ,with_labels=True , node_color=listColorGar)
 
-    nx.draw_networkx_edges(G, pos, edge_color='b')
+    nx.draw_networkx_edges(G, pos, edge_color='g')
 
     nx.draw_networkx_labels(G, pos, dictLabelGar, font_size=8)
     #nx.draw_networkx_labels(G, pos, font_size=8)

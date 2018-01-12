@@ -2,10 +2,25 @@ import sys,os
 import unidecode as u
 import  numpy as np
 import random
+import operator
 import math
+import pickle
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import SentimentAnalysis.test as sentiment
 dizionario_hashtag = {}
+
+class Retweet(object):
+    user = ''
+    retweet = []
+    text=''
+    date = ''
+
+    def __init__(self, user, retweet,date):
+        self.user = user
+        self.retweet = retweet
+
+        self.date = date
+
 # with open('/home/alessandro/PycharmProjects/Tesi/utils/ListaHashtag.txt', 'r') as fileHashtags:
 #
 #    for line in fileHashtags:
@@ -47,5 +62,23 @@ random_num = random.randint(0,len(aa_milne_arr)-1 );
 starting_node = aa_milne_arr[random_num];
 print(random_num,"nodo=",starting_node)
 
-x = math.sqrt(99);
-print math.sqrt(99) , int(x)
+
+# with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/probRetBlue.pkl', 'rb') as input:
+#     probRetBlue = pickle.load(input)
+#
+#
+# for i in probRetBlue:
+#     print probRetBlue[i]
+arrProb = [0.33, 1.0]
+
+if sum(arrProb) < 1.0:
+    arrProb[len(arrProb) - 1] = arrProb[len(arrProb) - 1] + (1 - sum(arrProb))
+
+elif sum(arrProb) > 1.0:
+    index, value = max(enumerate(arrProb), key=operator.itemgetter(1))
+    somma = 0.
+    for i in range(0, len(arrProb)):
+        if i != index:
+            somma = somma + arrProb[i]
+
+    arrProb[index] = 1 - somma
