@@ -2,9 +2,12 @@ import sys,os
 import unidecode as u
 import  numpy as np
 import random
+import networkx as nx
 import operator
 import math
 import pickle
+from dateutil import parser
+import matplotlib.pyplot as plt
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import SentimentAnalysis.test as sentiment
 dizionario_hashtag = {}
@@ -69,16 +72,37 @@ print(random_num,"nodo=",starting_node)
 #
 # for i in probRetBlue:
 #     print probRetBlue[i]
-arrProb = [0.33, 1.0]
+# arrProb = [0.33, 1.0]
+#
+# if sum(arrProb) < 1.0:
+#     arrProb[len(arrProb) - 1] = arrProb[len(arrProb) - 1] + (1 - sum(arrProb))
+#
+# elif sum(arrProb) > 1.0:
+#     index, value = max(enumerate(arrProb), key=operator.itemgetter(1))
+#     somma = 0.
+#     for i in range(0, len(arrProb)):
+#         if i != index:
+#             somma = somma + arrProb[i]
+#
+#     arrProb[index] = 1 - somma
 
-if sum(arrProb) < 1.0:
-    arrProb[len(arrProb) - 1] = arrProb[len(arrProb) - 1] + (1 - sum(arrProb))
+# G = nx.read_gpickle("../Test/Sicilia/grafoSicilia.pickle")
+#
+# print len(G.nodes())
+#
+# with open('../Test/Sicilia/dizionarioPolarizzazioneRandomWalk.pickle', "rb") as input:
+#     labelPol = pickle.load(input)
+# with open('../Test/Sicilia/listaColoriPolarizzazioneRandomWalk.pickle', "rb") as input:
+#     colorNode = pickle.load(input)
+# pos = nx.spring_layout(G)
+# nx.draw_networkx_nodes(G, pos, G.nodes(), node_size=150, with_labels=True, node_color=colorNode)
+#
+# nx.draw_networkx_edges(G, pos, edge_color='g')
+#
+# nx.draw_networkx_labels(G, pos, labelPol, font_size=8)
+#
+# plt.show()
 
-elif sum(arrProb) > 1.0:
-    index, value = max(enumerate(arrProb), key=operator.itemgetter(1))
-    somma = 0.
-    for i in range(0, len(arrProb)):
-        if i != index:
-            somma = somma + arrProb[i]
-
-    arrProb[index] = 1 - somma
+print( parser.parse("2017-09-01"))
+if parser.parse("2017-09-01") < parser.parse("2017-10-01"):
+    print "ciao"

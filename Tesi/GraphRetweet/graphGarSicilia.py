@@ -401,8 +401,11 @@ def opinionPolarizationDict(G,attr_mat,firstPol,nodeList):
 def setWeightEdge(G,DizWeightTot,Dictionary):
     for i in G.edges:
         if DizWeightTot.has_key(i[0]):
-            #print(i[0],i[1],"=",Dictionary[(i[0],i[1])]/DizWeightTot[i[0]])
+
+            print(i[0],i[1],"=",Dictionary[(i[0],i[1])],"/",DizWeightTot[i[0]])
             G[i[0]][i[1]]['weight']=Dictionary[(i[0],i[1])]/DizWeightTot[i[0]]
+        else:
+            continue
 
 def deleteList(List1,List2):
     for i in List1:
@@ -943,40 +946,40 @@ def main():
     #matriceProbRetweet= matrixProbRet(DizPesi,dizPosizioneRed,dizPosizioneBlue,List,G)
 
     #List of Polarization of Elite and Listener
-    firstPolar= setFirstPolarization(G,dizPosizioneBlue,dizPosizioneRed)
+    #firstPolar= setFirstPolarization(G,dizPosizioneBlue,dizPosizioneRed)
 
     #print "Passo 0 di polarizzazione ",firstPolar
 
-    dictFirstPol = {}
-    x = 0
-    for i in G.nodes():
-
-        if not dictFirstPol.has_key(i):
-            dictFirstPol[i] = firstPolar[x]
-            x = x + 1
-
-
-    list = []
-    for i in G.nodes():
-
-        list.append(i)
+    # dictFirstPol = {}
+    # x = 0
+    # for i in G.nodes():
+    #
+    #     if not dictFirstPol.has_key(i):
+    #         dictFirstPol[i] = firstPolar[x]
+    #         x = x + 1
+    #
+    #
+    # list = []
+    # for i in G.nodes():
+    #
+    #     list.append(i)
 
 
     #matrice di adiacenza partendo dalla lista dei nodi
-    mat_attr=nx.attr_matrix(G,rc_order=list)
+    #mat_attr=nx.attr_matrix(G,rc_order=list)
     #print(mat_attr[1])
 
-    at_array=np.array(mat_attr)
-
-    newPol=opinionPolarization(G,at_array,firstPolar,list)
-
-    dictPol={}
-    x=0
-    for i in G.nodes():
-
-        if not dictPol.has_key(i):
-            dictPol[i]=newPol[x]
-            x=x+1
+    # at_array=np.array(mat_attr)
+    #
+    # newPol=opinionPolarization(G,at_array,firstPolar,list)
+    #
+    # dictPol={}
+    # x=0
+    # for i in G.nodes():
+    #
+    #     if not dictPol.has_key(i):
+    #         dictPol[i]=newPol[x]
+    #         x=x+1
 
    #settare i vertici dangling
     #matrice=nx.google_matrix(G,alpha=1)
@@ -1001,18 +1004,18 @@ def main():
     #print p_array[15],"sumBlue",sumBlue,"sumRed",sumRed,"sumYellow",sumYellow,count,len(posizioneBlue),mat_attr
 
 
-    partition = community.best_partition(G.to_undirected())
+    #partition = community.best_partition(G.to_undirected())
    # print(partition)
 
     #print(len(G.nodes))
     #size = float(len(set(partition.values())))
 
-    count = 0.
+
     #cambio i colori dei nodi a seconda del loro grado
     #Polar = Polarization(p_array,posizioneRed,posizioneBlue,len(G.nodes),matriceProbRetweet)
 
     #funziona con la partizione
-    node_color= colorNode(G,nodi_Blue,nodi_Red)
+    #node_color= colorNode(G,nodi_Blue,nodi_Red)
 
     #node_colorPol= colorNodePol(len(G.nodes()),newPol)
 
@@ -1055,7 +1058,7 @@ def main():
 
     #con la partizione
     #nx.draw_networkx_nodes(G, pos ,list_nodes,with_labels=False,node_color=node_color)
-
+    print(len(G.nodes()))
     edgeWeightLabel = nx.get_edge_attributes(G, 'weight')
     print("pesi archi",edgeWeightLabel)
 
@@ -1070,7 +1073,7 @@ def main():
     #dictDegreeBlue= dictDegreeNodePart(G,nodi_Blue)
    # print "ListaNodiGradiBlu",dictDegreeBlue
 
-    #rint len(G.nodes()),math.sqrt(len(G.nodes())) , int(math.sqrt(len(G.nodes())))
+    #print len(G.nodes()),math.sqrt(len(G.nodes())) , int(math.sqrt(len(G.nodes())))
     #dictDegreeRed = dictDegreeNodePart(G,nodi_Red)
     result={}
     nodo=0
@@ -1095,12 +1098,21 @@ def main():
     dictLabelGar={}
     dictLabelGar = nodeLaberGar(G,result)
     print(dictLabelGar)
+
+
+    nx.write_gpickle(G, '../Test/Sicilia/grafoSicilia.pickle', protocol=pickle.HIGHEST_PROTOCOL)
+    with open('../Test/Sicilia/dizionarioPolarizzazioneRandomWalk.pickle',"wb") as output:
+        pickle.dump(dictLabelGar,output,pickle.HIGHEST_PROTOCOL)
+    with open('../Test/Sicilia/listaColoriPolarizzazioneRandomWalk.pickle',"wb") as output:
+        pickle.dump(listColorGar,output,pickle.HIGHEST_PROTOCOL)
+
     nx.draw_networkx_nodes(G, pos, G.nodes(),node_size=150 ,with_labels=True , node_color=listColorGar)
 
     nx.draw_networkx_edges(G, pos, edge_color='g')
 
     nx.draw_networkx_labels(G, pos, dictLabelGar, font_size=8)
     #nx.draw_networkx_labels(G, pos, font_size=8)
+
 
 
     plt.savefig("../Test/Sicilia/PolSenzaY.png", format="PNG")
