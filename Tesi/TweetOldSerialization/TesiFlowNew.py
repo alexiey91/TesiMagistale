@@ -165,7 +165,11 @@ def retweetmain(readList, query, start, stop,dizionario_tweet,char):
     dizionario_retweet = {}
     # with open('./pickle/retweet_data.pkl', 'wb') as output:
     result = getRetweet(api, readList, len(readList), list_ret,dizionario_tweet,dizionario_retweet,query,start,stop,char)
-    with open('./pickle/'+query+'TestAWS/Novembre/retweet'+char+ query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+
+    
+
+    with open('./pickle/'+query+'TestAWS/Settembre/retweet'+char+ query + '_' + start + '_' + stop + '_data.pkl', 'wb') as output:
+
         pickle.dump(result, output, pickle.HIGHEST_PROTOCOL)
     # getRetweet(api,readList,len(readList),list_ret,query,start,stop);
     print('finito getRetweet')

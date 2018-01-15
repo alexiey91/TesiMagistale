@@ -6,6 +6,15 @@ import networkx as nx
 import operator
 import math
 import pickle
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import pandas_datareader as web
+from sklearn.linear_model import LinearRegression
+
+
+
+import csv
 from dateutil import parser
 import matplotlib.pyplot as plt
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
@@ -106,3 +115,60 @@ print(random_num,"nodo=",starting_node)
 print( parser.parse("2017-09-01"))
 if parser.parse("2017-09-01") < parser.parse("2017-10-01"):
     print "ciao"
+
+with open('../Test/Sicilia/dizionarioPolarizzazioneRandomWalk.pickle', "rb") as input:
+     labelPolRand = pickle.load(input)
+
+with open('../Test/Sicilia/dizionarioPolarizzazioneVenezuela.pickle', "rb") as input:
+    labelPolVen = pickle.load(input)
+
+
+# myData=[]
+# myFile = open('../Test/Sicilia/example2.csv', 'w')
+# with myFile:
+#     writer = csv.writer(myFile)
+#     r = ["Nodo","Polarizazzione Random Walk","Polarizzazione Venezuela"]
+#     writer.writerow(r)
+#     for i in labelPolRand:
+#         #print i , labelPolRand[i]
+#         row=[i,labelPolRand[i],labelPolVen[i]]
+#         myData.append(row)
+#
+#     writer.writerows(myData)
+#
+# print("Writing complete")
+
+
+def double_exponential_smoothing(series, alpha, beta):
+    result = [series[0]]
+    for n in range(1, len(series)+1):
+        if n == 1:
+            level, trend = series[0], series[1] - series[0]
+        if n >= len(series): # we are forecasting
+          value = result[-1]
+        else:
+          value = series[n]
+        last_level, level = level, alpha*value + (1-alpha)*(level+trend)
+        trend = beta*(level-last_level) + (1-beta)*trend
+        result.append(level+trend)
+    return result
+
+def exponential_smoothing(series, alpha):
+    result = [series[0]] # first value is same as series
+    for n in range(1, len(series)):
+        result.append(alpha * series[n] + (1 - alpha) * result[n-1])
+    return result
+
+series = [-0.2,-0.15,-0.07]
+
+print "Double", double_exponential_smoothing(series,0.9,0.2)
+
+
+print "Double 2",double_exponential_smoothing(series,0.3,0.2)
+
+print "Single", exponential_smoothing(series,0.1)
+
+print "Single 2",exponential_smoothing(series,0.3)
+
+
+
