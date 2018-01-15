@@ -402,7 +402,7 @@ def setWeightEdge(G,DizWeightTot,Dictionary):
     for i in G.edges:
         if DizWeightTot.has_key(i[0]):
 
-            print(i[0],i[1],"=",Dictionary[(i[0],i[1])],"/",DizWeightTot[i[0]])
+            #print(i[0],i[1],"=",Dictionary[(i[0],i[1])],"/",DizWeightTot[i[0]])
             G[i[0]][i[1]]['weight']=Dictionary[(i[0],i[1])]/DizWeightTot[i[0]]
         else:
             continue
