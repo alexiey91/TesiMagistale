@@ -1,4 +1,4 @@
-
+import  csv
 
 
 '''
@@ -51,6 +51,39 @@ def main():
     print "Single", exponential_smoothing(series, 0.1)
 
     print "Single 2", exponential_smoothing(series, 0.3)
+
+    Dizionario={}
+
+    with open('../Test/Sicilia/prova.csv') as csvfile:
+        readCSV = csv.reader(csvfile, delimiter=',')
+        next(readCSV, None)
+        listRw=[]
+        listV=[]
+        for row in readCSV:
+
+            if (row[1] != ""):
+                listRw.append(row[1])
+            if (row[2] != ""):
+                listV.append(row[2])
+            if (row[3] != ""):
+                listRw.append(row[3])
+            if (row[4] != ""):
+                listV.append(row[4])
+            if (row[5] != ""):
+                listRw.append(row[5])
+            if (row[6] != ""):
+                listV.append(row[6])
+            if (row[7] != ""):
+                listRw.append(row[7])
+            if (row[8] != ""):
+                listV.append(row[8])
+
+
+            Dizionario[row[0]]=(listRw,listV)
+
+    for i in Dizionario:
+      print Dizionario[i]
+      break
 
 
 if __name__ == '__main__':

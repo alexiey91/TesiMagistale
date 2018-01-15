@@ -123,52 +123,49 @@ with open('../Test/Sicilia/dizionarioPolarizzazioneVenezuela.pickle', "rb") as i
     labelPolVen = pickle.load(input)
 
 
-# myData=[]
-# myFile = open('../Test/Sicilia/example2.csv', 'w')
-# with myFile:
-#     writer = csv.writer(myFile)
-#     r = ["Nodo","Polarizazzione Random Walk","Polarizzazione Venezuela"]
-#     writer.writerow(r)
-#     for i in labelPolRand:
-#         #print i , labelPolRand[i]
-#         row=[i,labelPolRand[i],labelPolVen[i]]
-#         myData.append(row)
-#
-#     writer.writerows(myData)
-#
-# print("Writing complete")
+myData=[]
+DizionarioSettembreRW={}
+DizionarioSettembreV={}
+DizionarioOttobreRW={}
+DizionarioOttobreV={}
+DizionarioNovembreRW={}
+DizionarioNovembreV={}
 
 
-def double_exponential_smoothing(series, alpha, beta):
-    result = [series[0]]
-    for n in range(1, len(series)+1):
-        if n == 1:
-            level, trend = series[0], series[1] - series[0]
-        if n >= len(series): # we are forecasting
-          value = result[-1]
-        else:
-          value = series[n]
-        last_level, level = level, alpha*value + (1-alpha)*(level+trend)
-        trend = beta*(level-last_level) + (1-beta)*trend
-        result.append(level+trend)
-    return result
+myFile = open('../Test/Sicilia/prova.csv', 'w')
+with myFile:
+    writer = csv.writer(myFile)
+    r = ["Nodo","Random Walk Settembre","Venezuela Settembre", "Random Walk Ottobre",
+         "Venezuela Ottobre","Random Walk Novembre","Venezuela Novembre" ,"Random Walk Dicembre","Venezuela Dicembre"]
+    writer.writerow(r)
+    for i in labelPolRand:
+        #print i , labelPolRand[i]
+        setRw =""
+        setV=""
+        ottRw=""
+        ottV=""
+        novRw=""
+        novV=""
+        if i in DizionarioSettembreRW:
+            setRw= DizionarioSettembreRW[i]
+        if i in DizionarioSettembreV:
+            setV= DizionarioSettembreV[i]
+        if i in DizionarioOttobreRW:
+            ottRw= DizionarioOttobreRW[i]
+        if i in DizionarioOttobreV:
+            ottV= DizionarioOttobreV[i]
+        if i in DizionarioNovembreRW:
+            novRw= DizionarioNovembreRW[i]
+        if i in DizionarioNovembreV:
+            novV= DizionarioNovembreV[i]
 
-def exponential_smoothing(series, alpha):
-    result = [series[0]] # first value is same as series
-    for n in range(1, len(series)):
-        result.append(alpha * series[n] + (1 - alpha) * result[n-1])
-    return result
+        row=[i,setRw,setV,ottRw,ottV,novRw,novV,labelPolRand[i],labelPolVen[i]]
+        myData.append(row)
 
-series = [-0.2,-0.15,-0.07]
+    writer.writerows(myData)
 
-print "Double", double_exponential_smoothing(series,0.9,0.2)
+print("Writing complete")
 
-
-print "Double 2",double_exponential_smoothing(series,0.3,0.2)
-
-print "Single", exponential_smoothing(series,0.1)
-
-print "Single 2",exponential_smoothing(series,0.3)
 
 
 

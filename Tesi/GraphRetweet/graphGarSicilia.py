@@ -829,19 +829,19 @@ def main():
     #retweetListRed = deleteList2(retweetList,retweetListRed)
     #deleteList(retweetList,retweetListRed)
 
-    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/retweetListBlue.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Novembre/retweetListBlue.pkl','rb') as input:
      retweetListBlue = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/retweetListRed.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Novembre/retweetListRed.pkl','rb') as input:
      retweetListRed = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/retweetListYellow.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Novembre/retweetListYellow.pkl','rb') as input:
      retweetListYellow = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/probRetBlue.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Novembre/probRetBlue.pkl','rb') as input:
      probRetBlue = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/probRetRed.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Novembre/probRetRed.pkl','rb') as input:
      probRetRed = pickle.load(input)
 
 
@@ -1100,10 +1100,10 @@ def main():
     print(dictLabelGar)
 
 
-    nx.write_gpickle(G, '../Test/Sicilia/grafoSicilia.pickle', protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../Test/Sicilia/dizionarioPolarizzazioneRandomWalk.pickle',"wb") as output:
+    nx.write_gpickle(G, '../Test/Sicilia/Novembre/grafoSiciliaNovembre.pickle', protocol=pickle.HIGHEST_PROTOCOL)
+    with open('../Test/Sicilia/Novembre/dizionarioPolarizzazioneRandomWalk.pickle',"wb") as output:
         pickle.dump(dictLabelGar,output,pickle.HIGHEST_PROTOCOL)
-    with open('../Test/Sicilia/listaColoriPolarizzazioneRandomWalk.pickle',"wb") as output:
+    with open('../Test/Sicilia/Novembre/listaColoriPolarizzazioneRandomWalk.pickle',"wb") as output:
         pickle.dump(listColorGar,output,pickle.HIGHEST_PROTOCOL)
 
     nx.draw_networkx_nodes(G, pos, G.nodes(),node_size=150 ,with_labels=True , node_color=listColorGar)
@@ -1115,7 +1115,7 @@ def main():
 
 
 
-    plt.savefig("../Test/Sicilia/PolSenzaY.png", format="PNG")
+    plt.savefig("../Test/Sicilia/Novembre/Polarizzazione.png", format="PNG")
 
     plt.show()
 

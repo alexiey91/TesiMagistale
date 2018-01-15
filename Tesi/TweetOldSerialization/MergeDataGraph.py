@@ -64,11 +64,12 @@ def deleteList(List1,List2):
 
 def mergeListPartitionNoDate(hashtag,color):
 
-    with open('../TweetOldSerialization/pickle/#'+hashtag[0]+'TestAWS/retweet'+color+'#'+hashtag[0]+'_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/#'+hashtag[0]+'TestAWS/Novembre/retweet'+color+'#'+hashtag[0]+'_2017-09-01_2017-11-30_data.pkl'
+            , 'rb') as input:
         retweetList = pickle.load(input)
 
 
-    with open('../TweetOldSerialization/pickle/#errorTestAWS/retweet'+color+'.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/#errorTestAWS/Novembre/retweet'+color+'.pkl', 'rb') as input:
         retweetList2 = pickle.load(input)
     for i in retweetList2:
         retweetList.append(i)
@@ -76,19 +77,19 @@ def mergeListPartitionNoDate(hashtag,color):
 
 
 
-    with open('../TweetOldSerialization/pickle/#'+hashtag[2]+'TestAWS/retweet' + color + '#'+hashtag[2]+'_2017-09-01_2017-12-20_data.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/#'+hashtag[2]+'TestAWS/Novembre/retweet' + color + '#'+hashtag[2]+'_2017-09-01_2017-11-30_data.pkl','rb') as input:
         retweetList3 = pickle.load(input)
     for i in retweetList3:
         retweetList.append(i)
     release_list(retweetList3)
-    with open('../TweetOldSerialization/pickle/#'+hashtag[3]+'TestAWS/retweet' + color + '#'+hashtag[3]+'_2017-09-01_2017-12-20_data.pkl',
+    with open('../TweetOldSerialization/pickle/#'+hashtag[3]+'TestAWS/Novembre/retweet' + color + '#'+hashtag[3]+'_2017-09-01_2017-11-30_data.pkl',
             'rb') as input:
         retweetList4 = pickle.load(input)
     for i in retweetList4:
         retweetList.append(i)
     release_list(retweetList4)
 
-    with open('../TweetOldSerialization/pickle/#' + hashtag[4] + 'TestAWS/retweet' + color + '#' + hashtag[4] + '_2017-09-01_2017-12-20_data.pkl',
+    with open('../TweetOldSerialization/pickle/#' + hashtag[4] + 'TestAWS/Novembre/retweet' + color + '#' + hashtag[4] + '_2017-09-01_2017-11-30_data.pkl',
               'rb') as input:
         retweetList5 = pickle.load(input)
     for i in retweetList5:
@@ -97,67 +98,67 @@ def mergeListPartitionNoDate(hashtag,color):
 
     return retweetList
 
-def mergeListPartition(hashtag,color,date):
-    list=[]
-    with open('../TweetOldSerialization/pickle/#'+hashtag[0]+'TestAWS/retweet'+color+'#'+hashtag[0]+'_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
-        retweetList = pickle.load(input)
-    for i in retweetList:
-        t = str(i.date.strftime('%Y-%m-%d'))
-
-        if parser.parse(t) <= parser.parse(date):
-            list.append(i)
-        else:
-            continue
-        #retweetList.append(i)
-
-    with open('../TweetOldSerialization/pickle/#errorTestAWS/retweet'+color+'.pkl','rb') as input:
-        retweetList2 = pickle.load(input)
-    for i in retweetList2:
-        t = str(i.date.strftime('%Y-%m-%d'))
-
-        if parser.parse(t) <= parser.parse(date):
-            list.append(i)
-        else:
-            continue
-    release_list(retweetList2)
-
-
-
-    with open('../TweetOldSerialization/pickle/#'+hashtag[2]+'TestAWS/retweet' + color + '#'+hashtag[2]+'_2017-09-01_2017-12-20_data.pkl','rb') as input:
-        retweetList3 = pickle.load(input)
-    for i in retweetList3:
-        t = str(i.date.strftime('%Y-%m-%d'))
-
-        if parser.parse(t) <= parser.parse(date):
-            list.append(i)
-        else:
-            continue
-    release_list(retweetList3)
-    with open('../TweetOldSerialization/pickle/#'+hashtag[3]+'TestAWS/retweet' + color + '#'+hashtag[3]+'_2017-09-01_2017-12-20_data.pkl',
-            'rb') as input:
-        retweetList4 = pickle.load(input)
-    for i in retweetList4:
-        t = str(i.date.strftime('%Y-%m-%d'))
-
-        if parser.parse(t) <= parser.parse(date):
-            list.append(i)
-        else:
-            continue
-    release_list(retweetList4)
-
-    with open('../TweetOldSerialization/pickle/#' + hashtag[4] + 'TestAWS/retweet' + color + '#' + hashtag[4] + '_2017-09-01_2017-12-20_data.pkl',
-              'rb') as input:
-        retweetList5 = pickle.load(input)
-    for i in retweetList5:
-        t = str(i.date.strftime('%Y-%m-%d'))
-
-        if parser.parse(t) <= parser.parse(date):
-            list.append(i)
-        else:
-            continue
-    release_list(retweetList5)
-
-    return list
+# def mergeListPartition(hashtag,color,date):
+#     list=[]
+#     with open('../TweetOldSerialization/pickle/#'+hashtag[0]+'TestAWS/retweet'+color+'#'+hashtag[0]+'_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
+#         retweetList = pickle.load(input)
+#     for i in retweetList:
+#         t = str(i.date.strftime('%Y-%m-%d'))
+#
+#         if parser.parse(t) <= parser.parse(date):
+#             list.append(i)
+#         else:
+#             continue
+#         #retweetList.append(i)
+#
+#     with open('../TweetOldSerialization/pickle/#errorTestAWS/retweet'+color+'.pkl','rb') as input:
+#         retweetList2 = pickle.load(input)
+#     for i in retweetList2:
+#         t = str(i.date.strftime('%Y-%m-%d'))
+#
+#         if parser.parse(t) <= parser.parse(date):
+#             list.append(i)
+#         else:
+#             continue
+#     release_list(retweetList2)
+#
+#
+#
+#     with open('../TweetOldSerialization/pickle/#'+hashtag[2]+'TestAWS/retweet' + color + '#'+hashtag[2]+'_2017-09-01_2017-12-20_data.pkl','rb') as input:
+#         retweetList3 = pickle.load(input)
+#     for i in retweetList3:
+#         t = str(i.date.strftime('%Y-%m-%d'))
+#
+#         if parser.parse(t) <= parser.parse(date):
+#             list.append(i)
+#         else:
+#             continue
+#     release_list(retweetList3)
+#     with open('../TweetOldSerialization/pickle/#'+hashtag[3]+'TestAWS/retweet' + color + '#'+hashtag[3]+'_2017-09-01_2017-12-20_data.pkl',
+#             'rb') as input:
+#         retweetList4 = pickle.load(input)
+#     for i in retweetList4:
+#         t = str(i.date.strftime('%Y-%m-%d'))
+#
+#         if parser.parse(t) <= parser.parse(date):
+#             list.append(i)
+#         else:
+#             continue
+#     release_list(retweetList4)
+#
+#     with open('../TweetOldSerialization/pickle/#' + hashtag[4] + 'TestAWS/retweet' + color + '#' + hashtag[4] + '_2017-09-01_2017-12-20_data.pkl',
+#               'rb') as input:
+#         retweetList5 = pickle.load(input)
+#     for i in retweetList5:
+#         t = str(i.date.strftime('%Y-%m-%d'))
+#
+#         if parser.parse(t) <= parser.parse(date):
+#             list.append(i)
+#         else:
+#             continue
+#     release_list(retweetList5)
+#
+#     return list
 
 
 def mergeProbDicPartition(hashtag,color,date):
@@ -212,8 +213,8 @@ def mergeProbDicPartition(hashtag,color,date):
 
 def mergeProbDicPartitionNoDate(hashtag, color):
     probFull = {}
-    with open('../TweetOldSerialization/pickle/#' + hashtag[0] + 'TestAWS/tweet#' + hashtag[
-        0] + '_2017-09-01_2017-12-20_dictionaryReTweet' + color + '.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/#' + hashtag[0] + 'TestAWS/Novembre/tweet#' + hashtag[
+        0] + '_2017-09-01_2017-11-30_dictionaryReTweet' + color + '.pkl', 'rb') as input:
         probRetBlue = pickle.load(input)
     for i in probRetBlue:
 
@@ -221,23 +222,23 @@ def mergeProbDicPartitionNoDate(hashtag, color):
             probFull[probRetBlue[i].edge] = probRetBlue[i].count
         else:
             continue
-    with open('../TweetOldSerialization/pickle/#errorTestAWS/dictionaryReTweet' + color + '.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/#errorTestAWS/Novembre/tweetdictionaryReTweet'+color+'.pkl', 'rb') as input:
         probRetBlue2 = pickle.load(input)
         for i in probRetBlue2:
             if not probFull.has_key(probRetBlue2[i].edge):
                 probFull[probRetBlue2[i].edge] = probRetBlue2[i].count
             else:
                 continue
-    with open('../TweetOldSerialization/pickle/#' + hashtag[2] + 'TestAWS/tweet#' + hashtag[
-        2] + '_2017-09-01_2017-12-20_dictionaryReTweet' + color + '.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/#' + hashtag[2] + 'TestAWS/Novembre/tweet#' + hashtag[
+        2] + '_2017-09-01_2017-11-30_dictionaryReTweet' + color + '.pkl', 'rb') as input:
         probRetBlue3 = pickle.load(input)
         for i in probRetBlue3:
             if not probFull.has_key(probRetBlue3[i].edge):
                 probFull[probRetBlue3[i].edge] = probRetBlue3[i].count
             else:
                 continue
-    with open('../TweetOldSerialization/pickle/#' + hashtag[3] + 'TestAWS/tweet#' + hashtag[
-        3] + '_2017-09-01_2017-12-20_dictionaryReTweet' + color + '.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/#' + hashtag[3] + 'TestAWS/Novembre/tweet#' + hashtag[
+        3] + '_2017-09-01_2017-11-30_dictionaryReTweet' + color + '.pkl', 'rb') as input:
         probRetBlue4 = pickle.load(input)
         for i in probRetBlue4:
             if not probFull.has_key(probRetBlue4[i].edge):
@@ -245,8 +246,8 @@ def mergeProbDicPartitionNoDate(hashtag, color):
             else:
                 continue
 
-    with open('../TweetOldSerialization/pickle/#' + hashtag[4] + 'TestAWS/tweet#' + hashtag[
-        4] + '_2017-09-01_2017-12-20_dictionaryReTweet' + color + '.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/#' + hashtag[4] + 'TestAWS/Novembre/tweet#' + hashtag[
+        4] + '_2017-09-01_2017-11-30_dictionaryReTweet' + color + '.pkl', 'rb') as input:
         probRetBlue5 = pickle.load(input)
         for i in probRetBlue5:
             if not probFull.has_key(probRetBlue5[i].edge):
@@ -271,40 +272,40 @@ def main():
 
 
 
-    if not os.path.exists('./pickle/ElezioniSiciliaGraph/retweetListBlue.pkl'):
-        os.makedirs('pickle/ElezioniSiciliaGraph/')
+    if not os.path.exists('./pickle/ElezioniSiciliaGraph/Novembre/retweetListBlue.pkl'):
+        os.makedirs('pickle/ElezioniSiciliaGraph/Novembre/')
 
-    with open('./pickle/ElezioniSiciliaGraph/retweetListBlue.pkl', 'wb') as output:
+    with open('./pickle/ElezioniSiciliaGraph/Novembre/retweetListBlue.pkl', 'wb') as output:
             pickle.dump(retweetListAllBlue, output, pickle.HIGHEST_PROTOCOL)
 
     retweetListAllRed = mergeListPartitionNoDate(hashtags,colors[1])
 
     deleteList(retweetListAllBlue,retweetListAllRed)
 
-    with open('./pickle/ElezioniSiciliaGraph/retweetListRed.pkl', 'wb') as output:
+    with open('./pickle/ElezioniSiciliaGraph/Novembre/retweetListRed.pkl', 'wb') as output:
         pickle.dump(retweetListAllRed, output, pickle.HIGHEST_PROTOCOL)
 
     retweetListAllYellow = mergeListPartitionNoDate(hashtags, colors[2])
 
     deleteList(retweetListAllBlue, retweetListAllYellow)
 
-    with open('./pickle/ElezioniSiciliaGraph/retweetListYellow.pkl', 'wb') as output:
+    with open('./pickle/ElezioniSiciliaGraph/Novembre/retweetListYellow.pkl', 'wb') as output:
         pickle.dump(retweetListAllYellow, output, pickle.HIGHEST_PROTOCOL)
 
 
     probRetBlue=mergeProbDicPartitionNoDate(hashtags,colors[0])
 
-    with open('./pickle/ElezioniSiciliaGraph/probRetBlue.pkl', 'wb') as output:
+    with open('./pickle/ElezioniSiciliaGraph/Novembre/probRetBlue.pkl', 'wb') as output:
         pickle.dump(probRetBlue, output, pickle.HIGHEST_PROTOCOL)
 
     probRetRed = mergeProbDicPartitionNoDate(hashtags, colors[1])
 
-    with open('./pickle/ElezioniSiciliaGraph/probRetRed.pkl', 'wb') as output:
+    with open('./pickle/ElezioniSiciliaGraph/Novembre/probRetRed.pkl', 'wb') as output:
         pickle.dump(probRetRed, output, pickle.HIGHEST_PROTOCOL)
 
     probRetYellow = mergeProbDicPartitionNoDate(hashtags, colors[2])
 
-    with open('./pickle/ElezioniSiciliaGraph/probRetYellow.pkl', 'wb') as output:
+    with open('./pickle/ElezioniSiciliaGraph/Novembre/probRetYellow.pkl', 'wb') as output:
         pickle.dump(probRetYellow, output, pickle.HIGHEST_PROTOCOL)
 
 
