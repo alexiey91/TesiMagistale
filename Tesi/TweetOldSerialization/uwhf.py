@@ -123,49 +123,95 @@ with open('../Test/Sicilia/dizionarioPolarizzazioneVenezuela.pickle', "rb") as i
     labelPolVen = pickle.load(input)
 
 
-myData=[]
-DizionarioSettembreRW={}
-DizionarioSettembreV={}
-DizionarioOttobreRW={}
-DizionarioOttobreV={}
-DizionarioNovembreRW={}
-DizionarioNovembreV={}
+# myData=[]
+# DizionarioSettembreRW={}
+# DizionarioSettembreV={}
+# DizionarioOttobreRW={}
+# DizionarioOttobreV={}
+# DizionarioNovembreRW={}
+# DizionarioNovembreV={}
+#
+#
+# myFile = open('../Test/Sicilia/prova.csv', 'w')
+# with myFile:
+#     writer = csv.writer(myFile)
+#     r = ["Nodo","Random Walk Settembre","Venezuela Settembre", "Random Walk Ottobre",
+#          "Venezuela Ottobre","Random Walk Novembre","Venezuela Novembre" ,"Random Walk Dicembre","Venezuela Dicembre"]
+#     writer.writerow(r)
+#     for i in labelPolRand:
+#         #print i , labelPolRand[i]
+#         setRw =""
+#         setV=""
+#         ottRw=""
+#         ottV=""
+#         novRw=""
+#         novV=""
+#         if i in DizionarioSettembreRW:
+#             setRw= DizionarioSettembreRW[i]
+#         if i in DizionarioSettembreV:
+#             setV= DizionarioSettembreV[i]
+#         if i in DizionarioOttobreRW:
+#             ottRw= DizionarioOttobreRW[i]
+#         if i in DizionarioOttobreV:
+#             ottV= DizionarioOttobreV[i]
+#         if i in DizionarioNovembreRW:
+#             novRw= DizionarioNovembreRW[i]
+#         if i in DizionarioNovembreV:
+#             novV= DizionarioNovembreV[i]
+#
+#         row=[i,setRw,setV,ottRw,ottV,novRw,novV,labelPolRand[i],labelPolVen[i]]
+#         myData.append(row)
+#
+#     writer.writerows(myData)
+#
+# print("Writing complete")
 
 
-myFile = open('../Test/Sicilia/prova.csv', 'w')
-with myFile:
-    writer = csv.writer(myFile)
-    r = ["Nodo","Random Walk Settembre","Venezuela Settembre", "Random Walk Ottobre",
-         "Venezuela Ottobre","Random Walk Novembre","Venezuela Novembre" ,"Random Walk Dicembre","Venezuela Dicembre"]
-    writer.writerow(r)
-    for i in labelPolRand:
-        #print i , labelPolRand[i]
-        setRw =""
-        setV=""
-        ottRw=""
-        ottV=""
-        novRw=""
-        novV=""
-        if i in DizionarioSettembreRW:
-            setRw= DizionarioSettembreRW[i]
-        if i in DizionarioSettembreV:
-            setV= DizionarioSettembreV[i]
-        if i in DizionarioOttobreRW:
-            ottRw= DizionarioOttobreRW[i]
-        if i in DizionarioOttobreV:
-            ottV= DizionarioOttobreV[i]
-        if i in DizionarioNovembreRW:
-            novRw= DizionarioNovembreRW[i]
-        if i in DizionarioNovembreV:
-            novV= DizionarioNovembreV[i]
-
-        row=[i,setRw,setV,ottRw,ottV,novRw,novV,labelPolRand[i],labelPolVen[i]]
-        myData.append(row)
-
-    writer.writerows(myData)
-
-print("Writing complete")
+def double_exponential_smoothing(series, alpha, beta):
+    result = [series[0]]
+    for n in range(1, len(series)+1):
+        if n == 1:
+            level, trend = series[0], series[1] - series[0]
+        if n >= len(series): # we are forecasting
+          value = result[-1]
+        else:
+          value = series[n]
+        last_level, level = level, alpha*value + (1-alpha)*(level+trend)
+        trend = beta*(level-last_level) + (1-beta)*trend
+        result.append(level+trend)
+    return result
 
 
 
+'''
+    @param series: is the list of series of polarization for the single node
+    @param alpha: is the adjstment factor of exponential smoothing
+    @return the list of all polarization with the prediction for the future month
+'''
 
+def exponential_smoothing(series, alpha):
+    result = [series[0]] # first value is same as series
+    for n in range(1, len(series)):
+        result.append(alpha * series[n] + (1 - alpha) * result[n-1])
+    return result
+
+# series = [0.9,0.01]
+
+# print "Double", double_exponential_smoothing(series, 0.9, 0.2)
+# print "Double 2", double_exponential_smoothing(series, 0.5, 0.5)
+#
+#
+# print "Single", exponential_smoothing(series, 0.8)
+
+def average(serie):
+    return float(sum(serie))/len(serie)
+
+def moving_average(serie, n):
+    print serie[-n:]
+    return average(serie[-n:])
+
+
+
+SERIE = [-1.0,0.14]
+
+print moving_average(SERIE,len(SERIE)-1)

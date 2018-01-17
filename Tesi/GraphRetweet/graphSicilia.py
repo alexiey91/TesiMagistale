@@ -391,19 +391,19 @@ def main():
     # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetYellow#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
     #     retweetListYellow = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/retweetListBlue.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Novembre/retweetListBlue.pkl', 'rb') as input:
         retweetListBlue = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/retweetListRed.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Novembre/retweetListRed.pkl', 'rb') as input:
         retweetListRed = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/retweetListYellow.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Novembre/retweetListYellow.pkl', 'rb') as input:
         retweetListYellow = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/probRetBlue.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Novembre/probRetBlue.pkl', 'rb') as input:
         probRetBlue = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/probRetRed.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Novembre/probRetRed.pkl', 'rb') as input:
         probRetRed = pickle.load(input)
     List=[]
 
@@ -594,10 +594,10 @@ def main():
     #con la partizione
     #nx.draw_networkx_nodes(G, pos ,list_nodes,with_labels=False,node_color=node_color)
 
-    nx.write_gpickle(G, '../Test/Sicilia/grafoSiciliaVen.pickle', protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../Test/Sicilia/dizionarioPolarizzazioneVenezuela.pickle', "wb") as output:
+    nx.write_gpickle(G, '../Test/Sicilia/Novembre/grafoSiciliaVen.pickle', protocol=pickle.HIGHEST_PROTOCOL)
+    with open('../Test/Sicilia/Novembre/dizionarioPolarizzazioneVenezuela.pickle', "wb") as output:
         pickle.dump(test, output, pickle.HIGHEST_PROTOCOL)
-    with open('../Test/Sicilia/listaColoriPolarizzazioneVenezuela.pickle', "wb") as output:
+    with open('../Test/Sicilia/Novembre/listaColoriPolarizzazioneVenezuela.pickle', "wb") as output:
         pickle.dump(node_colorPol, output, pickle.HIGHEST_PROTOCOL)
 
     nx.draw_networkx_nodes(G, pos ,G.nodes(),with_labels=True,node_color=node_colorPol)
@@ -606,7 +606,7 @@ def main():
 
     nx.draw_networkx_labels(G, pos,test,font_size=8)
 
-    plt.savefig("../Test/Sicilia/PolSenzaY.png", format="PNG")
+    plt.savefig("../Test/Sicilia/Novembre/PolarizzazioneVene.png", format="PNG")
 
     plt.show()
 
