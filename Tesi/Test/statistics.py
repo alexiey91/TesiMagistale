@@ -13,7 +13,7 @@ def datamonth(path,month):
             index = 1
         elif month == "Ottobre":
             index = 2
-        elif month == "Novembre":
+        elif month == "Dicembre":
             index = 3
         else:
             index =4
@@ -46,7 +46,7 @@ def datamonth(path,month):
 
 def main():
     #l[0] numero Blue, l[1] numero rossi, l[2] numero grigi, l[3] totale
-    l= datamonth('./Biotestamento/predictionRw.csv',"Settembre")
+    l= datamonth('./Biotestamento/predictionVenezuela.csv',"Dicembre")
     print l
 
     # Pie chart, where the slices will be ordered and plotted counter-clockwise:
@@ -68,7 +68,7 @@ def main():
             shadow=True, startangle=90,colors= colors)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
-    plt.savefig("../Test/Biotestamento/Statistiche/RandomWalk/SettembreRw.png", format="PNG")
+    plt.savefig("../Test/Biotestamento/Statistiche/Venezuela/DicembreVenezuela.png", format="PNG")
 
     plt.show()
 
