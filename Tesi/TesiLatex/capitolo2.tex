@@ -47,4 +47,66 @@ Etichettando un messaggio con un hashtag si crea un collegamento ipertestuale a 
 
 \end{itemize}
 
-\section{Polarizzazione}
+\subsection{Polarizzazione}
+Definiamo in maniera concettuale il significato, le funzionalità della polarizzazione. 
+Citando il paper \textit{A Measure of Polarization on Social Media NetworksBased on Community Boundaries} di \textit{Pedro H. Calais Guerra, Wagner Meira Jr. Claire Cardie, Robert Kleinberg} la polarizzazione viene definita come un processo sociale in cui un gruppo viene diviso: 
+in due sottogruppi aventi un conflitto o una visione differente del problema in questione, e da alcuni individui che rimangono neutrali.
+Comprendere la polarizzazione e quantificarla è una sfida a lungo termine per i ricercatori all'interno di diverse aree, proprio perché risulta essere un potente strumento per l'analisi delle opinioni.
+
+Nel paper \textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela} di \textit{A. J. Morales, J. Borondo, J. C. Losada e R. M. Benito}, la polarizzazione assume una connotazione molto simile, vista in chiave politica, infatti all'interno di questo paper viene effettuata tale analisi all'interno di un contesto politico. 
+La definizione che viene data è un fenomeno sociale che avviene quando gli individui contrappongono le proprie credenze ed opinioni in una posizione conflittuale tra loro, mentre alcuni rimangono in una posizione neutrale.
+Per citare \textit{Jonh Turner}\footnote{Noto psicologo sociale britannico, con altri colleghi ha sviluppato la teoria dell'Auto-categorizzazione, che afferma tra l'altro che il sé non è un aspetto fondamentale della cognizione, ma è il risultato di processi cognitivi ed interazioni tra la persona e il contesto sociale.} :"Come le molecole polarizzate, i membri di un gruppo allineano il proprio pensiero nella direzione in cui erano originalmente diretti". 
+
+Adottare questo strumento all'interno di un contesto politico fornisce una chiara visione della preferenza o meno per i candidati politici, verificando il trend del candidato.
+Dal punto di vista matematico possiamo definire la polarizzazione tra due gruppi come la distanza che intercorre tra due numeri. Definendo in questo modo quanto due idee siano diverse e contrastanti utilizzando la distanza tra due valori numerici di riferimento.
+Le problematiche che possono scovate utilizzando la polarizzazione vengono trattate all'interno del paper : \textit{Reducing Controversy by Connecting Opposing Views} di \textit{Kiran Garimella ,Gianmarco De Francisci Morales, Aristides Gionis e Michael Mathioudakis}. Quando una popolazione si divide in due gruppi con visioni opposte quello che spesso si può osservare è la creazione degli \textit{echo-chambers} cioè: una situazione dove persone che la pensano allo stesso modo rafforzano le proprie convinzioni a vicenda, senza esporsi verso idee contrastanti.
+In conclusione la polarizzazione può aiutare ad individuare e a prevenire la formazioni degli \textit{echo-chambers}.
+
+\subsection{Sentiment Analysis}
+
+La Sentiment Analysis è lo strumento utilizzato per poter catalogare le informazioni degli utenti attraverso un'analisi del testo. Non è possibile citare la sentiment analysis senza menzionare l' "opinion mining" ovvero una branchia del machine learning che studia il comportamento delle opinioni nella rete.
+Il termine sentiment viene utilizzato in riferimento all'analisi automatica effettuata per valutare il testo ed esprimere un giudizio predittivo sul contenuto.
+Il compito base di questo processo è quello di classificare la polarità di un testo e quindi il suo contenuto verificando e catalogarlo come \textit{positivo},\textit{negativo} o \textit{neutrale}.
+Gli approcci più comunemente individuati rispetto alla sentiment analysis possono suddividersi in tre macro-categorie: 
+\begin{itemize}
+\item \textit{rilevamento delle keyword}: questo metodo consente di classificare il testo tramite categorie emotive facilmente riconoscibili, individuate in base alla presenza di parole emotive non ambigue, come felice, triste, e annoiato.
+\item \textit{affinità lessicale}: questo metodo non rileva solo le keyword emotive, ma assegna anche a parole arbitrarie "un'affinità" probabile a emozioni particolari. Rispetto alla prima metodologia vista, l'affinità lessicale consente di affinare la selezione e l'attribuzione della polarità.
+\item \textit{metodi statistici}: questi metodi si basano su elementi di apprendimento automatico. Per misurare l'opinione nel contesto e trovare la caratteristica che è stata giudicata, sono usate le relazioni grammaticali delle parole utilizzate. Le relazioni di dipendenza grammaticale sono ottenute attraverso la scansione approfondita del testo. Il processo di apprendimento da parte della macchina (anche detto machine learning) non è immediato, devono infatti essere costruiti dei modelli che associano a diverse tipologie di commenti una polarità e se necessario ai fini dell'analisi anche un topic.
+\end{itemize}
+
+Quando parliamo della sentiment analysis non possiamo non esporre una delle grandi limitazioni offerte da questo strumento, cioè l'incapacità della macchina di poter comprendere concetti emotivi complessi come l'ironia.
+Ad esempio un commento ad un ritardo nel volo:
+\begin{quote}
+"Il mio volo è in ritardo. Splendido!"
+\end{quote}
+verranno interpretati e classificati dalla macchina come post dalla polarità positiva mentre invece dovrebbero essere assegnate delle negatività. Quindi in un contesto lessicale pieno di ironia l'attendibilità sarà inferiore rispetto ad un documento con informazioni oggettive.
+Per migliorare l'accuratezza della predizione è necessario l'intervento dell'uomo, aumentando il volume dei dati di riferimento per l'analisi, banalmente milioni di post, possono alleviare le preoccupazioni sull'affidabilità a livello granulare, ossia di un singolo post.
+In conclusione la sentiment analysis è uno strumento che può essere molto utile all'interno dei social media in quanto può consentire di catalogare le opinioni degli utenti attraverso l'analisi dei contenuto pubblicati all'interno della rete. Questa potenzialità è ciò che mi ha spinto nell'adottare tale tecnica all'interno della mia tesi, garantendo una  classificazione dei diversi \textit{Tweet} collezionati.
+
+
+\begin{comment}
+La sentiment analysis può essere sviluppata seguendo 4 approcci differenti:
+\begin{itemize}
+\item \textit{Spotting di parole chiave}: il testo viene classificato da categorie influenti basate sulla presenza di parole influenti come contento, triste, impaurito, annoiato.
+\item \textit{Affinità lessicale}: oltre a rilevare le parole influenzanti, assegna arbitrariamente alle parole una probabile affinità a emozioni particolari. 
+\item \textit{Metodi statistici}:  questo approccio si basa sugli elementi trattati dal machine learning come analisi semantica latente, macchine a vettori di supporto, bag of words. Partendo da questi elementi per estrarre le opinioni in un contesto e ottenerne delle caratteristiche, vengono utilizzate delle relazioni grammaticali tra le parole. Le relazioni sono ottenute da un'analisi sintattica e profonda del testo.
+\item \textit{Tecniche di livello concettuale}: utilizza gli elementi della rappresentazione della conoscenza come le \textit{ontologie} e le \textit{reti semantiche}, riuscendo a rilevare semantiche che sono espresse in maniera sottile all'interno del testo.
+\end{itemize}
+In conclusione la sentiment analysis è uno strumento che può essere molto utile all'interno dei social media in quanto può consentire di catalogare le opinioni degli utenti attraverso l'analisi dei contenuto pubblicati all'interno della rete. Questa potenzialità è ciò che mi ha spinto nell'adottare tale tecnica all'interno della mia tesi.
+\end{comment}
+
+\subsubsection{Forecasting}
+Il Forecasting è un processo per fare predizioni del futuro basandosi sui dati passati e presente mediante l'analisi delle tendenze. Questo viene utilizzato molto all'interno delle aziende per poter analizzare i guadagni ed i futuri ricavi.
+Spesso viene associato ai processi di budgeting e pianificazione, si serve di dati passati e presenti, analisi dei trend e informazioni esecutive per prevedere la situazione futura di ogni  indicatore.
+Il forecasting prevede tre diverse tecniche:
+\begin{itemize}
+\item \textit{Qualitativa}
+\item \textit{Analisi e proiezione delle serie temporali}
+\item \textit{Modelli causali}
+\end{itemize}
+La previsione finanziaria non è una scienza esatta e l'incertezza ne è un tipico aspetto. Per limitare gli errori e migliorare l'esattezza delle previsioni è necessario utilizzare precisi dati storici e in tempo reale. Inoltre, la possibilità di combinare previsioni rolling, previsioni a lungo raggio, simulazione di scenari possibili e stress test supporta i risultati delle previsioni e rende le previsioni più agili e reattive ai cambiamenti economici e di business.
+Ai fini della mia tesi ho deciso di adottare uno studio basato sulle analisi e proiezioni delle serie temporali, perché permette di estrarre statistiche significative ed altre caratteristiche dei dati. Predice i valori futuri attraverso l'osservazione dei dati precedentemente raccolti.
+
+
+
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  25 JAN 2018 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  26 JAN 2018 18:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -438,61 +438,66 @@ File: pictures/twitter-logo.png Graphic file (type png)
 Package pdftex.def Info: pictures/twitter-logo.png used on input line 32.
 (pdftex.def)             Requested size: 77.08467pt x 77.08467pt.
 
-Underfull \vbox (badness 2111) has occurred while \output is active []
 
- [15]
-[16 <./pictures/twitter-logo.png>]) [17]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15] [16 <./pictures/twitter-logo.png>] [17] [18] [19]
+Excluding 'comment' comment.
+Underfull \vbox (badness 3646) has occurred while \output is active []
+
+ [20])
+[21]
 \openout2 = `capitolo3.aux'.
 
- (./capitolo3.tex [18
+ (./capitolo3.tex [22
 
 
 
 ]
 Capitolo 3.
-) [19]
+) [23]
 \openout2 = `capitolo4.aux'.
 
- (./capitolo4.tex [20
+ (./capitolo4.tex [24
 
 
 
 ]
 Capitolo 4.
-) [21]
+) [25]
 \openout2 = `capitolo5.aux'.
 
- (./capitolo5.tex [22
+ (./capitolo5.tex [26
 
 
 
 ]
 Capitolo 5.
-) [23]
+) [27]
 \openout2 = `capitolo6.aux'.
 
- (./capitolo6.tex [24
+ (./capitolo6.tex [28
 
 
 
 ]
 Capitolo 6.
-) [25]
+) [29]
 \openout2 = `capitolo7.aux'.
 
- (./capitolo7.tex [26
+ (./capitolo7.tex [30
 
 
 
 ]
 Capitolo 7.
-) [27] [28]
+) [31] [32]
 No file tesi.bbl.
 \openout2 = `appendiceA.aux'.
 
 (./appendiceA.tex
 Appendice A.
-) [29
+) [33
 
 
 
@@ -507,49 +512,49 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[30
+[34
 
 
 
 ]
 Appendice B.
-) [31]
+) [35]
 \openout2 = `appendiceC.aux'.
 
- (./appendiceC.tex [32
+ (./appendiceC.tex [36
 
 
 
 ]
 Appendice C.
-) [33]
+) [37]
 \openout2 = `appendiceD.aux'.
 
- (./appendiceD.tex [34
+ (./appendiceD.tex [38
 
 
 
 ]
 Appendice D.
-) [35]
+) [39]
 \openout2 = `appendiceE.aux'.
 
- (./appendiceE.tex [36
+ (./appendiceE.tex [40
 
 
 
 ]
 Appendice E.
-) [37]
+) [41]
 \openout2 = `appendiceF.aux'.
 
- (./appendiceF.tex [38
+ (./appendiceF.tex [42
 
 
 
 ]
 Appendice F.
-) [39] (./tesi.aux (./frontespizio.aux) (./dedica.aux) (./sommario.aux)
+) [43] (./tesi.aux (./frontespizio.aux) (./dedica.aux) (./sommario.aux)
 (./ringraziamenti.aux) (./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux)
 (./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux)
 (./appendiceA.aux) (./appendiceB.aux) (./appendiceC.aux) (./appendiceD.aux)
@@ -559,24 +564,26 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5685 strings out of 493029
- 79421 string characters out of 6136234
+ 5713 strings out of 493029
+ 79708 string characters out of 6136234
  161256 words of memory out of 5000000
- 8999 multiletter control sequences out of 15000+600000
- 9672 words of font info for 36 fonts, out of 8000000 for 9000
+ 9018 multiletter control sequences out of 15000+600000
+ 14407 words of font info for 55 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  38i,11n,43p,840b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on tesi.pdf (43 pages, 186833 bytes).
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti12.pfb>
+Output written on tesi.pdf (47 pages, 211393 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
+ 198 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
