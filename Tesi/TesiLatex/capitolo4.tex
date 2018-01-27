@@ -2,15 +2,46 @@
 \label{capitolo4}
 \thispagestyle{empty}
 
-\begin{quotation}
-{\footnotesize
-\noindent \emph{``Bud: No, calma, calma, stiamo calmi, noi siamo su un'isola deserta, e per il momento non t'ammazzo perch\'e mi potresti servire come cibo ...''}
-\begin{flushright}
-Chi trova un amico trova un tesoro
-\end{flushright}
-}
-\end{quotation}
-\vspace{0.5cm}
+\noindent %In questa sezione si spiega come \`e stato affrontato il problema concettualmente, la soluzione logica che ne \`e seguita senza la documentazione.
 
-\noindent In questa sezione si spiega come \`e stato affrontato il problema concettualmente, la soluzione logica che ne \`e seguita senza la documentazione.
+In questo capitolo verrà presentato il flusso logico della tesi con la soluzione proposta per la suddivisione dei gruppi partendo dai dati raccolti, il calcolo della polarizzazione ed infine la sua predizione nel tempo.
 
+\section{Raccolta Dati}
+La prima parte del flusso logico della mia tesi si basa sulla raccolta dei dati. Questa operazione è stata effettuata utilizzando il social network \textbf{Twitter}. Nel dettaglio sono stati raccolti tutti i tweet relativi a due topic, utilizzati per effettuare le analisi,le motivazioni della scelta verranno illustrate più avanti, cioè:
+\begin{itemize}
+\item \textbf{La elezioni regionali in Sicilia}
+\item \textbf{Biotestamento}
+\end{itemize}
+Come precedentemente illustrato la scelta di questi due topic è dovuta al fatto che sono in primis due argomenti molto recenti e di attualità all'interno del nostro paese, in secundis perché riferiti a due contesti differenti tra loro ovvero quello politico e quello sociale.
+Prima di effettuare la raccolta di tweet per ognuno dei due topic, è stato effettuato uno studio sugli hashtag, cioè la ricerca veniva effettuata per una serie di hashtag per cui sono stati catalogati i 5 topic più utilizzati dagli utenti per esprimere le loro opinioni sull'argomento in questione.
+Lo studio di questi hashtag è stato improntato ricercando quelli che non esprimessero un giudizio, bensì che aiutassero l'utente a connotare i loro pensieri sul topic avendo una connotazione generica.
+La ricerca è stata fatta in maniera del tutto equilibrata sopratutto per quanto concerne le elezioni regionali in Sicilia in quanto è facile cadere in preda in hashtag utilizzati dalle fazioni politiche per attirare gli elettori, ne sono un esempio:
+\begin{itemize}
+\item \textit{\#diventeràbellissima}: utilizzato dal centro destra come motto all'interno dei social media per pubblicizzare il proprio piano politico.
+\item \textit{\#impresentabili}: utilizzato dal Movimento 5 Stelle per denunciare i candidati degli altri partiti politici.
+\end{itemize} 
+Per evitare quindi di raccogliere dati già fortemente polarizzati, si è deciso di adottare una strategia più neutrale cercando 5 hashtags generici che rendessero l'idea del topic in questione.
+Twitter ha una politica di protezione per i dati, che sono accessibile a qualsiasi utente che abbia effettuato l'abilitazione allo sviluppo attraverso le Api messe a disposizioni, impedendo di effettuare più di 100 richieste ogni 15 minuti al server, impedendo un uso improprio e maligno con i dati pubblicati dagli utenti. Per richieste basta considerare la raccolta di un singolo Tweet.
+Per ottimizzare i tempi di raccolta si è deciso di utilizzare un'istanza \textit{EC2}, che eseguisse uno script \textit{Python} per la raccolta dei dati in questione, rimanendo attivo anche durante le ore notturne.
+I dati in questioni venivano salvati all'interno di file binari, in modo da ottimizzare lo spazio che avrebbero occupato sulla macchina.
+Il motivo che mi ha spinto ad effettuare tale operazione è dettata dai costi che ha l'istanza EC2 per poter mantenere i dati fisici al suo interno, perché i consumi economici non sono generati soltanto dall'utilizzo delle risorse fisiche della stessa, ma anche dalla quantità di dati presente al suo interno.
+ 
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.5]{Aws.png}
+\caption{AWS}
+\end{minipage}%
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.5]{Python.png}
+\caption{Python}
+\end{minipage}
+%\caption{Didascalia comune alle
+%due figure\label{fig:minipage2}}
+\end{figure}
+
+\section{Sentiment Analysis}

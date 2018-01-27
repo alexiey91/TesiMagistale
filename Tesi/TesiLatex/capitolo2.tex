@@ -1,16 +1,16 @@
 \chapter{Stato dell'arte e Background}
+
 \label{capitolo2}
- 
 
 %\noindent Nella seconda sezione si riporta lo stato dell'arte del settore, un inquadramento dell'area di ricerca orientato a portare il lettore all'interno della problematica affrontata. Bisogna dimostrare di conoscere le cose fatte fino ad ora in questo campo e il perch\'e si sia reso necessario lo svolgimento di questo lavoro. Questa sezione deve essere grondante di citazioni bibliografiche~\cite{marco02bud}.
 
 \section{Stato dell'arte}
-All'interno delle reti sociali sta sempre pi\'u prendendo piede il problema della polarizzazione delle opinioni. Nel linguaggio comune il confronto tra individui ha sempre generato una forte controversia nelle opinioni oppure una visione comune. 
-I social network hanno permesso all'utente di poter diffondere attraverso post, messaggi o espressioni audio video le proprie opinioni e/o pensieri all'interno di una comunità sociale. A tal proposito per favorire la diffusione delle diverse correnti di pensiero i social network stanno sempre più sviluppando algoritmi per permettere di identificare le comunità isolate che condividono un unico punto di vista di un problema.
+All'interno delle reti sociali sta sempre pi\'u prendendo piede il problema della polarizzazione delle opinioni. Nel linguaggio comune il confronto tra individui ha sempre generato una forte controversia oppure un punto d'incontro. 
+I social network hanno permesso all'utente di poter diffondere attraverso post, messaggi o espressioni audio video le proprie opinioni e/o pensieri all'interno di una comunità sociale. A tal proposito per favorire la diffusione delle diverse correnti di pensiero i social network stanno sempre più sviluppando algoritmi per permettere di identificare le comunità isolate che condividono un unico punto di vista di un argomento.
 La polarizzazione è un algoritmo matematico che applicato all'interno delle rete sociali consente di capire quanto un utente che accede per la prima volta all'interno di una rete sociale, venga influenzato dagli altri utenti e quanto una news o un giudizio si propaga all'interno di una rete sociale.
 Prima di poter illustrare questo algoritmo con le relative problematiche verrà illustrata una definizione di rete sociale.
 
-\subsection{Sociale}
+\subsection{Rete Sociale}
 Una rete sociale consiste in un qualsiasi gruppo di individui connessi tra loro da diversi legami sociali. Per gli esseri umani i legami vanno dalla conoscenza casuale, ai rapporti di lavoro, ai vincoli familiari. Le reti sociali sono spesso usate come base di studi interculturali in sociologia, in antropologia, in etologia.
 
 L'analisi delle reti sociali, ovvero la mappatura e la misurazione delle reti sociali, può essere condotta con un formalismo matematico usando la teoria dei grafi. In generale, il corpus teorico ed i modelli usati per lo studio delle reti sociali sono compresi nella cosiddetta \textit{social network analysis}.
@@ -31,19 +31,20 @@ Il nome "Twitter" deriva dal verbo inglese to tweet che significa "cinguettare".
     \begin{center}
       \includegraphics[scale= 0.15]{twitter-logo.png}
 	%\psfig{file=./pictures/logo}
+	\caption{Logo di Twitter}
     \end{center}
   \end{figure}
 
 Questo social network è molto utilizzato da personaggi famosi, sportivi, ma anche capi di stato, esponenti politici ed economici, perfino il Papa, consentendo a tutti gli utenti iscritti alla piattaforma di poter visualizzare le idee ed opinioni espresse da questi personaggi. Proprio per questo motivo \textit{Twitter} consente una diffusione su larga scala di idee ed opinioni da parte di moltissimi utenti, gli stessi giornalisti utilizzano questa piattaforma per diffondere \textit{scoop} o notizie di vario genere, proprio per la grande visibilità che fornisce questo social network.
-Vengono generati moltissimi dati ed è proprio per questo motivo che ho deciso di utilizzarlo strumento per la raccolta dati e cercare di calcolare la polarizzazione, permettendomi di visualizzare come le informazioni espressi si propagano all'interno della rete e come queste influenzano il pensiero degli utenti.
+Vengono generati moltissimi dati ed è proprio per questo motivo che ho deciso di utilizzarlo come strumento per la raccolta dati e cercare di calcolare la polarizzazione di alcuni topic selezionati, permettendomi di visualizzare come le informazioni espresse si propagano all'interno della rete e come queste influenzano il pensiero degli utenti.
 
 \subsubsection{Tweet}
 L'elemento alla base di questo social network è il \textit{Tweet}, che non è altro che un messaggio contenente le opinioni, le idee, i pensieri dell'utente. Tutte queste cose possono essere arricchite utilizzato elementi multimediali come video, immagini oppure link a pagine web. Il tweet una volta pubblicato potrà essere accessibile per tutti gli utenti delle rete che hanno una relazione di "amicizia" con l'utente in questione, potendo anche effettuare delle operazioni aggiuntive quale commentare la notizia, apprezzarla oppure \textit{retwettarla} cioè condividere queste informazioni a tutti i propri collegamenti.
 I Tweet possono essere anche etichettati utilizzando due strumenti messi a disposizione da questo social network:
 \begin{itemize}
-\item \textit{Mentions}: sono dei riferimento ad utenti, cioè come assegnare un mittente ad un email, affermando all'interno della rete che quel tweet è destinato esclusivamente a quella persona indicata attraverso questo strumento. Può essere utile per condividere più informazioni con gli amici delle rete più stretti, oppure per formulare degli attacchi, riflessioni o considerazioni anche con utenti famosi. Per fare questa operazione è necessario inserire la \@ ed il nome dell'utente in questione per poter collegare al tweet in questione alla persona desiderata.
+\item \textit{Mentions}: sono dei riferimento ad utenti, cioè come assegnare un mittente ad un email, affermando a tutti i membri all'interno della rete, che quel tweet è destinato esclusivamente a quella persona. Può essere utile per condividere più informazioni con gli amici delle rete più stretti, oppure per formulare degli attacchi, riflessioni o considerazioni anche con utenti famosi. Per fare questa operazione è necessario inserire la \@ ed il nome dell'utente in questione per poter collegare al tweet in questione alla persona desiderata.
 \item \textit{Hashtag}: parole o combinazioni di parole concatenate precedute dal simbolo cancelletto (\#).
-Etichettando un messaggio con un hashtag si crea un collegamento ipertestuale a tutti i messaggi recenti che citano lo stesso hashtag. Molto  vengono utilizzati durante \textit{Show Tv}, \textit{comizi}, \textit{pubblicità}, \textit{eventi politici} per poter consentire alle persone che vogliano esprimere la loro opinioni sugli argomenti espressi durante questi eventi circoscrivendo i Tweet. 
+Etichettando un messaggio con un hashtag si crea un collegamento ipertestuale a tutti i messaggi recenti che citano lo stesso hashtag. Molto  vengono utilizzati durante \textit{Show Tv}, \textit{comizi}, \textit{pubblicità}, \textit{eventi politici} per poter consentire alle persone che vogliano esprimere la loro opinioni sugli argomenti espressi durante questi eventi. 
 
 \end{itemize}
 
@@ -59,14 +60,26 @@ Per citare \textit{Jonh Turner}\footnote{Noto psicologo sociale britannico, con 
 
 Adottare questo strumento all'interno di un contesto politico fornisce una chiara visione della preferenza o meno per i candidati politici, verificando il trend del candidato.
 Dal punto di vista matematico possiamo definire la polarizzazione tra due gruppi come la distanza che intercorre tra due numeri. Definendo in questo modo quanto due idee siano diverse e contrastanti utilizzando la distanza tra due valori numerici di riferimento.
-Le problematiche che possono scovate utilizzando la polarizzazione vengono trattate all'interno del paper : \textit{Reducing Controversy by Connecting Opposing Views} di \textit{Kiran Garimella ,Gianmarco De Francisci Morales, Aristides Gionis e Michael Mathioudakis}. Quando una popolazione si divide in due gruppi con visioni opposte quello che spesso si può osservare è la creazione degli \textit{echo-chambers} cioè: una situazione dove persone che la pensano allo stesso modo rafforzano le proprie convinzioni a vicenda, senza esporsi verso idee contrastanti.
+Le problematiche evidenziate dalla polarizzazione vengono trattate all'interno del paper : \textit{Reducing Controversy by Connecting Opposing Views} di \textit{Kiran Garimella ,Gianmarco De Francisci Morales, Aristides Gionis e Michael Mathioudakis}. Quando una popolazione si divide in due gruppi con visioni opposte quello che spesso si può osservare è la creazione degli \textit{echo-chambers} cioè: una situazione dove persone che la pensano allo stesso modo rafforzano le proprie convinzioni a vicenda, senza esporsi verso idee contrastanti.
 In conclusione la polarizzazione può aiutare ad individuare e a prevenire la formazioni degli \textit{echo-chambers}.
+
+\subsubsection{Echo-Chambers}
+Brevemente illustriamo un gravissimo problema che abbiamo precedentemente riscontrato all'interno della polarizzazione.
+Gli \textit{Echo-chambers} è una descrizione metaforica di una situazione in cui le informazioni, le idee, o credenze sono rinforzate dalla comunicazione e dalla ripetizione all'interno di un ambiente definito. Praticamente viene creato come un "\textit{eco}" che riproduce lo stesso suono più e più volte all'interno di un ambiente. 
+Nei social media il fenomeno degli echo chambers è un problema piuttosto comune e ciò è dovuto dalla forte presenza di comunità di utenti che condividono sempre le stesse informazioni con un forte tasso di pubblicazione, quindi un nuovo utente che appoggia una di quelle idee entra all'interno di quel circolo vizioso. Ovviamente gli amministratori di questi social network sviluppano algoritmi che possano prevenire la formazione di queste comunità.
+Le conseguenze di questo problema sono molto evidenti ovvero:
+\begin{itemize}
+\item \textit{Impossibilità della crescita culturale}
+\item \textit{Impossibilità della crescita sociale}
+\item \textit{Rendere la comunicazione poco democratica}
+\end{itemize}
+La polarizzazione come precedentemente accennato è uno strumento che può aiutare la prevenzione per la formazione di queste comunità.
 
 \subsection{Sentiment Analysis}
 
 La Sentiment Analysis è lo strumento utilizzato per poter catalogare le informazioni degli utenti attraverso un'analisi del testo. Non è possibile citare la sentiment analysis senza menzionare l' "opinion mining" ovvero una branchia del machine learning che studia il comportamento delle opinioni nella rete.
 Il termine sentiment viene utilizzato in riferimento all'analisi automatica effettuata per valutare il testo ed esprimere un giudizio predittivo sul contenuto.
-Il compito base di questo processo è quello di classificare la polarità di un testo e quindi il suo contenuto verificando e catalogarlo come \textit{positivo},\textit{negativo} o \textit{neutrale}.
+Il compito base di questo processo è quello di classificare la polarità di un testo e quindi il suo contenuto e catalogarlo come \textit{positivo},\textit{negativo} o \textit{neutrale}.
 Gli approcci più comunemente individuati rispetto alla sentiment analysis possono suddividersi in tre macro-categorie: 
 \begin{itemize}
 \item \textit{rilevamento delle keyword}: questo metodo consente di classificare il testo tramite categorie emotive facilmente riconoscibili, individuate in base alla presenza di parole emotive non ambigue, come felice, triste, e annoiato.
@@ -82,7 +95,6 @@ Ad esempio un commento ad un ritardo nel volo:
 verranno interpretati e classificati dalla macchina come post dalla polarità positiva mentre invece dovrebbero essere assegnate delle negatività. Quindi in un contesto lessicale pieno di ironia l'attendibilità sarà inferiore rispetto ad un documento con informazioni oggettive.
 Per migliorare l'accuratezza della predizione è necessario l'intervento dell'uomo, aumentando il volume dei dati di riferimento per l'analisi, banalmente milioni di post, possono alleviare le preoccupazioni sull'affidabilità a livello granulare, ossia di un singolo post.
 In conclusione la sentiment analysis è uno strumento che può essere molto utile all'interno dei social media in quanto può consentire di catalogare le opinioni degli utenti attraverso l'analisi dei contenuto pubblicati all'interno della rete. Questa potenzialità è ciò che mi ha spinto nell'adottare tale tecnica all'interno della mia tesi, garantendo una  classificazione dei diversi \textit{Tweet} collezionati.
-
 
 \begin{comment}
 La sentiment analysis può essere sviluppata seguendo 4 approcci differenti:

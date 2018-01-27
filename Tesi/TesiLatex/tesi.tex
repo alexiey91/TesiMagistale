@@ -11,6 +11,9 @@
 \usepackage{fancyhdr}  
 \usepackage[scriptsize]{caption}
 \usepackage{comment} 
+
+
+
 \hyphenation{a-gen-tiz-za-zio-ne}
 \graphicspath{{pictures/}}
 \setlength{\paperwidth}{16cm}
@@ -30,9 +33,13 @@
 \begin{document}
 \include{frontespizio}
 \thispagestyle{empty} \normalfont \cleardoublepage
+
+\tableofcontents
+\setcounter{tocdepth}{1}
 \include{dedica}
 \thispagestyle{empty}  \cleardoublepage
 \pagenumbering{arabic}
+
 \include{sommario}
 \thispagestyle{empty} \vspace*{.75truecm} \cleardoublepage
 \include{ringraziamenti}
@@ -47,7 +54,7 @@
 
 \include{capitolo1}
 \include{capitolo2}
-\include{capitolo3}
+%\include{capitolo3}
 \include{capitolo4}
 \include{capitolo5}
 \include{capitolo6}
@@ -78,6 +85,7 @@
 \include{appendiceD}
 \include{appendiceE}
 \include{appendiceF}
+
 
 \end{document}
 

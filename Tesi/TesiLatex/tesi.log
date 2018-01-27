@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  26 JAN 2018 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  27 JAN 2018 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -253,24 +253,23 @@ File: uni-global.def 2013/05/13 UCS: Unicode global data
 \uc@temptokena=\toks28
 ) (./tesi.aux
 (./frontespizio.aux) (./dedica.aux) (./sommario.aux) (./ringraziamenti.aux)
-(./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux) (./capitolo4.aux)
-(./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux) (./appendiceA.aux)
-(./appendiceB.aux) (./appendiceC.aux) (./appendiceD.aux) (./appendiceE.aux)
-(./appendiceF.aux))
+(./capitolo1.aux) (./capitolo2.aux) (./capitolo4.aux) (./capitolo5.aux)
+(./capitolo6.aux) (./capitolo7.aux) (./appendiceA.aux) (./appendiceB.aux)
+(./appendiceC.aux) (./appendiceD.aux) (./appendiceE.aux) (./appendiceF.aux))
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -335,8 +334,8 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \it@ocap on input line 30.
-LaTeX Info: Redefining \it@ccap on input line 30.
+LaTeX Info: Redefining \it@ocap on input line 33.
+LaTeX Info: Redefining \it@ccap on input line 33.
 
 
 File italian.ldf warning: 
@@ -344,7 +343,7 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 30.
+italian.ldf    on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -372,12 +371,18 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 36--37
 
 
 
-]
+] (./tesi.toc [3
+
+])
+\tf@toc=\write4
+\openout4 = `tesi.toc'.
+
+ [4]
 \openout2 = `dedica.aux'.
 
- (./dedica.tex) [3
+ (./dedica.tex) [5
 
-] [4
+] [6
 
 
 ]
@@ -391,8 +396,8 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 36--37
 ]
 \openout2 = `ringraziamenti.aux'.
 
- (./ringraziamenti.tex)
-[3
+
+(./ringraziamenti.tex) [3
 
 
 
@@ -431,7 +436,7 @@ Capitolo 2.
 Underfull \vbox (badness 3240) has occurred while \output is active []
 
  [14]
-<pictures/twitter-logo.png, id=67, 513.92pt x 513.92pt>
+<pictures/twitter-logo.png, id=74, 513.92pt x 513.92pt>
 File: pictures/twitter-logo.png Graphic file (type png)
 
 <use pictures/twitter-logo.png>
@@ -439,32 +444,49 @@ Package pdftex.def Info: pictures/twitter-logo.png used on input line 32.
 (pdftex.def)             Requested size: 77.08467pt x 77.08467pt.
 
 
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 34.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 34.
+
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15] [16 <./pictures/twitter-logo.png>] [17] [18] [19]
-Excluding 'comment' comment.
-Underfull \vbox (badness 3646) has occurred while \output is active []
-
- [20])
-[21]
-\openout2 = `capitolo3.aux'.
-
- (./capitolo3.tex [22
-
-
-
-]
-Capitolo 3.
-) [23]
+[15] [16 <./pictures/twitter-logo.png>] [17] [18] [19] [20]
+Excluding 'comment' comment. [21]) [22]
 \openout2 = `capitolo4.aux'.
 
- (./capitolo4.tex [24
+ (./capitolo4.tex
+Capitolo 3.
+[23
 
 
 
-]
-Capitolo 4.
-) [25]
+] [24] <pictures/Aws.png, id=111, 357.335pt x 141.52875pt>
+File: pictures/Aws.png Graphic file (type png)
+
+<use pictures/Aws.png>
+Package pdftex.def Info: pictures/Aws.png used on input line 34.
+(pdftex.def)             Requested size: 178.66705pt x 70.76419pt.
+
+Overfull \hbox (22.66943pt too wide) in paragraph at lines 34--35
+ [][] 
+ []
+
+<pictures/Python.png, id=112, 388.45125pt x 130.4875pt>
+File: pictures/Python.png Graphic file (type png)
+
+<use pictures/Python.png>
+Package pdftex.def Info: pictures/Python.png used on input line 40.
+(pdftex.def)             Requested size: 194.22514pt x 65.24358pt.
+
+Overfull \hbox (38.22752pt too wide) in paragraph at lines 40--41
+ [][] 
+ []
+
+) [25 <./pictures/Aws.png> <./pictures/Python.png>]
 \openout2 = `capitolo5.aux'.
 
  (./capitolo5.tex [26
@@ -472,7 +494,7 @@ Capitolo 4.
 
 
 ]
-Capitolo 5.
+Capitolo 4.
 ) [27]
 \openout2 = `capitolo6.aux'.
 
@@ -481,7 +503,7 @@ Capitolo 5.
 
 
 ]
-Capitolo 6.
+Capitolo 5.
 ) [29]
 \openout2 = `capitolo7.aux'.
 
@@ -490,7 +512,7 @@ Capitolo 6.
 
 
 ]
-Capitolo 7.
+Capitolo 6.
 ) [31] [32]
 No file tesi.bbl.
 \openout2 = `appendiceA.aux'.
@@ -555,35 +577,32 @@ Appendice E.
 ]
 Appendice F.
 ) [43] (./tesi.aux (./frontespizio.aux) (./dedica.aux) (./sommario.aux)
-(./ringraziamenti.aux) (./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux)
-(./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux)
-(./appendiceA.aux) (./appendiceB.aux) (./appendiceC.aux) (./appendiceD.aux)
-(./appendiceE.aux) (./appendiceF.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(./ringraziamenti.aux) (./capitolo1.aux) (./capitolo2.aux) (./capitolo4.aux)
+(./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux) (./appendiceA.aux)
+(./appendiceB.aux) (./appendiceC.aux) (./appendiceD.aux) (./appendiceE.aux)
+(./appendiceF.aux)) ) 
 Here is how much of TeX's memory you used:
- 5713 strings out of 493029
- 79708 string characters out of 6136234
- 161256 words of memory out of 5000000
- 9018 multiletter control sequences out of 15000+600000
- 14407 words of font info for 55 fonts, out of 8000000 for 9000
+ 5726 strings out of 493029
+ 79932 string characters out of 6136234
+ 160880 words of memory out of 5000000
+ 9030 multiletter control sequences out of 15000+600000
+ 15429 words of font info for 58 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  38i,11n,43p,840b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmti12.pfb>
-Output written on tesi.pdf (47 pages, 211393 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on tesi.pdf (49 pages, 235043 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 212 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
