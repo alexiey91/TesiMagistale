@@ -36,18 +36,19 @@
 
 \tableofcontents
 \setcounter{tocdepth}{1}
-\include{dedica}
-\thispagestyle{empty}  \cleardoublepage
+%\include{dedica}
+%\thispagestyle{empty}  \cleardoublepage
 \pagenumbering{arabic}
 
 \include{sommario}
 \thispagestyle{empty} \vspace*{.75truecm} \cleardoublepage
+\begin{comment}
 \include{ringraziamenti}
 \thispagestyle{empty} \vspace*{.75truecm} \normalfont \cleardoublepage
 \pagestyle{plain}\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}} 
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}         
 \fancyhead[LE,RO]{\bfseries\thepage}    
-                                        
+\end{comment}                                      
 \fancyhead[RE]{\bfseries\leftmark}    
 \fancyhead[LO]{\bfseries\rightmark}     
 \renewcommand{\headrulewidth}{0.3pt} 
@@ -79,12 +80,6 @@
 \fancyhead[LO]{\bfseries\rightmark}     
 \renewcommand{\headrulewidth}{0.3pt} 
 
-\include{appendiceA}
-\include{appendiceB}
-\include{appendiceC}
-\include{appendiceD}
-\include{appendiceE}
-\include{appendiceF}
 
 
 \end{document}

@@ -54,7 +54,7 @@ Una volta generato il grafo vengono catalogati i nodi in due categorie:
 \item \textit{Elite}: l'utente che ha \textit{tweettato} un'opinione.
 \item \textit{Listener}: l'utente che ha \textit{retwettato} il tweet di uno o più nodi \textit{Elite}.
 \end{itemize}
-Partendo da queste categorie viene calcolata la polarizzazione sfruttando il grado di ogni nodo, tale operazione viene eseguito iterativamente fino ad ottenere una stabilizzazione della polarizzazione.(Per una più dettagliata spiegazione si rimanda al Capitolo??)
+Partendo da queste categorie viene calcolata la polarizzazione sfruttando il grado di ogni nodo, tale operazione viene eseguito iterativamente fino ad ottenere una stabilizzazione della polarizzazione.
 
 \item \textbf{\textit{Reducing Controversy by Connecting Opposing Views}}:
 Identifica la polarizzazione sfruttando la topologia del grafo. Il grafo viene generato utilizzando la medesima tecnica del precedente paper, così come il social network di riferimento \textit{Twitter}. %La differenza principale \'e che non vengono catalogati i nodi in due gruppi in base al loro comportamento nel grafo, bens\'i utilizza la tecninca dei \textit{Random Walk} sfruttando la struttura dell' \textit{endorsement graph} e la probabilit\'a di retweet per ottenere il valore della polarizzazione per ogni nodo. Per la spiegazione relativa al calcolo del valore assoluto della polarizzazione attraverso la tecnina dei \textit{Random Walk} si rimanda al capitolo ??.
@@ -77,9 +77,9 @@ La predizione \'e stata realizzata attraverso tecniche di \textit{Forecasting} m
 \begin{itemize}
 \item \textit{Double exponential smoothing}
 \item \textit{Linear regression}
-\item \textit{Average window}
+\item \textit{Moving average}
 \end{itemize}
-Per i fondamenti teorici si rimanda al Capitolo???.
+
 
 Terminiamo questa sezione presentando i casi studio utilizzati. Per lo sviluppo della mia tesi ho deciso di analizzare  la polarizzazione all'interno di due contesti differenti, attraverso questi due Topic:
 \begin{itemize}
@@ -108,6 +108,20 @@ Questi risultati sono conformi al contesto sociale e religioso presente in Itali
 
 In conclusione questi due Topic hanno contribuito a confermare quanto precedentemente spiegato all'interno di questo capitolo e cioè che la polarizzazione \'e un potentissimo strumento che consente di poter individuare gli \textit{Echo-chambers} presenti nella rete. %Eventuali sviluppo futuri relativi a questa tesi possono essere la possibilit\'a di eliminare la creazione degli \textit{Echo-chambers} utilizzando algoritmi per eliminare la controversia delle informazioni all'interno dei social network favorendo una facile diffusione delle informazioni. 
 Eventuali sviluppi futuri possono riguardare l'eliminazione degli \textit{Echochambers} abbassando la controversia tra i due gruppi ottenuti attraverso la polarizzazione, effettuando dei congiungimento tra quei gruppi di nodi che condividono sempre le stesse opinioni.
+
+\section{Stuttura Tesi}
+Per quanto riguarda tutti i dettagli:
+\begin{itemize}
+\item implementativi
+\item teorici
+\item degli esperimenti
+\item sviluppi futuri
+\end{itemize}
+definiti all'interno di questa introduzione verranno sviluppati all'interno di questa tesi.
+La parte teorica relativa a tutti gli argomenti precedentemente illustrati verranno trattati all'interno del ~\ref{capitolo4}.
+Nel dettaglio la parte implementativa dei due algoritmi, della raccolta dati, della sentiment analysis e della predizione verrà trattata all'interno del ~\ref{capitolo5}.
+Gli esperimenti e le motivazioni  che hanno mosso alla definizione dei due topic scelti per l'analisi della polarizzazione verranno trattate all'interno del ~\ref{capitolo6}.
+Infine gli sviluppi futuri verranno trattati all'interno del ~\ref{capitolo7}.
 \begin{comment}
 \section{Inquadramento generale}
 La prima parte contiene una frase che spiega l'area generale dove si svolge il lavoro; una che spiega la sottoarea pi\`u specifica dove si svolge il lavoro e la terza, che dovrebbe cominciare con le seguenti parole ``lo scopo della tesi \`e \dots'', illustra l'obbiettivo del lavoro. Poi vi devono essere una o due frasi che contengano una breve spiegazione di cosa e come \`e stato fatto, delle attivit\`a� sperimentali, dei risultati ottenuti con una valutazione e degli sviluppi futuri. La prima parte deve essere circa una facciata e mezza o due
