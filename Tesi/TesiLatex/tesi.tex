@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,twoside,openright]{report}
+\documentclass[12pt,a4paper,oneside,openright]{report}
 
 %\usepackage[dvips]{graphicx}
 \usepackage{graphicx}
@@ -11,7 +11,7 @@
 \usepackage{fancyhdr}  
 \usepackage[scriptsize]{caption}
 \usepackage{comment} 
-
+\usepackage{nameref}
 
 
 \hyphenation{a-gen-tiz-za-zio-ne}
@@ -28,31 +28,42 @@
 \usepackage[utf8x]{inputenc}
 \renewcommand{\captionfont}{\normalfont \sffamily \itshape \small}
 
-\pagestyle{empty}
+%\pagestyle{empty}
 
 \begin{document}
 \include{frontespizio}
 \thispagestyle{empty} \normalfont \cleardoublepage
 
-\tableofcontents
-\setcounter{tocdepth}{1}
+%\tableofcontents
+%\setcounter{tocdepth}{1}
 %\include{dedica}
 %\thispagestyle{empty}  \cleardoublepage
-\pagenumbering{arabic}
+%\pagenumbering{arabic}
+\pagenumbering{roman}
 
 \include{sommario}
+
 \thispagestyle{empty} \vspace*{.75truecm} \cleardoublepage
+
 \begin{comment}
 \include{ringraziamenti}
 \thispagestyle{empty} \vspace*{.75truecm} \normalfont \cleardoublepage
 \pagestyle{plain}\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}} 
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}         
 \fancyhead[LE,RO]{\bfseries\thepage}    
-\end{comment}                                      
+                                   
 \fancyhead[RE]{\bfseries\leftmark}    
 \fancyhead[LO]{\bfseries\rightmark}     
 \renewcommand{\headrulewidth}{0.3pt} 
+\end{comment}   
 
+\pagestyle{empty}
+%\pagenumbering{roman}
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
+\newpage
+\setcounter{page}{1}
 \include{capitolo1}
 \include{capitolo2}
 %\include{capitolo3}

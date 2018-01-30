@@ -1,22 +1,21 @@
 \BOOKMARK [0][-]{chapter*.2}{Sommario}{}% 1
-\BOOKMARK [0][-]{chapter*.3}{Ringraziamenti}{}% 2
-\BOOKMARK [0][-]{chapter.1}{Introduzione}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduzione}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Stuttura Tesi}{chapter.1}% 3
 \BOOKMARK [0][-]{chapter.2}{Stato dell'arte e Background}{}% 4
 \BOOKMARK [1][-]{section.2.1}{Stato dell'arte}{chapter.2}% 5
-\BOOKMARK [2][-]{subsection.2.1.1}{Sociale}{section.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.1.1}{Rete Sociale}{section.2.1}% 6
 \BOOKMARK [2][-]{subsection.2.1.2}{Le reti}{section.2.1}% 7
 \BOOKMARK [2][-]{subsection.2.1.3}{Twitter}{section.2.1}% 8
 \BOOKMARK [2][-]{subsection.2.1.4}{Polarizzazione}{section.2.1}% 9
 \BOOKMARK [2][-]{subsection.2.1.5}{Sentiment Analysis}{section.2.1}% 10
-\BOOKMARK [0][-]{chapter.3}{Impostazione del problema di ricerca}{}% 11
-\BOOKMARK [0][-]{chapter.4}{Progetto logico della soluzione del problema}{}% 12
-\BOOKMARK [0][-]{chapter.5}{Architettura del sistema}{}% 13
-\BOOKMARK [0][-]{chapter.6}{Realizzazioni sperimentali e valutazione}{}% 14
-\BOOKMARK [0][-]{chapter.7}{Direzioni future di ricerca e conclusioni}{}% 15
-\BOOKMARK [0][-]{chapter.7}{Bibliografia}{}% 16
-\BOOKMARK [0][-]{appendix.Alph1}{Documentazione del progetto logico}{}% 17
-\BOOKMARK [0][-]{appendix.Alph2}{Documentazione della programmazione}{}% 18
-\BOOKMARK [0][-]{appendix.Alph3}{Listato}{}% 19
-\BOOKMARK [0][-]{appendix.Alph4}{Il manuale utente}{}% 20
-\BOOKMARK [0][-]{appendix.Alph5}{Esempio di impiego}{}% 21
-\BOOKMARK [0][-]{appendix.Alph6}{Datasheet}{}% 22
+\BOOKMARK [0][-]{chapter.3}{Progetto logico della soluzione del problema}{}% 11
+\BOOKMARK [1][-]{section.3.1}{Raccolta Dati}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.2}{Sentiment Analysis}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.3}{Endorsement Graph}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.4}{Polarizzazione}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.5}{Predizione}{chapter.3}% 16
+\BOOKMARK [0][-]{chapter.4}{Implementazione}{}% 17
+\BOOKMARK [1][-]{section.4.1}{Raccolta dati}{chapter.4}% 18
+\BOOKMARK [2][-]{subsection.4.1.1}{Twitter Api}{section.4.1}% 19
+\BOOKMARK [0][-]{chapter.5}{Realizzazioni sperimentali e valutazione}{}% 20
+\BOOKMARK [0][-]{chapter.6}{Direzioni future di ricerca e conclusioni}{}% 21

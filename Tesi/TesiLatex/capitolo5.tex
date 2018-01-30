@@ -15,3 +15,53 @@ Nati con la camicia
 
 \noindent Si mostra il progetto dell'architettura del sistema con i vari moduli.
 \end{comment}
+
+\noindent All'interno di questo capitolo verranno illustrate tutte le tecniche implementative per realizzare quanto è stato enunciato nel capitolo precedente. Nel dettaglio verranno spigate, argomentate le implementazioni effettuate su tutte le fasi della tesi, i riferimenti teorici che hanno permesso la realizzazione di questa tesi.
+\section{Raccolta dati}
+La raccolta dati è la fase iniziale della tesi di laurea. Come precedentemente argomentato il social network di riferimento utilizzato è \textit{Twitter}.Prima di spiegare quanto fatto occorre citare le funzionalità della \textit{Twitter Api}. Successivamente verranno illustrate le tecniche adottate per la raccolta dei \textit{Tweet} del passato.
+\subsection{Twitter Api}
+Sono delle api messe a disposizione dal social network Twitter, per poter usufruire di tali servizi occorre necessariamente effettuare delle iscrizioni all'interno del reparto sviluppatori di Twitter, mettendo a disposizione il proprio account, quindi come prima cosa occorre predisporre di un proprio account personale. Per poter effettuare la raccolta dei dati occorre abilitare l'account alla raccolta dati attraverso un processo di streaming, per fare questa operazione occorre creare una \textit{Twitter Apps} il quale rilascerà una volta creata una serie di codici che dovranno essere utilizzati per poter effettuare le richieste con le Twitter Api al server.
+Le credenziali sono divise in:
+\begin{itemize}
+\item \textit{Token}: identificano il token di accesso ai servizi messi a disposizione da Twitter, a sua volta è composto da:
+\begin{itemize}
+\item \textit{Access token}
+\item \textit{Access secret}
+\end{itemize}
+\item \textit{Consumer}: è un codice di accesso ai servizi di consumo, ovvero consente lo streaming dei dati dal server, si suddivide in due chiavi:
+\begin{itemize}
+\item \textit{Consumer key}
+\item \textit{Consumer secret}
+\end{itemize}
+\end{itemize}
+Queste chiavi di accesso possono essere generate più e più volte, una volta creata un'applicazione per lo sviluppo di Twitter.
+Le Api sono disponibili in diversi linguaggi di programmazione tra cui il \textit{Python}, utilizzato per lo sviluppo della tesi.
+Per richiamare tutte le api attraverso il codice è necessario sempre autenticarsi, caricando le credenziali di accesso  fornite attraverso i permessi da sviluppatore precedentemente illustrate.
+Lo streaming per la raccolta dei dati è soggetto a stringenti regole per evitare un uso improprio delle informazioni diffuse dagli utenti all'interno della rete. Infatti c'è un numero massimo di richieste che un utente, con le credenziali da sviluppatore, può effettuare, cioè 100 ogni 15 minuti. Allo scadere di tale tempo potrà ricominciare, altrimenti nel caso in cui un utente non tenesse conto di questa limitazione ed effettuasse una nuova richiesta durante il tempo di pausa le sue credenziali verrebbero bloccate per circa un'ora non potendo più interagire con le api di Twitter.
+La risposta da parte del server sarà un file \textit{JSON} contenente tutti i metadati dell'utente in questione, come il testo del Tweet, il suo id, lo username dell'utente che ha effettuato il tweet, i mentions gli hashtag ed il numero di retweet con la lista degli utenti che hanno retwettato la notizia in questione.
+
+\subsection{Get Old Tweet}
+Questa sezione illustrerà in che modo sono stati raccolti tutti i tweet del passato. Avendo spiegato nella sezione precedente le problematiche relative al numero di richieste da effettuare nell'arco temporale, è stata seguito un approccio differente che consentiva di limitare il numero di richieste alla volta.
+L'approccio in questione consiste nell'effettuare una \textit{GET} sulla pagina di ricerca di Twitter, specificando l'argomento ricercato, ed il periodo di validità dei tweet.
+Un altro problema che ha spinto all'utilizzo di questo metodo riguarda la politica di Twitter nel far collezionare, agli utenti non premium con i permessi di sviluppo, soltanto i dati con data di riferimento di 7 giorni precedenti alla data di ricerca selezionata. Per di più come indicato all'interno della documentazione i dati raccolti mediante le Twitter Api non saranno tutti quelli pubblicati nel periodo selezionato.
+
+Tutte queste problematiche sono state risolte utilizzando questo approccio definite attraverso la libreria \textit{Get Old Tweet}, il quale crea un indirizzo http con i parametri di ricerca richiesti, nel nostro caso:
+\begin{itemize}
+\item \textit{La query}: la parola chiave, l'hashtag da ricercare all'interno dei Tweet.
+\item \textit{Data inizio}: la data in cui inizio a raccogliere i dati.
+\item \textit{Data Fine}: la data in termino la ricerca e la raccolta dei dati.
+\end{itemize}
+Una volta definiti questi parametri all'interno della \textit{url}, viene restituita la pagina html contenente tutti i  tweet presenti nel periodo indicato, per estrarre le informazioni basterà parsare la pagina ottenendo i seguenti dati:
+\begin{itemize}
+\item Lo \textit{username} della persona che ha postato il tweet.
+\item Il numero di \textit{retweet} al tweet. 
+\item Il \textit{testo} del tweet pubblicato.
+\item La lista  degli \textit{hashtag} pubblicati dall'utente all'interno del tweet
+\item La lista dei \textit{mentions} pubblicati dall'utente all'interno del tweet.
+\item La \textit{data} di pubblicazione del tweet.
+\end{itemize}
+Tutti questi dati sono stati successivamente elaborati ed analizzati. Particolare attenzione è stata posta a due di essi ovvero: il testo ed il numero di retweet. 
+Il primo per effettuare la sentiment analysis e poter definire una prima partizione dei dati in questione, partizionando il grafo.
+Il secondo perché costituisce la base per i nuovi nodi del grafo e quindi la diffusione del tweet con altri utenti. 
+Per identificare la lista degli utenti che hanno effettuato il retweet sul tweet in questione è stato necessario usare una libreria esterna chiamata \textbf{Tweepy}.
+Questa libreria sfrutta le \textit{Twitter Api}, effettuando delle chiamate rest sul server di Twitter per poter ricevere le informazioni richieste. Nel nostro case è stato utilizzato il metodo \textit{retweet} che ricevendo come argomento l'id relativo al tweet pubblicato permette di ricevere la lista degli username che hanno pubblicato quell'argomento all'interno della propria rete. Il problemi presentati in precedente nell'utilizzare queste chiamate al server sono sempre validi, infatti se vengono superate le 100 richieste viene lanciata un'eccezione: \textit{Tweepy Error} che consente di mettere in pausa l'applicazione attraverso una sleep per 15 minuti. Una volta terminato il tempo di attesa la richiesta viene ripresa dal punto richiesto, continuando a collezionare gli username richiesti.
