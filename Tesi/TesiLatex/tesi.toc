@@ -23,5 +23,7 @@
 \contentsline {section}{\numberline {4.1}Raccolta dati}{28}
 \contentsline {subsection}{\numberline {4.1.1}Twitter Api}{28}
 \contentsline {subsection}{\numberline {4.1.2}Get Old Tweet}{30}
-\contentsline {chapter}{\numberline {5}Realizzazioni sperimentali e valutazione}{33}
-\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{34}
+\contentsline {subparagraph}{EC2}{33}
+\contentsline {section}{\numberline {4.2}Sentiment Analysis}{33}
+\contentsline {chapter}{\numberline {5}Realizzazioni sperimentali e valutazione}{38}
+\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{39}
