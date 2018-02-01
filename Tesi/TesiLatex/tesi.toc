@@ -21,9 +21,10 @@
 \contentsline {section}{\numberline {3.5}Predizione}{26}
 \contentsline {chapter}{\numberline {4}Implementazione}{28}
 \contentsline {section}{\numberline {4.1}Raccolta dati}{28}
-\contentsline {subsection}{\numberline {4.1.1}Twitter Api}{28}
-\contentsline {subsection}{\numberline {4.1.2}Get Old Tweet}{30}
+\contentsline {subsection}{\numberline {4.1.1}Twitter Api}{29}
+\contentsline {subsection}{\numberline {4.1.2}Get Old Tweet}{31}
 \contentsline {subparagraph}{EC2}{33}
-\contentsline {section}{\numberline {4.2}Sentiment Analysis}{33}
-\contentsline {chapter}{\numberline {5}Realizzazioni sperimentali e valutazione}{38}
-\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{39}
+\contentsline {section}{\numberline {4.2}Sentiment Analysis}{34}
+\contentsline {section}{\numberline {4.3}Endorsement Graph}{38}
+\contentsline {chapter}{\numberline {5}Realizzazioni sperimentali e valutazione}{42}
+\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{43}

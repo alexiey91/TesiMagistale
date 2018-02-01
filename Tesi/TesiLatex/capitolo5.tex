@@ -4,7 +4,16 @@
 
 
 
-\noindent All'interno di questo capitolo verranno illustrate tutte le tecniche implementative per realizzare quanto è stato enunciato nel capitolo precedente. Nel dettaglio verranno spigate, argomentate le implementazioni effettuate su tutte le fasi della tesi, i riferimenti teorici che hanno permesso la realizzazione di questa tesi.
+\noindent All'interno di questo capitolo verranno illustrate tutte le tecniche implementative per realizzare quanto è stato enunciato nel capitolo precedente. Nel dettaglio verranno spigate, argomentate le implementazioni effettuate su tutte le fasi della tesi, i riferimenti teorici che hanno permesso la realizzazione di questa tesi. Di seguito una breve descrizione grafica del flusso con le operazioni effettuate durante la redazione del lavoro di tesi.(vedi fig:\ref{Flusso})
+\begin{figure}[h!]
+    \begin{center}
+      \includegraphics[scale= 0.45]{Flusso.png}
+	%\psfig{file=./pictures/logo}
+	\caption{Flusso}
+	\label{Flusso}
+    \end{center}
+  \end{figure}
+
 \section{Raccolta dati}
 La raccolta dati è la fase iniziale della tesi di laurea. Come precedentemente argomentato il social network di riferimento utilizzato è \textit{Twitter}.Prima di spiegare quanto fatto occorre citare le funzionalità della \textit{Twitter Api}. Successivamente verranno illustrate le tecniche adottate per la raccolta dei \textit{Tweet} del passato.
 \subsection{Twitter Api}
@@ -78,7 +87,7 @@ Il motivo di tale scelta è dettata dai tempi di attesa via via sempre più lung
 
 
 \section{Sentiment Analysis}
-La sentiment analysis è l'approccio utilizzato per la divisione dei diversi tweet, raccolti per un determinato topic, analizzando il "sentimento" espresso nel contenuto del testo pubblicato dagli utenti.
+La sentiment analysis è l'approccio utilizzato per la divisione dei diversi tweet, raccolti per un determinato topic, in un determinato periodo, analizzando il "sentimento" espresso nel contenuto del testo pubblicato dagli utenti.
 Questa fase viene effettuata al momento della raccolta dei dati, cioè una volta collezionati l'insieme dei dati vengono sottoposti alla funzione implementata e salvati in due categorie distinte mediante la libreria \textit{pickle}, precedentemente illustrata.
 
 L'implementazione di questo metodo è stata effettuata seguendo un approccio basato su \textit{metodi statistici}: questi metodi si basano su elementi di apprendimento automatico. Per misurare l'opinione nel contesto e trovare la caratteristica che è stata giudicata, sono usate le relazioni grammaticali delle parole utilizzate. Le relazioni di dipendenza grammaticale sono ottenute attraverso la scansione approfondita del testo. Il processo di apprendimento da parte della macchina (anche detto machine learning) non è immediato, devono infatti essere costruiti dei modelli che associano a diverse tipologie di commenti una polarità e se necessario ai fini dell'analisi anche un topic.
@@ -99,19 +108,19 @@ Ci sono diversi classificatori, quello utilizzato per l'implementazione della Se
 Un classificatore bayesiano è un classificatore basato sull'applicazione del teorema di Bayes.
 Richiede la conoscenza delle probabilità a priori e condizionali relative al problema, quantità che in generale non sono note ma sono tipicamente stimabili. Se è possibile ottenere delle stime affidabili delle probabilità coinvolte nel teorema, il classificatore bayesiano risulta generalmente affidabile e potenzialmente compatto. Per costruzione, il classificatore bayesiano minimizza il rischio di classificazione.
 
-Nel gergo della classificazione di testi o \textit{Text Categorization}, con il termine classificatore bayesiano ci si riferisce convenzionalmente al classificatore Naive Bayes, ossia un classificatore bayesiano semplificato con un modello di probabilità sottostante assume l'indipendenza delle \textit{feature}, ovvero che la presenza o l'assenza di una particolare \textit{feature} in un documento testuale non è correlata alle altre.
+Nel gergo della classificazione di testi o \textit{Text Categorization}, con il termine classificatore bayesiano ci si riferisce convenzionalmente al classificatore Naive Bayes, ossia un classificatore bayesiano semplificato con un modello di probabilità sottostante che assume l'indipendenza delle \textit{feature}, ovvero che la presenza o l'assenza di una particolare \textit{feature} in un documento testuale non è correlata alle altre.
 
-L'esperienza dimostra che il metodo funziona in molti problemi pratici, come per esempio il filtraggio antispam adattivo. Un vantaggio del classificatore Naive Bayes è che richiede solo un training set di esigue dimensioni per stimare i parametri necessari per la classificazione
+L'esperienza dimostra che il metodo funziona in molti problemi pratici, come per esempio il filtraggio antispam adattivo. Un vantaggio del classificatore Naive Bayes è che richiede solo un training set di esigue dimensioni per stimare i parametri necessari per la classificazione.
 
 \end{itemize}
 
-Tornando allo sviluppo, la prima operazione fatta è stata quella di raccogliere dati per classificare i tweet secondo un determinato topic. Questa operazione è stata effettuata manualmente anche per per permettere alla macchina di poter riconoscere l'ironia. Attraverso un file csv\ref{training} costruito con due colonne:
+Tornando allo sviluppo, la prima operazione fatta è stata quella di raccogliere dati per classificare i tweet secondo un determinato topic. Questa operazione è stata effettuata manualmente anche per permettere alla macchina di poter riconoscere l'ironia, cosa che è possibile solo per la mente umana.Per questo motivo la precisione dei classificatori non sarà mai assoluto, conseguentemente le macchine necessitano dell'intervento dell'uomo per risolvere tali problematiche. Il training set in questione è stato redatto attraverso un file csv (vedi tabella: \ref{training}) costruito con due colonne:
 \begin{itemize}
 \item \textit{label}: ovvero l'identificatore che verrà utilizzato nell'analisi del classificatore per analizzare il contenuto di tweet ed associarlo ad un gruppo piuttosto che ad un altro.
 \item \textit{Tweet}: il testo del tweet pubblicato, contenente anche caratteri speciali, elementi multimediali, link etc.
 \end{itemize}
 %Inserire una tabella con un esempio dei tre valori
-\begin{table}
+\begin{table}[!htb]
 \centering
 
 \begin{tabular}{ |p{3cm}||p{7cm}| }
@@ -125,19 +134,50 @@ Tornando allo sviluppo, la prima operazione fatta è stata quella di raccogliere
 Altri & Tutti gli schieramenti alle \#elezioniregionali in Sicilia.L'articolo di Pierangelo Bonanno \\
  \hline
 \end{tabular}
-\label{training}
+
 \caption{Esempio di training set}
+\label{training}
 \end{table}
 Una volta definito un training set occorre definire un \textit{vettore di Feature}:
 \begin{itemize}
-\item Rappresenta l'elemento cardine di un classificatore, maggiore è la sua efficienza e maggiore sarà la precisione del classificatore. Il vettore di feature è utilizzato per costruire un modello che consenta al classificatore di poter apprendere attraverso un training set, di poter fare una predizione sui dati che non ha mai analizzato prima.
-Dovendo analizzare dei dati basati su Twitter si è deciso di adottare degli schemi basati sull'assenza o meno di alcune parole che appaiono nei tweet come feature. Attraverso il training set, composto da tweet suddivisi in 3 gruppi (positivi, negativi e neutrali), suddividiamo ciascun tweet in parole e aggiungeremo ogni parola la vettore di feature. Tale approccio viene definito \textit{unigrams}.Prima di andare ad inserire tali parole all'interno di questo vettore andremo ad effettuare delle operazioni di filtraggio scartando quelle parole che non sono necessarie per comprendere il sentimento. 
+\item Rappresenta l'elemento cardine di un classificatore, maggiore è la sua efficienza e maggiore sarà la sua precisione. Il vettore di feature è utilizzato per costruire un modello che consenta, attraverso un training set, di poter fare una predizione sui dati che non ha mai analizzato prima.
+Dovendo analizzare dei dati basati su Twitter si è deciso di adottare degli schemi basati sull'assenza o meno di alcune parole che appaiono nei tweet come feature. Attraverso il training set, composto da tweet suddivisi in 3 gruppi (positivi, negativi e neutrali)\footnote{Questa classificazione può essere modificata in base alle esigenze dell'utente, modificando i label nel file csv del \textit{training set}}, suddividiamo ciascun tweet in parole e aggiungeremo ogni parola la vettore di feature. Tale approccio viene definito \textit{unigrams}.Prima di andare ad inserire tali parole all'interno di questo vettore, andremo ad effettuare delle operazioni di filtraggio scartando quelle parole che non sono necessarie per comprendere il sentimento. 
 Nel nostro caso le congiunzioni, articoli, preposizioni semplici ed articolate, ma anche altri caratteri perché generalmente i tweet contengono caratteri speciali come \textit{\# , @, link},  vengono inseriti all'interno della lista di parole di \textit{Stop}, cioè una lista popolata da tutte quelle parole che potrebbero far saturare il vettore di feature e che non esprimono un sentimento.
 Il vettore di feature viene popolato a partire da tutte le parole che non sono presenti all'interno della lista di \textit{Stop} e che appartengono a tutti i tweet del training set.
 \end{itemize}
-
  
 In conclusione una volta definito il classificatore, il vettore di Feature ed il training set non resta che illustrare il calcolo della sentiment Analysis.
-Per l'implementazione del classificatore \textit{Naive Bayes} si è utilizzata la libreria \textit{Python} \textbf{NLTK}\footnote{Natural Language Toolkit.}, la quale una volta istruito il classificatore attraverso il training set utilizza il vettore di feature per ricercare la vicinanza del tweet al traiining set, restituendo il label corrispettivo ( inserito dall'utente nella definizione del csv sopra citato).
+Per l'implementazione del classificatore \textit{Naive Bayes} si è utilizzata la libreria \textit{Python} \textbf{NLTK}\footnote{Natural Language Toolkit.}, la quale una volta istruito il classificatore attraverso il training set, precedentemente popolato in base alle proprie esigenze (come nell'esempio \ref{training}) utilizza il vettore di feature per ricercare la vicinanza del tweet al training set, restituendo il label corrispettivo (inserito dall'utente nella definizione del csv sopra citato). In questo modo sarà possibile sottoporre ogni testo dei diversi tweet raccolti al sistema il quale restituirà il responso in breve tempo. Per garantire una maggiore accuratezza nelle predizioni sarà necessario arricchire il training set con molteplici tweet. All'interno della sezione dedicata agli esperimenti verranno illustrati alcuni esempi dei label e dei tweet utilizzati per il calcolo dell'analisi illustrata all'interno di questa sezione. 
 
+\section{Endorsement Graph}
+In questa sezione verranno illustrate le tecniche e gli strumenti utilizzati per la realizzazione dell'\textit{endorsement graph}, cioè un grafo diretto che consenta la diffusione e la pubblicazione delle notizie.
+Un grafo è un insieme di elementi chiamati nodi connessi tra di loro attraverso degli archi, essendo il nostro un grafo diretto significa che gli archi in questione hanno dei versi di orientamento da un nodo ad un altro.
+Definiamo gli elementi costituenti:
+\begin{itemize}
+\item \textit{Nodo}: per ogni nodo è stato associato un utente che abbia pubblicato una notizia sul topic analizzato.
+\item \textit{Arco}: per ogni arco è stata associata una relazione tra il tweet pubblicato da un nodo ed il retweet effettuato da un altro utente. Questi archi sono possono essere pesati, cioè avere una probabilità che una qualsiasi coppia di nodi sia adiacente. Nel nostro caso tale valore viene definito dalla \textit{probabilità di retweet}.
+\end{itemize}
 
+La creazione di questo grafo diretta dipende strettamente dai risultati ottenuti durante la raccolta dati. Nel dettaglio sono stati collezionati tutti i tweet che contenessero i 5 \textit{hashtag} più utilizzati per l'espressione del suddetto topic, una volta raccolta tutti i dati in questione questi sono stati fusi ed utilizzati per la definizione del grafo. I dati sono stati salvati in tre gruppi differenti grazie ai risultati ottenuti durante la \textit{Sentiment Analysis},questa classificazione risulta necessaria per la colorazione ed il calcolo della polarizzazione sul grafo. Tornando alla creazione è stata applicata una limitazione e cioè che i nodi isolati non venissero considerati all'interno del grafo. La motivazione che ha spinto nell'adottare tale politica è dettata dall'esigenza di ricercare quanto un idea espressa attraverso un tweet venga diffusa in un grafo e quanto questa sia polarizzata, quindi un nodo isolato che non viene ripubblicato dagli utenti risulta inutile ai fini dell'analisi in questione.
+In precedenza nella definizione di Arco si è definita la probabilità di retweet:
+\begin{quote}
+Si definisce tale il rapporto che intercorre tra il numero dei retweet che l'utente ha effettuato su un nodo\footnote{Per nodo ci si riferisce ad un tweet pubblicato da un utente} con il numero di retweet totali effettuati dall'utente stesso.
+\begin{equation}
+ Pretweet_{ij} = \dfrac{\#retweet_{ij}}{\#retweet_{j}} 
+\end{equation}
+ con i,j= nodi adiacenti appartenenti al grafo.
+ \end{quote}
+ Avendo raccolto dati da \textit{hashtag} differenti è possibile che alcuni utenti potessero retwettare lo stesso utente che avesse pubblicato nuovi tweet, per mantenere questa relazione si è incrementato il numero totale di retweet effettuati complessivamente così come il numero di volte che l'utente ha retwettato le opinioni di quello specifico utente. 
+
+Prima di popolare il grafo sono state effettuate tutte le precedenti operazioni. Per la realizzazione del grafo è stata utilizzata la libreria \textbf{Networkx}\footnote{NetworkX è una libreria Python per la creazione, manipolazione e studio delle strutture, dinamiche, e delle funzioni di una rete complessa.}, scritta in \textit{Python}.
+Il grafo in questione può essere modificato graficamente, nel nostro caso per meglio far comprendere la polarizzazione si è deciso di adottare i colori: 	\textit{Rosso} e \textit{Blu}; per rappresentare le due partizioni raccolte attraverso la sentiment analysis, successivamente calcolarne la polarizzazione.(Vedi fig:\ref{endorsement})
+%inserire un esempio grafico di un endorsement graph senza lab
+\begin{figure}[!h]
+    \begin{center}
+      \includegraphics[scale= 0.8]{esempio.png}
+	%\psfig{file=./pictures/logo}
+	\caption{esempio di Endorsement Graph}
+	\label{endorsement}
+    \end{center}
+  \end{figure}
+   
