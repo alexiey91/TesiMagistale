@@ -7,7 +7,7 @@
 \noindent All'interno di questo capitolo verranno illustrate tutte le tecniche implementative per realizzare quanto è stato enunciato nel capitolo precedente. Nel dettaglio verranno spigate, argomentate le implementazioni effettuate su tutte le fasi della tesi, i riferimenti teorici che hanno permesso la realizzazione di questa tesi. Di seguito una breve descrizione grafica del flusso con le operazioni effettuate durante la redazione del lavoro di tesi.(vedi fig:\ref{Flusso})
 \begin{figure}[h!]
     \begin{center}
-      \includegraphics[scale= 0.45]{Flusso.png}
+      \includegraphics[scale= 0.5]{Flusso.png}
 	%\psfig{file=./pictures/logo}
 	\caption{Flusso}
 	\label{Flusso}
@@ -123,11 +123,15 @@ Tornando allo sviluppo, la prima operazione fatta è stata quella di raccogliere
 \begin{table}[!htb]
 \centering
 
-\begin{tabular}{ |p{3cm}||p{7cm}| }
+\begin{tabular}{ |p{3cm}|p{7cm}| }
  \hline
- \multicolumn{2}{|c|}{Training set} \\
- \hline
- Label & Tweet\\
+ \multicolumn{2}{|c|}{\textbf{Training set}} \\
+ \hline 
+ \begin{center}
+ \textbf{Label}
+ \end{center} & \begin{center}
+ \textbf{Tweet}
+ \end{center}\\
  \hline
  5stelle   & Chi ama la sua terra non può che votare il \#M5S \#Regionali \#Sicilia pic.twitter.com/gv3CQWhCeI   \\
  ForzaItalia &   Con elezioni $ @matteosalvinimi$ e $@Musumeci\_Staff$ regionali 2017 in \#Sicilia !!\#elezioniregionali2017 \#andiamoagovernare \#forzalega  \\
@@ -169,15 +173,121 @@ Si definisce tale il rapporto che intercorre tra il numero dei retweet che l'ute
  \end{quote}
  Avendo raccolto dati da \textit{hashtag} differenti è possibile che alcuni utenti potessero retwettare lo stesso utente che avesse pubblicato nuovi tweet, per mantenere questa relazione si è incrementato il numero totale di retweet effettuati complessivamente così come il numero di volte che l'utente ha retwettato le opinioni di quello specifico utente. 
 
-Prima di popolare il grafo sono state effettuate tutte le precedenti operazioni. Per la realizzazione del grafo è stata utilizzata la libreria \textbf{Networkx}\footnote{NetworkX è una libreria Python per la creazione, manipolazione e studio delle strutture, dinamiche, e delle funzioni di una rete complessa.}, scritta in \textit{Python}.
+Prima di popolare il grafo sono state effettuate tutte le precedenti operazioni. La realizzazione del grafo è stata ultimata attraverso la libreria \textbf{Networkx}\footnote{NetworkX è una libreria Python per la creazione, manipolazione e studio delle strutture, dinamiche, e delle funzioni di una rete complessa.}, scritta in \textit{Python}.
 Il grafo in questione può essere modificato graficamente, nel nostro caso per meglio far comprendere la polarizzazione si è deciso di adottare i colori: 	\textit{Rosso} e \textit{Blu}; per rappresentare le due partizioni raccolte attraverso la sentiment analysis, successivamente calcolarne la polarizzazione.(Vedi fig:\ref{endorsement})
 %inserire un esempio grafico di un endorsement graph senza lab
 \begin{figure}[!h]
     \begin{center}
       \includegraphics[scale= 0.8]{esempio.png}
-	%\psfig{file=./pictures/logo}
-	\caption{esempio di Endorsement Graph}
+		\caption{esempio di Endorsement Graph}
 	\label{endorsement}
     \end{center}
   \end{figure}
-   
+\newpage
+\section{Polarizzazione}
+La polarizzazione viene definita come un processo sociale in cui un gruppo viene diviso: 
+in due sottogruppi aventi un conflitto o una visione differente del problema in questione, e da alcuni individui che rimangono neutrali.
+Dal punto di vista matematico la polarizzazione è una assegnazione di un valore compreso all'interno di un range:
+\begin{equation}
+[-1,1]
+\end{equation}
+I valori in questione identificano la vicinanza ad un gruppo piuttosto che ad un altro, in conclusione occorre assegnare alle due visioni contrastanti, che si vogliono analizzare, due valori di riferimento ovvero gli estremi.
+Di seguito verranno illustrate le due implementazioni realizzate per il calcolo della polarizzazione all'interno di un endorsement graph.
+
+\subsection{Polarizzazione basata sul grado}
+All'interno di questa sezione verrà illustrata l'implementazione della polarizzazione attraverso l'algoritmo illustrato all'interno del paper: \textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela}.
+
+Come precedentemente spiegato all'interno di questa tesi, il primo passo consiste nell'individuare due tipi di nodi: 
+\begin{itemize}
+\item \textit{Elite}: sono i nodi che hanno pubblicato una notizia all'interno del grafo, sul topic selezionato.
+\item \textit{Listener}: sono i nodi che seguono le informazioni pubblicate dai nodi \textit{Elite}.
+\end{itemize}
+Questa suddivisione è indipendente dai risultati ottenuti dalla sentiment analysis, cioè la prima partizione effettuata analizzando i contenuti, in questo modo si analizza la diffusione delle opinioni.
+Illustriamo ora i passi algoritmici implementati per la realizzazione di questa polarizzazione:
+\begin{enumerate}
+\item Per prima cosa individuiamo tutti i nodi \textit{Elite} e quelli \textit{Listener}, per poter assegnare il primo valore della polarizzazione.
+\begin{equation}
+-1\leq X_{s}\leq1
+\end{equation}
+La formula precedentemente illustrata indica il range dei valori che la polarizzazione può assumere all'interno del grafo. 
+\item Il passo successivo, definisce le condizioni iniziali dell'algoritmo, consiste nell'assegnare ai nodi Elite e Listener rispettivamente:
+\[
+\begin{cases}
+    X_{e}= \pm1      & \quad \\
+    X_{l}=0  & \quad 
+  \end{cases}
+\]
+Il valore dei noti elite dipende dall'appartenenza o meno ad i gruppi ottenuti attraverso la classificazione effettuata dalla sentiment analysis, per esempio Rossi = +1, Blu = -1.
+\item I nodi elite propagheranno le loro opinioni verso i nodi listener, tale operazione verrà effettuata iterativamente fino al verificarsi di alcune condizioni, cioè diffonderà le proprie notizie ai propri vicini.
+Calcoliamo la polarizzazione dell'opinione per ogni listener appartenente al grafo:
+
+La polarizzazione all'istante temporale, t, di un dato listener, i, è data dalla seguente espressione:
+\begin{equation}
+X_{i}(t)=\dfrac{\displaystyle\sum_{j} A_{ij}X_{j}(t-1)}{k_{i}^{in}}
+\end{equation}
+Dove $A_{ij}$ definisce gli elementi della matrice di adiacenza del grafo, il cui valore è pari a 1 se esiste un collegamento da j a i, e $k_{i}^{in}$ corrisponde al proprio \textit{indegree}\footnote{Indica il numero di archi entrati nel nodo selezionato}.
+Tale formula è stata modificata poiché è stata modificata la topologia del grafo, cioè all'interno del paper gli archi congiungeva i nodi elite verso i nodi listener, mentre nella tesi i collegamenti sono stati creati nel verso opposto. L'endorsement graph collega i nodi in base alla relazione di retweet, quindi si è deciso di creare gli archi dai retweet verso il tweet.
+Alla luce di questa considerazione la formula in questione viene modificata in questo modo:
+\begin{equation}\label{equation}
+X_{i}(t)=\dfrac{\displaystyle\sum_{j} A_{ij}X_{j}(t-1)}{k_{i}^{out}}
+\end{equation}
+Dove $k_{i}^{out}$ corrisponde all'\textit{outdegree}\footnote{Indica il numero di archi uscenti dal nodo selezionato} del nodo.
+\item La formula illustrata nel passo precedente deve essere eseguita fino a quando avremo una stabilizzazione della polarizzazione.
+\end{enumerate}
+
+Brevemente ora verrà illustrato un esempio dell'applicazione dell'algoritmo del grafo. Come prima cosa sono stati impostati i pesi ai nodi \textit{elite}, nel nostro caso rappresenti dai nodi : A, B, C (vedi fig:\ref{Passo0}).
+Successivamente è stata applicata la formula precedentemente illustrata (vedi \ref{equation}), quindi utilizzando i valori della polarizzazione nel passo iniziale dell'algoritmo insieme alla seguente matrice di adiacenza del grafo:
+
+\begin{table}[!htb]
+\centering
+\begin{tabular}{|lr|l|l|l|l|l|l|} \cline{3-6}
+\multicolumn{1}{l}{} && \multicolumn{4}{c|}{Verso} \\ \cline{3-6}
+\multicolumn{1}{l}{} & & A & B & C & D\\ \hline
+\multirow{4}{*}{\begin{sideways}Da\end{sideways}}
+%                           A   B   C   D   
+& \multicolumn{1}{|r|}{A} & 0  & 1  & 0  & 0 \\ \cline{2-6}
+& \multicolumn{1}{|r|}{B} & 0  & 0  & 0  & 0 \\ \cline{2-6}
+& \multicolumn{1}{|r|}{C} & 0  & 1  & 0  & 0 \\ \cline{2-6}
+& \multicolumn{1}{|r|}{D} & 1  & 1  & 1  & 0 \\ \hline
+
+\end{tabular}
+\caption{Matrice di adiacenza}
+\label{matrice}
+\end{table}
+Come possibile notare dall'esempio assistiamo ad un cambiamento di polarizzazione poiché mentre in un primo momento i nodi C e D che erano di un colore Blu (risultato ottenuto attraverso la sentiment analysis) possiamo notare come il valore cambi drasticamente in funzione del grado del nodo e agli archi,conseguentemente cambia il colore del nodo stesso. In questo modo risulta evidente come un grafo cambi drasticamente la propria polarizzazione. L'algoritmo come si evince dall'esempio termina nel momento in cui l'algoritmo converge stabilizzando i valori della polarizzazione nei nodi (vedi fig:\ref{Passo3}).
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{Passo0.png}
+\caption{Passo 0}
+\label{Passo0}
+\end{minipage}%
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{Passo1.png}
+\caption{Passo 1}
+\label{Passo1}
+\end{minipage}
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{Passo2.png}
+\caption{Passo 2}
+\label{Passo2}
+\end{minipage}
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{Passo2.png}
+\caption{Passo 3}
+\label{Passo3}
+\end{minipage}
+\caption{Esempio algoritmo basato sul grado}\label{fig:minipage2}
+\end{figure}
+
+Dal punto di vista implementativo l'algoritmo trattato è stato implementato mediante le funzionalità contenute all'interno della libreria \textit{NetworkX}, la quale garantisce ottime prestazione nel caricamento dei dati relativa alla matrice di adiacenza, senza far saturare la memoria volatile del sistema.
+\newpage
+\subsection{Polarizzazione basata sulla topologia}
+%Illustrare 
