@@ -87,6 +87,7 @@ Il motivo di tale scelta è dettata dai tempi di attesa via via sempre più lung
 
 
 \section{Sentiment Analysis}
+\label{Sentiment}
 La sentiment analysis è l'approccio utilizzato per la divisione dei diversi tweet, raccolti per un determinato topic, in un determinato periodo, analizzando il "sentimento" espresso nel contenuto del testo pubblicato dagli utenti.
 Questa fase viene effettuata al momento della raccolta dei dati, cioè una volta collezionati l'insieme dei dati vengono sottoposti alla funzione implementata e salvati in due categorie distinte mediante la libreria \textit{pickle}, precedentemente illustrata.
 
@@ -167,7 +168,7 @@ In precedenza nella definizione di Arco si è definita la probabilità di retwee
 \begin{quote}
 Si definisce tale il rapporto che intercorre tra il numero dei retweet che l'utente ha effettuato su un nodo\footnote{Per nodo ci si riferisce ad un tweet pubblicato da un utente} con il numero di retweet totali effettuati dall'utente stesso.
 \begin{equation}
- Pretweet_{ij} = \dfrac{\#retweet_{ij}}{\#retweet_{j}} 
+ P(retweet)_{ij} = \dfrac{\#retweet_{ij}}{\#retweet_{j}} 
 \end{equation}
  con i,j= nodi adiacenti appartenenti al grafo.
  \end{quote}
@@ -221,7 +222,7 @@ Il valore dei noti elite dipende dall'appartenenza o meno ad i gruppi ottenuti a
 \item I nodi elite propagheranno le loro opinioni verso i nodi listener, tale operazione verrà effettuata iterativamente fino al verificarsi di alcune condizioni, cioè diffonderà le proprie notizie ai propri vicini.
 Calcoliamo la polarizzazione dell'opinione per ogni listener appartenente al grafo:
 
-La polarizzazione all'istante temporale, t, di un dato listener, i, è data dalla seguente espressione:
+La polarizzazione all'istante temporale \textit{t}, di un dato listener \textit{i}, è data dalla seguente espressione:
 \begin{equation}
 X_{i}(t)=\dfrac{\displaystyle\sum_{j} A_{ij}X_{j}(t-1)}{k_{i}^{in}}
 \end{equation}
@@ -290,4 +291,85 @@ Come possibile notare dall'esempio assistiamo ad un cambiamento di polarizzazion
 Dal punto di vista implementativo l'algoritmo trattato è stato implementato mediante le funzionalità contenute all'interno della libreria \textit{NetworkX}, la quale garantisce ottime prestazione nel caricamento dei dati relativa alla matrice di adiacenza, senza far saturare la memoria volatile del sistema.
 \newpage
 \subsection{Polarizzazione basata sulla topologia}
-%Illustrare 
+La polarizzazione basata sulla topologia del grafo è un algoritmo definito all'interno di questo paper:\textit{Reducing Controversy by Connecting Opposing Views}.
+L'algoritmo in questione sfrutta la topologia del grafo per poter valutare la polarizzazione di ogni singolo nodo a fronte dell'opinione espressa all'interno del tweet pubblicato.
+Per prima cosa una volta costruito l'\textit{endorsement graph} un ruolo fondamentale lo svolge la scelta delle due partizioni che compongono il grafo.
+Nel paper in questione le partizioni venivano effettuate attraverso una catalogazione degli hashtags, cioè degli elementi testuali che esprimessero in poche parole, o una loro concatenazione, un parere su una determinata notizia.
+Per fare un esempio se il topic dell'analisi fosse stata una partita di calcio ed un utente avesse pubblicato un tweet con un hashtag come \textit{\#ForzaBlu}, questo sarebbe stato associato come un parere positivo verso la squadra blu. Però se nel testo ci fosse stata una frase negativa insieme all'hashtag precedente, sarebbe stato un errore perché non più a favore della squadra blu, bensì per il suo avversario. Per risolvere questa problematica la suddivisione è stata effettuata attraverso la \textit{Sentiment Analysis}(vedi sezione n:\ref{Sentiment}, per ulteriori spiegazioni). 
+Tornando alla definizione della polarizzazione anche in questo caso tale strumento può assumere un valore contenuto nel seguente range:
+\begin{equation}
+[-1,1]
+\end{equation}
+La polarizzazione applicando quanto illustrato in questo paper risulta essere:
+\begin{quote}
+Il tempo atteso per un random walk per raggiungere un nodo di grado massimo appartenente ad un insieme X ed Y partendo rispettivamente da un nodo \textit{u}. Otteniamo così:
+\[
+\begin{cases}
+    \rho^{X}(u) \in [0,1]       & \quad \\
+     \rho^{Y}(u) \in [0,1]   & \quad 
+  \end{cases}
+\]
+Rispettivamente i risultati dei random walk per raggiungere i nodi di grado massimo di X ed Y\footnote{Per X e Y sono da intendere come le due partizioni ottenute attraverso la sentiment analysis.}. 
+Infine definiamo la polarizzazione come:
+\begin{equation}\label{polar}
+P_{u}= \rho^{X}(u)-\rho^{Y}(u) \ \in [-1,1] 
+\end{equation}
+\end{quote}
+In caso di nodi che non hanno uscite, cioè quei nodi che non hanno alcun arco uscente che gli permetta di comunicare con altri, questi assumeranno il comportamento di nodi di \textit{dangling}, cioè quei nodi che non hanno possibilità di comunicazione. Per dar loro un valore della polarizzazione gli verrà assegnato il valore massimo a seconda della partizione a cui sono associati.
+Un discorso analogo è valido anche per i nodi di grado massimo, questi al passo iniziale hanno una polarizzazione pari al valore massimo del loro insieme di appartenenza, però se hanno degli archi in uscita, che li metta in contatto con nodi di opinione opposta, allora tale valore verrà aggiornato utilizzato l'algoritmo precedentemente illustrato.
+
+
+All'interno della tesi sono state affrontate diverse problematiche per la realizzazione di questo algoritmo, per prima cosa è stata inserita la \textit{probabilità di retweet} per calcolare la polarizzazione. In questo modo è stata assegnata una forte relazione tra i nodi che retwettano notizie e quelli che le pubblicano. Nel calcolo del random walk il numero di passi dipende dalla probabilità che relaziona i due nodi, rendendo il calcolo più verosimile alla realtà.
+Per completezza si definisce \textit{probabilità di retweet}:
+\begin{quote}
+Si definisce tale il rapporto che intercorre tra il numero dei retweet che l'utente ha effettuato su un nodo\footnote{Per nodo ci si riferisce ad un tweet pubblicato da un utente} con il numero di retweet totali effettuati dall'utente stesso.
+\begin{equation}
+ P(retweet)_{ij} = \dfrac{\#retweet_{ij}}{\#retweet_{j}} 
+\end{equation}
+ con i,j= nodi adiacenti appartenenti al grafo.
+ \end{quote}
+
+Detto ciò illustriamo un esempio dell'applicazione di questo algoritmo, per completezza consideriamo lo stesso grafo utilizzato in precedenza (vedi fig:\ref{Passo3}):
+\begin{figure}[htbp]
+    \begin{center}
+      \includegraphics[scale= 0.6]{RWPasso0.png}
+		\caption{esempio di polarizzazione basata sulla topologia}
+	\label{RandomWalk}
+    \end{center}
+  \end{figure}
+
+Come possiamo notare i nodi di grado massimo della partizione \textit{Rossa} e \textit{Blu} sono rispettivamente i nodi: B e C, perché quelli aventi \textit{indegree} massima per le rispettive partizioni. Le colorazioni sono il risultato della sentiment analysis.
+Analizzando i risultati presentati nell'immagine \ref{RandomWalk}, possiamo notare come la probabilità di retweet giochi un ruolo cruciale nell'analisi in questione. 
+Possiamo notare un comportamento particolare nel nodo B il quale assume un polarizzazione pari a zero. Essendo un nodo di grado massimo appartenente alla partizione Blu, ha pubblicato notizie a favore di quel gruppo, però ha anche condiviso notizie a favore del gruppo opposto modificando la sua natura originale. In conclusione applicando la formula \ref{polar}, otteniamo un annullamento della sua polarizzazione
+%Infatti possiamo notare come il nodo B abbia una polarizzazione pari a zero, ciò è dovuto dal fatto che essendo un nodo di grado massimo appartenente alla partizione Blu, quindi ha pubblicato una notizia inerente a quel gruppo, avendo retwettato un tweet opposto alla sua visione iniziale indica un cambiamento della sua natura e quindi applicando la formula \ref{polar}, otteniamo un annullamento della sua polarizzazione.
+Un altro comportamento particolare è osservabile nel nodo D, questi avrà due possibili valori a seconda del percorso scelto durante il random walk. Se consideriamo il percorso per raggiungere il nodo di grado massimo appartenente alla partizione Blu è facile notare che tale valore è pari a:
+\[\rho^{Y}(D)= (D,C) = 0.5
+\]
+Per quanto riguarda la partizione Rossa il discorso non è semplice infatti:
+
+\[
+\begin{cases}
+    \rho^{X}(D)= (D,B)= 0,4        & \quad \\
+     \rho^{X}(D)= (D,A)\times(A,B) = 0,1 \times1 = 0,1     & \quad 
+  \end{cases}
+\]
+
+In conclusione la sua polarizzazione può assumere questi due valori:
+\[
+\begin{cases}
+    P_{B}= \rho^{X}(D)-\rho^{Y}(D) = 0,4 - 0,5 = -0.1   & \quad \\
+     P_{B}= \rho^{X}(D)-\rho^{Y}(D) = 0,1 - 0,5 = -0.4    & \quad 
+  \end{cases}
+\]
+Per concludere dal punto di vista implementativo essendo molto oneroso dal punto di vista della memoria volatile, l'esecuzione di tutti questi random walk per ogni nodo, sono state ottimizzate le operazioni. Piuttosto che utilizzare la matrice di adiacenza si è utilizzato un metodo definito nella libreria \textit{NetworkX} che restituisce i primi vicini dell'algoritmo. Dovendo mantenere in memoria una lista di nodi visitati durante l'esecuzione, al raggiungimento di un nodo di grado massimo viene effettuata una operazione di \textit{free} che consente al processo di deallocare le risorse occupate da tale lista.
+
+\section{Predizione}
+La predizione è una tecnica che consente di analizzare il comportamento di serie di dati nel tempo, permettendo di poter predirne il comportamento nell'istante temporale successivo a quello attualmente in vigore.
+Per la realizzazione degli algoritmi che hanno consentito di poter realizzare una tale operazione sono state adottate delle tecniche molto conosciute nell'ambito del \textit{Forecasting}.
+Nello sviluppo di questa tesi queste tecniche sono state implementate per consentire una predizione della polarizzazione di ogni nodo nel mese successivo a quello calcolato.
+\subsection{Double Exponential Smoothing}
+Il Double Exponential Smoothing è una tecnica che sfrutta la serie temporale dei dati raccolti, assegnando una crescita esponenziale sui dati nel tempo, tenendo conto anche del trend di crescita o di decrescita nel tempo. In questo modo si cerca di predire il contenuto nel primo instante successivo.
+Questa tecnica è uno sviluppo della semplice Exponential Smoothing che faceva la previsione del singolo punto senza tenere conto del trend che veniva a generarsi tra i diversi punti. 
+La polarizzazione cambiava in base ai nuovi collegamenti che venivano a generarsi volta per volta nel tempo, per cui avere una cognizione sul trend della serie numerica risulta molto importante.
+\subsection{Linear Regression}
+\subsection{Moving Averaqe}

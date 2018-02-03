@@ -29,6 +29,10 @@
 \contentsline {section}{\numberline {4.4}Polarizzazione}{41}
 \contentsline {subsection}{\numberline {4.4.1}Polarizzazione basata sul grado}{42}
 \contentsline {subsection}{\numberline {4.4.2}Polarizzazione basata sulla topologia}{46}
-\contentsline {chapter}{\numberline {5}Realizzazioni sperimentali e valutazione}{47}
-\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{48}
-\contentsline {chapter}{Bibliografia}{50}
+\contentsline {section}{\numberline {4.5}Predizione}{50}
+\contentsline {subsection}{\numberline {4.5.1}Double Exponential Smoothing}{50}
+\contentsline {subsection}{\numberline {4.5.2}Linear Regression}{50}
+\contentsline {subsection}{\numberline {4.5.3}Moving Averaqe}{50}
+\contentsline {chapter}{\numberline {5}Realizzazioni sperimentali e valutazione}{51}
+\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{52}
+\contentsline {chapter}{Bibliografia}{54}
