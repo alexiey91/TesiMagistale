@@ -366,10 +366,90 @@ Per concludere dal punto di vista implementativo essendo molto oneroso dal punto
 \section{Predizione}
 La predizione è una tecnica che consente di analizzare il comportamento di serie di dati nel tempo, permettendo di poter predirne il comportamento nell'istante temporale successivo a quello attualmente in vigore.
 Per la realizzazione degli algoritmi che hanno consentito di poter realizzare una tale operazione sono state adottate delle tecniche molto conosciute nell'ambito del \textit{Forecasting}.
-Nello sviluppo di questa tesi queste tecniche sono state implementate per consentire una predizione della polarizzazione di ogni nodo nel mese successivo a quello calcolato.
+Nello sviluppo di questa tesi queste tecniche sono state implementate per consentire una predizione della polarizzazione di ogni nodo nel mese successivo a quello calcolato. Per mantenere i dati e averli sempre a disposizione, questi sono stati salvati all'interno di file \textit{csv} per poter consentire all'utente di poterli analizzare e consultare nel tempo.
 \subsection{Double Exponential Smoothing}
 Il Double Exponential Smoothing è una tecnica che sfrutta la serie temporale dei dati raccolti, assegnando una crescita esponenziale sui dati nel tempo, tenendo conto anche del trend di crescita o di decrescita nel tempo. In questo modo si cerca di predire il contenuto nel primo instante successivo.
 Questa tecnica è uno sviluppo della semplice Exponential Smoothing che faceva la previsione del singolo punto senza tenere conto del trend che veniva a generarsi tra i diversi punti. 
 La polarizzazione cambiava in base ai nuovi collegamenti che venivano a generarsi volta per volta nel tempo, per cui avere una cognizione sul trend della serie numerica risulta molto importante.
+Per meglio comprendere il funzionamento di questa tecnica, verrà illustrata la \textit{Exponential Smoothing}:
+\begin{equation}\label{singleExp}
+\widehat{y}_{x}= \alpha y_{x} + (1-\alpha)\widehat{y}_{x-1}
+\end{equation}
+Che definisce la relazione che intercorre tra l'instante attuale con quello precedente. Possiamo notare la presenza della costante $\alpha$ che viene definita come \textit{fattore di smoothing}. Fondamentalmente viene effettuata una \textit{Moving average} (vedi sezione n:\ref{moving}), utilizzando i fattori: $\alpha$ ed $(1-\alpha)$.
+Analizzando la formula si può notare la presenza di una operazione ricorsiva assumendo il comportamento di un esponenziale.
+Il fattore di smoothing assegna un peso all'osservazione più recente rispetto all'ultimo valore precedentemente osservato. In conclusione più $\alpha$ è alto e maggiore e più velocemente il metodo dimentica il passato\footnote{Indica un tasso di decadenza della memoria}.
+Alla luce di quanto illustrato con la Exponential Smoothing, è intuibile che la presenza di un trend di analisi diventa fondamentale per un'analisi a lungo termine. La polarizzazione è uno strumento a lungo termine che può rivelare il futuro andamento delle opinioni degli utenti nella rete.
+Definiamo la Double Exponential Smoothing come:
+\[
+\begin{cases}
+    l_{x}= \alpha y_{x} +(1-\alpha)(l_{x-1}+ b_{x-1}) \ livello        & \quad \\
+    b_{x}= \beta (l_{x}-l_{x-1}) +(1-\beta)b_{x-1}  \ trend        & \quad \\
+   \widehat{y}(x+1)=  l_{x} + b_{x} \ forecast    & \quad 
+  \end{cases}
+\]
+Il \textit{livello} espresso nella prima equazione del sistema è simile alla equazione \ref{singleExp}, con la differenza che l'osservazione precedente tiene conto anche dell'andamento (trend) dell'istante precedente.
+Il \textit{trend} indica la pendenza della funzione, dal punto di vista matematico e geometrico è assimilabile al \textit{coefficiente angolare} di una funzione.
+\begin{equation}
+m=\dfrac{\Delta_{y}}{\Delta_{x}}
+\end{equation}
+Dove $\Delta_{y}$ e $\Delta_{x}$ sono rispettivamente le differenze delle ordinate e delle ascisse tra due punti. Però dal punto di vista del Double Exponential Smoothing, possiamo assumere come la differenze tra le ascisse sia pari ad uno essendo una serie temporale, la differenza tra l'istante attuale e quello precedente è un 1. in conclusione avremo che 
+\begin{equation}
+m=\dfrac{\Delta_{y}}{1}= y_{x}-y_{x-1}
+\end{equation}
+Per comodità verrà indicata con  $b_{x}$.
+Un altro fattore che risulta evidente nel sistema precedentemente illustrato è la presenza di $\beta$, questo viene chiamato \textit{fattore di trend}. Dal punto di vista funzionale si comporta allo stesso modo di $\alpha$ soltanto che si riferisce al trend e non al livello.
+Per la realizzazione di tale algoritmo è stata implementata una funzione \textit{Python} che effettuasse tale a calcolo a partire dalla serie di dati calcolati durante le operazioni della polarizzazione.
+La serie di dati in questione risultava contenere al massimo 4 elementi, ovvero i mesi scelti per il periodo dell'analisi. Per calcolare il valore successivo laddove mancassero osservazioni precedenti sono state effettuate delle assunzioni:
+\begin{itemize}
+\item In caso di una singola osservazione, per predire il futuro, non è possibile applicare tale algoritmo per cui si è scelto di restituire come valore il valore della precedente  osservazione.
+\item Il numero minimo di osservazioni per effettuare il calcolo con questo algoritmo deve essere pari a 2.
+\end{itemize}
+In seguito verranno illustrati i risultati ottenuti mediante questo approccio.
 \subsection{Linear Regression}
-\subsection{Moving Averaqe}
+La Regressione Lineare formalizza e risolve il problema di una relazione funzionale tra variabili misurate sulla base di dati campionari estratti da un'ipotetica popolazione infinita. In statistica l'analisi della regressione è associata alla risoluzione del modello lineare.
+La regressione consiste nel costruire un modello attraverso cui prevedere i valori di una variabile dipendente o risposta (quantitativa) a partire dai valori di una o più variabili indipendenti o esplicative.
+La relazione tra due o più variabili può essere effettuata attraverso modelli matematici, nel nostro caso quello di una \textit{retta}.
+La definizione di regressione lineare è:
+\begin{equation}
+Y_{i}= \beta_{0} + \beta_{1}X_{i} + e_{i}
+\end{equation}
+\begin{itemize}
+\item \textit{i} indica le diverse osservazioni, $i= 1,....,n$, con \textit{n} pari al numero di osservazioni
+\item $Y_{i}$ è la variabile dipendente.
+\item $X_{i}$ è la variabile indipendente.
+\item $\beta_{0} + \beta_{1}X$ è la retta di regressione. 
+\item $\beta_{0}$ è l'intercetta, corrisponde al valore medio di \textit{Y} quando \textit{X} è pari a zero.
+\item $\beta_{1}$ è il coefficiente angolare, indica come varia \textit{Y} in corrispondenza di una variazione unitaria di \textit{X}.
+\item $e_{i}$ è l'errore statistico.
+
+\end{itemize}
+Applicando questa formula viene generata una retta che sia più vicina possibile ai punti analizzati. Nel caso della predizione partendo dalla retta, si calcola il valore nell'istante temporale successivo individuato sulla retta. La medesima operazione è stata effettuata per la serie di dati della polarizzazione.
+L'implementazione di questa tecnica è stata effettuata mediante la libreria \textit{Python} \textit{numpy}, la quale consentiva attraverso una lista numerica di calcolare la regressione lineare.
+Una volta calcolata la retta e quindi la relativa \textit{quota} e \textit{coefficiente angolare}, si è applicata la classica formula geometrica:
+\begin{equation}
+y=mx+q
+\end{equation}
+sostituendo il valore di \textit{x} con l'istante temporale che si voleva calcolare, ottenendo la predizione desiderata.
+\subsection{Moving Average}
+\label{moving}
+La moving average  è una tecnica che estende la media aritmetica dei risultati, andando a mediare i risultati all'interno di una finestra mobile.
+Concettualmente vengono prelevati i risultati più recenti all'interno della serie temporale, successivamente questi verranno mediati. Il risultato sarà il valore della predizione dell'istante temporale richiesto.
+% Vengono prelevati gli ultimi risultati ottenuti mediati ed infine viene definito come valore futuro questo risultato.
+Viene anche definita \textit{finestra mobile}, proprio perché calcola la media dei valori all'interno di una finestra limitata rispetto alla serie di dati contenuti.
+La definizione matematica è la seguente:
+Data una serie storica $y_{t}$, con $\textit{t}= 1,...,T$, contenente i valori osservati di una variabile \textit{Y}  dal tempo 1 al tempo \textit{T}, siano:
+\begin{itemize}
+\item $m_{1}$ il numero dei periodi precedenti a \textit{t};
+\item $m_{2}$ il numero dei periodi successivi a \textit{t};
+\item $\theta_{i}$ il peso da attribuire all' \textit{i-esimo} valore osservato;
+\end{itemize}
+\begin{equation}
+Media_{t}= \dfrac{1}{k} \sum_{i=-m_{1}}^{m_{2}}\theta_{i}y_{t+i}
+\end{equation}
+In conclusione attraverso questa tecnica di forecasting è possibile fare una predizione del valore successivo, attraverso una media tra i valori antecedenti all'evento richiesto. In questo modo viene definita una forte correlazione tra i valori vicini. La moving average è molto utile nel caso si abbiano pochi dati a disposizione.
+Dal punto di vista implementativo, utilizzando i dati ottenuto attraverso la polarizzazione, è stato necessario fare delle assunzione:
+\begin{itemize}
+\item Non è possibile utilizzare questa tecnica con serie numeriche aventi un solo elemento, infatti per sopperire a tale problematica si suppone che la previsione coincida con l'ultimo valore acquisito.
+\item La lunghezza massima della finestra temporale, è stata impostata pari a 2 in questo modo si cerca di tener conto del trend ottenuto.
+\end{itemize}
+In conclusione l'implementazione di tale funzionalità è stata implementata attraverso il \textit{Python}.

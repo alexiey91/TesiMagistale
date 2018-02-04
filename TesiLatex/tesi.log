@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  3 FEB 2018 18:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  4 FEB 2018 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -617,13 +617,13 @@ File: pictures/RWPasso0.png Graphic file (type png)
 <use pictures/RWPasso0.png>
 Package pdftex.def Info: pictures/RWPasso0.png used on input line 335.
 (pdftex.def)             Requested size: 244.51538pt x 228.85675pt.
- [48 <./pictures/RWPasso0.png>] [49]) [50]
+ [48 <./pictures/RWPasso0.png>] [49] [50] [51]
+[52] [53] [54]) [55]
 \openout2 = `capitolo6.aux'.
 
-
-(./capitolo6.tex
+ (./capitolo6.tex
 Capitolo 5.
-) [51
+) [56
 
 
 
@@ -632,11 +632,11 @@ Capitolo 5.
 
  (./capitolo7.tex
 Capitolo 6.
-) [52
+) [57
 
 
 
-] [53] (./tesi.bbl
+] [58] (./tesi.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 []\OT1/cmr/m/n/12 Computer Emer-gen-cy Re-spon-se Team.  Co-me fun-zio-
  []
@@ -667,7 +667,7 @@ less on input line 90.
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
 less on input line 92.
 
-[54
+[59
 
 
 
@@ -675,11 +675,11 @@ less on input line 92.
 (./capitolo2.aux) (./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux)
 (./capitolo7.aux)) ) 
 Here is how much of TeX's memory you used:
- 5982 strings out of 493029
- 84154 string characters out of 6136234
- 167783 words of memory out of 5000000
- 9313 multiletter control sequences out of 15000+600000
- 15598 words of font info for 59 fonts, out of 8000000 for 9000
+ 5988 strings out of 493029
+ 84211 string characters out of 6136234
+ 167863 words of memory out of 5000000
+ 9317 multiletter control sequences out of 15000+600000
+ 16299 words of font info for 61 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  42i,15n,43p,1089b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
@@ -689,17 +689,18 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmtt12.pfb>
-Output written on tesi.pdf (59 pages, 682603 bytes).
+mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on tesi.pdf (64 pages, 711073 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
+ 298 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -31,8 +31,8 @@
 \contentsline {subsection}{\numberline {4.4.2}Polarizzazione basata sulla topologia}{46}
 \contentsline {section}{\numberline {4.5}Predizione}{50}
 \contentsline {subsection}{\numberline {4.5.1}Double Exponential Smoothing}{50}
-\contentsline {subsection}{\numberline {4.5.2}Linear Regression}{50}
-\contentsline {subsection}{\numberline {4.5.3}Moving Averaqe}{50}
-\contentsline {chapter}{\numberline {5}Realizzazioni sperimentali e valutazione}{51}
-\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{52}
-\contentsline {chapter}{Bibliografia}{54}
+\contentsline {subsection}{\numberline {4.5.2}Linear Regression}{52}
+\contentsline {subsection}{\numberline {4.5.3}Moving Average}{54}
+\contentsline {chapter}{\numberline {5}Realizzazioni sperimentali e valutazione}{56}
+\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{57}
+\contentsline {chapter}{Bibliografia}{59}
