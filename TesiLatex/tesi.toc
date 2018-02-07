@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {3.3}Endorsement Graph}{23}
 \contentsline {section}{\numberline {3.4}Polarizzazione}{24}
 \contentsline {section}{\numberline {3.5}Predizione}{26}
-\contentsline {chapter}{\numberline {4}Implementazione}{28}
+\contentsline {chapter}{\numberline {4}Implementazione e realizzazione del sistema}{28}
 \contentsline {section}{\numberline {4.1}Raccolta dati}{28}
 \contentsline {subsection}{\numberline {4.1.1}Twitter Api}{29}
 \contentsline {subsection}{\numberline {4.1.2}Get Old Tweet}{31}
@@ -33,6 +33,8 @@
 \contentsline {subsection}{\numberline {4.5.1}Double Exponential Smoothing}{50}
 \contentsline {subsection}{\numberline {4.5.2}Linear Regression}{52}
 \contentsline {subsection}{\numberline {4.5.3}Moving Average}{54}
-\contentsline {chapter}{\numberline {5}Realizzazioni sperimentali e valutazione}{56}
-\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{57}
-\contentsline {chapter}{Bibliografia}{59}
+\contentsline {chapter}{\numberline {5}Test sperimentali e valutazione}{56}
+\contentsline {section}{\numberline {5.1}Elezioni Regionali Sicilia 2017}{58}
+\contentsline {section}{\numberline {5.2}Biotestamento}{63}
+\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{64}
+\contentsline {chapter}{Bibliografia}{66}

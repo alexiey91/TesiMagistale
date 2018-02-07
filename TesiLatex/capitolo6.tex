@@ -1,18 +1,105 @@
-\chapter{Realizzazioni sperimentali e valutazione}
+\chapter{Test sperimentali e valutazione}
 \label{capitolo6}
 \thispagestyle{empty}
 
-\begin{quotation}
-{\footnotesize
-\noindent\emph{``Bambino: Questo  l'ultimo avviso per voi e i vostri rubagalline \\
-Il pistolero si alza: Che avete detto? \\
-Bambino: RUBAGALLINE \\
-Il pistolero si risiede: Aaah.''}
-\begin{flushright}
-Lo chiamavano Trinit\`a \dots
-\end{flushright}
-}
-\end{quotation}
-\vspace{0.5cm}
 
-\noindent Si mostra il progetto dal punto di vista sperimentale, le cose materialmente realizzate. In questa sezione si mostrano le attivit\`a sperimentali svolte, si illustra il funzionamento del sistema (a grandi linee) e si spiegano i risultati ottenuti con la loro valutazione critica. Bisogna introdurre dati sulla complessit\`a degli algoritmi e valutare l'efficienza del sistema.
+
+%\noindent Si mostra il progetto dal punto di vista sperimentale, le cose materialmente realizzate. In questa sezione si mostrano le attivit\`a sperimentali svolte, si illustra il funzionamento del sistema (a grandi linee) e si spiegano i risultati ottenuti con la loro valutazione critica. Bisogna introdurre dati sulla complessit\`a degli algoritmi e valutare l'efficienza del sistema.
+
+All'interno di questo capitolo verranno illustrati i test sperimentali con le relative valutazioni.
+Tali operazioni sono stati svolti per due topic distinti:
+\begin{itemize}
+\item \textit{Elezioni Regionali Sicilia 2017}
+\item \textit{Biotestamento}
+\end{itemize}
+Prima di illustrare i risultati ottenuti, verranno presentate le motivazioni della scelta di questi due topic differenti tra loro.
+Sono stati scelti perché identificano differenti contesti nel dettaglio:
+\begin{itemize}
+\item Politico
+\item Sociale
+\end{itemize}
+Questa differenza è molto importante perché dimostra come la polarizzazione possa essere utilizzata in contesti completamente differenti tra loro. Infatti questo strumento consente di avere una visione generale sulla diffusione di opinioni e l'eventuale formazione di \textit{Echo-Chambers}. 
+Le motivazioni che mi hanno spinto a scegliere questi due contesti così differenti tra loro è stato dettato dalla necessità di cercare degli argomenti, che consentissero di avere una forte divergenza di opinione.
+Nel contesto politico le divergenze di opinioni vengono generate già dagli esponenti dei diversi partiti politici, quindi utilizzando questi dibattiti è possibile definire due gruppi distinti di opinione. Un gruppo che aderisce ad un'idea espressa da un partito piuttosto che da un'altra. In conclusione studiare ed analizzare un topic in un contesto del genere risulta essere molto interessante.
+Per quanto riguarda il contesto sociale, questo è molto interessante, perchè gli argomenti che appartengono a questa categoria hanno presa su un campione maggiore di utenti, perché molto spesso collegate a problematiche religiose, politiche, etiche ed economiche. La scelta di questo contesto consente di poter verificare quanto un topic, sia appetibile e polarizzato. Nel dettaglio è interessante notare come utilizzare uno strumento come la polarizzazione possa essere usato non solo per misurare quanto un argomento divida due gruppi di utenti, ma anche per fare indagini di mercato, statistiche da poter utilizzare in futuro.
+\newpage
+\section{Elezioni Regionali Sicilia 2017}
+%Motivazione scelta topic
+%Come sono stati fatti i test
+%Gli hashtag, Il grafo, i risultati
+%Predizione
+%Valutazione dei risultati
+Le elezioni regionali in Sicilia sono state svolte il 5 Novembre del 2017, è stato scelto come topic di studio per calcolare la polarizzazione all'interno di un contesto politico. Le suddette elezione hanno mostrato un cambiamento di trend, poiché vinte dalla coalizione del centro-destra a discapito della coalizione del centro-sinistra che era il partito in carica. I risultati di questa elezione hanno mostrato che gli antagonisti principali della coalizione del centro-destra fosse il Movimento 5 stelle.
+I risultati ottenuti attraverso queste elezioni rispecchiano ampiamente il panorama politico dello stato italiano, poiché da molti anni non è più presente un'unica linea guida, ma ci sono molteplici visioni espresse, che possono generare molteplici conflitti e quindi una forte polarizzazione delle opinioni. Nel dettaglio è interessante notare come in Italia la presenza dei dibattiti innescati da parte dei diversi esponenti della classe politica abbia ripercussioni sugli utenti appartenenti ad una rete sociale.
+In questo periodo storico vige un certa sfiducia da parte degli elettori verso la classe politica, infatti nelle elezioni regionali in Sicilia la percentuale degli astenuti è stata di $\simeq 54\%$ a discapito del $\simeq 53\%$ ottenuto nelle precedenti elezioni nel 2012. Queste informazioni rendono poco accurate le predizioni fatti dai diversi enti per calcolare gli \textit{exit pool}.
+Dal punto di vista della polarizzazione le differenti correnti politiche generano conflitti, divergenze o anche convergenze di opinioni tra gli auditori; quindi fare uno studio attraverso questi dati raccolti può mostrare quanto la controversia attiri gli elettori.
+La classe politica sta sempre più utilizzando i social media per poter esprimere le loro idee, anche per catturare l'attenzione di diversi elettori, per rendere accessibili a più utenti le proprie visioni politiche. 
+Proprio per questo motivo si è deciso di utilizzare le elezioni regionali in Sicilia come caso di studio all'interno del social media di \textit{Twitter}, sempre più utilizzato dalla classe politica.
+
+I test sono stati effettuati dopo una raccolta di dati effettuati attraverso una ricerca per \textit{hashtag} (vedi sezione \ref{raccolta}). La lista degli hashtag utilizzati è la seguente:
+\begin{itemize}
+\item \textbf{\#elezionisicilia2017}
+\item \textbf{\#EleSicilia}
+\item \textbf{\#elezionisicilia}
+\item \textbf{\#regionalisicilia2017}
+\item \textbf{\#regionalisicilia}
+\end{itemize}
+Per ognuno di questi hashtag sono stati collezionati i tweet pubblicati dai diversi utenti del social media durante il periodo dal 01/09/2017 al 31/12/2017.
+Il motivo della scelta di un periodo del genere è dettata dalla necessita di analizzare la polarizzazione del grafo nel tempo. Il periodo utilizzato per la raccolta dei dati è stato scelto per analizzare il comportamento della polarizzazione in un periodo di tempo precedente ed antecedente all'evento in questione. In questo modo è possibile effettuare considerazioni sul comportamento temporale del topic.
+La scelta degli hashtag non è puramente casuale, infatti per garantire una imparzialità nella raccolta dei tweet sono state fatte delle ricerche all'interno del social media per identificare gli hashtag utilizzati da giornalisti, redazioni giornalistiche per poter parlare in maniera neutrale delle elezioni regionali in Sicilia.
+Una volta identificati attraverso una ricerca manuale sulla rete è stato utilizzato un framework online per ricercare le loro eventuali correlazioni con altri:
+\begin{itemize}
+\item \textbf{hashtagify} (vedi fig:\ref{Hashtagify}):consente di ricercare degli hashtag attraverso una barra di ricerca. Una volta terminata, verranno illustrati all'interno di una interfaccia grafica alcuni risultati quali: gli hashtag correlati, la popolarità nel tempo, i maggiori \textit{influencer}.
+Attraverso questo servizio è stato possibile identificare altri hashtag generici utilizzati per arricchire la lista degli hashtag sopra elencati.
+\begin{figure}[!htb]
+    \begin{center}
+      \includegraphics[scale= 0.5]{hashtagify.png}
+	%\psfig{file=./pictures/logo}
+	\caption{Hashtagify}
+	\label{Hashtagify}
+    \end{center}
+  \end{figure}
+  
+\end{itemize}
+Ricercare la neutralità attraverso gli hashtag è molto importante, sopratutto in un contesto politico, perché molti partiti o rappresentati politici utilizzano questi strumenti per diffondere le loro opinioni, quindi utilizzare quelle parole chiave come elementi per la raccolta dati non avrebbe permesso di avere uno studio imparziale sul topic.
+Per fare un esempio basta considerare che il partito del candidato \textit{Musumeci} si chiamava: \textit{\#Diventerà bellissima - Per la Sicilia}.
+Un altro esempio può essere l'hashtag lanciato dal Movimento 5 Stelle: \textit{\#SceglieteIlFuturo}; utilizzato per incoraggiare gli elettori a votare per il loro candidato \textit{Cancelleri}.
+In conclusione per evitare argomenti fortemente polarizzati in un unico senso, i test e quindi la raccolta dati sono stati effettuati attraverso una lista di parole chiave che descrivessero il contenuto senza esprimere una opinione di partenza.
+
+Una volta che i dati sono stati raccolti attraverso la ricerca per hashtag, è stata effettuata una prima operazione di catalogo attraverso la \textit{Sentiment Analysis} (vedi sezione:\ref{Sentiment}). Attraverso questa operazione verranno classificati i tweet in 3 gruppi distinti, di cui soltanto per 2 di loro verrà calcolata la polarizzazione.
+Nel dettaglio i gruppi in questione sono stati classificati attraverso 3 \textit{label}, utilizzati dalla sentiment analysis per catalogare il testo, analizzando il loro contenuto:
+\begin{itemize}
+\item \textbf{ForzaItalia} identifica tutti i tweet e retweet relativi alla coalizione del centro-destra.
+\item \textbf{5Stelle} identifica tutti i tweet e retweet relativi al Movimento 5 Stelle.
+\item \textbf{Altri} identifica tutti i tweet e retweet relativi alle restanti coalizioni, informazioni giornalistiche oppure altri tweet che non avevano alcun interesse con l'analisi in questione.
+\end{itemize}
+
+Si è scelto di calcolare la polarizzazione solo per le due forze politiche che hanno dominato la scena politica siciliana: la coalizione del centro destra  ed il Movimento 5 Stelle. Il centro-destra rappresenta un'insieme di partiti, si è deciso di raggrupparle i un'unica coalizione, mentre l'altra forza politica in gioco, ovvero il Movimento 5 Stelle, rappresenta un unico partito politico.
+La sentiment analysis utilizza un training set per catalogare le informazioni in base al sentimento che esprimono i tweet pubblicati dagli utenti. Per questo motivo è stata fatta una operazione di raccolta e catalogo di diversi tweet di esempio per consentire alla macchina di poter comprendere a quale gruppo associare il tweet che avrebbe analizzato.
+Qui di seguito mostriamo una tabella contenente 3 tweet di esempio per ogni label per meglio rendere l'idea.
+\begin{tabular}{ |p{3cm}|p{10cm}| }
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Training set}} \\
+ \hline 
+ \begin{center}
+ \textbf{Label}
+ \end{center} & \begin{center}
+ \textbf{Tweet}
+ \end{center}\\
+ \hline
+ 5stelle   & Chi ama la sua terra non può che votare il \#M5S \#Regionali \#Sicilia  \\ \hline
+ 5stelle & A disposizione del \#MoVimento5Stelle per cambiare la nostra fantastica \#Sicilia! Contattatemi \#regionaliSicilia \#m5s\\ \hline
+ 5stelle & \#Regionalisicilia2017 con la vittoria del \#M5S i partiti capiranno tutto il potere che ha un popolo unito! \\ \hline
+ ForzaItalia &   Con elezioni $ @matteosalvinimi$ e $@Musumeci\_Staff$ regionali 2017 in \#Sicilia !!\#elezioniregionali2017 \#andiamoagovernare \#forzalega  \\ \hline
+ ForzaItalia & Regionali Sicilia  Berlusconi a Palermo: "No a M5s chi li vota non ragiona" \\ \hline
+ ForzaItalia & 'Siamo qui a \#Palermo per vincere con $@Musumeci_Staff$ , \#M5s non hanno arte né parte \#regionalisicilia \\ \hline
+Altri & Tutti gli schieramenti alle \#elezioniregionali in Sicilia.L'articolo di Pierangelo Bonanno \\ \hline
+Altri & \#Londra ricevo questa card per gli \#emigrati : è valida solo per i \#treni in \#Italia . E le migliaia di \#Siciliani all' \#estero ? \#elesicilia \\ \hline
+Altri & \#cambiamoabitudini Basta! Adesso si agisce. Il \#5novembre \#iovoto \#siciliafutura \#micaripresidente \#elesicilia\\
+ \hline
+ \caption{Esempi di tweet del Training Set}
+ \label{trainingSetExample}
+\end{tabular}
+
+
+\section{Biotestamento}

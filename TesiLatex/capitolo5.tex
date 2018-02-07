@@ -1,4 +1,4 @@
-\chapter{Implementazione}
+\chapter{Implementazione e realizzazione del sistema}
 \label{capitolo5}
 \thispagestyle{empty}
 
@@ -15,6 +15,7 @@
   \end{figure}
 
 \section{Raccolta dati}
+\label{raccolta}
 La raccolta dati è la fase iniziale della tesi di laurea. Come precedentemente argomentato il social network di riferimento utilizzato è \textit{Twitter}.Prima di spiegare quanto fatto occorre citare le funzionalità della \textit{Twitter Api}. Successivamente verranno illustrate le tecniche adottate per la raccolta dei \textit{Tweet} del passato.
 \subsection{Twitter Api}
 Sono delle api messe a disposizione dal social network Twitter, per poterle utilizzare occorre necessariamente effettuare l'iscrizione al reparto sviluppatori di Twitter, mettendo a disposizione il proprio account personale, quindi come prima cosa occorre predisporre di un proprio account. La raccolta dei dati può essere effettuata soltanto dopo aver abilitato l'account. Per raccogliere i dati pubblicati dagli utenti all'interno della rete occorre creare una \textit{Twitter Apps}, la quale rilascerà delle credenziali che dovranno essere utilizzate per poter effettuare le richieste attraverso le Twitter Api al server. Viene inizializzato un processo di streaming tra il client ed il server che consenta la ricezione dei dati, diamo una definizione delle credenziali, che sono divise in:
@@ -316,7 +317,7 @@ P_{u}= \rho^{X}(u)-\rho^{Y}(u) \ \in [-1,1]
 \end{equation}
 \end{quote}
 In caso di nodi che non hanno uscite, cioè quei nodi che non hanno alcun arco uscente che gli permetta di comunicare con altri, questi assumeranno il comportamento di nodi di \textit{dangling}, cioè quei nodi che non hanno possibilità di comunicazione. Per dar loro un valore della polarizzazione gli verrà assegnato il valore massimo a seconda della partizione a cui sono associati.
-Un discorso analogo è valido anche per i nodi di grado massimo, questi al passo iniziale hanno una polarizzazione pari al valore massimo del loro insieme di appartenenza, però se hanno degli archi in uscita, che li metta in contatto con nodi di opinione opposta, allora tale valore verrà aggiornato utilizzato l'algoritmo precedentemente illustrato.
+Un discorso analogo è valido anche per i nodi di grado massimo, questi al passo iniziale hanno una polarizzazione pari al valore massimo del loro insieme di appartenenza, però se hanno degli archi in uscita, che li metta in contatto con nodi di opinione opposta, allora tale valore verrà aggiornato attraverso l'algoritmo precedentemente illustrato.
 
 
 All'interno della tesi sono state affrontate diverse problematiche per la realizzazione di questo algoritmo, per prima cosa è stata inserita la \textit{probabilità di retweet} per calcolare la polarizzazione. In questo modo è stata assegnata una forte relazione tra i nodi che retwettano notizie e quelli che le pubblicano. Nel calcolo del random walk il numero di passi dipende dalla probabilità che relaziona i due nodi, rendendo il calcolo più verosimile alla realtà.

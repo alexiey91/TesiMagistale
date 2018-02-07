@@ -1,0 +1,446 @@
+LIST=
+('Blue', 'Siracusa_Online', '', datetime.datetime(2017, 9, 13, 18, 38, 56))
+('Blue', 'OpenGDB', '', datetime.datetime(2017, 9, 13, 1, 3, 9))
+('Blue', 'OpenGDB', '', datetime.datetime(2017, 9, 12, 14, 8, 59))
+('Blue', 'siculindignati', [u'CloBonfardino', u'MimmoDagna', u'SicilyisI', u'siciliasveglia', u'beppevicari', u'jophx', u'angelofullone1', u'waltergianno'], datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', 'OpenGDB', '', datetime.datetime(2017, 9, 10, 18, 58, 32))
+('Blue', 'OpenGDB', '', datetime.datetime(2017, 9, 5, 12, 54, 16))
+('Blue', 'OpenGDB', '', datetime.datetime(2017, 9, 4, 20, 24, 18))
+('Blue', 'siculindignati', [u'siciliasveglia', u'jophx', u'beppevicari', u'waltergianno'], datetime.datetime(2017, 9, 4, 12, 26, 27))
+('Blue', 'OpenGDB', [u'Luca_Imp79'], datetime.datetime(2017, 9, 1, 22, 48, 12))
+('Blue', 'beppevicari', '', datetime.datetime(2017, 9, 1, 13, 3, 55))
+('Red', 'sevenseasmarina', '', datetime.datetime(2017, 9, 10, 14, 46))
+('Red', 'claudioreale', [u'giubi7'], datetime.datetime(2017, 9, 8, 15, 33, 6))
+
+Diz=
+('Blue', (u'jophx', 'siculindignati'), 2, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'siciliasveglia', 'siculindignati'), 2, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'beppevicari', 'siculindignati'), 2, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'waltergianno', 'siculindignati'), 2, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'SicilyisI', 'siculindignati'), 1, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'MimmoDagna', 'siculindignati'), 1, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'angelofullone1', 'siculindignati'), 1, datetime.datetime(2017, 9, 11, 12, 32, 21))
+('Blue', (u'Luca_Imp79', 'OpenGDB'), 1, datetime.datetime(2017, 9, 1, 22, 48, 12))
+('Blue', (u'CloBonfardino', 'siculindignati'), 1, datetime.datetime(2017, 9, 11, 12, 32, 21))
+#('RED', (u'jophx', 'siculindignati'), 1, datetime.datetime(2017, 9, 12, 15, 11))
+#('RED', (u'siciliasveglia', 'siculindignati'), 1, datetime.datetime(2017, 9, 12, 15, 11))
+('RED', (u'giubi7', 'claudioreale'), 1, datetime.datetime(2017, 9, 8, 15, 33, 6))
+#('RED', (u'SicilyisI', 'siculindignati'), 1, datetime.datetime(2017, 9, 12, 15, 11))
+#('RED', (u'beppevicari', 'siculindignati'), 1, datetime.datetime(2017, 9, 12, 15, 11))
+#('RED', (u'CloBonfardino', 'siculindignati'), 1, datetime.datetime(2017, 9, 12, 15, 11))
+
+
+'pesi archi', {(u'jophx', 'siculindignati'): 1.0, (u'siciliasveglia', 'siculindignati'): 1.0, (u'giubi7', 'claudioreale'): 1.0,
+               (u'waltergianno', 'siculindignati'): 1.0, (u'SicilyisI', 'siculindignati'): 1.0, (u'MimmoDagna', 'siculindignati'): 1.0,
+               (u'angelofullone1', 'siculindignati'): 1.0, (u'Luca_Imp79', 'OpenGDB'): 1.0, (u'beppevicari', 'siculindignati'): 1.0,
+               (u'CloBonfardino', 'siculindignati'): 1.0})
+
+ ('dictgetProbRandom', {u'beppevicari': [1.0], u'Luca_Imp79': [1.0], u'angelofullone1': [1.0], 'siculindignati': [], u'SicilyisI': [1.0],
+                        u'waltergianno': [1.0], u'giubi7': [1.0], 'OpenGDB': [], u'jophx': [1.0], u'siciliasveglia': [1.0], u'MimmoDagna': [1.0],
+                        u'CloBonfardino': [1.0], 'claudioreale': []})
+
+beppevicari
+('tempBlue', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbBlue [0.5, 0.5]
+successorNodeBlue siculindignati
+qui
+fine Blue 1.0
+('tempRed', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbRed [0.5, 0.5]
+successorNodeRed siculindignati
+i 0
+ELSE= 0.5 [u'beppevicari', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+SuccessorNode non in listRed
+Fine red 0.0
+resultBlue[0] ListaBlue visitate [u'beppevicari', 'siculindignati']
+ListaRed visitate [u'beppevicari', 'siculindignati']
+diffPol 1.0
+Luca_Imp79
+('tempBlue', u'Luca_Imp79')
+('i', 0)
+Vicini ['OpenGDB']
+ListProbBlue [1.0]
+successorNodeBlue OpenGDB
+qui
+fine Blue 1.0
+('tempRed', u'Luca_Imp79')
+('i', 0)
+Vicini ['OpenGDB']
+ListProbRed [1.0]
+successorNodeRed OpenGDB
+i 0
+ELSE= 1.0 [u'Luca_Imp79', 'OpenGDB']
+('tempRed', 'OpenGDB')
+('i', 1)
+Vicini []
+SuccessorNode non in listRed
+Fine red 0.0
+resultBlue[0] ListaBlue visitate [u'Luca_Imp79', 'OpenGDB']
+ListaRed visitate [u'Luca_Imp79', 'OpenGDB']
+diffPol 1.0
+angelofullone1
+('tempBlue', u'angelofullone1')
+('i', 0)
+Vicini ['siculindignati']
+ListProbBlue [1.0]
+successorNodeBlue siculindignati
+qui
+fine Blue 1.0
+('tempRed', u'angelofullone1')
+('i', 0)
+Vicini ['siculindignati']
+ListProbRed [1.0]
+successorNodeRed siculindignati
+i 0
+ELSE= 1.0 [u'angelofullone1', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+SuccessorNode non in listRed
+Fine red 0.0
+resultBlue[0] ListaBlue visitate [u'angelofullone1', 'siculindignati']
+ListaRed visitate [u'angelofullone1', 'siculindignati']
+diffPol 1.0
+claudioreale
+('tempBlue', 'claudioreale')
+('i', 0)
+Vicini []
+i==0
+fine Blue 1.0
+('tempRed', 'claudioreale')
+('i', 0)
+Vicini []
+i==0
+Fine red 1.0
+resultBlue[0] ListaBlue visitate ['claudioreale']
+ListaRed visitate ['claudioreale']
+diffPol 0.0
+SicilyisI
+('tempBlue', u'SicilyisI')
+('i', 0)
+Vicini ['siculindignati']
+ListProbBlue [1.0]
+successorNodeBlue siculindignati
+qui
+fine Blue 1.0
+('tempRed', u'SicilyisI')
+('i', 0)
+Vicini ['siculindignati']
+ListProbRed [1.0]
+successorNodeRed siculindignati
+i 0
+ELSE= 1.0 [u'SicilyisI', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+SuccessorNode non in listRed
+Fine red 0.0
+resultBlue[0] ListaBlue visitate [u'SicilyisI', 'siculindignati']
+ListaRed visitate [u'SicilyisI', 'siculindignati']
+diffPol 1.0
+waltergianno
+('tempBlue', u'waltergianno')
+('i', 0)
+Vicini ['siculindignati']
+ListProbBlue [1.0]
+successorNodeBlue siculindignati
+qui
+fine Blue 1.0
+('tempRed', u'waltergianno')
+('i', 0)
+Vicini ['siculindignati']
+ListProbRed [1.0]
+successorNodeRed siculindignati
+i 0
+ELSE= 1.0 [u'waltergianno', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+SuccessorNode non in listRed
+Fine red 0.0
+resultBlue[0] ListaBlue visitate [u'waltergianno', 'siculindignati']
+ListaRed visitate [u'waltergianno', 'siculindignati']
+diffPol 1.0
+giubi7
+('tempBlue', u'giubi7')
+('i', 0)
+Vicini ['claudioreale']
+ListProbBlue [1.0]
+successorNodeBlue claudioreale
+i 0
+ELSE= 1.0 [u'giubi7', 'claudioreale']
+claudioreale
+('tempBlue', 'claudioreale')
+('i', 1)
+Vicini []
+SuccessorNode non in listBlue
+fine Blue 0.0
+('tempRed', u'giubi7')
+('i', 0)
+Vicini ['claudioreale']
+ListProbRed [1.0]
+successorNodeRed claudioreale
+qui
+Fine red 1.0
+resultBlue[0] ListaBlue visitate
+
+
+
+
+
+NOdi grado Max
+RED ['claudioreale']
+BLUE ['siculindignati']
+
+
+beppevicari
+('tempBlue', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbBlue [0.6666666666666666, 0.3333333333333333]
+successorNodeBlue siculindignati
+Succesore in lista DegreeBlue
+fine Blue 0.666666666667
+('tempRed', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbRed [0.6666666666666666, 0.3333333333333333]
+successorNodeRed siculindignati
+i 0
+ELSERed= 0.666666666667 [u'beppevicari', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+('SuccessorNode non in listRed', 1, 0.6666666666666666, 'siculindignati', [u'beppevicari', 'siculindignati'])
+Ricomincio 1 1.0 beppevicari []
+('tempRed', u'beppevicari')
+('i', 2)
+Vicini ['siculindignati', 'claudioreale']
+ListProbRed [0.6666666666666666, 0.3333333333333333]
+successorNodeRed siculindignati
+i 2
+ELSERed= 0.666666666667 ['siculindignati']
+('tempRed', 'siculindignati')
+('i', 0)
+Vicini []
+i==0
+Fine red 1.0
+{u'beppevicari': {u'beppevicari': (-0.33333333333333337, [u'beppevicari', 'siculindignati'], ['siculindignati', 'siculindignati'])}} 1
+
+
+
+['claudioreale']
+['siculindignati']
+beppevicari
+('tempBlue', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbBlue [0.6666666666666666, 0.3333333333333333]
+successorNodeBlue siculindignati
+Succesore in lista DegreeBlue
+fine Blue 0.666666666667
+
+
+('tempRed', u'beppevicari')
+('i', 0)
+Vicini ['siculindignati', 'claudioreale']
+ListProbRed [0.6666666666666666, 0.3333333333333333]
+successorNodeRed siculindignati
+i 0
+ELSERed= 0.666666666667 [u'beppevicari', 'siculindignati']
+('tempRed', 'siculindignati')
+('i', 1)
+Vicini []
+('SuccessorNode non in listRed', 1, 0.6666666666666666, 'siculindignati', [u'beppevicari', 'siculindignati'], 'siculindignati')
+Ricomincio 1 1.0 beppevicari []
+('tempRed', u'beppevicari')
+('i', 2)
+Vicini ['siculindignati', 'claudioreale']
+ListProbRed [0.6666666666666666, 0.3333333333333333]
+successorNodeRed siculindignati
+i 2
+ELSERed= 0.666666666667 ['siculindignati']
+('tempRed', 'siculindignati')
+('i', 0)
+Vicini []
+i==0
+Fine red 1.0
+{u'beppevicari': {u'beppevicari': (-0.33333333333333337, [u'beppevicari', 'siculindignati'], ['siculindignati', 'siculindignati'])}} 1
+
+
+
+retweetBlue#elezionisicilia2017ِ_2017-09-01_2017-12-20_data
+
+/pickle/#elezionisicilia2017TestAWS/retweetBlue#elezionisicilia2017_2017-09-01_2017-12-20_data.pkl'
+
+
+RANDOM WALK
+ALPHA = 0.9 beta [0 a 1]
+[0.0, 0.4, -0.08]
+('predizione alpha=', 0.9, ' beta=', 0.0, [0.0, 0.8, 0.40800000000000003, 0.808], 'dicembre reale', 0.0)
+('predizione alpha=', 0.9, ' beta=', 0.1, [0.0, 0.8, 0.3288, 0.6496], 'dicembre reale', 0.0)
+('predizione alpha=', 0.9, ' beta=', 0.2, [0.0, 0.8, 0.24960000000000002, 0.4912], 'dicembre reale', 0.0)
+('predizione alpha=', 0.9, ' beta=', 0.3, [0.0, 0.8, 0.17039999999999997, 0.3328], 'dicembre reale', 0.0)
+('predizione alpha=', 0.9, ' beta=', 0.4, [0.0, 0.8, 0.09119999999999995, 0.17439999999999992], 'dicembre reale', 0.0)
+('predizione alpha=', 0.9, ' beta=', 0.5, [0.0, 0.8, 0.011999999999999983, 0.015999999999999986], 'dicembre reale', 0.0)
+('predizione alpha=', 0.9, ' beta=', 0.6, [0.0, 0.8, -0.06719999999999998, -0.14239999999999994], 'dicembre reale', 0.0)
+('predizione alpha=', 0.9, ' beta=', 0.7, [0.0, 0.8, -0.14639999999999997, -0.30079999999999996], 'dicembre reale', 0.0)
+('predizione alpha=', 0.9, ' beta=', 0.8, [0.0, 0.8, -0.22560000000000008, -0.45920000000000016], 'dicembre reale', 0.0)
+('predizione alpha=', 0.9, ' beta=', 0.9, [0.0, 0.8, -0.30480000000000007, -0.6176000000000001], 'dicembre reale', 0.0)
+('predizione alpha=', 0.9, ' beta=', 1.0, [0.0, 0.8, -0.384, -0.776], 'dicembre reale', 0.0)
+
+Si è avvicinato di più quello con beta = 0.6
+
+
+
+Alpha = 0.8 beta [0 a 1]
+
+[0.0, 0.4, -0.08]
+('predizione alpha=', 0.8, ' beta=', 0.0, [0.0, 0.8, 0.496, 0.896], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.1, [0.0, 0.8, 0.42560000000000003, 0.7552000000000001], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.2, [0.0, 0.8, 0.3552, 0.6144000000000001], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.3, [0.0, 0.8, 0.28479999999999994, 0.4735999999999999], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.4, [0.0, 0.8, 0.21439999999999992, 0.3327999999999999], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.5, [0.0, 0.8, 0.14399999999999996, 0.19199999999999995], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.6, [0.0, 0.8, 0.07359999999999997, 0.05119999999999997], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.7, [0.0, 0.8, 0.0031999999999999806, -0.08960000000000001], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.8, [0.0, 0.8, -0.06720000000000009, -0.23040000000000016], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.9, [0.0, 0.8, -0.1376000000000001, -0.3712000000000002], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 1.0, [0.0, 0.8, -0.20800000000000007, -0.5120000000000001], 'dicembre reale', 0.0)
+
+Si è avvicinato di più quello con beta = 0.6
+
+
+Alpha = 0.7 beta [0 a 1]
+
+[0.0, 0.4, -0.08]
+('predizione alpha=', 0.8, ' beta=', 0.0, [0.0, 0.8, 0.496, 0.896], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.1, [0.0, 0.8, 0.42560000000000003, 0.7552000000000001], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.2, [0.0, 0.8, 0.3552, 0.6144000000000001], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.3, [0.0, 0.8, 0.28479999999999994, 0.4735999999999999], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.4, [0.0, 0.8, 0.21439999999999992, 0.3327999999999999], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.5, [0.0, 0.8, 0.14399999999999996, 0.19199999999999995], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.6, [0.0, 0.8, 0.07359999999999997, 0.05119999999999997], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.7, [0.0, 0.8, 0.0031999999999999806, -0.08960000000000001], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.8, [0.0, 0.8, -0.06720000000000009, -0.23040000000000016], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 0.9, [0.0, 0.8, -0.1376000000000001, -0.3712000000000002], 'dicembre reale', 0.0)
+('predizione alpha=', 0.8, ' beta=', 1.0, [0.0, 0.8, -0.20800000000000007, -0.5120000000000001], 'dicembre reale', 0.0)
+
+Si è avvicinato di più quello con beta = 0.8
+
+Alpha = 0.6 beta [0 a 1]
+
+[0.0, 0.4, -0.08]
+('predizione alpha=', 0.6, ' beta=', 0.0, [0.0, 0.8, 0.6720000000000002, 1.072], 'dicembre reale', 0.0)
+('predizione alpha=', 0.6, ' beta=', 0.1, [0.0, 0.8, 0.6192000000000002, 0.9664000000000004], 'dicembre reale', 0.0)
+('predizione alpha=', 0.6, ' beta=', 0.2, [0.0, 0.8, 0.5664000000000001, 0.8608000000000002], 'dicembre reale', 0.0)
+('predizione alpha=', 0.6, ' beta=', 0.3, [0.0, 0.8, 0.5136000000000001, 0.7552], 'dicembre reale', 0.0)
+('predizione alpha=', 0.6, ' beta=', 0.4, [0.0, 0.8, 0.4608000000000001, 0.6496000000000002], 'dicembre reale', 0.0)
+('predizione alpha=', 0.6, ' beta=', 0.5, [0.0, 0.8, 0.40800000000000014, 0.5440000000000003], 'dicembre reale', 0.0)
+('predizione alpha=', 0.6, ' beta=', 0.6, [0.0, 0.8, 0.3552000000000001, 0.4384000000000002], 'dicembre reale', 0.0)
+('predizione alpha=', 0.6, ' beta=', 0.7, [0.0, 0.8, 0.3024000000000001, 0.33280000000000015], 'dicembre reale', 0.0)
+('predizione alpha=', 0.6, ' beta=', 0.8, [0.0, 0.8, 0.2496000000000001, 0.22720000000000012], 'dicembre reale', 0.0)
+('predizione alpha=', 0.6, ' beta=', 0.9, [0.0, 0.8, 0.1968000000000001, 0.12160000000000015], 'dicembre reale', 0.0)
+('predizione alpha=', 0.6, ' beta=', 1.0, [0.0, 0.8, 0.14400000000000013, 0.01600000000000018], 'dicembre reale', 0.0)
+Si è avvicinato di più quello con beta = 1.0
+
+Con Alpha <= 0.5 quello che si avvicina di più è quello con beta = 1.0
+
+
+VENEZUELA
+
+Alpha 0.9 betha = [0 to 1]
+
+-1.0, -0.9642857142857143, 0.08360548361452136]
+('predizione alpha=', 0.9, ' beta=', 0.0, [-1.0, -0.9285714285714286, 0.018102078110212083, 0.05381636382449778], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.9, ' beta=', 0.1, [-1.0, -0.9285714285714286, 0.10919800020694759, 0.2360082080179688], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.9, ' beta=', 0.2, [-1.0, -0.9285714285714286, 0.2002939223036831, 0.4182000522114398], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.9, ' beta=', 0.3, [-1.0, -0.9285714285714286, 0.29138984440041854, 0.6003918964049106], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.9, ' beta=', 0.4, [-1.0, -0.9285714285714286, 0.3824857664971541, 0.7825837405983818], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.9, ' beta=', 0.5, [-1.0, -0.9285714285714286, 0.4735816885938896, 0.9647755847918529], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.9, ' beta=', 0.6, [-1.0, -0.9285714285714286, 0.564677610690625, 1.1469674289853238], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.9, ' beta=', 0.7, [-1.0, -0.9285714285714286, 0.6557735327873606, 1.329159273178795], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.9, ' beta=', 0.8, [-1.0, -0.9285714285714286, 0.7468694548840962, 1.511351117372266], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.9, ' beta=', 0.9, [-1.0, -0.9285714285714286, 0.8379653769808317, 1.6935429615657371], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.9, ' beta=', 1.0, [-1.0, -0.9285714285714286, 0.9290612990775671, 1.8757348057592078], 'dicembre reale', 0.08336052477176856)
+
+con alpha = 0.9 si avvicina di più beta=0.0
+
+Alfa = 0.8 beta = [0 a 1]
+[-1.0, -0.9642857142857143, 0.08360548361452136]
+('predizione alpha=', 0.8, ' beta=', 0.0, [-1.0, -0.9285714285714286, -0.0831156131083829, -0.047401327394097206], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.8, ' beta=', 0.1, [-1.0, -0.9285714285714286, -0.002141460133506898, 0.11454697855565481], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.8, ' beta=', 0.2, [-1.0, -0.9285714285714286, 0.07883269284136911, 0.27649528450540684], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.8, ' beta=', 0.3, [-1.0, -0.9285714285714286, 0.1598068458162451, 0.4384435904551588], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.8, ' beta=', 0.4, [-1.0, -0.9285714285714286, 0.24078099879112114, 0.6003918964049109], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.8, ' beta=', 0.5, [-1.0, -0.9285714285714286, 0.3217551517659971, 0.7623402023546628], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.8, ' beta=', 0.6, [-1.0, -0.9285714285714286, 0.4027293047408731, 0.9242885083044148], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.8, ' beta=', 0.7, [-1.0, -0.9285714285714286, 0.4837034577157491, 1.0862368142541667], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.8, ' beta=', 0.8, [-1.0, -0.9285714285714286, 0.5646776106906252, 1.248185120203919], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.8, ' beta=', 0.9, [-1.0, -0.9285714285714286, 0.6456517636655011, 1.4101334261536707], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.8, ' beta=', 1.0, [-1.0, -0.9285714285714286, 0.7266259166403771, 1.5720817321034228], 'dicembre reale', 0.08336052477176856)
+
+si avvicina di più beta = 0.1
+
+Alfa = 0.7 beta = [0 a 1]
+
+[-1.0, -0.9642857142857143, 0.08360548361452136]
+('predizione alpha=', 0.7, ' beta=', 0.0, [-1.0, -0.9285714285714285, -0.18433330432697792, -0.14861901861269222], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.7, ' beta=', 0.1, [-1.0, -0.9285714285714285, -0.11348092047396142, -0.0069142509066592445], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.7, ' beta=', 0.2, [-1.0, -0.9285714285714285, -0.04262853662094493, 0.1347905167993738], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.7, ' beta=', 0.3, [-1.0, -0.9285714285714285, 0.028223847232071553, 0.2764952845054067], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.7, ' beta=', 0.4, [-1.0, -0.9285714285714285, 0.09907623108508806, 0.41820005221143974], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.7, ' beta=', 0.5, [-1.0, -0.9285714285714284, 0.16992861493810452, 0.5599048199174727], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.7, ' beta=', 0.6, [-1.0, -0.9285714285714284, 0.24078099879112103, 0.7016095876235057], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.7, ' beta=', 0.7, [-1.0, -0.9285714285714284, 0.31163338264413754, 0.8433143553295387], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.7, ' beta=', 0.8, [-1.0, -0.9285714285714284, 0.38248576649715393, 0.9850191230355715], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.7, ' beta=', 0.9, [-1.0, -0.9285714285714284, 0.45333815035017044, 1.1267238907416046], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.7, ' beta=', 1.0, [-1.0, -0.9285714285714284, 0.524190534203187, 1.2684286584476374], 'dicembre reale', 0.08336052477176856)
+
+si avvicina di più beta = 0.2
+
+alpha = 0.6
+
+[-1.0, -0.9642857142857143, 0.08360548361452136]
+('predizione alpha=', 0.6, ' beta=', 0.0, [-1.0, -0.9285714285714285, -0.28555099554557295, -0.24983670983128725], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.6, ' beta=', 0.1, [-1.0, -0.9285714285714285, -0.22482038081441597, -0.12837548036897325], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.6, ' beta=', 0.2, [-1.0, -0.9285714285714285, -0.16408976608325895, -0.006914250906659258], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.6, ' beta=', 0.3, [-1.0, -0.9285714285714285, -0.103359151352102, 0.11454697855565465], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.6, ' beta=', 0.4, [-1.0, -0.9285714285714285, -0.04262853662094496, 0.23600820801796873], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.6, ' beta=', 0.5, [-1.0, -0.9285714285714284, 0.018102078110212083, 0.35746943748028276], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.6, ' beta=', 0.6, [-1.0, -0.9285714285714284, 0.07883269284136901, 0.4789306669425966], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.6, ' beta=', 0.7, [-1.0, -0.9285714285714284, 0.139563307572526, 0.6003918964049106], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.6, ' beta=', 0.8, [-1.0, -0.9285714285714284, 0.20029392230368298, 0.7218531258672245], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.6, ' beta=', 0.9, [-1.0, -0.9285714285714284, 0.26102453703484, 0.8433143553295386], 'dicembre reale', 0.08336052477176856)
+('predizione alpha=', 0.6, ' beta=', 1.0, [-1.0, -0.9285714285714284, 0.32175515176599695, 0.9647755847918524], 'dicembre reale', 0.08336052477176856)
+
+si avvicina di più beta = 0.3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
