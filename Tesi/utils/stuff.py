@@ -125,13 +125,22 @@ def writeRangeCsv(path):
 
 def main():
     #l[0] numero Blue, l[1] numero rossi, l[2] numero grigi, l[3] totale
-    l= datamonth('../Test/Biotestamento/predictionRw.csv',2)
+    # l= datamonth('../Test/Sicilia/predictionVenezuela.csv',2)
+    # print l
+    #
+    # writeCsv(l,"./SiciliaCsv/5NovembreVenezuela.csv","Venezuela","5Novembre")
+    # DizionarioCon = writeRangeCsv("./SiciliaCsv/5NovembreVenezuela.csv")
+    # print DizionarioCon
+    #
+    # writeCsvCon(DizionarioCon,len(l),"./SiciliaCsv/ContatoriCsv/Venezuela/5NovembreContVenezuela.csv","Venezuela","5Novembre")
+
+    l = datamonth('../Test/Sicilia/testing5.csv', 10)
     print l
 
-    writeCsv(l,"./BiotestamentoCsv/OttobreRw.csv","Rw","Ottobre")
-    DizionarioCon = writeRangeCsv("./BiotestamentoCsv/OttobreRw.csv")
+    writeCsv(l,"./SiciliaCsv/5NovembreVenezuela.csv","Venezuela","5Novembre")
+    DizionarioCon = writeRangeCsv("./SiciliaCsv/5NovembreVenezuela.csv")
     print DizionarioCon
 
-    writeCsvCon(DizionarioCon,len(l),"./BiotestamentoCsv/ContatoriCsv/RW/OttobreContRw.csv","Rw","Ottobre")
+    writeCsvCon(DizionarioCon,len(l),"./SiciliaCsv/ContatoriCsv/Venezuela/5NovembreContVenezuela.csv","Venezuela","5Novembre")
 if __name__ == '__main__':
     main()
