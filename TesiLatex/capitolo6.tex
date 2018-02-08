@@ -104,7 +104,7 @@ Altri & \#cambiamoabitudini Basta! Adesso si agisce.Il \#5novembre \#iovoto \#si
  \label{trainingSetExample}
 \end{table}
 
-Una volta partizionato il grafo è stato popolato l'endorsement graph relativo alle elezioni siciliane. Questo grafo è cresciuto nel tempo, cioè via via che venivano raccolti i tweet ed i relativi retweet durante la raccolta dati effettuata mese per mese. I tweet isolati cioè quelle informazioni, con espressione di idee, che non sono state ripubblicate dagli altri utenti della rete sono stati scartati, ma presi in riesame nel caso in cui nei mesi successivi ci fosse stato qualche utente che avesse retweettato quelle notizie.
+Una volta partizionato i dati, l'endorsement graph relativo alle elezioni siciliane  è stato popolato. Questo grafo è cresciuto nel tempo, cioè via via che venivano raccolti i tweet ed i relativi retweet durante la raccolta dati effettuata mese per mese. I tweet isolati cioè quelle informazioni, con espressione di idee, che non sono state ripubblicate dagli altri utenti della rete sono stati scartati, ma presi in riesame nel caso in cui nei mesi successivi ci fosse stato qualche utente che avesse retweettato quelle notizie.
 Per meglio rendere l'idea in questione illustriamo una tabella (vedi tabelle: \ref{Noditotali}) contente i dati raccolti nei diversi mesi, e quelli effettivamente utilizzati per il calcolo della polarizzazione.
 \begin{table}
 
@@ -132,15 +132,137 @@ Per meglio rendere l'idea in questione illustriamo una tabella (vedi tabelle: \r
 \caption{Numero di nodi del grafo}
  \label{Noditotali}
 \end{table}
-Per quanto riguarda la colorazione del grafo i colori di riferimento delle due partizioni sono: 
-\begin{itemize}
-\item \textbf{Blu}: per la coalizione del centro-destra.
-\item \textbf{Rosso}: per il Movimento 5 stelle.
-\end{itemize}
-
+Per quanto riguarda la colorazione del grafo i colori di riferimento delle due partizioni sono: \textcolor{blue}{\textbf{Blu}} per la coalizione del centro-destra; \textcolor{red}{\textbf{Rosso}} per il Movimento 5 Stelle.
 Essendo la polarizzazione un'assegnazione di un valore all'interno di un range tra $[-1,+1]$, i valori di riferimento per i nodi \textit{Blu} sono definiti nel range $(0,+1]$ mentre per i nodi \textit{Rossi} in $[-1,0)$.
 Per meglio contraddistinguere quegli utenti che hanno mantenuto uno schieramento neutrale, quindi quei nodi del grafo avente polarizzazione esattamente pari a 0, si è deciso di assegnare loro il colore \textbf{Grigio}.
 %Inserire i 5 grafi colorati senza i label della polarizzazione, con i relativi commenti.
-%Inserire i risultati ottenuti mostrando il trend nei mesi della polarizzazione ed i relativi commenti
+Mostriamo i grafi ottenuti durante la raccolta dei dati durante il periodo di tempo sopra indicato. Nel dettaglio la colorazione è stata modificata in base al valore ottenuto durante la polarizzazione, quindi con i nodi colorati di \textit{rosso}, \textit{blu} e grigio.
+I risultati mostrati (vedi fig:\ref{grafoTopologia}) illustrano la popolazione del grafo attraverso il calcolo della polarizzazione attraverso l'algoritmo basato sulla topologia. I risultati sono cumulativi e mostrano il cambiamento del grafo nel tempo. Ogni grafo mostra risultati cumulativi; cioè ogni mese contiene anche i dati  raccolti nel periodo ad esso precedente. Le immagini successive (vedi fig:\ref{grafoGrado}), mostrano le medesime considerazioni, soltanto che è stato applicato un algoritmo differente per il calcolo della polarizzazione.
+
+\begin{figure}[!htbp]
+\centering
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{/Image/RandomWalk/SettembreRandomWalk.png}
+\caption{Settembre}
+\label{Passo0}
+\end{minipage}%
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{/Image/RandomWalk/OttobreRandomWalk.png}
+\caption{Ottobre}
+\label{Passo1}
+\end{minipage}
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{/Image/RandomWalk/5NovembreRw.png}
+\caption{5Novembre}
+\label{Passo2}
+\end{minipage}
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{/Image/RandomWalk/NovembreRandomWalk.png}
+\caption{Novembre}
+\label{Passo3}
+\end{minipage}
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{/Image/RandomWalk/DicembreRandomWalk.png}
+\caption{Dicembre}
+\label{Passo3}
+\end{minipage}
+\caption{Popolazione del grafo attraverso l'algoritmo basato sulla topologia}\label{grafoTopologia}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+\centering
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{/Image/Venezuela/SettembreVenezuela.png}
+\caption{Settembre}
+\label{Passo0}
+\end{minipage}%
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{/Image/Venezuela/OttobreVenezuela.png}
+\caption{Ottobre}
+\label{Passo1}
+\end{minipage}
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{/Image/Venezuela/5NovembreVenezuela.png}
+\caption{5Novembre}
+\label{Passo2}
+\end{minipage}
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{/Image/Venezuela/NovembreVenezuela.png}
+\caption{Novembre}
+\label{Passo3}
+\end{minipage}
+\hspace{10mm}%
+\begin{minipage}[c]{.40\textwidth}
+\centering\setlength{\captionmargin}{0pt}%
+\includegraphics[scale= 0.4]{/Image/Venezuela/DicembreVenezuela.png}
+\caption{Dicembre}
+\label{Passo3}
+\end{minipage}
+\caption{Popolazione del grafo attraverso l'algoritmo basato sul grado del nodo}\label{grafoGrado}
+\end{figure}
+
+
+\newpage
+Il calcolo della polarizzazione è stato effettuato con i due algoritmi presentati in precedenza (vedi sezione:\ref{Polarizzazione}), per meglio comprendere i risultati ottenuti sono stati fatti dei grafici che mostrano l'andamento della polarizzazione nel tempo. 
+Dopo aver analizzato i grafici si è dimostrato come la \textit{polarizzazione basata sulla topologia} fosse più accurata di quella \textit{basata sul grado del nodo}. La motivazione per cui si verifica questa situazione è dettata dalla \textit{probabilità di retweet}, cioè il valore che è stato assegnato ad ogni arco del grafo in base alle preferenze degli utenti; cioè dal numero di volte che un utente ripubblicava le notizie di un altro utente.
+Per riscontrare in maniera visiva il comportamento di questa informazione basterà confrontare i due diagrammi mostrati.
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale= 0.4]{/Image/RandomWalk/DiagrammiRW/Dicembre.png}
+\caption{Risultati Dicembre algoritmo basato sulla topologia}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale= 0.35]{/Image/Venezuela/Venezuela/Diagrammi/Dicembre.png}
+\caption{Risultati Dicembre algoritmo basato sul grado del nodo}
+\end{figure}
+
+Il risultati più interessanti sono stati ottenuti durante la raccolta dati nel mese di Novembre, il giorno 5 Novembre ci sono state le elezioni in Sicilia. Nel grafico (vedi fig:\ref{NovembrevsNovembre}) sono stati confrontati i risultati ottenuti da Settembre fino a Novembre e quelli ottenuti da Settembre fino al 5 Novembre. Risulta evidente come i dati raccolti prima delle elezioni, mostrino che le opinioni a favore del Movimento 5 Stelle fossero molto simile a quelle espresse dalla coalizione del centro destra. Questo risultato è conforme agli exit-pool espressi poco prima delle elezioni fatti dalla \textit{Rai}, i quali predicevano una lotta serrata tra il candidato \textit{Cancelleri}\footnote{Il candidato presidente della regione Sicilia per il Movimento 5 Stelle} e il candidato \textit{Musumeci}\footnote{Il candidato presidente della regione Sicilia per la coalizione del centro destra}.
+I risultati delle elezioni mostrano un capovolgimento di fronte cioè la vittoria della coalizione del centro-destra a discapito di quella dei 5 Stelle. Un'altra importante considerazione che possiamo fare alla luce dei test effettuati all'interno di questo topic è i cambiamento di trend nel tempo. Avendo raccolto dati per un periodo molto lungo si è potuto assistere all'evoluzione del trend della polarizzazione ottenendo un capovolgimento di fronte; infatti mentre nei mesi di Settembre ed Ottobre la rete era maggiormente influenzata dalle opinioni del Movimento 5 Stelle, a Novembre abbiamo ottenuto un considerevole capovolgimento in conformità con quanto avvenuto nella realtà.
+A fini didattici si è deciso di analizzare il comportamento della rete anche nel mese di Dicembre per verificare se la rete cambiasse il proprio comportamento e quindi la propria polarizzazione; come indicato nella tabella \ref{Noditotali}, i nodi raccolti tra il mese di Novembre e di Dicembre era di 87 nuovi tweet e/o retweet, notando che il comportamento della polarizzazione non era cambiato e che ormai il topic in questione non era più considerato appetibile.
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale= 0.4]{/Image/RandomWalk/DiagrammiRW/Novembre5Novembre.png}
+\caption{Risultati Novembre}
+\label{NovembrevsNovembre}
+\end{figure}
+
+Durante lo sviluppo della tesi, analizzando i dati ottenuti, si è deciso di realizzare un principio di predizione della polarizzazione in mesi successivi utilizzando i dati calcolati nei periodi precedenti. Il motivo di tale scelta è dettata dalla necessità di poter intuire il comportamento della rete, quindi capire come saranno partizionate le opinioni degli utente, nel futuro. Le tecniche utilizzate per la la predizione sono state illustrate all'interno della sezione: \ref{Predizione}.
+Durante la fase di test di queste tecniche di predizione, sono state fatte alcune considerazioni:
+\begin{itemize}
+\item In caso di una singola osservazione, per predire il futuro, non è possibile applicare tale algoritmo per cui si è scelto di restituire come valore il valore della precedente  osservazione.
+\item Il numero minimo di osservazioni per effettuare il calcolo con questo algoritmo deve essere pari a 2.
+\end{itemize}
+Una volta ottenuti i risultati si è calcolato l'errore medio e la relativa varianza in base ai risultati conseguiti nel calcolo della polarizzazione attraverso i due algoritmi implementati. Di seguito mostriamo i risultati conseguiti attraverso un diagramma (vedi fig:\ref{predizioneSicilia1})
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale= 0.4]{ErroreSicilia.png}
+\caption{Errore medio predizione}
+\label{predizioneSicilia1}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale= 0.4]{VarianzaErrSicilia.png}
+\caption{Varianza tasso di errore predizione}
+\label{predizioneSicilia1}
+\end{figure}
+
 \newpage
 \section{Biotestamento}

@@ -187,6 +187,7 @@ Il grafo in questione può essere modificato graficamente, nel nostro caso per m
   \end{figure}
 \newpage
 \section{Polarizzazione}
+\label{Polarizzazione}
 La polarizzazione viene definita come un processo sociale in cui un gruppo viene diviso: 
 in due sottogruppi aventi un conflitto o una visione differente del problema in questione, e da alcuni individui che rimangono neutrali.
 Dal punto di vista matematico la polarizzazione è una assegnazione di un valore compreso all'interno di un range:
@@ -365,6 +366,7 @@ In conclusione la sua polarizzazione può assumere questi due valori:
 Per concludere dal punto di vista implementativo essendo molto oneroso dal punto di vista della memoria volatile, l'esecuzione di tutti questi random walk per ogni nodo, sono state ottimizzate le operazioni. Piuttosto che utilizzare la matrice di adiacenza si è utilizzato un metodo definito nella libreria \textit{NetworkX} che restituisce i primi vicini dell'algoritmo. Dovendo mantenere in memoria una lista di nodi visitati durante l'esecuzione, al raggiungimento di un nodo di grado massimo viene effettuata una operazione di \textit{free} che consente al processo di deallocare le risorse occupate da tale lista.
 
 \section{Predizione}
+\label{Predizione}
 La predizione è una tecnica che consente di analizzare il comportamento di serie di dati nel tempo, permettendo di poter predirne il comportamento nell'istante temporale successivo a quello attualmente in vigore.
 Per la realizzazione degli algoritmi che hanno consentito di poter realizzare una tale operazione sono state adottate delle tecniche molto conosciute nell'ambito del \textit{Forecasting}.
 Nello sviluppo di questa tesi queste tecniche sono state implementate per consentire una predizione della polarizzazione di ogni nodo nel mese successivo a quello calcolato. Per mantenere i dati e averli sempre a disposizione, questi sono stati salvati all'interno di file \textit{csv} per poter consentire all'utente di poterli analizzare e consultare nel tempo.

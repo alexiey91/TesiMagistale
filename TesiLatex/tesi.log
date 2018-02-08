@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  7 FEB 2018 23:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  8 FEB 2018 19:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -252,7 +252,400 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen130
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2016/01/06 v1.13 Data Visualization (1.13)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks24
+\pgfutil@tempdima=\dimen131
+\pgfutil@tempdimb=\dimen132
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box31
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks27
+))
+\pgf@x=\dimen133
+\pgf@y=\dimen134
+\pgf@xa=\dimen135
+\pgf@ya=\dimen136
+\pgf@xb=\dimen137
+\pgf@yb=\dimen138
+\pgf@xc=\dimen139
+\pgf@yc=\dimen140
+\w@pgf@writea=\write4
+\r@pgf@reada=\read1
+\c@pgf@counta=\count109
+\c@pgf@countb=\count110
+\c@pgf@countc=\count111
+\c@pgf@countd=\count112
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count113
+\pgfsyssoftpath@bigbuffer@items=\count114
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen141
+\pgfmath@count=\count115
+\pgfmath@box=\box32
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count116
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen142
+\pgf@picmaxx=\dimen143
+\pgf@picminy=\dimen144
+\pgf@picmaxy=\dimen145
+\pgf@pathminx=\dimen146
+\pgf@pathmaxx=\dimen147
+\pgf@pathminy=\dimen148
+\pgf@pathmaxy=\dimen149
+\pgf@xx=\dimen150
+\pgf@xy=\dimen151
+\pgf@yx=\dimen152
+\pgf@yy=\dimen153
+\pgf@zx=\dimen154
+\pgf@zy=\dimen155
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen156
+\pgf@path@lasty=\dimen157
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen158
+\pgf@shorten@start@additional=\dimen159
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box33
+\pgf@hbox=\box34
+\pgf@layerbox@main=\box35
+\pgf@picture@serial@count=\count117
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen160
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen161
+\pgf@pt@y=\dimen162
+\pgf@pt@temp=\dimen163
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen164
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen165
+\pgf@sys@shading@range@num=\count118
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box36
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box37
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen166
+\pgf@nodesepend=\dimen167
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen168
+\pgffor@skip=\dimen169
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count119
+\pgfplotmarksize=\dimen170
+)
+\tikz@lastx=\dimen171
+\tikz@lasty=\dimen172
+\tikz@lastxsaved=\dimen173
+\tikz@lastysaved=\dimen174
+\tikzleveldistance=\dimen175
+\tikzsiblingdistance=\dimen176
+\tikz@figbox=\box38
+\tikz@figbox@bg=\box39
+\tikz@tempbox=\box40
+\tikz@tempbox@bg=\box41
+\tikztreelevel=\count120
+\tikznumberofchildren=\count121
+\tikznumberofcurrentchild=\count122
+\tikz@fig@count=\count123
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count124
+\pgfmatrixcurrentcolumn=\count125
+\pgf@matrix@numberofcolumns=\count126
+)
+\tikz@expandcount=\count127
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks36
+\t@pgfplots@tokb=\toks37
+\t@pgfplots@tokc=\toks38
+\pgfplots@tmpa=\dimen177
+\c@pgfplots@coordindex=\count128
+\c@pgfplots@scanlineindex=\count129
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
+.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_loader.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+)
+Package pgfplots: loading complementary arithmetics for your pgf version...
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgflibraryfpu.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count130
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructure.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructureext.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
+.code.tex
+\c@pgfplotsarray@tmp=\count131
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
+x.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
+d.code.tex
+\c@pgfplotstable@counta=\count132
+\t@pgfplotstable@a=\toks39
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.te
+x
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.co
+de.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
+fshading.code.tex
+\c@pgfplotslibrarysurf@no=\count133
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
+shading.pgfsys-pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.
+tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.t
+ex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
+e.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.
+tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex
+\pgfdecoratedcompleteddistance=\dimen178
+\pgfdecoratedremainingdistance=\dimen179
+\pgfdecoratedinputsegmentcompleteddistance=\dimen180
+\pgfdecoratedinputsegmentremainingdistance=\dimen181
+\pgf@decorate@distancetomove=\dimen182
+\pgf@decorate@repeatstate=\count134
+\pgfdecorationsegmentamplitude=\dimen183
+\pgfdecorationsegmentlength=\dimen184
+)
+\tikz@lib@dec@box=\box42
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathreplacing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathreplacing.code.tex))
+\pgfplots@numplots=\count135
+\pgfplots@xmin@reg=\dimen185
+\pgfplots@xmax@reg=\dimen186
+\pgfplots@ymin@reg=\dimen187
+\pgfplots@ymax@reg=\dimen188
+\pgfplots@zmin@reg=\dimen189
+\pgfplots@zmax@reg=\dimen190
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
+de.tex
+File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
+))) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/02/24 3.9q The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-italian/italian.ldf
@@ -260,21 +653,21 @@ Language: italian 2015/03/26 v1.3n Italian support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
-\babel@savecnt=\count109
-\U@D=\dimen131
+\babel@savecnt=\count136
+\U@D=\dimen191
 )
-\it@lettering=\count110
-\it@doublequoteactive=\count111
-\it@ISOcompliance=\count112
+\it@lettering=\count137
+\it@doublequoteactive=\count138
+\it@ISOcompliance=\count139
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count113
+\etb@tempcnta=\count140
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks24
-\inpenc@posthook=\toks25
+\inpenc@prehook=\toks40
+\inpenc@posthook=\toks41
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
@@ -285,13 +678,50 @@ Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count114
-\uc@combtoks=\toks26
-\uc@combtoksb=\toks27
-\uc@temptokena=\toks28
+\uc@secondtry=\count141
+\uc@combtoks=\toks42
+\uc@combtoksb=\toks43
+\uc@temptokena=\toks44
 ) (./tesi.aux
 (./frontespizio.aux) (./sommario.aux) (./capitolo1.aux) (./capitolo2.aux)
-(./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux))
+(./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux
+
+LaTeX Warning: Label `Passo0' multiply defined.
+
+
+LaTeX Warning: Label `Passo1' multiply defined.
+
+
+LaTeX Warning: Label `Passo2' multiply defined.
+
+
+LaTeX Warning: Label `Passo3' multiply defined.
+
+
+LaTeX Warning: Label `Passo3' multiply defined.
+
+
+LaTeX Warning: Label `Passo0' multiply defined.
+
+
+LaTeX Warning: Label `Passo1' multiply defined.
+
+
+LaTeX Warning: Label `Passo2' multiply defined.
+
+
+LaTeX Warning: Label `Passo3' multiply defined.
+
+
+LaTeX Warning: Label `Passo3' multiply defined.
+
+
+LaTeX Warning: Label `Passo0' multiply defined.
+
+
+LaTeX Warning: Label `Passo1' multiply defined.
+
+) (./capitolo7.aux))
 \openout1 = `tesi.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -309,17 +739,17 @@ LaTeX Font Info:    ... okay on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
-\scratchdimen=\dimen132
-\scratchbox=\box31
-\nofMPsegments=\count116
-\nofMParguments=\count117
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count118
-\MPscratchDim=\dimen133
-\MPnumerator=\count119
-\makeMPintoPDFobject=\count120
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count142
+\scratchdimen=\dimen192
+\scratchbox=\box43
+\nofMPsegments=\count143
+\nofMParguments=\count144
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count145
+\MPscratchDim=\dimen193
+\MPnumerator=\count146
+\makeMPintoPDFobject=\count147
+\everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -353,9 +783,16 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+
+ABD: EveryShipout initializing macros
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
+your preamble.
+ on input line 35.
+
 LaTeX Info: Redefining \it@ocap on input line 35.
 LaTeX Info: Redefining \it@ccap on input line 35.
-
 
 File italian.ldf warning: 
 italian.ldf    With OT1 encoding guillemets are poorly faked
@@ -370,7 +807,7 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 \openout2 = `frontespizio.aux'.
 
  (./frontespizio.tex
-<pictures/logo.png, id=1, 1084.05pt x 1084.05pt>
+<pictures/logo.png, id=4, 1084.05pt x 1084.05pt>
 File: pictures/logo.png Graphic file (type png)
  <use pictures/logo.png>
 Package pdftex.def Info: pictures/logo.png used on input line 14.
@@ -401,8 +838,8 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 36--37
 
 
 ])
-\tf@toc=\write4
-\openout4 = `tesi.toc'.
+\tf@toc=\write5
+\openout5 = `tesi.toc'.
 
  [4]
 \openout2 = `capitolo1.aux'.
@@ -434,7 +871,7 @@ Capitolo 2.
 
 
 
-] [11] <pictures/twitter-logo.png, id=61, 513.92pt x 513.92pt>
+] [11] <pictures/twitter-logo.png, id=64, 513.92pt x 513.92pt>
 File: pictures/twitter-logo.png Graphic file (type png)
 
 <use pictures/twitter-logo.png>
@@ -462,7 +899,7 @@ Capitolo 3.
 
 
 
-] [21] <pictures/Aws.png, id=99, 357.335pt x 141.52875pt>
+] [21] <pictures/Aws.png, id=102, 357.335pt x 141.52875pt>
 File: pictures/Aws.png Graphic file (type png)
 
 <use pictures/Aws.png>
@@ -473,7 +910,7 @@ Overfull \hbox (22.66943pt too wide) in paragraph at lines 34--35
  [][] 
  []
 
-<pictures/Python.png, id=100, 388.45125pt x 130.4875pt>
+<pictures/Python.png, id=103, 388.45125pt x 130.4875pt>
 File: pictures/Python.png Graphic file (type png)
 
 <use pictures/Python.png>
@@ -490,7 +927,7 @@ Overfull \hbox (38.22752pt too wide) in paragraph at lines 40--41
 
 (./capitolo5.tex
 Capitolo 4.
-<pictures/Flusso.png, id=121, 781.92125pt x 604.2575pt>
+<pictures/Flusso.png, id=124, 781.92125pt x 604.2575pt>
 File: pictures/Flusso.png Graphic file (type png)
 
 <use pictures/Flusso.png>
@@ -509,7 +946,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 ] [29 <./pictures/Flusso.png>] [30] [31]
-<pictures/trump.png, id=135, 511.9125pt x 213.79875pt>
+<pictures/trump.png, id=138, 511.9125pt x 213.79875pt>
 File: pictures/trump.png Graphic file (type png)
 
 <use pictures/trump.png>
@@ -524,7 +961,7 @@ Overfull \hbox (19.53056pt too wide) in paragraph at lines 72--74
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [32] [33 <./pictures/trump.png>]
-<pictures/sentiment.png, id=143, 708.6475pt x 373.395pt>
+<pictures/sentiment.png, id=146, 708.6475pt x 373.395pt>
 File: pictures/sentiment.png Graphic file (type png)
 
 <use pictures/sentiment.png>
@@ -557,7 +994,7 @@ Underfull \hbox (badness 1655) in paragraph at lines 150--150
 in ba-se al-le esi-gen-ze del-l'u-ten-te,
  []
 
-[36] [37] [38] [39] <pictures/esempio.png, id=166, 462.528pt x 346.896pt>
+[36] [37] [38] [39] <pictures/esempio.png, id=169, 462.528pt x 346.896pt>
 File: pictures/esempio.png Graphic file (type png)
 
 <use pictures/esempio.png>
@@ -568,54 +1005,54 @@ Package pdftex.def Info: pictures/esempio.png used on input line 183.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [40] [41 <./pictures/esempio.png>] [42] [43]
-<pictures/Passo0.png, id=182, 432.61626pt x 362.35374pt>
+<pictures/Passo0.png, id=185, 432.61626pt x 362.35374pt>
 File: pictures/Passo0.png Graphic file (type png)
 
 <use pictures/Passo0.png>
-Package pdftex.def Info: pictures/Passo0.png used on input line 264.
+Package pdftex.def Info: pictures/Passo0.png used on input line 265.
 (pdftex.def)             Requested size: 173.04343pt x 144.93892pt.
 
-Overfull \hbox (17.0458pt too wide) in paragraph at lines 264--265
+Overfull \hbox (17.0458pt too wide) in paragraph at lines 265--266
  [][] 
  []
 
-<pictures/Passo1.png, id=183, 432.61626pt x 362.35374pt>
+<pictures/Passo1.png, id=186, 432.61626pt x 362.35374pt>
 File: pictures/Passo1.png Graphic file (type png)
 
 <use pictures/Passo1.png>
-Package pdftex.def Info: pictures/Passo1.png used on input line 271.
+Package pdftex.def Info: pictures/Passo1.png used on input line 272.
 (pdftex.def)             Requested size: 173.04343pt x 144.93892pt.
 
-Overfull \hbox (17.0458pt too wide) in paragraph at lines 271--272
+Overfull \hbox (17.0458pt too wide) in paragraph at lines 272--273
  [][] 
  []
 
-<pictures/Passo2.png, id=184, 432.61626pt x 362.35374pt>
+<pictures/Passo2.png, id=187, 432.61626pt x 362.35374pt>
 File: pictures/Passo2.png Graphic file (type png)
 
 <use pictures/Passo2.png>
-Package pdftex.def Info: pictures/Passo2.png used on input line 278.
+Package pdftex.def Info: pictures/Passo2.png used on input line 279.
 (pdftex.def)             Requested size: 173.04343pt x 144.93892pt.
 
-Overfull \hbox (17.0458pt too wide) in paragraph at lines 278--279
+Overfull \hbox (17.0458pt too wide) in paragraph at lines 279--280
  [][] 
  []
 
 File: pictures/Passo2.png Graphic file (type png)
 <use pictures/Passo2.png>
-Package pdftex.def Info: pictures/Passo2.png used on input line 285.
+Package pdftex.def Info: pictures/Passo2.png used on input line 286.
 (pdftex.def)             Requested size: 173.04343pt x 144.93892pt.
 
-Overfull \hbox (17.0458pt too wide) in paragraph at lines 285--286
+Overfull \hbox (17.0458pt too wide) in paragraph at lines 286--287
  [][] 
  []
 
 [44] [45 <./pictures/Passo0.png> <./pictures/Passo1.png> <./pictures/Passo2.png
->] [46] [47] <pictures/RWPasso0.png, id=202, 407.5225pt x 381.425pt>
+>] [46] [47] <pictures/RWPasso0.png, id=205, 407.5225pt x 381.425pt>
 File: pictures/RWPasso0.png Graphic file (type png)
 
 <use pictures/RWPasso0.png>
-Package pdftex.def Info: pictures/RWPasso0.png used on input line 336.
+Package pdftex.def Info: pictures/RWPasso0.png used on input line 337.
 (pdftex.def)             Requested size: 244.51538pt x 228.85675pt.
  [48 <./pictures/RWPasso0.png>] [49] [50] [51]
 [52] [53] [54]) [55]
@@ -627,7 +1064,7 @@ Capitolo 5.
 
 
 
-] [57] [58] <pictures/hashtagify.png, id=241, 244.915pt x 52.195pt>
+] [57] [58] <pictures/hashtagify.png, id=244, 244.915pt x 52.195pt>
 File: pictures/hashtagify.png Graphic file (type png)
 
 <use pictures/hashtagify.png>
@@ -681,16 +1118,213 @@ Overfull \hbox (33.34616pt too wide) in paragraph at lines 111--132
 [][] 
  []
 
-[61] [62] [63]) [64]
+[61] [62]
+<pictures//Image/RandomWalk/SettembreRandomWalk.png, id=259, 462.528pt x 346.89
+6pt>
+File: pictures//Image/RandomWalk/SettembreRandomWalk.png Graphic file (type png
+)
+ <use pictures//Image/RandomWalk/SettembreRandomWalk.png>
+Package pdftex.def Info: pictures//Image/RandomWalk/SettembreRandomWalk.png use
+d on input line 146.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 146--147
+ [][] 
+ []
+
+
+<pictures//Image/RandomWalk/OttobreRandomWalk.png, id=260, 462.528pt x 346.896p
+t>
+File: pictures//Image/RandomWalk/OttobreRandomWalk.png Graphic file (type png)
+ <use pictures//Image/RandomWalk/OttobreRandomWalk.png>
+Package pdftex.def Info: pictures//Image/RandomWalk/OttobreRandomWalk.png used 
+on input line 153.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 153--154
+ [][] 
+ []
+
+<pictures//Image/RandomWalk/5NovembreRw.png, id=261, 462.528pt x 346.896pt>
+File: pictures//Image/RandomWalk/5NovembreRw.png Graphic file (type png)
+
+<use pictures//Image/RandomWalk/5NovembreRw.png>
+Package pdftex.def Info: pictures//Image/RandomWalk/5NovembreRw.png used on inp
+ut line 160.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 160--161
+ [][] 
+ []
+
+
+<pictures//Image/RandomWalk/NovembreRandomWalk.png, id=262, 462.528pt x 346.896
+pt>
+File: pictures//Image/RandomWalk/NovembreRandomWalk.png Graphic file (type png)
+
+ <use pictures//Image/RandomWalk/NovembreRandomWalk.png>
+Package pdftex.def Info: pictures//Image/RandomWalk/NovembreRandomWalk.png used
+ on input line 167.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 167--168
+ [][] 
+ []
+
+
+<pictures//Image/RandomWalk/DicembreRandomWalk.png, id=263, 462.528pt x 346.896
+pt>
+File: pictures//Image/RandomWalk/DicembreRandomWalk.png Graphic file (type png)
+
+ <use pictures//Image/RandomWalk/DicembreRandomWalk.png>
+Package pdftex.def Info: pictures//Image/RandomWalk/DicembreRandomWalk.png used
+ on input line 174.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 174--175
+ [][] 
+ []
+
+
+<pictures//Image/Venezuela/SettembreVenezuela.png, id=264, 462.528pt x 346.896p
+t>
+File: pictures//Image/Venezuela/SettembreVenezuela.png Graphic file (type png)
+ <use pictures//Image/Venezuela/SettembreVenezuela.png>
+Package pdftex.def Info: pictures//Image/Venezuela/SettembreVenezuela.png used 
+on input line 186.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 186--187
+ [][] 
+ []
+
+
+<pictures//Image/Venezuela/OttobreVenezuela.png, id=265, 462.528pt x 346.896pt>
+File: pictures//Image/Venezuela/OttobreVenezuela.png Graphic file (type png)
+<use pictures//Image/Venezuela/OttobreVenezuela.png>
+Package pdftex.def Info: pictures//Image/Venezuela/OttobreVenezuela.png used on
+ input line 193.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 193--194
+ [][] 
+ []
+
+
+<pictures//Image/Venezuela/5NovembreVenezuela.png, id=266, 462.528pt x 346.896p
+t>
+File: pictures//Image/Venezuela/5NovembreVenezuela.png Graphic file (type png)
+ <use pictures//Image/Venezuela/5NovembreVenezuela.png>
+Package pdftex.def Info: pictures//Image/Venezuela/5NovembreVenezuela.png used 
+on input line 200.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 200--201
+ [][] 
+ []
+
+
+<pictures//Image/Venezuela/NovembreVenezuela.png, id=267, 462.528pt x 346.896pt
+>
+File: pictures//Image/Venezuela/NovembreVenezuela.png Graphic file (type png)
+ <use pictures//Image/Venezuela/NovembreVenezuela.png>
+Package pdftex.def Info: pictures//Image/Venezuela/NovembreVenezuela.png used o
+n input line 207.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 207--208
+ [][] 
+ []
+
+
+<pictures//Image/Venezuela/DicembreVenezuela.png, id=268, 462.528pt x 346.896pt
+>
+File: pictures//Image/Venezuela/DicembreVenezuela.png Graphic file (type png)
+ <use pictures//Image/Venezuela/DicembreVenezuela.png>
+Package pdftex.def Info: pictures//Image/Venezuela/DicembreVenezuela.png used o
+n input line 214.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 214--215
+ [][] 
+ []
+
+[63] [64 <./pictures//Image/RandomWalk/SettembreRandomWalk.png> <./pictures//Im
+age/RandomWalk/OttobreRandomWalk.png> <./pictures//Image/RandomWalk/5NovembreRw
+.png> <./pictures//Image/RandomWalk/NovembreRandomWalk.png> <./pictures//Image/
+RandomWalk/DicembreRandomWalk.png>] [65 <./pictures//Image/Venezuela/SettembreV
+enezuela.png> <./pictures//Image/Venezuela/OttobreVenezuela.png> <./pictures//I
+mage/Venezuela/5NovembreVenezuela.png> <./pictures//Image/Venezuela/NovembreVen
+ezuela.png> <./pictures//Image/Venezuela/DicembreVenezuela.png>]
+<pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png, id=288, 963.6pt x 557.834
+06pt>
+File: pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png Graphic file (type pn
+g)
+ <use pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png>
+Package pdftex.def Info: pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png us
+ed on input line 228.
+(pdftex.def)             Requested size: 385.43317pt x 223.12967pt.
+
+<pictures//Image/Venezuela/Venezuela/Diagrammi/Dicembre.png, id=289, 1151.80313
+pt x 520.94624pt>
+File: pictures//Image/Venezuela/Venezuela/Diagrammi/Dicembre.png Graphic file (
+type png)
+
+<use pictures//Image/Venezuela/Venezuela/Diagrammi/Dicembre.png>
+Package pdftex.def Info: pictures//Image/Venezuela/Venezuela/Diagrammi/Dicembre
+.png used on input line 233.
+(pdftex.def)             Requested size: 403.13713pt x 182.33391pt.
+
+Overfull \hbox (13.13713pt too wide) in paragraph at lines 233--234
+ [][] 
+ []
+
+
+<pictures//Image/RandomWalk/DiagrammiRW/Novembre5Novembre.png, id=290, 981.6675
+pt x 519.44063pt>
+File: pictures//Image/RandomWalk/DiagrammiRW/Novembre5Novembre.png Graphic file
+ (type png)
+
+<use pictures//Image/RandomWalk/DiagrammiRW/Novembre5Novembre.png>
+Package pdftex.def Info: pictures//Image/RandomWalk/DiagrammiRW/Novembre5Novemb
+re.png used on input line 242.
+(pdftex.def)             Requested size: 392.66003pt x 207.77257pt.
+
+Overfull \hbox (2.66003pt too wide) in paragraph at lines 242--243
+ [][] 
+ []
+
+[66 <./pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png>] [67 <./pictures//I
+mage/Venezuela/Venezuela/Diagrammi/Dicembre.png>] [68 <./pictures//Image/Random
+Walk/DiagrammiRW/Novembre5Novembre.png>]
+
+LaTeX Warning: Reference `predizioneSicilia1' on page 69 undefined on input lin
+e 253.
+
+<pictures/ErroreSicilia.png, id=301, 676.5275pt x 428.60126pt>
+File: pictures/ErroreSicilia.png Graphic file (type png)
+
+<use pictures/ErroreSicilia.png>
+Package pdftex.def Info: pictures/ErroreSicilia.png used on input line 256.
+(pdftex.def)             Requested size: 270.6062pt x 171.43745pt.
+
+<pictures/VarianzaErrSicilia.png, id=302, 602.25pt x 372.39125pt>
+File: pictures/VarianzaErrSicilia.png Graphic file (type png)
+
+<use pictures/VarianzaErrSicilia.png>
+Package pdftex.def Info: pictures/VarianzaErrSicilia.png used on input line 262
+.
+(pdftex.def)             Requested size: 240.89572pt x 148.95386pt.
+ [69 <./pictures/ErroreSicilia.png> <./pictures/VarianzaErrSicilia.png>]) [70]
 \openout2 = `capitolo7.aux'.
 
  (./capitolo7.tex
 Capitolo 6.
-) [65
+) [71
 
 
 
-] [66] (./tesi.bbl
+] [72] (./tesi.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 []\OT1/cmr/m/n/12 Computer Emer-gen-cy Re-spon-se Team.  Co-me fun-zio-
  []
@@ -721,40 +1355,47 @@ less on input line 90.
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
 less on input line 92.
 
-[67
+[73
 
 
 
 ] (./tesi.aux (./frontespizio.aux) (./sommario.aux) (./capitolo1.aux)
 (./capitolo2.aux) (./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux)
-(./capitolo7.aux)) ) 
+(./capitolo7.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5997 strings out of 493029
- 84390 string characters out of 6136234
- 170032 words of memory out of 5000000
- 9325 multiletter control sequences out of 15000+600000
+ 25211 strings out of 493029
+ 610625 string characters out of 6136234
+ 784605 words of memory out of 5000000
+ 28173 multiletter control sequences out of 15000+600000
  16299 words of font info for 61 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 42i,16n,43p,1089b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
-xti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tesi.pdf (72 pages, 728983 bytes).
+ 62i,16n,77p,1089b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+si10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on tesi.pdf (78 pages, 1974607 bytes).
 PDF statistics:
- 326 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
+ 376 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 
