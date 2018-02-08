@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  8 FEB 2018 19:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  8 FEB 2018 23:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -716,10 +716,7 @@ LaTeX Warning: Label `Passo3' multiply defined.
 LaTeX Warning: Label `Passo3' multiply defined.
 
 
-LaTeX Warning: Label `Passo0' multiply defined.
-
-
-LaTeX Warning: Label `Passo1' multiply defined.
+LaTeX Warning: Label `predizioneSicilia1' multiply defined.
 
 ) (./capitolo7.aux))
 \openout1 = `tesi.aux'.
@@ -1068,53 +1065,53 @@ Capitolo 5.
 File: pictures/hashtagify.png Graphic file (type png)
 
 <use pictures/hashtagify.png>
-Package pdftex.def Info: pictures/hashtagify.png used on input line 56.
+Package pdftex.def Info: pictures/hashtagify.png used on input line 57.
 (pdftex.def)             Requested size: 122.45718pt x 26.09743pt.
  [59] [60 <./pictures/hashtagify.png>]
-Underfull \hbox (badness 4328) in paragraph at lines 93--93
+Underfull \hbox (badness 4328) in paragraph at lines 94--94
 []|\OT1/cmr/m/n/12 A di-spo-si-zio-ne del #Mo-Vi-men-to5Stelle per cam-
  []
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 93--93
+Underfull \hbox (badness 1622) in paragraph at lines 94--94
 \OT1/cmr/m/n/12 bia-re la no-stra fan-ta-sti-ca #Si-ci-lia! Con-tat-ta-te-mi
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 95--95
+Underfull \hbox (badness 5578) in paragraph at lines 96--96
 \OT1/cmr/m/n/12 re-gio-na-li 2017 in #Si-ci-lia !!#ele-zio-ni-re-gio-na-li2017
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--97
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
 []|\OT1/cmr/m/n/12 'Siamo qui a #Pa-ler-mo per vin-ce-re con
  []
 
 
-Underfull \hbox (badness 4726) in paragraph at lines 100--101
+Underfull \hbox (badness 4726) in paragraph at lines 101--102
 []|\OT1/cmr/m/n/12 #cambiamoabitudini Ba-sta! Ades-so si agi-sce.Il
  []
 
 
-Overfull \hbox (5.0858pt too wide) in paragraph at lines 82--103
+Overfull \hbox (5.0858pt too wide) in paragraph at lines 83--104
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 30.03307pt on input line 105.
+LaTeX Warning: Float too large for page by 30.03307pt on input line 106.
 
 
-Overfull \hbox (3.46254pt too wide) in paragraph at lines 117--118
+Overfull \hbox (3.46254pt too wide) in paragraph at lines 118--119
  \OT1/cmr/bx/n/12 Settembre 
  []
 
 
-Overfull \hbox (2.9834pt too wide) in paragraph at lines 123--124
+Overfull \hbox (2.9834pt too wide) in paragraph at lines 124--125
  \OT1/cmr/bx/n/12 Novembre 
  []
 
 
-Overfull \hbox (33.34616pt too wide) in paragraph at lines 111--132
+Overfull \hbox (33.34616pt too wide) in paragraph at lines 112--133
 [][] 
  []
 
@@ -1125,10 +1122,10 @@ File: pictures//Image/RandomWalk/SettembreRandomWalk.png Graphic file (type png
 )
  <use pictures//Image/RandomWalk/SettembreRandomWalk.png>
 Package pdftex.def Info: pictures//Image/RandomWalk/SettembreRandomWalk.png use
-d on input line 146.
+d on input line 147.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (29.01028pt too wide) in paragraph at lines 146--147
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 147--148
  [][] 
  []
 
@@ -1138,10 +1135,10 @@ t>
 File: pictures//Image/RandomWalk/OttobreRandomWalk.png Graphic file (type png)
  <use pictures//Image/RandomWalk/OttobreRandomWalk.png>
 Package pdftex.def Info: pictures//Image/RandomWalk/OttobreRandomWalk.png used 
-on input line 153.
+on input line 154.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (29.01028pt too wide) in paragraph at lines 153--154
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 154--155
  [][] 
  []
 
@@ -1150,10 +1147,10 @@ File: pictures//Image/RandomWalk/5NovembreRw.png Graphic file (type png)
 
 <use pictures//Image/RandomWalk/5NovembreRw.png>
 Package pdftex.def Info: pictures//Image/RandomWalk/5NovembreRw.png used on inp
-ut line 160.
+ut line 161.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (29.01028pt too wide) in paragraph at lines 160--161
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 161--162
  [][] 
  []
 
@@ -1164,10 +1161,10 @@ File: pictures//Image/RandomWalk/NovembreRandomWalk.png Graphic file (type png)
 
  <use pictures//Image/RandomWalk/NovembreRandomWalk.png>
 Package pdftex.def Info: pictures//Image/RandomWalk/NovembreRandomWalk.png used
- on input line 167.
+ on input line 168.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (29.01028pt too wide) in paragraph at lines 167--168
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 168--169
  [][] 
  []
 
@@ -1178,10 +1175,10 @@ File: pictures//Image/RandomWalk/DicembreRandomWalk.png Graphic file (type png)
 
  <use pictures//Image/RandomWalk/DicembreRandomWalk.png>
 Package pdftex.def Info: pictures//Image/RandomWalk/DicembreRandomWalk.png used
- on input line 174.
+ on input line 175.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (29.01028pt too wide) in paragraph at lines 174--175
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 175--176
  [][] 
  []
 
@@ -1191,10 +1188,10 @@ t>
 File: pictures//Image/Venezuela/SettembreVenezuela.png Graphic file (type png)
  <use pictures//Image/Venezuela/SettembreVenezuela.png>
 Package pdftex.def Info: pictures//Image/Venezuela/SettembreVenezuela.png used 
-on input line 186.
+on input line 187.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (29.01028pt too wide) in paragraph at lines 186--187
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 187--188
  [][] 
  []
 
@@ -1203,10 +1200,10 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 186--187
 File: pictures//Image/Venezuela/OttobreVenezuela.png Graphic file (type png)
 <use pictures//Image/Venezuela/OttobreVenezuela.png>
 Package pdftex.def Info: pictures//Image/Venezuela/OttobreVenezuela.png used on
- input line 193.
+ input line 194.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (29.01028pt too wide) in paragraph at lines 193--194
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 194--195
  [][] 
  []
 
@@ -1216,10 +1213,10 @@ t>
 File: pictures//Image/Venezuela/5NovembreVenezuela.png Graphic file (type png)
  <use pictures//Image/Venezuela/5NovembreVenezuela.png>
 Package pdftex.def Info: pictures//Image/Venezuela/5NovembreVenezuela.png used 
-on input line 200.
+on input line 201.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (29.01028pt too wide) in paragraph at lines 200--201
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 201--202
  [][] 
  []
 
@@ -1229,10 +1226,10 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 200--201
 File: pictures//Image/Venezuela/NovembreVenezuela.png Graphic file (type png)
  <use pictures//Image/Venezuela/NovembreVenezuela.png>
 Package pdftex.def Info: pictures//Image/Venezuela/NovembreVenezuela.png used o
-n input line 207.
+n input line 208.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (29.01028pt too wide) in paragraph at lines 207--208
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 208--209
  [][] 
  []
 
@@ -1242,10 +1239,10 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 207--208
 File: pictures//Image/Venezuela/DicembreVenezuela.png Graphic file (type png)
  <use pictures//Image/Venezuela/DicembreVenezuela.png>
 Package pdftex.def Info: pictures//Image/Venezuela/DicembreVenezuela.png used o
-n input line 214.
+n input line 215.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (29.01028pt too wide) in paragraph at lines 214--215
+Overfull \hbox (29.01028pt too wide) in paragraph at lines 215--216
  [][] 
  []
 
@@ -1262,7 +1259,7 @@ File: pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png Graphic file (type pn
 g)
  <use pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png>
 Package pdftex.def Info: pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png us
-ed on input line 228.
+ed on input line 229.
 (pdftex.def)             Requested size: 385.43317pt x 223.12967pt.
 
 <pictures//Image/Venezuela/Venezuela/Diagrammi/Dicembre.png, id=289, 1151.80313
@@ -1272,10 +1269,10 @@ type png)
 
 <use pictures//Image/Venezuela/Venezuela/Diagrammi/Dicembre.png>
 Package pdftex.def Info: pictures//Image/Venezuela/Venezuela/Diagrammi/Dicembre
-.png used on input line 233.
+.png used on input line 234.
 (pdftex.def)             Requested size: 403.13713pt x 182.33391pt.
 
-Overfull \hbox (13.13713pt too wide) in paragraph at lines 233--234
+Overfull \hbox (13.13713pt too wide) in paragraph at lines 234--235
  [][] 
  []
 
@@ -1287,44 +1284,59 @@ File: pictures//Image/RandomWalk/DiagrammiRW/Novembre5Novembre.png Graphic file
 
 <use pictures//Image/RandomWalk/DiagrammiRW/Novembre5Novembre.png>
 Package pdftex.def Info: pictures//Image/RandomWalk/DiagrammiRW/Novembre5Novemb
-re.png used on input line 242.
+re.png used on input line 243.
 (pdftex.def)             Requested size: 392.66003pt x 207.77257pt.
 
-Overfull \hbox (2.66003pt too wide) in paragraph at lines 242--243
+Overfull \hbox (2.66003pt too wide) in paragraph at lines 243--244
  [][] 
  []
 
 [66 <./pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png>] [67 <./pictures//I
 mage/Venezuela/Venezuela/Diagrammi/Dicembre.png>] [68 <./pictures//Image/Random
 Walk/DiagrammiRW/Novembre5Novembre.png>]
-
-LaTeX Warning: Reference `predizioneSicilia1' on page 69 undefined on input lin
-e 253.
-
 <pictures/ErroreSicilia.png, id=301, 676.5275pt x 428.60126pt>
 File: pictures/ErroreSicilia.png Graphic file (type png)
 
 <use pictures/ErroreSicilia.png>
-Package pdftex.def Info: pictures/ErroreSicilia.png used on input line 256.
+Package pdftex.def Info: pictures/ErroreSicilia.png used on input line 257.
 (pdftex.def)             Requested size: 270.6062pt x 171.43745pt.
 
 <pictures/VarianzaErrSicilia.png, id=302, 602.25pt x 372.39125pt>
 File: pictures/VarianzaErrSicilia.png Graphic file (type png)
 
 <use pictures/VarianzaErrSicilia.png>
-Package pdftex.def Info: pictures/VarianzaErrSicilia.png used on input line 262
+Package pdftex.def Info: pictures/VarianzaErrSicilia.png used on input line 263
 .
 (pdftex.def)             Requested size: 240.89572pt x 148.95386pt.
- [69 <./pictures/ErroreSicilia.png> <./pictures/VarianzaErrSicilia.png>]) [70]
+ [69 <./pictures/ErroreSicilia.png> <./pictures/VarianzaErrSicilia.png>] [70] [
+71]
+Overfull \hbox (5.0858pt too wide) in paragraph at lines 303--321
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 72.33313pt on input line 323.
+
+[72]
+Overfull \hbox (3.46254pt too wide) in paragraph at lines 335--336
+ \OT1/cmr/bx/n/12 Settembre 
+ []
+
+
+Overfull \hbox (92.69301pt too wide) in paragraph at lines 329--352
+[][] 
+ []
+
+) [73] [74] [75]
 \openout2 = `capitolo7.aux'.
 
  (./capitolo7.tex
 Capitolo 6.
-) [71
+[76
 
 
 
-] [72] (./tesi.bbl
+]) [77] [78] (./tesi.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 []\OT1/cmr/m/n/12 Computer Emer-gen-cy Re-spon-se Team.  Co-me fun-zio-
  []
@@ -1355,7 +1367,7 @@ less on input line 90.
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
 less on input line 92.
 
-[73
+[79
 
 
 
@@ -1363,17 +1375,14 @@ less on input line 92.
 (./capitolo2.aux) (./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux)
 (./capitolo7.aux))
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25211 strings out of 493029
- 610625 string characters out of 6136234
+ 25213 strings out of 493029
+ 610656 string characters out of 6136234
  784605 words of memory out of 5000000
- 28173 multiletter control sequences out of 15000+600000
+ 28175 multiletter control sequences out of 15000+600000
  16299 words of font info for 61 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  62i,16n,77p,1089b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1392,10 +1401,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tesi.pdf (78 pages, 1974607 bytes).
+Output written on tesi.pdf (84 pages, 1979287 bytes).
 PDF statistics:
- 376 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
+ 395 PDF objects out of 1000 (max. 8388607)
+ 239 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

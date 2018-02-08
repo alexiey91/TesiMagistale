@@ -24,6 +24,7 @@ Nel contesto politico le divergenze di opinioni vengono generate già dagli espo
 Per quanto riguarda il contesto sociale, questo è molto interessante, perchè gli argomenti che appartengono a questa categoria hanno presa su un campione maggiore di utenti, perché molto spesso collegate a problematiche religiose, politiche, etiche ed economiche. La scelta di questo contesto consente di poter verificare quanto un topic, sia appetibile e polarizzato. Nel dettaglio è interessante notare come utilizzare uno strumento come la polarizzazione possa essere usato non solo per misurare quanto un argomento divida due gruppi di utenti, ma anche per fare indagini di mercato, statistiche da poter utilizzare in futuro.
 \newpage
 \section{Elezioni Regionali Sicilia 2017}
+\label{EleSicilia}
 %Motivazione scelta topic
 %Come sono stati fatti i test
 %Gli hashtag, Il grafo, i risultati
@@ -36,7 +37,7 @@ Dal punto di vista della polarizzazione le differenti correnti politiche generan
 La classe politica sta sempre più utilizzando i social media per poter esprimere le loro idee, anche per catturare l'attenzione di diversi elettori, per rendere accessibili a più utenti le proprie visioni politiche. 
 Proprio per questo motivo si è deciso di utilizzare le elezioni regionali in Sicilia come caso di studio all'interno del social media di \textit{Twitter}, sempre più utilizzato dalla classe politica.
 
-I test sono stati effettuati dopo una raccolta di dati effettuati attraverso una ricerca per \textit{hashtag} (vedi sezione \ref{raccolta}). La lista degli hashtag utilizzati è la seguente:
+I test sono stati effettuati dopo una raccolta di dati attraverso una ricerca per \textit{hashtag} (vedi sezione \ref{raccolta}). La lista degli hashtag utilizzati è la seguente:
 \begin{itemize}
 \item \textbf{\#elezionisicilia2017}
 \item \textbf{\#EleSicilia}
@@ -74,7 +75,7 @@ Nel dettaglio i gruppi in questione sono stati classificati attraverso 3 \textit
 \item \textbf{Altri} identifica tutti i tweet e retweet relativi alle restanti coalizioni, informazioni giornalistiche oppure altri tweet che non avevano alcun interesse con l'analisi in questione.
 \end{itemize}
 
-Si è scelto di calcolare la polarizzazione solo per le due forze politiche che hanno dominato la scena politica siciliana: la coalizione del centro destra  ed il Movimento 5 Stelle. Il centro-destra rappresenta un'insieme di partiti, si è deciso di raggrupparle i un'unica coalizione, mentre l'altra forza politica in gioco, ovvero il Movimento 5 Stelle, rappresenta un unico partito politico.
+Si è scelto di calcolare la polarizzazione solo per le due forze politiche che hanno dominato la scena politica siciliana: la coalizione del centro destra  ed il Movimento 5 Stelle. Il centro-destra rappresenta un'insieme di partiti, si è deciso di raggrupparli all'interno di un'unica coalizione, mentre l'altra forza politica in gioco, ovvero il Movimento 5 Stelle, rappresenta un unico partito politico.
 La sentiment analysis utilizza un training set per catalogare le informazioni in base al sentimento che esprimono i tweet pubblicati dagli utenti. Per questo motivo è stata fatta una operazione di raccolta e catalogo di diversi tweet di esempio per consentire alla macchina di poter comprendere a quale gruppo associare il tweet che avrebbe analizzato.
 Qui di seguito mostriamo una tabella contenente 3 tweet di esempio per ogni label per meglio rendere l'idea.
 \begin{table}
@@ -266,3 +267,88 @@ Una volta ottenuti i risultati si è calcolato l'errore medio e la relativa vari
 
 \newpage
 \section{Biotestamento}
+Il biotestamento è una legge approvata dal governo italiano il 14 Dicembre 2017. Questa legge consente a qualsiasi individuo che abbia compiuto i 18 anni di poter depositare presso sede comunali e notarili, un testamento che regolamenta la sanità dell'individuo. Nel dettaglio all'interno di questo testamento l'individuo può inserire le proprie volontà, per regolamentare la propria sanità. Queste volontà sono definite \textit{DAT}, nel dettaglio 		\textit{disposizione anticipate di trattamento}, sono disposizione che possono essere impugnate dal fiduciario dichiarato dall'intestatario del biotestamento che dovranno essere eseguite in mancanza di volontà del paziente.
+Questa legge non consente alcuna forma di \textit{eutanasia}, però consente di poter richiedere la sospensione idrica e nutrizionale perché prescrizioni che possono essere state assegnate da un medico. Le volontà redatte all'interno del documento possono anche essere revocate dai pazienti, i quali essendo in grado di intendere e di volere possono anche accettare le cure offerte dal medico indipendentemente da quanto dichiarato nel documento. Per quanto riguarda i medici, questi possono anche rifiutarsi di adempiere all'impegno scritto nel biotestamento dal malato, però la struttura ospedaliera dovrà garantire che un altro medico si prenda l'onere di applicare tali dettami.
+
+Come descritto in questo breve paragrafo il topic scelto accomuna molteplici problematiche che possono essere scaturite all'interno dello stato italiano. Possiamo assimilarlo come un problema di polarizzazione delle opinioni all'interno di un contesto etico e sociale.
+Affrontando l'analisi di questo topic, ci si era posti l'obiettivo di analizzare l'opinione degli utenti all'interno della rete di \textit{Twitter} in un periodo molto lungo; sono stati collezionati tweet e retweet dal 01/09/2017 al 31/01/2018.
+La scelta di un tale topic è nata dalla curiosità di testare le potenzialità della polarizzazione in ottica sociale, vista anche la risonanza che aveva riscontrato nella popolazione attraverso i mass media. Dal punto di vista scientifico è interessante anche analizzare il comportamento degli utenti italiani, vista anche la connotazione religiosa che assume lo stato italiano essendo uno paese prevalentemente \textit{Cattolico}. Ovviamente un dibattito accesso su questo argomento pone in gioco differenti correnti di pensiero che spaziano dalla politica, alla regione fino all'etica. 
+Lo studio che è stato affrontato su questo topic verte nel calcolare la polarizzazione semplicemente tra i favorevoli e contrari alla legge presentata.
+
+I test sono stati effettuati dopo una raccolta di dati effettuati una ricerca per \textit{hashtag} (vedi sezione \ref{raccolta}). La lista degli hashtag utilizzati è la seguente:
+\begin{itemize}
+\item \textbf{\#biotestamento}
+\item \textbf{\#eutanasia}
+\item \textbf{\#finevita}
+\item \textbf{\#rsuicidioassistito}
+\item \textbf{\#testamentobiologico}
+\end{itemize}
+Per ognuno di questi hashtag sono stati collezionati i tweet pubblicati dai diversi utenti del social media durante il periodo dal 01/09/2017 al 31/01/2018.
+Il motivo della scelta di un periodo del genere è dettata dalla necessita di analizzare la polarizzazione del grafo nel tempo. Il periodo utilizzato per la raccolta dei dati è stato scelto per analizzare il comportamento della polarizzazione in un periodo di tempo precedente ed antecedente all'evento in questione. In questo modo è possibile effettuare considerazioni sul comportamento temporale del topic.
+La scelta degli hashtag non è puramente casuale, infatti per garantire una imparzialità nella raccolta dei tweet sono state fatte delle ricerche all'interno del social media per identificare gli hashtag utilizzati da giornalisti, testate giornalistiche per poter parlare in maniera neutrale delle elezioni regionali in Sicilia.
+Anche per questo topic si è utilizzato un framework che consentisse di poter ricercare quegli hashtag che non esprimessero un giudizio favorevole o contrario sull'argomento. Il servizio in questione è \textit{hashtagify} (vedi fig:\ref{Hashtagify}) precedentemente illustrato all'interno della sezione: \ref{EleSicilia}.
+Questo argomento essendo di grande interesse per gli utenti della rete necessita di un approccio molto neutrale nella raccolta dei tweet, con cui esprimono le proprie opinioni, per non drogare i risultati della polarizzazione.
+In questo topic sono stati lanciati da molti utenti o da associazioni religiose hashtag di denuncia in cui gli utenti si appellavano in maniera negativa riguardo l'attuazione del biotestamento; per esempio: \textit{\#NoDAT}, \textit{\#NoBiotestamento}. Vere e proprie campagne per denunciare la legge.
+
+Per cercare di rimanere più neutrali e cercare di catalogare le informazioni attraverso le opinioni scritte dagli utente è stata utilizzata la \textit{sentiment analysis}, che consente di catalogare le informazioni attraverso una analisi sui contenuti pubblicati. Quindi una volta raccolta tutti i dati per gli hashtag, i tweet sono stati classificati in due gruppi di distinti.
+Nel dettaglio i gruppi in questione sono stati classificati attraverso 2 \textit{label}, utilizzati dalla sentiment analysis per catalogare il testo, analizzando il loro contenuto:
+\begin{itemize}
+\item \textbf{Red}: identifica tutti quei tweet e/o retweet che esprimono un dissenso sulla legge emanata il 14 Dicembre sul biotestamento.
+\item \textbf{Blue}:identifica tutti quei tweet e/o retweet che esprimono un consenso favorevole sulla legge emanata il 14 Dicembre sul biotestamento.
+\end{itemize}
+La sentiment analysis utilizza un training set per catalogare le informazioni in base al sentimento che esprimono i tweet pubblicati dagli utenti. Per questo motivo è stata fatta una operazione di raccolta e catalogo di diversi tweet di esempio per consentire alla macchina di poter comprendere a quale gruppo associare il tweet che avrebbe analizzato.
+Qui di seguito mostriamo una tabella (vedi \ref{trainingSetExampleBio}) contenente 3 tweet di esempio per ogni label per meglio rendere l'idea.
+\begin{table}
+
+\begin{tabular}{ |p{3cm}|p{10cm}| }
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Training set}} \\
+ \hline 
+ \begin{center}
+ \textbf{Label}
+ \end{center} & \begin{center}
+ \textbf{Tweet}
+ \end{center}\\
+ \hline
+ Red   & \#biotestamento \#testamentobiologico \#eutanasia battete le mani in nome del progresso e morirete felici a contenti Dove stiamo andando?\\ \hline
+ Red & L'aspetto forse più aberrante è il divieto di obiezione di coscienza. Se il paziente chiede di morire il medico dovrà obbedire, ossia sarà costretto a compiere un assassinio pena il licenziamento e, forse, una condanna penale. Altro che Nazismo! \#eutanasia \#suicidioassistito \\ \hline
+ Red & Una volta sancito che vi è il diritto di togliersi la vita, la posizione di chi pretendere di limitarlo ai malati terminali diventa, come minimo, arbitraria. \#DAT \#eutanasia \#finevita \\ \hline 
+ Blue & ti dico solo che la sedazione profonda è accettata anche dai medici obiettori e da molti cattolici tradizionalisti. Non è eutanasia o sospensione cure e viene fatta in accordo fra paziente e medico. Poi se tu vuoi soffrire,libera,ma mi pare un proposito masochista. \#biotestamento'  \\ \hline
+Blue & Sul \#biotestamento o, meglio, sull'autodeterminazione del malato. Una legge assolutamente positiva, che ha assai poco a che fare con l' \#eutanasia o \#finevita \\ \hline
+Blue & \#eutanasia Tutti parlano di diritto alla vita, ma pochi si preoccupano del diritto a morire in modo dignitoso. Eppure non è difficile immaginare cosa sia peggiore della morte immedesimandosi con partecipazione, e non superficialmente, in certe situazioni.............\\
+ \hline
+\end{tabular}
+\caption{Esempi di tweet del Training Set del biotestamento}
+ \label{trainingSetExampleBio}
+\end{table}
+
+Una volta partizionato i dati, l'endorsement graph relativo al biotestamento è stato popolato. La cardinalità del grafo aumentava nel tempo, cioè via via che venivano raccolti i tweet ed i relativi retweet attraverso la raccolta dati effettuata mese per mese. I tweet isolati cioè quelle informazioni, con espressione di idee, che non sono state ripubblicate dagli altri utenti della rete sono stati scartati, ma presi in riesame nel caso in cui nei mesi successivi ci fosse stato qualche utente che avesse retweettato quelle notizie.
+Per meglio rendere l'idea in questione illustriamo una tabella (vedi tabelle: \ref{NoditotaliBio}) contente i dati raccolti nei diversi mesi, e quelli effettivamente utilizzati per il calcolo della polarizzazione.
+\begin{table}
+
+\begin{tabular}{ |p{1.7cm}|p{2cm}|p{1.7cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}| }
+ \hline
+ 
+ \begin{center}
+ \textbf{}
+ \end{center} & \begin{center}
+ \textbf{Settembre}
+ \end{center}& \begin{center}
+ \textbf{Ottobre}
+ \end{center} &\begin{center}
+ \textbf{Novembre}
+ \end{center} &\begin{center}
+ \textbf{14 Dicembre}
+ \end{center} &\begin{center}
+ \textbf{Dicembre}
+ \end{center}&\begin{center}
+ \textbf{Gennaio}
+ \end{center}\\
+ \hline
+ Utilizzati &1 & 2& 3 &4 & 5& 6 \\ \hline
+ Totali  &1 & 2& 3 &4 & 5& 6   \\ 
+ \hline
+\end{tabular}
+\caption{Numero di nodi del grafo}
+ \label{NoditotaliBio}
+\end{table}

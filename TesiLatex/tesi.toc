@@ -36,5 +36,5 @@
 \contentsline {chapter}{\numberline {5}Test sperimentali e valutazione}{56}
 \contentsline {section}{\numberline {5.1}Elezioni Regionali Sicilia 2017}{58}
 \contentsline {section}{\numberline {5.2}Biotestamento}{70}
-\contentsline {chapter}{\numberline {6}Direzioni future di ricerca e conclusioni}{71}
-\contentsline {chapter}{Bibliografia}{73}
+\contentsline {chapter}{\numberline {6}Sviluppi futuri e conclusioni}{76}
+\contentsline {chapter}{Bibliografia}{79}
