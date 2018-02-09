@@ -125,22 +125,22 @@ def writeRangeCsv(path):
 
 def main():
     #l[0] numero Blue, l[1] numero rossi, l[2] numero grigi, l[3] totale
-    # l= datamonth('../Test/Sicilia/predictionVenezuela.csv',2)
+    # l= datamonth('../Test/Sicilia/predictionRw.csv',2)
     # print l
     #
-    # writeCsv(l,"./SiciliaCsv/5NovembreVenezuela.csv","Venezuela","5Novembre")
-    # DizionarioCon = writeRangeCsv("./SiciliaCsv/5NovembreVenezuela.csv")
+    # writeCsv(l,"./SiciliaCsv/5NovembreRw.csv","Rw","5Novembre")
+    # DizionarioCon = writeRangeCsv("./SiciliaCsv/5NovembreRw.csv")
     # print DizionarioCon
     #
-    # writeCsvCon(DizionarioCon,len(l),"./SiciliaCsv/ContatoriCsv/Venezuela/5NovembreContVenezuela.csv","Venezuela","5Novembre")
+    # writeCsvCon(DizionarioCon,len(l),"./SiciliaCsv/ContatoriCsv/Rw/5NovembreContRw.csv","Rw","5Novembre")
 
-    l = datamonth('../Test/Sicilia/testing5.csv', 10)
+    l = datamonth('../Test/Sicilia/testing5.csv', 9)
     print l
 
-    writeCsv(l,"./SiciliaCsv/5NovembreVenezuela.csv","Venezuela","5Novembre")
-    DizionarioCon = writeRangeCsv("./SiciliaCsv/5NovembreVenezuela.csv")
+    writeCsv(l,"./SiciliaCsv/5NovembreRw.csv","Rw","5Novembre")
+    DizionarioCon = writeRangeCsv("./SiciliaCsv/5NovembreRw.csv")
     print DizionarioCon
 
-    writeCsvCon(DizionarioCon,len(l),"./SiciliaCsv/ContatoriCsv/Venezuela/5NovembreContVenezuela.csv","Venezuela","5Novembre")
+    writeCsvCon(DizionarioCon,len(l),"./SiciliaCsv/ContatoriCsv/Rw/5NovembreContRw.csv","Rw","5Novembre")
 if __name__ == '__main__':
     main()

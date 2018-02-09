@@ -396,19 +396,19 @@ def main():
     # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetYellow#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
     #     retweetListYellow = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Settembre/retweetListBlue.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Gennaio/retweetListBlue.pkl', 'rb') as input:
         retweetListBlue = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Settembre/retweetListRed.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Gennaio/retweetListRed.pkl', 'rb') as input:
         retweetListRed = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Settembre/retweetListYellow.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Gennaio/retweetListYellow.pkl', 'rb') as input:
         retweetListYellow = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Settembre/probRetBlue.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Gennaio/probRetBlue.pkl', 'rb') as input:
         probRetBlue = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Settembre/probRetRed.pkl', 'rb') as input:
+    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Gennaio/probRetRed.pkl', 'rb') as input:
         probRetRed = pickle.load(input)
     List=[]
 
@@ -599,10 +599,10 @@ def main():
     #con la partizione
     #nx.draw_networkx_nodes(G, pos Biotestamento,list_nodes,with_labels=False,node_color=node_color)
 
-    nx.write_gpickle(G, '../Test/Biotestamento/Settembre/grafoBiotestVen.pickle', protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../Test/Biotestamento/Settembre/dizionarioPolarizzazioneVenezuela.pickle', "wb") as output:
+    nx.write_gpickle(G, '../Test/Biotestamento/Gennaio/grafoBiotestVen.pickle', protocol=pickle.HIGHEST_PROTOCOL)
+    with open('../Test/Biotestamento/Gennaio/dizionarioPolarizzazioneVenezuela.pickle', "wb") as output:
         pickle.dump(test, output, pickle.HIGHEST_PROTOCOL)
-    with open('../Test/Biotestamento/Settembre/listaColoriPolarizzazioneVenezuela.pickle', "wb") as output:
+    with open('../Test/Biotestamento/Gennaio/listaColoriPolarizzazioneVenezuela.pickle', "wb") as output:
         pickle.dump(node_colorPol, output, pickle.HIGHEST_PROTOCOL)
 
     nx.draw_networkx_nodes(G, pos ,G.nodes(),with_labels=True,node_color=node_colorPol)
@@ -611,7 +611,7 @@ def main():
 
     nx.draw_networkx_labels(G, pos,test,font_size=8)
 
-    plt.savefig("../Test/Biotestamento/Settembre/PolarizzazioneVene.png", format="PNG")
+    plt.savefig("../Test/Biotestamento/Gennaio/PolarizzazioneVene.png", format="PNG")
 
     plt.show()
 

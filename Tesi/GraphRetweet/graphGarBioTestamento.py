@@ -829,19 +829,19 @@ def main():
     #retweetListRed = deleteList2(retweetList,retweetListRed)
     #deleteList(retweetList,retweetListRed)
 
-    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Settembre/retweetListBlue.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/14Dicembre/retweetListBlue.pkl','rb') as input:
      retweetListBlue = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Settembre/retweetListRed.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/14Dicembre/retweetListRed.pkl','rb') as input:
      retweetListRed = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Settembre/retweetListYellow.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/14Dicembre/retweetListYellow.pkl','rb') as input:
      retweetListYellow = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Settembre/probRetBlue.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/14Dicembre/probRetBlue.pkl','rb') as input:
      probRetBlue = pickle.load(input)
 
-    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/Settembre/probRetRed.pkl','rb') as input:
+    with open('../TweetOldSerialization/pickle/BiotestamentoGraph/14Dicembre/probRetRed.pkl','rb') as input:
      probRetRed = pickle.load(input)
 
 
@@ -1100,10 +1100,10 @@ def main():
     print(dictLabelGar)
 
 
-    nx.write_gpickle(G, '../Test/Biotestamento/Settembre/grafoSiciliaSettembre.pickle', protocol=pickle.HIGHEST_PROTOCOL)
-    with open('../Test/Biotestamento/Settembre/dizionarioPolarizzazioneRandomWalk.pickle',"wb") as output:
+    nx.write_gpickle(G, '../Test/Biotestamento/14Dicembre/grafoBiotestamento14Dicembre.pickle', protocol=pickle.HIGHEST_PROTOCOL)
+    with open('../Test/Biotestamento/14Dicembre/dizionarioPolarizzazioneRandomWalk.pickle',"wb") as output:
         pickle.dump(dictLabelGar,output,pickle.HIGHEST_PROTOCOL)
-    with open('../Test/Biotestamento/Settembre/listaColoriPolarizzazioneRandomWalk.pickle',"wb") as output:
+    with open('../Test/Biotestamento/14Dicembre/listaColoriPolarizzazioneRandomWalk.pickle',"wb") as output:
         pickle.dump(listColorGar,output,pickle.HIGHEST_PROTOCOL)
 
     nx.draw_networkx_nodes(G, pos, G.nodes(),node_size=150 ,with_labels=True , node_color=listColorGar)
@@ -1115,7 +1115,7 @@ def main():
 
 
 
-    plt.savefig("../Test/Biotestamento/Settembre/Polarizzazionegar.png", format="PNG")
+    plt.savefig("../Test/Biotestamento/14Dicembre/Polarizzazionegar.png", format="PNG")
 
     plt.show()
 

@@ -37,7 +37,7 @@ with open('../Test/Sicilia/5Novembre/dizionarioPolarizzazioneVenezuela.pickle', 
 
 
 
-
+x=0
 myFile = open('../Test/Sicilia/testing5.csv', 'w')
 with myFile:
     writer = csv.writer(myFile)
@@ -55,6 +55,7 @@ with myFile:
         novV = ""
         cinqueNovRw=""
         cinqueNovV = ""
+
         if i in DizionarioSettembreRW:
             setRw = DizionarioSettembreRW[i]
         if i in DizionarioSettembreV:
@@ -73,9 +74,12 @@ with myFile:
         if i in Dizionario5NovembreV:
             cinqueNovV = Dizionario5NovembreV[i]
 
+            x=x+1
+
+
         row = [i, setRw, setV, ottRw, ottV, novRw, novV, labelPolRand[i], labelPolVen[i], cinqueNovRw, cinqueNovV]
         myData.append(row)
 
     writer.writerows(myData)
 
-print("Writing complete")
+print("Writing complete",x)

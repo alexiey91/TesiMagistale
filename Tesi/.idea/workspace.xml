@@ -11,41 +11,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="csvUtils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/csvUtils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="53" column="73" lean-forward="true" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testing.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PredictionPolatization/testing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="60" column="15" lean-forward="false" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="statistics.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/statistics.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="63" column="12" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="prediction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PredictionPolatization/prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7260">
-              <caret line="550" column="0" lean-forward="true" selection-start-line="550" selection-start-column="0" selection-end-line="550" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="550" column="0" lean-forward="false" selection-start-line="550" selection-start-column="0" selection-end-line="550" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graphSicilia.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GraphRetweet/graphSicilia.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8445">
+              <caret line="563" column="25" lean-forward="false" selection-start-line="563" selection-start-column="25" selection-end-line="563" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -54,31 +34,29 @@
       <file leaf-file-name="utilPrediction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PredictionPolatization/utilPrediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+            <state relative-caret-position="1125">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testing5.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/Sicilia/testing5.csv">
+      <file leaf-file-name="uwhf.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TweetOldSerialization/uwhf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="108" column="4" lean-forward="false" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stuff.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/utils/stuff.py">
+      <file leaf-file-name="graphGarBioTestamento.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GraphRetweet/graphGarBioTestamento.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="143" column="112" lean-forward="false" selection-start-line="143" selection-start-column="112" selection-end-line="143" selection-end-column="112" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1868">
+              <caret line="1117" column="49" lean-forward="false" selection-start-line="1117" selection-start-column="49" selection-end-line="1117" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,8 +89,13 @@
       <find>Novembre</find>
       <find>Sicilia</find>
       <find>Biotestamento</find>
-      <find>Ottobre</find>
       <find>Rw</find>
+      <find>Ottobre</find>
+      <find>RandomWalk</find>
+      <find>09-30</find>
+      <find>14Dicembre</find>
+      <find>Settembre</find>
+      <find>Gennaio</find>
     </findStrings>
     <replaceStrings>
       <replace>Novembre</replace>
@@ -120,35 +103,39 @@
       <replace>10-31</replace>
       <replace>Ottobre</replace>
       <replace>09-30</replace>
-      <replace>Settembre</replace>
       <replace>RandomWalk</replace>
       <replace>-05</replace>
       <replace>Biotestamento</replace>
       <replace>Sicilia</replace>
       <replace>5Novembre</replace>
+      <replace>Settembre</replace>
       <replace>Venezuela</replace>
+      <replace>12-14</replace>
+      <replace>Gennaio</replace>
+      <replace>14Dicembre</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Test/Sicilia/predictionRw.csv" />
-        <option value="$PROJECT_DIR$/GraphRetweet/graphBioTestamento.py" />
-        <option value="$PROJECT_DIR$/TweetOldSerialization/MergeDataGraphEutanasia.py" />
-        <option value="$PROJECT_DIR$/GraphRetweet/graphGarBioTestamento.py" />
         <option value="$PROJECT_DIR$/PredictionPolatization/prediction.py" />
         <option value="$PROJECT_DIR$/utils/csvUtils.py" />
         <option value="$PROJECT_DIR$/Test/statistics.py" />
         <option value="$PROJECT_DIR$/TweetOldSerialization/MergeDataGraph.py" />
         <option value="$PROJECT_DIR$/GraphRetweet/graphGarSicilia.py" />
-        <option value="$PROJECT_DIR$/GraphRetweet/graphSicilia.py" />
         <option value="$PROJECT_DIR$/PredictionPolatization/utilPredictionBio.py" />
         <option value="$PROJECT_DIR$/PredictionPolatization/utilPrediction.py" />
+        <option value="$PROJECT_DIR$/GraphRetweet/graphSicilia.py" />
         <option value="$PROJECT_DIR$/utils/stuff.py" />
+        <option value="$PROJECT_DIR$/TweetOldSerialization/uwhf.py" />
+        <option value="$PROJECT_DIR$/TweetOldSerialization/MergeDataGraphEutanasia.py" />
+        <option value="$PROJECT_DIR$/GraphRetweet/graphBioTestamento.py" />
+        <option value="$PROJECT_DIR$/GraphRetweet/graphGarBioTestamento.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1" />
     <option name="y" value="25" />
     <option name="width" value="1368" />
@@ -169,6 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,7 +167,20 @@
             <path>
               <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tesi" type="462c0819:PsiDirectoryNode" />
-              <item name="PredictionPolatization" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tesi" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="Biotestamento" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tesi" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="Biotestamento" type="462c0819:PsiDirectoryNode" />
+              <item name="14Dicembre" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
@@ -191,6 +192,21 @@
               <item name="Tesi" type="462c0819:PsiDirectoryNode" />
               <item name="TweetOldSerialization" type="462c0819:PsiDirectoryNode" />
               <item name="pickle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tesi" type="462c0819:PsiDirectoryNode" />
+              <item name="TweetOldSerialization" type="462c0819:PsiDirectoryNode" />
+              <item name="pickle" type="462c0819:PsiDirectoryNode" />
+              <item name="BiotestamentoGraph" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tesi" type="462c0819:PsiDirectoryNode" />
+              <item name="TweetOldSerialization" type="462c0819:PsiDirectoryNode" />
+              <item name="pickle" type="462c0819:PsiDirectoryNode" />
+              <item name="BiotestamentoGraph" type="462c0819:PsiDirectoryNode" />
+              <item name="14Dicembre" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tesi" type="b2602c69:ProjectViewProjectNode" />
@@ -243,22 +259,22 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Test/Sicilia/Dicembre" />
-      <recent name="$PROJECT_DIR$/utils/SicilyCsv" />
-      <recent name="$PROJECT_DIR$/Test/Sicilia/Statistiche/RandomWalk" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/TweetOldSerialization/pickle/#testamentobiologicoTestAWS" />
       <recent name="$PROJECT_DIR$/TweetOldSerialization/pickle/#suicidioassistitoTestAWS" />
       <recent name="$PROJECT_DIR$/TweetOldSerialization/pickle/#finevitaTestAWS" />
       <recent name="$PROJECT_DIR$/TweetOldSerialization/pickle/#eutanasiaTestAWS" />
       <recent name="$PROJECT_DIR$/TweetOldSerialization/pickle/#biotestamentoTestAWS" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Test/Sicilia/Image/Rw" />
+      <recent name="$PROJECT_DIR$/Test/Sicilia/Dicembre" />
+      <recent name="$PROJECT_DIR$/utils/SicilyCsv" />
+      <recent name="$PROJECT_DIR$/Test/Sicilia/Statistiche/RandomWalk" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -273,8 +289,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.stuff">
-    <configuration name="MergeDataGraph" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.graphGarBioTestamento">
+    <configuration name="MergeDataGraphEutanasia" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -286,13 +302,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Tesi" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TweetOldSerialization/MergeDataGraph.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TweetOldSerialization/MergeDataGraphEutanasia.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="graphGarSicilia" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="graphBioTestamento" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -304,13 +320,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Tesi" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GraphRetweet/graphGarSicilia.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GraphRetweet/graphBioTestamento.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="graphSicilia" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="graphGarBioTestamento" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -322,7 +338,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Tesi" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GraphRetweet/graphSicilia.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GraphRetweet/graphGarBioTestamento.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -346,38 +362,38 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="utilPrediction" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="uwhf" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PredictionPolatization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TweetOldSerialization" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Tesi" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PredictionPolatization/utilPrediction.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TweetOldSerialization/uwhf.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.MergeDataGraph" />
-      <item index="1" class="java.lang.String" itemvalue="Python.graphGarSicilia" />
-      <item index="2" class="java.lang.String" itemvalue="Python.graphSicilia" />
-      <item index="3" class="java.lang.String" itemvalue="Python.utilPrediction" />
-      <item index="4" class="java.lang.String" itemvalue="Python.stuff" />
+      <item index="0" class="java.lang.String" itemvalue="Python.stuff" />
+      <item index="1" class="java.lang.String" itemvalue="Python.uwhf" />
+      <item index="2" class="java.lang.String" itemvalue="Python.MergeDataGraphEutanasia" />
+      <item index="3" class="java.lang.String" itemvalue="Python.graphBioTestamento" />
+      <item index="4" class="java.lang.String" itemvalue="Python.graphGarBioTestamento" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.stuff" />
-        <item index="1" class="java.lang.String" itemvalue="Python.utilPrediction" />
-        <item index="2" class="java.lang.String" itemvalue="Python.graphSicilia" />
-        <item index="3" class="java.lang.String" itemvalue="Python.graphGarSicilia" />
-        <item index="4" class="java.lang.String" itemvalue="Python.MergeDataGraph" />
+        <item index="0" class="java.lang.String" itemvalue="Python.graphGarBioTestamento" />
+        <item index="1" class="java.lang.String" itemvalue="Python.graphBioTestamento" />
+        <item index="2" class="java.lang.String" itemvalue="Python.MergeDataGraphEutanasia" />
+        <item index="3" class="java.lang.String" itemvalue="Python.uwhf" />
+        <item index="4" class="java.lang.String" itemvalue="Python.stuff" />
       </list>
     </recent_temporary>
   </component>
@@ -398,9 +414,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
+    <frame x="-1" y="25" width="1368" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23645681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23645681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3658915" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -448,13 +465,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Test/Sicilia/testing.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3465">
-          <caret line="0" column="75" lean-forward="false" selection-start-line="0" selection-start-column="75" selection-end-line="0" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TweetOldSerialization/note.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-55">
@@ -514,45 +524,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prova/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TweetOldSerialization/MergeDataGraphEutanasia.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="308" column="52" lean-forward="false" selection-start-line="308" selection-start-column="52" selection-end-line="308" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GraphRetweet/graphBioTestamento.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="613" column="48" lean-forward="false" selection-start-line="613" selection-start-column="48" selection-end-line="613" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/prova/main.py" />
     <entry file="file://$PROJECT_DIR$/PredictionPolatization/linear test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GraphRetweet/graphGarBioTestamento.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="1117" column="48" lean-forward="false" selection-start-line="1117" selection-start-column="48" selection-end-line="1117" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TweetOldSerialization/uwhf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1255">
-          <caret line="216" column="39" lean-forward="false" selection-start-line="216" selection-start-column="39" selection-end-line="216" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -678,27 +654,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PredictionPolatization/testing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="60" column="15" lean-forward="false" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TweetOldSerialization/MergeDataGraph.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="225" column="9" lean-forward="false" selection-start-line="225" selection-start-column="9" selection-end-line="225" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GraphRetweet/graphSicilia.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="608" column="42" lean-forward="false" selection-start-line="608" selection-start-column="42" selection-end-line="608" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,23 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="958">
           <caret line="1117" column="42" lean-forward="false" selection-start-line="1117" selection-start-column="42" selection-end-line="1117" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/statistics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="63" column="12" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PredictionPolatization/prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7260">
-          <caret line="550" column="0" lean-forward="true" selection-start-line="550" selection-start-column="0" selection-end-line="550" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,39 +672,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PredictionPolatization/utilPrediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/csvUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="53" column="73" lean-forward="true" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/Sicilia/testing5.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/SiciliaCsv/ContatoriCsv/Rw/5NovembreContRw.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="795">
+          <caret line="53" column="73" lean-forward="false" selection-start-line="53" selection-start-column="73" selection-end-line="53" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -770,17 +686,106 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PredictionPolatization/testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="60" column="15" lean-forward="false" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/statistics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="63" column="12" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/SiciliaCsv/ContatoriCsv/Rw/5NovembreContRw.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PredictionPolatization/utilPrediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/SiciliaCsv/5NovembreRw.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PredictionPolatization/prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="550" column="0" lean-forward="false" selection-start-line="550" selection-start-column="0" selection-end-line="550" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraphRetweet/graphSicilia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8445">
+          <caret line="563" column="25" lean-forward="false" selection-start-line="563" selection-start-column="25" selection-end-line="563" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/stuff.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="143" column="112" lean-forward="false" selection-start-line="143" selection-start-column="112" selection-end-line="143" selection-end-column="112" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-200">
+          <caret line="113" column="41" lean-forward="true" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/Sicilia/testing5.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TweetOldSerialization/MergeDataGraphEutanasia.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="308" column="53" lean-forward="false" selection-start-line="308" selection-start-column="53" selection-end-line="308" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TweetOldSerialization/uwhf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="108" column="4" lean-forward="false" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraphRetweet/graphBioTestamento.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4646">
+          <caret line="613" column="49" lean-forward="false" selection-start-line="613" selection-start-column="49" selection-end-line="613" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraphRetweet/graphGarBioTestamento.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1868">
+          <caret line="1117" column="49" lean-forward="false" selection-start-line="1117" selection-start-column="49" selection-end-line="1117" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
