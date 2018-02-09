@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  9 FEB 2018 10:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  9 FEB 2018 19:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -645,22 +645,32 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
 de.tex
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
-))) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+))) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip65
+\bibsep=\skip66
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count136
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip65
-\LTright=\skip66
-\LTpre=\skip67
-\LTpost=\skip68
-\LTchunksize=\count136
+\LTleft=\skip67
+\LTright=\skip68
+\LTpre=\skip69
+\LTpost=\skip70
+\LTchunksize=\count137
 \LTcapwidth=\dimen191
 \LT@head=\box43
 \LT@firsthead=\box44
 \LT@foot=\box45
 \LT@lastfoot=\box46
-\LT@cols=\count137
-\LT@rows=\count138
-\c@LT@tables=\count139
-\c@LT@chunks=\count140
+\LT@cols=\count138
+\LT@rows=\count139
+\c@LT@tables=\count140
+\c@LT@chunks=\count141
 \LT@p@ftn=\toks40
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
@@ -671,16 +681,16 @@ Language: italian 2015/03/26 v1.3n Italian support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
-\babel@savecnt=\count141
+\babel@savecnt=\count142
 \U@D=\dimen192
 )
-\it@lettering=\count142
-\it@doublequoteactive=\count143
-\it@ISOcompliance=\count144
+\it@lettering=\count143
+\it@doublequoteactive=\count144
+\it@ISOcompliance=\count145
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count145
+\etb@tempcnta=\count146
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -696,7 +706,7 @@ Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count146
+\uc@secondtry=\count147
 \uc@combtoks=\toks43
 \uc@combtoksb=\toks44
 \uc@temptokena=\toks45
@@ -739,31 +749,31 @@ LaTeX Warning: Label `predizioneSicilia1' multiply defined.
 ) (./capitolo7.aux))
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count147
+\scratchcounter=\count148
 \scratchdimen=\dimen193
 \scratchbox=\box47
-\nofMPsegments=\count148
-\nofMParguments=\count149
+\nofMPsegments=\count149
+\nofMParguments=\count150
 \everyMPshowfont=\toks46
-\MPscratchCnt=\count150
+\MPscratchCnt=\count151
 \MPscratchDim=\dimen194
-\MPnumerator=\count151
-\makeMPintoPDFobject=\count152
+\MPnumerator=\count152
+\makeMPintoPDFobject=\count153
 \everyMPtoPDFconversion=\toks47
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -809,17 +819,17 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 36.
+ on input line 41.
 
-LaTeX Info: Redefining \it@ocap on input line 36.
-LaTeX Info: Redefining \it@ccap on input line 36.
+LaTeX Info: Redefining \it@ocap on input line 41.
+LaTeX Info: Redefining \it@ccap on input line 41.
 
 File italian.ldf warning: 
 italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 36.
+italian.ldf    on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -846,43 +856,42 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 36--37
 \openout2 = `sommario.aux'.
 
 
-(./sommario.tex) [1
+(./sommario.tex (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+[1
 
 
 
 
 
-] [2
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 19.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
+ [2]) [3] [4
 
-] Excluding 'comment' comment. (./tesi.toc [3
+]
+Excluding 'comment' comment. (./tesi.toc [5
 
 
 ])
 \tf@toc=\write5
 \openout5 = `tesi.toc'.
 
- [4]
+ [6]
 \openout2 = `capitolo1.aux'.
 
-
-(./capitolo1.tex
+ (./capitolo1.tex
 Capitolo 1.
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 15.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
- [1
+[1
 
 
 
-] [2] [3] [4]
-[5] [6] [7] [8] Excluding 'comment' comment.) [9]
+] [2] [3] [4] [5] [6] [7] [8]) [9]
 \openout2 = `capitolo2.aux'.
 
  (./capitolo2.tex
@@ -891,7 +900,7 @@ Capitolo 2.
 
 
 
-] [11] <pictures/twitter-logo.png, id=64, 513.92pt x 513.92pt>
+] [11] <pictures/twitter-logo.png, id=71, 513.92pt x 513.92pt>
 File: pictures/twitter-logo.png Graphic file (type png)
 
 <use pictures/twitter-logo.png>
@@ -919,25 +928,25 @@ Capitolo 3.
 
 
 
-] [21] <pictures/Aws.png, id=102, 357.335pt x 141.52875pt>
+] [21] <pictures/Aws.png, id=109, 357.335pt x 141.52875pt>
 File: pictures/Aws.png Graphic file (type png)
 
 <use pictures/Aws.png>
-Package pdftex.def Info: pictures/Aws.png used on input line 34.
+Package pdftex.def Info: pictures/Aws.png used on input line 35.
 (pdftex.def)             Requested size: 178.66705pt x 70.76419pt.
 
-Overfull \hbox (22.66943pt too wide) in paragraph at lines 34--35
+Overfull \hbox (22.66943pt too wide) in paragraph at lines 35--36
  [][] 
  []
 
-<pictures/Python.png, id=103, 388.45125pt x 130.4875pt>
+<pictures/Python.png, id=110, 388.45125pt x 130.4875pt>
 File: pictures/Python.png Graphic file (type png)
 
 <use pictures/Python.png>
-Package pdftex.def Info: pictures/Python.png used on input line 40.
+Package pdftex.def Info: pictures/Python.png used on input line 41.
 (pdftex.def)             Requested size: 194.22514pt x 65.24358pt.
 
-Overfull \hbox (38.22752pt too wide) in paragraph at lines 40--41
+Overfull \hbox (38.22752pt too wide) in paragraph at lines 41--42
  [][] 
  []
 
@@ -947,7 +956,7 @@ Overfull \hbox (38.22752pt too wide) in paragraph at lines 40--41
 
 (./capitolo5.tex
 Capitolo 4.
-<pictures/Flusso.png, id=124, 781.92125pt x 604.2575pt>
+<pictures/Flusso.png, id=131, 781.92125pt x 604.2575pt>
 File: pictures/Flusso.png Graphic file (type png)
 
 <use pictures/Flusso.png>
@@ -966,14 +975,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 ] [29 <./pictures/Flusso.png>] [30] [31]
-<pictures/trump.png, id=138, 511.9125pt x 213.79875pt>
+<pictures/trump.png, id=146, 511.9125pt x 213.79875pt>
 File: pictures/trump.png Graphic file (type png)
 
 <use pictures/trump.png>
-Package pdftex.def Info: pictures/trump.png used on input line 72.
+Package pdftex.def Info: pictures/trump.png used on input line 73.
 (pdftex.def)             Requested size: 409.53056pt x 171.03922pt.
 
-Overfull \hbox (19.53056pt too wide) in paragraph at lines 72--74
+Overfull \hbox (19.53056pt too wide) in paragraph at lines 73--75
  [] 
  []
 
@@ -981,98 +990,86 @@ Overfull \hbox (19.53056pt too wide) in paragraph at lines 72--74
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [32] [33 <./pictures/trump.png>]
-<pictures/sentiment.png, id=146, 708.6475pt x 373.395pt>
+<pictures/sentiment.png, id=153, 708.6475pt x 373.395pt>
 File: pictures/sentiment.png Graphic file (type png)
 
 <use pictures/sentiment.png>
-Package pdftex.def Info: pictures/sentiment.png used on input line 100.
+Package pdftex.def Info: pictures/sentiment.png used on input line 101.
 (pdftex.def)             Requested size: 389.75734pt x 205.36787pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [34] [35 <./pictures/sentiment.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-[]|\OT1/cmr/m/n/12 Con ele-zio-ni $@\OML/cmm/m/it/12 matteosalvinimi$ \OT1/cmr/
-m/n/12 e
+Overfull \hbox (31.94914pt too wide) in paragraph at lines 129--144
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-\OT1/cmr/m/n/12 @\OML/cmm/m/it/12 Musumeci[]Staff$ \OT1/cmr/m/n/12 re-gio-na-li
- 2017
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-\OT1/cmr/m/n/12 in #Si-ci-lia !!#ele-zio-ni-re-gio-na-li2017
- []
-
-
-Underfull \hbox (badness 1655) in paragraph at lines 150--150
+Underfull \hbox (badness 1655) in paragraph at lines 152--152
 [][]\OT1/cmr/m/n/10 Questa clas-si-fi-ca-zio-ne pu^^Ro es-se-re mo-di-fi-ca-ta 
 in ba-se al-le esi-gen-ze del-l'u-ten-te,
  []
 
-[36] [37] [38] [39] <pictures/esempio.png, id=169, 462.528pt x 346.896pt>
+[36] [37] [38] [39] <pictures/esempio.png, id=176, 462.528pt x 346.896pt>
 File: pictures/esempio.png Graphic file (type png)
 
 <use pictures/esempio.png>
-Package pdftex.def Info: pictures/esempio.png used on input line 183.
+Package pdftex.def Info: pictures/esempio.png used on input line 186.
 (pdftex.def)             Requested size: 370.02289pt x 277.51717pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [40] [41 <./pictures/esempio.png>] [42] [43]
-<pictures/Passo0.png, id=185, 432.61626pt x 362.35374pt>
+<pictures/Passo0.png, id=193, 432.61626pt x 362.35374pt>
 File: pictures/Passo0.png Graphic file (type png)
 
 <use pictures/Passo0.png>
-Package pdftex.def Info: pictures/Passo0.png used on input line 265.
+Package pdftex.def Info: pictures/Passo0.png used on input line 268.
 (pdftex.def)             Requested size: 173.04343pt x 144.93892pt.
 
-Overfull \hbox (17.0458pt too wide) in paragraph at lines 265--266
+Overfull \hbox (17.0458pt too wide) in paragraph at lines 268--269
  [][] 
  []
 
-<pictures/Passo1.png, id=186, 432.61626pt x 362.35374pt>
+<pictures/Passo1.png, id=194, 432.61626pt x 362.35374pt>
 File: pictures/Passo1.png Graphic file (type png)
 
 <use pictures/Passo1.png>
-Package pdftex.def Info: pictures/Passo1.png used on input line 272.
+Package pdftex.def Info: pictures/Passo1.png used on input line 275.
 (pdftex.def)             Requested size: 173.04343pt x 144.93892pt.
 
-Overfull \hbox (17.0458pt too wide) in paragraph at lines 272--273
+Overfull \hbox (17.0458pt too wide) in paragraph at lines 275--276
  [][] 
  []
 
-<pictures/Passo2.png, id=187, 432.61626pt x 362.35374pt>
+<pictures/Passo2.png, id=195, 432.61626pt x 362.35374pt>
 File: pictures/Passo2.png Graphic file (type png)
 
 <use pictures/Passo2.png>
-Package pdftex.def Info: pictures/Passo2.png used on input line 279.
+Package pdftex.def Info: pictures/Passo2.png used on input line 282.
 (pdftex.def)             Requested size: 173.04343pt x 144.93892pt.
 
-Overfull \hbox (17.0458pt too wide) in paragraph at lines 279--280
+Overfull \hbox (17.0458pt too wide) in paragraph at lines 282--283
  [][] 
  []
 
 File: pictures/Passo2.png Graphic file (type png)
 <use pictures/Passo2.png>
-Package pdftex.def Info: pictures/Passo2.png used on input line 286.
+Package pdftex.def Info: pictures/Passo2.png used on input line 289.
 (pdftex.def)             Requested size: 173.04343pt x 144.93892pt.
 
-Overfull \hbox (17.0458pt too wide) in paragraph at lines 286--287
+Overfull \hbox (17.0458pt too wide) in paragraph at lines 289--290
  [][] 
  []
 
 [44] [45 <./pictures/Passo0.png> <./pictures/Passo1.png> <./pictures/Passo2.png
->] [46] [47] <pictures/RWPasso0.png, id=205, 407.5225pt x 381.425pt>
+>] [46] [47] <pictures/RWPasso0.png, id=211, 407.5225pt x 381.425pt>
 File: pictures/RWPasso0.png Graphic file (type png)
 
 <use pictures/RWPasso0.png>
-Package pdftex.def Info: pictures/RWPasso0.png used on input line 337.
+Package pdftex.def Info: pictures/RWPasso0.png used on input line 340.
 (pdftex.def)             Requested size: 244.51538pt x 228.85675pt.
  [48 <./pictures/RWPasso0.png>] [49] [50] [51]
 [52] [53] [54]) [55]
@@ -1084,7 +1081,7 @@ Capitolo 5.
 
 
 
-] [57] [58] <pictures/hashtagify.png, id=244, 244.915pt x 52.195pt>
+] [57] [58] <pictures/hashtagify.png, id=250, 244.915pt x 52.195pt>
 File: pictures/hashtagify.png Graphic file (type png)
 
 <use pictures/hashtagify.png>
@@ -1120,7 +1117,7 @@ Underfull \vbox (badness 10000) detected at line 104
  []
 
 Excluding 'comment' comment. [62] [63]
-<pictures//Image/RandomWalk/SettembreRandomWalk.png, id=262, 462.528pt x 346.89
+<pictures//Image/RandomWalk/SettembreRandomWalk.png, id=268, 462.528pt x 346.89
 6pt>
 File: pictures//Image/RandomWalk/SettembreRandomWalk.png Graphic file (type png
 )
@@ -1134,7 +1131,7 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 162--163
  []
 
 
-<pictures//Image/RandomWalk/OttobreRandomWalk.png, id=263, 462.528pt x 346.896p
+<pictures//Image/RandomWalk/OttobreRandomWalk.png, id=269, 462.528pt x 346.896p
 t>
 File: pictures//Image/RandomWalk/OttobreRandomWalk.png Graphic file (type png)
  <use pictures//Image/RandomWalk/OttobreRandomWalk.png>
@@ -1146,7 +1143,7 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 169--170
  [][] 
  []
 
-<pictures//Image/RandomWalk/5NovembreRw.png, id=264, 462.528pt x 346.896pt>
+<pictures//Image/RandomWalk/5NovembreRw.png, id=270, 462.528pt x 346.896pt>
 File: pictures//Image/RandomWalk/5NovembreRw.png Graphic file (type png)
 
 <use pictures//Image/RandomWalk/5NovembreRw.png>
@@ -1159,7 +1156,7 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 176--177
  []
 
 
-<pictures//Image/RandomWalk/NovembreRandomWalk.png, id=265, 462.528pt x 346.896
+<pictures//Image/RandomWalk/NovembreRandomWalk.png, id=271, 462.528pt x 346.896
 pt>
 File: pictures//Image/RandomWalk/NovembreRandomWalk.png Graphic file (type png)
 
@@ -1173,7 +1170,7 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 183--184
  []
 
 
-<pictures//Image/RandomWalk/DicembreRandomWalk.png, id=266, 462.528pt x 346.896
+<pictures//Image/RandomWalk/DicembreRandomWalk.png, id=272, 462.528pt x 346.896
 pt>
 File: pictures//Image/RandomWalk/DicembreRandomWalk.png Graphic file (type png)
 
@@ -1187,7 +1184,7 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 190--191
  []
 
 
-<pictures//Image/Venezuela/SettembreVenezuela.png, id=267, 462.528pt x 346.896p
+<pictures//Image/Venezuela/SettembreVenezuela.png, id=273, 462.528pt x 346.896p
 t>
 File: pictures//Image/Venezuela/SettembreVenezuela.png Graphic file (type png)
  <use pictures//Image/Venezuela/SettembreVenezuela.png>
@@ -1200,7 +1197,7 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 202--203
  []
 
 
-<pictures//Image/Venezuela/OttobreVenezuela.png, id=268, 462.528pt x 346.896pt>
+<pictures//Image/Venezuela/OttobreVenezuela.png, id=274, 462.528pt x 346.896pt>
 File: pictures//Image/Venezuela/OttobreVenezuela.png Graphic file (type png)
 <use pictures//Image/Venezuela/OttobreVenezuela.png>
 Package pdftex.def Info: pictures//Image/Venezuela/OttobreVenezuela.png used on
@@ -1212,7 +1209,7 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 209--210
  []
 
 
-<pictures//Image/Venezuela/5NovembreVenezuela.png, id=269, 462.528pt x 346.896p
+<pictures//Image/Venezuela/5NovembreVenezuela.png, id=275, 462.528pt x 346.896p
 t>
 File: pictures//Image/Venezuela/5NovembreVenezuela.png Graphic file (type png)
  <use pictures//Image/Venezuela/5NovembreVenezuela.png>
@@ -1225,7 +1222,7 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 216--217
  []
 
 
-<pictures//Image/Venezuela/NovembreVenezuela.png, id=270, 462.528pt x 346.896pt
+<pictures//Image/Venezuela/NovembreVenezuela.png, id=276, 462.528pt x 346.896pt
 >
 File: pictures//Image/Venezuela/NovembreVenezuela.png Graphic file (type png)
  <use pictures//Image/Venezuela/NovembreVenezuela.png>
@@ -1238,7 +1235,7 @@ Overfull \hbox (29.01028pt too wide) in paragraph at lines 223--224
  []
 
 
-<pictures//Image/Venezuela/DicembreVenezuela.png, id=271, 462.528pt x 346.896pt
+<pictures//Image/Venezuela/DicembreVenezuela.png, id=277, 462.528pt x 346.896pt
 >
 File: pictures//Image/Venezuela/DicembreVenezuela.png Graphic file (type png)
  <use pictures//Image/Venezuela/DicembreVenezuela.png>
@@ -1257,7 +1254,7 @@ RandomWalk/DicembreRandomWalk.png>] [66 <./pictures//Image/Venezuela/SettembreV
 enezuela.png> <./pictures//Image/Venezuela/OttobreVenezuela.png> <./pictures//I
 mage/Venezuela/5NovembreVenezuela.png> <./pictures//Image/Venezuela/NovembreVen
 ezuela.png> <./pictures//Image/Venezuela/DicembreVenezuela.png>]
-<pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png, id=291, 963.6pt x 557.834
+<pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png, id=298, 963.6pt x 557.834
 06pt>
 File: pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png Graphic file (type pn
 g)
@@ -1266,7 +1263,7 @@ Package pdftex.def Info: pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png us
 ed on input line 244.
 (pdftex.def)             Requested size: 385.43317pt x 223.12967pt.
 
-<pictures//Image/Venezuela/Venezuela/Diagrammi/Dicembre.png, id=292, 1151.80313
+<pictures//Image/Venezuela/Venezuela/Diagrammi/Dicembre.png, id=299, 1151.80313
 pt x 520.94624pt>
 File: pictures//Image/Venezuela/Venezuela/Diagrammi/Dicembre.png Graphic file (
 type png)
@@ -1281,7 +1278,7 @@ Overfull \hbox (13.13713pt too wide) in paragraph at lines 249--250
  []
 
 
-<pictures//Image/RandomWalk/DiagrammiRW/Novembre5Novembre.png, id=293, 981.6675
+<pictures//Image/RandomWalk/DiagrammiRW/Novembre5Novembre.png, id=300, 981.6675
 pt x 519.44063pt>
 File: pictures//Image/RandomWalk/DiagrammiRW/Novembre5Novembre.png Graphic file
  (type png)
@@ -1298,14 +1295,14 @@ Overfull \hbox (2.66003pt too wide) in paragraph at lines 258--259
 [67 <./pictures//Image/RandomWalk/DiagrammiRW/Dicembre.png>] [68 <./pictures//I
 mage/Venezuela/Venezuela/Diagrammi/Dicembre.png>] [69 <./pictures//Image/Random
 Walk/DiagrammiRW/Novembre5Novembre.png>]
-<pictures/ErroreSicilia.png, id=304, 676.5275pt x 428.60126pt>
+<pictures/ErroreSicilia.png, id=310, 676.5275pt x 428.60126pt>
 File: pictures/ErroreSicilia.png Graphic file (type png)
 
 <use pictures/ErroreSicilia.png>
 Package pdftex.def Info: pictures/ErroreSicilia.png used on input line 272.
 (pdftex.def)             Requested size: 270.6062pt x 171.43745pt.
 
-<pictures/VarianzaErrSicilia.png, id=305, 602.25pt x 372.39125pt>
+<pictures/VarianzaErrSicilia.png, id=311, 602.25pt x 372.39125pt>
 File: pictures/VarianzaErrSicilia.png Graphic file (type png)
 
 <use pictures/VarianzaErrSicilia.png>
@@ -1326,56 +1323,45 @@ Capitolo 6.
 
 
 
-]) [77] [78] (./tesi.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
-[]\OT1/cmr/m/n/12 Computer Emer-gen-cy Re-spon-se Team.  Co-me fun-zio-
- []
+]) [77] [78] (./tesi.bbl [79
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
-\OT1/cmr/m/n/12 na il ran-som-ware Wan-na-Cry e co-sa fa-re per pro-teg-ger-
- []
+
+])
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 97.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
-\OT1/cmr/m/n/12 si.  $\OT1/cmtt/m/n/12 https : / / www . certnazionale . it / n
-ews / 2017 / 05 / 15 /
- []
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 99.
 
 
-Overfull \hbox (37.41664pt too wide) in paragraph at lines 4--9
-\OT1/cmtt/m/n/12 come-[]funziona-[]il-[]ransomware-[]wannacry-[]e-[]cosa-[]fare
--[]per-[]proteggersi/$\OT1/cmr/m/n/12 ,
- []
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[80] (./tesi.aux (./frontespizio.aux) (./sommario.aux) (./capitolo1.aux)
+(./capitolo2.aux) (./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux)
+(./capitolo7.aux)
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
 
 )
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 91.
-
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 93.
-
-[79
-
-
-
-] (./tesi.aux (./frontespizio.aux) (./sommario.aux) (./capitolo1.aux)
-(./capitolo2.aux) (./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux)
-(./capitolo7.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25340 strings out of 493029
- 612329 string characters out of 6136234
+ 25719 strings out of 493029
+ 617267 string characters out of 6136234
  781605 words of memory out of 5000000
- 28296 multiletter control sequences out of 15000+600000
+ 28667 multiletter control sequences out of 15000+600000
  16299 words of font info for 61 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 62i,15n,77p,1089b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,15n,77p,1088b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
@@ -1391,10 +1377,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tesi.pdf (84 pages, 1979677 bytes).
+Output written on tesi.pdf (87 pages, 2181386 bytes).
 PDF statistics:
- 395 PDF objects out of 1000 (max. 8388607)
- 239 compressed objects within 3 object streams
+ 405 PDF objects out of 1000 (max. 8388607)
+ 246 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -15,7 +15,10 @@
 \usepackage{url}
 \usepackage{multirow}
 \usepackage{rotating}
-  \usepackage{pgfplots}
+\usepackage{pgfplots}
+\usepackage{setspace}
+\usepackage[square,numbers]{natbib}
+\renewcommand*{\bibfont}{\raggedright}
 \hyphenation{a-gen-tiz-za-zio-ne}
 \graphicspath{{pictures/}}
 \setlength{\paperwidth}{16cm}
@@ -31,6 +34,8 @@
 \renewcommand{\captionfont}{\normalfont \sffamily \itshape \small}
 \newcommand*\rot{\rotatebox{90}}
 \newcommand*\OK{\ding{51}}
+
+
 %\pagestyle{empty}
 
 \begin{document}
@@ -67,6 +72,7 @@
 \pagenumbering{arabic}
 \newpage
 \setcounter{page}{1}
+
 \include{capitolo1}
 \include{capitolo2}
 %\include{capitolo3}

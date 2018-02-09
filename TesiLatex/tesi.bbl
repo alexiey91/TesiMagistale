@@ -1,10 +1,45 @@
 \begin{thebibliography}{1}
 
-\bibitem{wannacryicert}
-Computer Emergency~Response Team.
-\newblock {Come funziona il ransomware WannaCry e cosa fare per proteggersi}.
+\bibitem{test}
+Amazon.
 \newblock
-  \url{https://www.certnazionale.it/news/2017/05/15/come-funziona-il-ransomware-wannacry-e-cosa-fare-per-proteggersi/},
-  May 2017.
+  \url{https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Instances:sort=instanceId}.
+
+\bibitem{echo}
+Echo-chambers.
+\newblock \url{https://en.wikipedia.org/wiki/Echo_chamber_(media)}.
+
+\bibitem{Bayes}
+Naive bayes.
+\newblock \url{https://en.wikipedia.org/wiki/Naive_Bayes_classifier}.
+
+\bibitem{sentiment2}
+Sentiment analysis.
+\newblock \url{https://www.celi.it/soluzioni/opinion-mining/}.
+
+\bibitem{morales2015polarization}
+J.~C.~Losada A.~J.~Morales, J.~Borondo and R.~M. Benito.
+\newblock Measuring political polarization: Twitter shows the two sides of
+  venezuela.
+\newblock May 2015.
+
+\bibitem{pang2015sentiment}
+Lillian~Lee Bo~Pang.
+\newblock Opinion mining and sentiment analysis.
+
+\bibitem{Garimella2015polarization}
+Aristides Gionis e Michael~Mathioudakis Kiran~Garimella, Gianmarco De
+  Francisci~Morales.
+\newblock Reducing controversy by connecting opposing views.
+
+\bibitem{Kevin2015sentiment}
+Kevin~P. Murphy.
+\newblock Naive bayes classifiers.
+
+\bibitem{Guerra2015polarization}
+Robert~Kleinberg Pedro H. Calais~Guerra, Wagner Meira Jr. Claire~Cardie.
+\newblock A measure of polarization on social media networksbased on community
+  boundaries.
+\newblock 2015.
 
 \end{thebibliography}

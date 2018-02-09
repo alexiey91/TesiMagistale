@@ -6,12 +6,12 @@
 
 \section{Stato dell'arte}
 All'interno delle reti sociali sta sempre pi\'u prendendo piede il problema della polarizzazione delle opinioni. Nel linguaggio comune il confronto tra individui ha sempre generato una forte controversia oppure un punto d'incontro. 
-I social network hanno permesso all'utente di poter diffondere attraverso post, messaggi o espressioni audio video le proprie opinioni e/o pensieri all'interno di una comunità sociale. A tal proposito per favorire la diffusione delle diverse correnti di pensiero i social network stanno sempre più sviluppando algoritmi per permettere di identificare le comunità isolate che condividono un unico punto di vista di un argomento.
-La polarizzazione è un algoritmo matematico che applicato all'interno delle rete sociali consente di capire quanto un utente che accede per la prima volta all'interno di una rete sociale, venga influenzato dagli altri utenti e quanto una news o un giudizio si propaga all'interno di una rete sociale.
-Prima di poter illustrare questo algoritmo con le relative problematiche verrà illustrata una definizione di rete sociale.
+I social network hanno permesso all'utente di poter diffondere attraverso post, messaggi o espressioni audio video le proprie opinioni e/o pensieri all'interno di una comunità sociale. A tal proposito per favorire la diffusione delle diverse correnti di pensiero i social network stanno sempre più sviluppando algoritmi per permettere di identificare le comunità isolate, che condividono un unico punto di vista di un determinato argomento.
+La polarizzazione è un algoritmo matematico che applicato all'interno delle rete sociali consente di capire quanto un utente, che accede per la prima volta all'interno di una rete sociale, venga influenzato dagli altri utenti e quanto una news o un giudizio si propaga all'interno di una rete sociale.
+Prima di poter illustrare questo algoritmo, con le relative problematiche, verrà illustrata una definizione di rete sociale.
 
 \subsection{Rete Sociale}
-Una rete sociale consiste in un qualsiasi gruppo di individui connessi tra loro da diversi legami sociali. Per gli esseri umani i legami vanno dalla conoscenza casuale, ai rapporti di lavoro, ai vincoli familiari. Le reti sociali sono spesso usate come base di studi interculturali in sociologia, in antropologia, in etologia.
+Una rete sociale consiste in un qualsiasi gruppo di individui connessi tra loro da diversi legami. Per gli esseri umani i legami vanno dalla conoscenza casuale, ai rapporti di lavoro, ai vincoli familiari. Le reti sociali sono spesso usate come base di studi interculturali in sociologia, in antropologia, in etologia.
 
 L'analisi delle reti sociali, ovvero la mappatura e la misurazione delle reti sociali, può essere condotta con un formalismo matematico usando la teoria dei grafi. In generale, il corpus teorico ed i modelli usati per lo studio delle reti sociali sono compresi nella cosiddetta \textit{social network analysis}.
 
@@ -50,23 +50,24 @@ Etichettando un messaggio con un hashtag si crea un collegamento ipertestuale a 
 
 \subsection{Polarizzazione}
 Definiamo in maniera concettuale il significato, le funzionalità della polarizzazione. 
-Citando il paper \textit{A Measure of Polarization on Social Media NetworksBased on Community Boundaries} di \textit{Pedro H. Calais Guerra, Wagner Meira Jr. Claire Cardie, Robert Kleinberg} la polarizzazione viene definita come un processo sociale in cui un gruppo viene diviso: 
+Citando il paper \textit{A Measure of Polarization on Social Media NetworksBased on Community Boundaries} di \textit{Pedro H. Calais Guerra, Wagner Meira Jr. Claire Cardie, Robert Kleinberg}(\cite{Guerra2015polarization} la polarizzazione viene definita come un processo sociale in cui un gruppo viene diviso: 
 in due sottogruppi aventi un conflitto o una visione differente del problema in questione, e da alcuni individui che rimangono neutrali.
 Comprendere la polarizzazione e quantificarla è una sfida a lungo termine per i ricercatori all'interno di diverse aree, proprio perché risulta essere un potente strumento per l'analisi delle opinioni.
 
-Nel paper \textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela} di \textit{A. J. Morales, J. Borondo, J. C. Losada e R. M. Benito}, la polarizzazione assume una connotazione molto simile, vista in chiave politica, infatti all'interno di questo paper viene effettuata tale analisi all'interno di un contesto politico. 
-La definizione che viene data è un fenomeno sociale che avviene quando gli individui contrappongono le proprie credenze ed opinioni in una posizione conflittuale tra loro, mentre alcuni rimangono in una posizione neutrale.
+Nel paper \textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela} di \textit{A. J. Morales, J. Borondo, J. C. Losada e R. M. Benito} (\cite{morales2015polarization}), la polarizzazione assume una connotazione molto simile, vista in chiave politica, infatti all'interno di questo paper tale analisi viene effettuata all'interno di un contesto politico. 
+La definizione che viene data della polarizzazione è: 
+un fenomeno sociale che si verifica quando gli individui contrappongono le proprie credenze ed opinioni in una posizione conflittuale tra loro, mentre alcuni mantengono una posizione neutrale.
 Per citare \textit{Jonh Turner}\footnote{Noto psicologo sociale britannico, con altri colleghi ha sviluppato la teoria dell'Auto-categorizzazione, che afferma tra l'altro che il sé non è un aspetto fondamentale della cognizione, ma è il risultato di processi cognitivi ed interazioni tra la persona e il contesto sociale.} :"Come le molecole polarizzate, i membri di un gruppo allineano il proprio pensiero nella direzione in cui erano originalmente diretti". 
 
-Adottare questo strumento all'interno di un contesto politico fornisce una chiara visione della preferenza o meno per i candidati politici, verificando il trend del candidato.
+Adottare questo strumento all'interno di un contesto politico fornisce una chiara visione della preferenza o meno verso i candidati politici, verificando il trend del candidato.
 Dal punto di vista matematico possiamo definire la polarizzazione tra due gruppi come la distanza che intercorre tra due numeri. Definendo in questo modo quanto due idee siano diverse e contrastanti utilizzando la distanza tra due valori numerici di riferimento.
-Le problematiche evidenziate dalla polarizzazione vengono trattate all'interno del paper : \textit{Reducing Controversy by Connecting Opposing Views} di \textit{Kiran Garimella ,Gianmarco De Francisci Morales, Aristides Gionis e Michael Mathioudakis}. Quando una popolazione si divide in due gruppi con visioni opposte quello che spesso si può osservare è la creazione degli \textit{echo-chambers} cioè: una situazione dove persone che la pensano allo stesso modo rafforzano le proprie convinzioni a vicenda, senza esporsi verso idee contrastanti.
-In conclusione la polarizzazione può aiutare ad individuare e a prevenire la formazioni degli \textit{echo-chambers}.
+Le problematiche evidenziate dalla polarizzazione vengono trattate all'interno del paper : \textit{Reducing Controversy by Connecting Opposing Views} di \textit{Kiran Garimella ,Gianmarco De Francisci Morales, Aristides Gionis e Michael Mathioudakis} \cite{Garimella2015polarization}. Quando una popolazione si divide in due gruppi con visioni opposte quello che spesso si può verificare è la creazione degli \textit{Echo-chambers} cioè: una situazione dove persone che la pensano allo stesso modo rafforzano le proprie convinzioni a vicenda, senza esporsi verso idee contrastanti.
+In conclusione la polarizzazione può aiutare ad individuare e a prevenire la formazioni degli \textit{Echo-chambers}.
 
 \subsubsection{Echo-Chambers}
 Brevemente illustriamo un gravissimo problema che abbiamo precedentemente riscontrato all'interno della polarizzazione.
-Gli \textit{Echo-chambers} è una descrizione metaforica di una situazione in cui le informazioni, le idee, o credenze sono rinforzate dalla comunicazione e dalla ripetizione all'interno di un ambiente definito. Praticamente viene creato come un "\textit{eco}" che riproduce lo stesso suono più e più volte all'interno di un ambiente. 
-Nei social media il fenomeno degli echo chambers è un problema piuttosto comune e ciò è dovuto dalla forte presenza di comunità di utenti che condividono sempre le stesse informazioni con un forte tasso di pubblicazione, quindi un nuovo utente che appoggia una di quelle idee entra all'interno di quel circolo vizioso. Ovviamente gli amministratori di questi social network sviluppano algoritmi che possano prevenire la formazione di queste comunità.
+Gli \textit{Echo-chambers} è una descrizione metaforica di una situazione in cui le informazioni, le idee, o credenze sono rinforzate dalla comunicazione e dalla ripetizione all'interno di un ambiente definito. Praticamente viene diffuso lo stesso messaggio, come un "\textit{eco}" che riproduce lo stesso suono più e più volte all'interno di un ambiente\cite{echo}. 
+Nei social media il fenomeno degli echo-chambers è un problema piuttosto comune e ciò è dovuto dalla forte presenza di comunità di utenti che condividono sempre le stesse informazioni con un forte tasso di pubblicazione, quindi un nuovo utente che appoggia una di quelle idee entra all'interno di quel circolo vizioso. Ovviamente gli amministratori di questi social network sviluppano algoritmi che possano prevenire la formazione di queste comunità.
 Le conseguenze di questo problema sono molto evidenti ovvero:
 \begin{itemize}
 \item \textit{Impossibilità della crescita culturale}
@@ -78,12 +79,12 @@ La polarizzazione come precedentemente accennato è uno strumento che può aiuta
 \subsection{Sentiment Analysis}
 
 La Sentiment Analysis è lo strumento utilizzato per poter catalogare le informazioni degli utenti attraverso un'analisi del testo. Non è possibile citare la sentiment analysis senza menzionare l' "opinion mining" ovvero una branchia del machine learning che studia il comportamento delle opinioni nella rete.
-Il termine sentiment viene utilizzato in riferimento all'analisi automatica effettuata per valutare il testo ed esprimere un giudizio predittivo sul contenuto.
+Il termine sentiment viene utilizzato in riferimento all'analisi automatica effettuata per valutare il testo ed esprimere un giudizio predittivo sul contenuto \cite{pang2015sentiment}.
 Il compito base di questo processo è quello di classificare la polarità di un testo e quindi il suo contenuto e catalogarlo come \textit{positivo},\textit{negativo} o \textit{neutrale}.
 Gli approcci più comunemente individuati rispetto alla sentiment analysis possono suddividersi in tre macro-categorie: 
 \begin{itemize}
 \item \textit{rilevamento delle keyword}: questo metodo consente di classificare il testo tramite categorie emotive facilmente riconoscibili, individuate in base alla presenza di parole emotive non ambigue, come felice, triste, e annoiato.
-\item \textit{affinità lessicale}: questo metodo non rileva solo le keyword emotive, ma assegna anche a parole arbitrarie "un'affinità" probabile a emozioni particolari. Rispetto alla prima metodologia vista, l'affinità lessicale consente di affinare la selezione e l'attribuzione della polarità.
+\item \textit{affinità lessicale}: questo metodo non rileva solo le keyword emotive, ma assegna anche a parole arbitrarie \textit{un'affinità probabile} a emozioni particolari. Rispetto alla prima metodologia vista, l'affinità lessicale consente di affinare la selezione e l'attribuzione della polarità.
 \item \textit{metodi statistici}: questi metodi si basano su elementi di apprendimento automatico. Per misurare l'opinione nel contesto e trovare la caratteristica che è stata giudicata, sono usate le relazioni grammaticali delle parole utilizzate. Le relazioni di dipendenza grammaticale sono ottenute attraverso la scansione approfondita del testo. Il processo di apprendimento da parte della macchina (anche detto machine learning) non è immediato, devono infatti essere costruiti dei modelli che associano a diverse tipologie di commenti una polarità e se necessario ai fini dell'analisi anche un topic.
 \end{itemize}
 
@@ -108,7 +109,7 @@ In conclusione la sentiment analysis è uno strumento che può essere molto util
 \end{comment}
 
 \subsubsection{Forecasting}
-Il Forecasting è un processo per fare predizioni del futuro basandosi sui dati passati e presente mediante l'analisi delle tendenze. Questo viene utilizzato molto all'interno delle aziende per poter analizzare i guadagni ed i futuri ricavi.
+Il Forecasting è un processo per fare predizioni del futuro basandosi sui dati passati e presenti mediante l'analisi delle tendenze. Questo viene utilizzato molto all'interno delle aziende per poter analizzare i guadagni ed i futuri ricavi.
 Spesso viene associato ai processi di budgeting e pianificazione, si serve di dati passati e presenti, analisi dei trend e informazioni esecutive per prevedere la situazione futura di ogni  indicatore.
 Il forecasting prevede tre diverse tecniche:
 \begin{itemize}

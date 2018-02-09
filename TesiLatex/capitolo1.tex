@@ -1,5 +1,6 @@
 \chapter{Introduzione}
 \label{Introduzione}
+
 %\thispagestyle{empty}
 
 
@@ -32,10 +33,10 @@ Otteniamo  la formazione degli \textit{Echo-Chambers}, definita come:
 \textit{Una situazione in cui le informazioni, le idee e le credenze vengono rinforzate e amplificate perché espresse all'interno dello stesso ambiente, rimanendo isolato.}
 \end{quote}
 
-Un altro problema che può formare una forte polarizzazione delle opinioni e delle informazioni sono i \textit{Filter Bubble} ovvero:
+Un altro problema che può generare una forte polarizzazione delle opinioni e delle informazioni sono i \textit{Filter Bubble} ovvero:
 
 \begin{quote} 
-\textit{Uno stato di un isolamento intellettuale che può essere ottenuto a partire da risultati di ricerche su siti che registrano la storia del comportamento dell'utente. Questi siti sono in grado di utilizzare informazioni sull'utente per scegliere selettivamente tra tutte le risposte quelle che vorrà vedere l'utente stesso. L'effetto è di isolare l'utente da informazioni che sono in contrasto con il suo punto di vista, isolandolo nella sua bolla culturale o ideologica.}
+\textit{Uno stato di un isolamento intellettuale che può essere ottenuto a partire da risultati di ricerche su siti che registrano la storia del comportamento dell'utente. Questi siti sono in grado di utilizzare informazioni sull'utente per scegliere selettivamente tra tutte le risposte quelle che l'utente vorrà visualizzare. L'effetto è di isolare l'utente da informazioni che sono in contrasto con il suo punto di vista, isolandolo nella sua bolla culturale o ideologica.}
 \end{quote}
 
 Come precedentemente anticipato la polarizzazione è uno strumento che può essere facilmente utilizzato per individuare tutte queste problematiche all'interno dei moderni Social Network come \textit{Facebook}, \textit{Twitter} e molti altri. Questo perché gli utenti si sentono sempre più liberi di poter esprimere le proprie opinioni all'interno di queste piattaforme riguardo problematiche sociali, culturali, politiche ed economiche.
@@ -44,10 +45,10 @@ Come precedentemente anticipato la polarizzazione è uno strumento che può esse
 Non è sempre possibile poter uscire dalle \textit{Filter Bubble}, perché gli stessi social network tendono a indirizzare l'utente a visualizzare informazioni che potrebbero interessargli senza farli confrontare con opinioni divergenti. 
 Alla luce di questo grande problema il calcolo di una polarizzazione può consentire agli amministratori dei social network di individuare i topic più polarizzati garantendo una diffusione democratica delle informazioni, facendo comunicare gli utenti con opinioni divergenti.
 
-L'obiettivo della mia tesi consiste nell'utilizzare la polarizzazione per poter individuare gli argomenti fortemente polarizzati e comprendere come tali informazioni vengono diffuse all'interno della rete sociale.
+L'obiettivo della mia tesi consiste nell'utilizzare la polarizzazione per poter individuare gli argomenti fortemente polarizzati e comprendere come tali informazioni si diffondano all'interno della rete sociale.
 Lo sviluppo di questo strumento è stato effettuato attraverso due algoritmi, presentati nei seguenti paper:
 \begin{itemize}
-\item \textbf{\textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela}}:
+\item \textbf{\textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela}}(\cite{test}:
 Studia la diffusione delle informazioni all'interno di un \textit{endorsement graph} collezionando i dati relativi alle elezioni in Venezuela all'interno del \textit{social network Twitter}. Viene effettuato uno studio della polarizzazione all'interno di un contesto politico attraverso la diffusione delle opinioni sui candidati politici durante le ultime elezioni presidenziali, l'\textit{endorsement graph} viene costruito partendo da un utente che pubblica nella rete un \textit{Tweet} esprimendo la propria opinione, formando un nuovo nodo, mentre eventuali follower di quell'utente che \textit{retwettano} tale notizia sono nuovi nodi all'interno del grafo con archi uscenti verso il nodo che hanno \textit{retwettato}. In questo modo viene generato un grafo basato sul \textit{retweet}.
 Una volta generato il grafo vengono catalogati i nodi in due categorie:
 \begin{itemize}
@@ -61,16 +62,16 @@ Identifica la polarizzazione sfruttando la topologia del grafo. Il grafo viene g
 La differenza principale con la soluzione proposta in precedenza, consiste nell'utilizzare la tecnica dei \textit{Random Walk}. La polarizzazione adottando questo approccio dipende fortemente dalla topologia dell'\textit{endorsement graph}. 
 \end{itemize}
 
-Prima di poter effettuare il calcolo vero e proprio della polarizzazione occorre effettuare una prima scrematura,da intendersi come una prima classificazione delle opinioni in due gruppi contrastanti, nel dettaglio attraverso la \textit{Sentiment Analysis}. Questa particolare tecnica consente di partizionare il grafo in due gruppi che per semplicità chiameremo \textbf{Rossi} e \textbf{Blu}, nel dettaglio viene analizzato il testo contenuto in un tweet o in un post (a seconda del social network adottato) catalogandolo per un gruppo piuttosto che un altro a seconda del contenuto e all'affinità col topic in questione. 
+Prima di poter effettuare il calcolo vero e proprio della polarizzazione occorre effettuare una prima scrematura, da intendersi come una prima classificazione delle opinioni in due gruppi contrastanti, nel dettaglio attraverso la \textit{Sentiment Analysis}. Questa particolare tecnica consente di partizionare il grafo in due gruppi che per semplicità chiameremo \textbf{Rossi} e \textbf{Blu}, nel dettaglio viene analizzato il testo contenuto in un tweet o in un post (a seconda del social network adottato) catalogandolo per un gruppo piuttosto che un altro a seconda del contenuto e all'affinità col topic in questione. 
 Per meglio comprendere cosa viene effettuato presentiamo la definizione di \textit{Sentiment Analysis}:
 \begin{quote}
 \textit{L'Analisi del sentiment o Sentiment analysis (ma anche opinion mining) \'e la maniera a cui ci si riferisce all'uso dell'elaborazione del linguaggio naturale, analisi testuale e linguistica computazionale per identificare ed estrarre informazioni soggettive da diverse fonti.} 
 \end{quote}
 
-In conclusione l'analisi semantica consente di poter catalogare le informazione in base alla loro vicinanza alle opinioni di un gruppo piuttosto che ad un altro, ed eventualmente scartare quelle informazioni che non sono di alcun interesse per l'utente. Tale operazione è possibile soltanto se la macchina \'e stata precedentemente istruita sul topic in questione, infatti si definisce \textit{training set} l'insieme delle informazioni di riferimento che consentono alla macchina di poter distinguere le opinioni a seconda del loro contenuto.
+In conclusione l'analisi semantica consente di poter catalogare le informazione in base alla loro vicinanza alle opinioni di un gruppo piuttosto che ad un altro, ed eventualmente scartare quelle informazioni che non sono di alcun interesse per il calcolo della polarizzazione. Tale operazione è possibile soltanto se la macchina \'e stata precedentemente istruita sul topic in questione, infatti si definisce \textit{training set} l'insieme delle informazioni di riferimento che consentono alla macchina di poter distinguere le opinioni a seconda del loro contenuto.
 
 Dopo aver effettuato questa separazione o catalogazione delle informazioni \'e possibile identificare quali utenti siano pi\'u o meno vicini ai due poli di un'opinione. Ricapitolando partendo da \textit{post} o \textit{topic} viene effettuata la \textit{Sentiment analysis}, viene costruito l'\textit{endorsement Graph} ed infine calcolata la \textbf{polarizzazione}.
-Diamo ora qualche informazione in pi\'u sulla polarizzazione, a livello matematico la polarizzazione può assumere valori compresi tra [-1,1] definendo in questo modo due poli opposti. I nodi che avranno una polarizzazione pari a 0 sono da ritenersi nodi neutri ovvero che non sono soggetti ad una forte polarizzazione, ma sono l'emblema della democrazia, in quanto ricevono informazioni da entrambi i gruppi.
+Diamo ora qualche informazione in pi\'u sulla polarizzazione, a livello matematico la polarizzazione può assumere valori compresi tra $[-1,1$] definendo in questo modo due poli opposti. I nodi che avranno una polarizzazione pari a 0 sono da ritenersi nodi neutrali ovvero che non sono soggetti ad una forte polarizzazione, ma sono l'emblema della democrazia, in quanto ricevono informazioni da entrambi i gruppi.
 
 Per concludere è stato effettuato anche uno studio per poter consentire la predizione del valore della polarizzazione in un periodo futuro. In questo modo gli amministratori dei social network possono effettuare degli accorgimenti alla rete consentendo una democratica diffusione delle opinioni, senza creare \textit{Echo-Chambers} e \textit{Filter Bubble}.  
 La predizione \'e stata realizzata attraverso tecniche di \textit{Forecasting} molto utilizzate in contesti economici, in quanto consentono, attraverso delle serie numeriche, di poter predirne il valore nell'istante temporale successivo. Sfruttando queste particolarità è stato possibile effettuare una predizione, nel dettaglio le tecniche utilizzate sono tre:
@@ -81,15 +82,15 @@ La predizione \'e stata realizzata attraverso tecniche di \textit{Forecasting} m
 \end{itemize}
 
 
-Terminiamo questa sezione presentando i casi studio utilizzati. Per lo sviluppo della mia tesi ho deciso di analizzare  la polarizzazione all'interno di due contesti differenti, attraverso questi due Topic:
+Terminiamo questa sezione presentando i casi di studio utilizzati. Per lo sviluppo della mia tesi ho deciso di analizzare  la polarizzazione all'interno di due contesti differenti, attraverso questi due Topic:
 \begin{itemize}
 \item \textbf{Elezioni Regionali in Sicilia nel 2017}: analisi in un contesto politico.
 \item \textbf{Biotestamento}: analisi in un contesto sociale.
 \end{itemize}
 %I dati relativi a questi due topic sono stati raccolti utilizzando il social network \textit{Twitter}, dal 01/09/2017 al 20/12/2017, sfruttando diversi \textit{hashtags} nel dettaglio per ogni topic sono stati scelti i 5 hashtag pi\'u utilizzati dagli utenti per esprimere la loro opinioni su questi differenti argomenti. Una volta collezionati diversi dati \'e stato fatto quanto precedentemente illustrato in questo capitolo. 
-I dati relativi a questi due topic sono stati raccolti attraverso il social network \textit{Twitter}, dal 01/09/2017 al 20/12/2017. Il periodo indicato \'e stato scelto per analizzare l'evoluzione della polarizzazione nel tempo comprensiva della conclusione di questi due topic.
+I dati relativi a questi due topic sono stati raccolti attraverso il social network \textit{Twitter}, dal 01/09/2017 al 20/12/2017, per il primo topic, mentre per il secondo il periodo di raccolta è compreso tra il 01/09/2017 al 31/01/2018. Il periodo indicato \'e stato scelto per analizzare l'evoluzione della polarizzazione nel tempo comprensiva della conclusione di questi due topic.
 Il 05/11/2017 si sono svolte le elezioni regionali in Sicilia ed il 14/12/2017 il parlamento italiano ha approvato la legge sul biotestamento.
-I dati sono stati raccolti effettuando una ricerca attraverso i 5 \textit{hashtags} più utilizzati per entrambi i topic. Questi \textit{hashtag} non esprimono nessuna opinione o parere presi singolarmente ma sono delle parole chiavi necessarie per catalogare il contesto del \textit{tweet}. Per catalogare i dati raccolti e poi valutare la polarizzazione sono state adottate le tecniche precedentemente illustrate.
+I dati sono stati raccolti effettuando una ricerca attraverso i 5 \textit{hashtags} più utilizzati per entrambi i topic. Questi \textit{hashtag} non esprimono nessuna opinione o parere presi singolarmente ma sono delle parole chiavi necessarie per catalogare il contesto del \textit{tweet}. Per classificare i dati raccolti e poi valutarne la polarizzazione sono state adottate le tecniche precedentemente illustrate.
 
 Per quanto riguarda le elezioni regionali in Sicilia si è deciso di raccogliere i tweet relativi alle due grandi fazioni che hanno dominato la scena politica siciliana:
 \begin{itemize}
@@ -97,17 +98,17 @@ Per quanto riguarda le elezioni regionali in Sicilia si è deciso di raccogliere
 \item \textit{Forza Italia} (la coalizione del centro destra).
 \end{itemize}
 Innanzitutto è stata una scelta dettata dai risultati conseguiti durante le suddette elezioni e dal fatto che in Italia non sono presenti soltanto due fazioni politiche, come in molti altri paesi del mondo, quindi sarebbe risultato impossibile definire un valore polarizzato se avessimo considerato più di due fazioni politiche.
-A tal proposito sono stati scartati i dati relativi a quei candidati politici appartenenti ad altri partiti politici e coalizione rispetto a quelli sopra elencati, utilizzando la \textit{Sentiment Analysis}.
+A tal proposito sono stati scartati i dati relativi a quei candidati appartenenti ad altri partiti politici e coalizione rispetto a quelli sopra elencati, utilizzando la \textit{Sentiment Analysis}.
 I risultati ottenuti da questo topic hanno un comportamento interessante, cioè il cambiamento nel tempo della polarizzazione, seguendo il trend riscontrato durante i sondaggi effettuati mensilmente. Nel dettaglio si può facilmente assistere ad un cambiamento di trend col passare del tempo.
 % infatti in un primo istante c'\'e una totale polarizzazione verso il \textit{Movimento 5 stelle} per poi terminare con una polarizzazione tendente verso \textit{Forza Italia}.
-Si comincia con una polarizzazione del 79\% a favore del \textit{Movimento 5 Stelle} per concludere alla fine del suddetto periodo con un capovolgimento di fronte con il 59\% della polarizzazione a favore della coalizione di \textit{Forza Italia}, mostrando un cambiamento radicale nel tempo conforme con quanto accaduto nei sondaggi.
+Si comincia con una polarizzazione di $\simeq 79\%$  a favore del \textit{Movimento 5 Stelle} per concludere alla fine del suddetto periodo con un capovolgimento di fronte con il $\simeq 59\%$ della polarizzazione a favore della coalizione di \textit{Forza Italia}, mostrando un cambiamento radicale nel tempo conforme con quanto accaduto nei sondaggi.
 
 Per quanto riguarda il \textit{Biotestamento} si è deciso di raccogliere i tweet relativi alla legge approvata il 14 Dicembre 2017 dal parlamento italiano, per analizzare la polarizzazioni in un contesto sociale.
 La polarizzazione riguardava l'adesione o meno a questa legge, riscontrando una fortissima polarizzazione verso i contrari all'attuazione di tale legge. %Ci\'o pu\'o essere facilmente addidato al contesto religioso e sociale presente in Italia, ovvero la forte presenza di una societ\'a cattolica che \'e contraria  all'attuazione del biotestamento. I risultati hanno confermato il contesto sociale cio\'e che la presenza relegiosa ha letteralmente dominato anche all'interno di \textit{Twitter} favorendo la creazione di un \textit{Echo-chambers} che non permette agli utenti di poter visualizzare opinioni discordanti rispetto alla loro opinioni.
 Questi risultati sono conformi al contesto sociale e religioso presente in Italia, confermando quanto spiegato in precedenza e cioè quanto un retaggio culturale o religioso possa influenzare il pensiero e le opinioni di una persona. Questa considerazione non è applicabile soltanto nella vita di tutti i giorni ma anche all'interno di un social network e ciò viene dimostrato dai risultati ottenuti all'interno di questo topic.
 
 In conclusione questi due Topic hanno contribuito a confermare quanto precedentemente spiegato all'interno di questo capitolo e cioè che la polarizzazione è un potentissimo strumento che consente di poter individuare gli \textit{Echo-chambers} presenti nella rete. %Eventuali sviluppo futuri relativi a questa tesi possono essere la possibilit\'a di eliminare la creazione degli \textit{Echo-chambers} utilizzando algoritmi per eliminare la controversia delle informazioni all'interno dei social network favorendo una facile diffusione delle informazioni. 
-Eventuali sviluppi futuri possono riguardare l'eliminazione degli \textit{Echochambers} abbassando la controversia tra i due gruppi ottenuti attraverso la polarizzazione, effettuando dei congiungimento tra quei gruppi di nodi che condividono sempre le stesse opinioni.
+Eventuali sviluppi futuri possono riguardare l'eliminazione degli \textit{Echo-chambers} abbassando il livello di controversia tra i due gruppi ottenuti attraverso la polarizzazione, attraverso un congiungimento tra quei gruppi di nodi che condividono sempre le stesse opinioni.
 \newpage
 \section{Stuttura Tesi}
 All'interno di questa tesi, verranno illustrati e sviluppati:
@@ -123,36 +124,4 @@ definiti all'interno dell'introduzione.
 La parte teorica relativa a tutti gli argomenti precedentemente illustrati verranno trattati all'interno del capitolo  \ref{capitolo4} \textit{\nameref{capitolo4}}.
 Nel dettaglio la parte implementativa dei due algoritmi, della raccolta dati, della sentiment analysis e della predizione verrà trattata all'interno del capitolo \ref{capitolo5} \textit{\nameref{capitolo5}}.
 Gli esperimenti e le motivazioni  che hanno mosso alla definizione dei due topic scelti per l'analisi della polarizzazione verranno trattate all'interno del capitolo  \ref{capitolo6} \textit{\nameref{capitolo6}}.
-Infine gli sviluppi futuri verranno trattati all'interno del capitolo  \ref{capitolo7} \textit{\nameref{capitolo7}}.
-\begin{comment}
-\section{Inquadramento generale}
-La prima parte contiene una frase che spiega l'area generale dove si svolge il lavoro; una che spiega la sottoarea pi\`u specifica dove si svolge il lavoro e la terza, che dovrebbe cominciare con le seguenti parole ``lo scopo della tesi \`e \dots'', illustra l'obbiettivo del lavoro. Poi vi devono essere una o due frasi che contengano una breve spiegazione di cosa e come \`e stato fatto, delle attivit\`a� sperimentali, dei risultati ottenuti con una valutazione e degli sviluppi futuri. La prima parte deve essere circa una facciata e mezza o due
-
-\section{Breve descrizione del lavoro}
-La seconda parte deve essere una esplosione della prima e deve quindi mostrare in maniera pi\`u esplicita l'area dove si svolge il lavoro, le fonti bibliografiche pi\`u importanti su cui si fonda il lavoro in maniera sintetica (una pagina) evidenziando i lavori in letteratura che presentano attinenza con il lavoro affrontato in modo da mostrare da dove e perch\'e \`e sorta la tematica di studio. Poi si mostrano esplicitamente le realizzazioni, le direttive future di ricerca, quali sono i problemi aperti e quali quelli affrontati e si ripete lo scopo della tesi. Questa parte deve essere piena (ma non grondante come la sezione due) di citazioni bibliografiche e deve essere lunga circa 4 facciate.
-
-\section{Struttura della tesi}
-La terza parte contiene la descrizione della struttura della tesi ed \`e organizzata nel modo seguente.
-``La tesi \`e strutturata nel modo seguente.
-
-Nella sezione due si mostra \dots
-
-Nella sez. tre si illustra \dots
-
-Nella sez. quattro si descrive \dots
-
-Nelle conclusioni si riassumono gli scopi, le valutazioni di questi e le prospettive future \dots
-
-Nell'appendice A si riporta \dots (Dopo ogni sezione o appendice ci vuole un punto).''
-
-I titoli delle sezioni da 2 a M-1 sono indicativi, ma bisogna cercare di mantenere un significato equipollente nel caso si vogliano cambiare. Queste sezioni possono contenere eventuali sottosezioni.
-\end{comment}
-%``Terence: "Mi fai un gelato anche a me? Lo vorrei di pistacchio" \\
-%Bud: "Non ce l'ho il pistacchio. C'ho la vaniglia, cioccolato, fragola, limone e caff�"\\
-%Terence: "Ah bene. Allora fammi un cono di vaniglia e di pistacchio"\\
-%Bud: "No, non ce l'ho il pistacchio. C'ho la vaniglia, cioccolato, fragola, limone e caff�"\\
-%Terence: "Ah, va bene. Allora vediamo un po', fammelo al cioccolato, tutto coperto di pistacchio"\\
-%Bud: "Ehi, macch� sei sordo? Ti ho detto che il pistacchio non ce l'ho!"\\
-%Terence: "Ok ok, non c'� bisogno che t'arrabbi, no? Insomma, di che ce l'hai?"\\
-%Bud: "Ce l'ho di vaniglia, cioccolato, fragola, limone e caff�!"\\
-%Terence: "Ah, ho capito. Allora fammene uno misto: mettici la fragola, il cioccolato, la vaniglia, il limone e il caff�. Charlie, mi raccomando il pistacchio, eh"''}
+Infine gli sviluppi futuri e le conclusione verranno trattati all'interno del capitolo  \ref{capitolo7} \textit{\nameref{capitolo7}}.

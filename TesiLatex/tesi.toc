@@ -18,20 +18,20 @@
 \contentsline {section}{\numberline {3.2}Sentiment Analysis}{22}
 \contentsline {section}{\numberline {3.3}Endorsement Graph}{23}
 \contentsline {section}{\numberline {3.4}Polarizzazione}{24}
-\contentsline {section}{\numberline {3.5}Predizione}{26}
+\contentsline {section}{\numberline {3.5}Predizione}{25}
 \contentsline {chapter}{\numberline {4}Implementazione e realizzazione del sistema}{28}
 \contentsline {section}{\numberline {4.1}Raccolta dati}{28}
 \contentsline {subsection}{\numberline {4.1.1}Twitter Api}{29}
 \contentsline {subsection}{\numberline {4.1.2}Get Old Tweet}{31}
 \contentsline {subparagraph}{EC2}{33}
 \contentsline {section}{\numberline {4.2}Sentiment Analysis}{34}
-\contentsline {section}{\numberline {4.3}Endorsement Graph}{39}
+\contentsline {section}{\numberline {4.3}Endorsement Graph}{38}
 \contentsline {section}{\numberline {4.4}Polarizzazione}{41}
 \contentsline {subsection}{\numberline {4.4.1}Polarizzazione basata sul grado}{42}
 \contentsline {subsection}{\numberline {4.4.2}Polarizzazione basata sulla topologia}{46}
 \contentsline {section}{\numberline {4.5}Predizione}{50}
 \contentsline {subsection}{\numberline {4.5.1}Double Exponential Smoothing}{50}
-\contentsline {subsection}{\numberline {4.5.2}Linear Regression}{52}
+\contentsline {subsection}{\numberline {4.5.2}Linear Regression}{53}
 \contentsline {subsection}{\numberline {4.5.3}Moving Average}{54}
 \contentsline {chapter}{\numberline {5}Test sperimentali e valutazione}{56}
 \contentsline {section}{\numberline {5.1}Elezioni Regionali Sicilia 2017}{58}

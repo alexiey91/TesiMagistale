@@ -7,15 +7,16 @@
 In questo capitolo verrà presentato il flusso logico della tesi con la soluzione proposta per la suddivisione dei gruppi partendo dai dati raccolti, il calcolo della polarizzazione ed infine la sua predizione nel tempo.
 
 \section{Raccolta Dati}
-La prima parte del flusso logico della mia tesi si basa sulla raccolta dei dati. Questa operazione è stata effettuata utilizzando il social network \textbf{Twitter}. Nel dettaglio sono stati raccolti tutti i tweet relativi a due topic, utilizzati per effettuare le analisi,le motivazioni della scelta verranno illustrate più avanti, cioè:
+La prima parte del flusso logico della mia tesi si basa sulla raccolta dei dati. Questa operazione è stata effettuata utilizzando il social network \textbf{Twitter}. Nel dettaglio sono stati raccolti tutti i tweet relativi a due topic, usati per effettuare le analisi, le motivazioni della scelta di questi due argomenti verranno illustrate più avanti, cioè:
 \begin{itemize}
 \item \textbf{La elezioni regionali in Sicilia}
 \item \textbf{Biotestamento}
 \end{itemize}
+
 Come precedentemente illustrato la scelta di questi due topic è dovuta al fatto che sono in primis due argomenti molto recenti e di attualità all'interno del nostro paese, in secundis perché riferiti a due contesti differenti tra loro ovvero quello politico e quello sociale.
-Prima di effettuare la raccolta di tweet per ognuno dei due topic, è stato effettuato uno studio sugli hashtag, cioè la ricerca veniva effettuata per una serie di hashtag per cui sono stati catalogati i 5 topic più utilizzati dagli utenti per esprimere le loro opinioni sull'argomento in questione.
+Prima di effettuare la raccolta di tweet per ognuno dei due topic, è stato effettuato uno studio sugli hashtag, cioè la ricerca veniva effettuata per una serie di hashtag per cui sono stati catalogati i 5 più utilizzati dagli utenti per esprimere le loro opinioni sull'argomento in questione.
 Lo studio di questi hashtag è stato improntato ricercando quelli che non esprimessero un giudizio, bensì che aiutassero l'utente a connotare i loro pensieri sul topic avendo una connotazione generica.
-La ricerca è stata fatta in maniera del tutto equilibrata sopratutto per quanto concerne le elezioni regionali in Sicilia in quanto è facile cadere in preda in hashtag utilizzati dalle fazioni politiche per attirare gli elettori, ne sono un esempio:
+La ricerca è stata fatta in maniera del tutto equilibrata sopratutto per quanto concerne le elezioni regionali in Sicilia in quanto è facile cadere in preda di hashtag utilizzati dalle fazioni politiche per attirare gli elettori, ne sono un esempio:
 \begin{itemize}
 \item \textit{\#diventeràbellissima}: utilizzato dal centro destra come motto all'interno dei social media per pubblicizzare il proprio piano politico.
 \item \textit{\#impresentabili}: utilizzato dal Movimento 5 Stelle per denunciare i candidati degli altri partiti politici.
@@ -46,17 +47,18 @@ Il motivo che mi ha spinto ad effettuare tale operazione è dettata dai costi ch
 
 \section{Sentiment Analysis}
 La sentiment Analysis è stata utilizzata per catalogare i \textit{Tweet} delle persone in riferimento ai due topic d'interesse. 
-Utilizzando questo strumento l'operazione effettuata è stata quella di suddividere in 3 categorie il contenuto pubblicato nella rete. In precedenza sono state illustrate le numerose tecniche per poter utilizzare la sentiment analysis, per questo motivo la tecnica che più si avvicinasse alle mie esigenze è quella basata su metodi statistici, cioè vengono applicati principi del machine learning per poter identificare la vicinanza o meno del testo con il \textit{training set} di riferimento. 
-Come descritto in precedenza maggiore è la quantità dei dati che contengono il training set e maggiore ne risulterà la precisione nella predizione del contenuto desiderato.
+Utilizzando questo strumento l'operazione effettuata è stata quella di suddividere in 3 categorie il contenuto pubblicato nella rete. In precedenza sono state illustrate le numerose tecniche per poter utilizzare la sentiment analysis, per questo motivo la tecnica che più si avvicinasse alle mie esigenze è quella basata su metodi statistici, cioè vengono applicati principi del machine learning per poter identificare la vicinanza o meno del testo con il \textit{training set} di riferimento.\cite{Bayes}
+Come descritto in precedenza maggiore è la quantità dei dati che contiene il training set e maggiore ne risulterà la precisione nella predizione del contenuto desiderato.
 All'interno del flusso di esecuzione della mia tesi la sentiment analysis viene collocata all'interno della raccolta dati, cioè nel momento in cui viene collezionato un tweet questo viene immediatamente analizzato e collocato nel gruppo di riferimento.
-Successivamente se il tweet in questione presenta dei \textit{retweet}, ovvero una condivisione del contenuto con altri utenti, poiché c'è la possibilità di poter aggiungere commenti, allora verrà analizzato anche il testo aggiunto dal nuovo utente sul \textit{tweet} in questione.
+Successivamente se il tweet in questione presenta dei \textit{retweet}, ovvero una condivisione del contenuto con altri utenti, questi saranno a loro volta analizzati attraverso la sentiment analysis perché c'è la possibilità di aggiungere commenti al retweet.
+
 
 \section{Endorsement Graph}
 L'Endorsement Graph è il grafo di riferimento su cui verranno effettuate le successive operazioni. Concettualmente è un grafo diretto basato sui tweet e sui retweet fatti dagli utenti della rete.
 Gli elementi costituenti del grafo sono:
 \begin{itemize}
 \item \textit{Tweet}: sono i nodi che formano il grafo.
-\item \textit{Retweet}: sono assimilabili ad archi e noti, cioè essendo delle estensioni alle pubblicazioni aggiuntive fatte dai nodi, allora all'interno del grafo verranno generati nuovi nodi, rappresentati gli utenti che hanno pubblicato tali informazioni, e nuovi archi che rappresentano il collegamento tra i due. Una menzione particolare su questi archi che sono orientati dal Retweet verso il Tweet. 
+\item \textit{Retweet}: sono assimilabili ad archi e noti, cioè essendo delle estensioni alle pubblicazioni fatte dai nodi, allora all'interno del grafo verranno generati nuovi nodi. Questi sono gli utenti che hanno pubblicato tali informazioni, ed i nuovi archi che collegano i tweet con i retweet rappresentano il collegamento tra i due nodi. Una menzione particolare su questi archi che sono orientati dal Retweet verso il Tweet. 
 \end{itemize}
 L'endorsement graph viene popolato da tutti i dati raccolti attraverso la ricerca per hashtag, rendendo in questo modo il grafo molto popolato. 
 Per dare una parvenza grafica della polarizzazione i nodi appartenenti ai due gruppi distinti sono stati colorati in due colori di riferimento:
@@ -64,6 +66,7 @@ Per dare una parvenza grafica della polarizzazione i nodi appartenenti ai due gr
 \item \textbf{Rossi}
 \item \textbf{Blu}
 \end{itemize}
+
 \section{Polarizzazione}
 La polarizzazione viene calcolata subito dopo la creazione del grafo in questione. La realizzazione di questo strumento è stato fatta implementando gli algoritmi proposti all'interno di questi due paper:
 \begin{itemize}
@@ -88,14 +91,16 @@ Per quanto riguarda la polarizzazione basata sulla topologia, come suggerisce il
 \item Effettuare dei \textit{Random Walk} \footnote{Si definisce Random Walk la formalizzazione dell'idea di prendere passi successivi in direzioni casuali. Matematicamente parlando, è il processo stocastico più semplice, il processo markoviano, la cui rappresentazione matematica più nota è costituita dal processo di Wiener.}, utilizzando i pesi sugli archi per calcolare la polarizzazione, per raggiungere quei nodi di grado massimo appartenenti alle due categorie sopra citate.
 \end{enumerate}
 Queste sono le operazioni effettuate dall'algoritmo basato sulla topologia.
-Una volta applicati i due algoritmi i risultati vengono salvati per poi essere rappresentati graficamente, mostrando il grafo con le colorazioni in modo da mostrare la polarizzazione a livello visivo.
-Questa parte è il focus della mia tesi in quanto utilizzando questi algoritmi possiamo visualizzare con i nostri occhi quanto queste informazioni siano polarizzate, quanto le persone (i nodi sono utenti della rete) hanno dibattuto sul quel topic. I risultati ed i dettagli implementativi verranno mostrati in seguito, come anticipazione posso affermare che i topic hanno mostrato attraverso la polarizzazione lo stesso trend del mondo reale.
+Una volta applicati i due algoritmi i risultati vengono salvati per poi essere rappresentati graficamente, mostrando a livello visivo il grafo con le colorazioni in conformità con i risultati raggiunti attraverso la polarizzazione.
+Questa parte è il focus della mia tesi in quanto utilizzando questi algoritmi possiamo visualizzare con i nostri occhi quanto queste informazioni siano polarizzate, quanto le persone (i nodi sono utenti della rete) hanno dibattuto sul quel topic. I risultati ed i dettagli implementativi verranno mostrati in seguito, come anticipazione posso affermare che i topic hanno mostrato attraverso la polarizzazione lo stesso trend mostrato nel mondo reale.
+
 \section{Predizione}
-L'ultima fase della tesi consiste nella predizione della polarizzazione in un periodo successivo rispetto a quello considerato durante la fase di raccolta dati. Questa esigenza nasce per poter consentire una prevenzione sul problema della formazione degli \textit{Echo-chambers}, questi molto spesso vengono a formarsi con argomenti fortemente polarizzati, quindi poter prevenire per tempo la formazione di queste comunità isolate può comportare un enorme vantaggio per gli amministratori dei social media. Per la realizzazione di questa parte della tesi si è deciso di adottare una predizione basata sull'analisi dei dati raccolti, nel dettaglio si è deciso di utilizzare algoritmi alla base del \textit{Forecasting} basati sull'analisi delle serie temporali.
+
+L'ultima fase della tesi consiste nella predizione della polarizzazione in un periodo successivo rispetto a quello considerato durante la fase di raccolta dati. Questa esigenza nasce per poter consentire una prevenzione sul problema della formazione degli \textit{Echo-chambers}, questi molto spesso vengono a formarsi con argomenti fortemente polarizzati, quindi poter prevenire per tempo la formazione di queste comunità isolate può comportare un enorme vantaggio per gli amministratori dei social media. Per la realizzazione di questa parte della tesi si è deciso di adottare una predizione basata sull'analisi dei dati raccolti, nel dettaglio si è deciso di utilizzare algoritmi di \textit{Forecasting} basati sull'analisi delle serie temporali.
 Nel dettaglio ho effettuato un analisi basata su 3 tecniche differenti tra loro:
 \begin{itemize}
 \item \textit{Double exponential smoothing}: è una tecnica che sfrutta la serie temporale dei dati raccolti, assegnando una crescita esponenziale sui dati nel tempo, tenendo conto anche del trend di crescita o di decrescita nel tempo. In questo modo si cerca di predire il contenuto nel primo instante successivo.
 \item \textit{Linear regression}: questa tecnica formalizza e risolve il problema di una relazione funzionale tra variabili misurate sulla base di dati campionari estratti da un'ipotetica popolazione infinita. In statistica l'analisi della regressione è associata alla risoluzione del modello lineare. 
 \item \textit{Moving average}: è una tecnica che estende la media aritmetica dei risultati, andando a mediare i risultati all'interno di una finestra mobile, prelevando gli ultimi risultati ottenuti in precedenza mediandoli e definendo come valore futuro questo risultato. 
 \end{itemize}
-I risultati della predizione verranno trattati in seguito così come i dettagli implementativi. La predizione all'interno di questo contesto può risultare utilissimo per l'analisi futura dei topic nel tempo, perchè ovviamente la formazione degli \textit{Echo-chambers} può essere arginata facendo dei controlli e/o previsioni sul valore della polarizzazione nel futuro.
+I risultati della predizione verranno trattati in seguito così come i dettagli implementativi. La predizione all'interno di questo contesto può risultare utilissimo per l'analisi futura dei topic nel tempo, perché ovviamente la formazione degli \textit{Echo-chambers} può essere arginata facendo dei controlli e/o previsioni sul valore della polarizzazione nel futuro.
