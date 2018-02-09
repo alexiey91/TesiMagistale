@@ -78,17 +78,15 @@ Nel dettaglio i gruppi in questione sono stati classificati attraverso 3 \textit
 Si è scelto di calcolare la polarizzazione solo per le due forze politiche che hanno dominato la scena politica siciliana: la coalizione del centro destra  ed il Movimento 5 Stelle. Il centro-destra rappresenta un'insieme di partiti, si è deciso di raggrupparli all'interno di un'unica coalizione, mentre l'altra forza politica in gioco, ovvero il Movimento 5 Stelle, rappresenta un unico partito politico.
 La sentiment analysis utilizza un training set per catalogare le informazioni in base al sentimento che esprimono i tweet pubblicati dagli utenti. Per questo motivo è stata fatta una operazione di raccolta e catalogo di diversi tweet di esempio per consentire alla macchina di poter comprendere a quale gruppo associare il tweet che avrebbe analizzato.
 Qui di seguito mostriamo una tabella contenente 3 tweet di esempio per ogni label per meglio rendere l'idea.
-\begin{table}
+\newpage
+\begin{longtable}[c]{ |c|p{10cm}| }
 
-\begin{tabular}{ |p{3cm}|p{10cm}| }
+%\begin{tabular}{ |p{3cm}|p{10cm}| }
  \hline
  \multicolumn{2}{|c|}{\textbf{Training set}} \\
  \hline 
- \begin{center}
- \textbf{Label}
- \end{center} & \begin{center}
- \textbf{Tweet}
- \end{center}\\
+ 
+ \textbf{Label} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   \textbf{Tweet}\\
  \hline
  5stelle   & Chi ama la sua terra non può che votare il \#M5S \#Regionali \#Sicilia  \\ \hline
  5stelle & A disposizione del \#MoVimento5Stelle per cambiare la nostra fantastica \#Sicilia! Contattatemi \#regionaliSicilia \#m5s\\ \hline
@@ -100,13 +98,14 @@ Altri & Tutti gli schieramenti alle \#elezioniregionali in Sicilia.L'articolo di
 Altri & \#Londra ricevo questa card per gli \#emigrati : è valida solo per i \#treni in \#Italia . E le migliaia di \#Siciliani all' \#estero ? \#elesicilia \\ \hline
 Altri & \#cambiamoabitudini Basta! Adesso si agisce.Il \#5novembre \#iovoto \#siciliafutura \#micaripresidente \#elesicilia\\
  \hline
-\end{tabular}
+%\end{tabular}
 \caption{Esempi di tweet del Training Set}
  \label{trainingSetExample}
-\end{table}
+\end{longtable}
 
 Una volta partizionato i dati, l'endorsement graph relativo alle elezioni siciliane  è stato popolato. Questo grafo è cresciuto nel tempo, cioè via via che venivano raccolti i tweet ed i relativi retweet durante la raccolta dati effettuata mese per mese. I tweet isolati cioè quelle informazioni, con espressione di idee, che non sono state ripubblicate dagli altri utenti della rete sono stati scartati, ma presi in riesame nel caso in cui nei mesi successivi ci fosse stato qualche utente che avesse retweettato quelle notizie.
 Per meglio rendere l'idea in questione illustriamo una tabella (vedi tabelle: \ref{Noditotali}) contente i dati raccolti nei diversi mesi, e quelli effettivamente utilizzati per il calcolo della polarizzazione.
+\begin{comment}
 \begin{table}
 
 \begin{tabular}{ |p{1.75cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2cm}|p{2cm}| }
@@ -128,6 +127,22 @@ Per meglio rendere l'idea in questione illustriamo una tabella (vedi tabelle: \r
  \hline
  Utilizzati &350 & 968 & 2145 &5183 &5270  \\ \hline
  Totali &464 & 1158 & 2631 &6779 & 6876  \\ 
+ \hline
+\end{tabular}
+\caption{Numero di nodi del grafo}
+ \label{Noditotali}
+\end{table}
+\end{comment}
+\begin{table}
+\centering
+\begin{tabular}{ c|c|c|c|c|c| }
+
+ 
+
+ &\rot{\textbf{Settembre}}&\rot{\textbf{Ottobre}} & \rot{\textbf{5 Novembre}} &\rot{\textbf{Novembre}} &\rot{\textbf{Dicembre}}\\
+ \hline
+ Utilizzati &350 & 968 & 2145 &5183 &5270\\ \hline
+ Totali &464 & 1158 & 2631 &6779 & 6876 \\ 
  \hline
 \end{tabular}
 \caption{Numero di nodi del grafo}
@@ -298,17 +313,14 @@ Nel dettaglio i gruppi in questione sono stati classificati attraverso 2 \textit
 \end{itemize}
 La sentiment analysis utilizza un training set per catalogare le informazioni in base al sentimento che esprimono i tweet pubblicati dagli utenti. Per questo motivo è stata fatta una operazione di raccolta e catalogo di diversi tweet di esempio per consentire alla macchina di poter comprendere a quale gruppo associare il tweet che avrebbe analizzato.
 Qui di seguito mostriamo una tabella (vedi \ref{trainingSetExampleBio}) contenente 3 tweet di esempio per ogni label per meglio rendere l'idea.
-\begin{table}
+\begin{longtable}[c]{|c|p{10cm}|}
 
-\begin{tabular}{ |p{3cm}|p{10cm}| }
+%\begin{tabular}{ |p{3cm}|p{10cm}| }
  \hline
  \multicolumn{2}{|c|}{\textbf{Training set}} \\
  \hline 
- \begin{center}
- \textbf{Label}
- \end{center} & \begin{center}
- \textbf{Tweet}
- \end{center}\\
+ 
+ \textbf{Label} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{Tweet}\\
  \hline
  Red   & \#biotestamento \#testamentobiologico \#eutanasia battete le mani in nome del progresso e morirete felici a contenti Dove stiamo andando?\\ \hline
  Red & L'aspetto forse più aberrante è il divieto di obiezione di coscienza. Se il paziente chiede di morire il medico dovrà obbedire, ossia sarà costretto a compiere un assassinio pena il licenziamento e, forse, una condanna penale. Altro che Nazismo! \#eutanasia \#suicidioassistito \\ \hline
@@ -317,33 +329,21 @@ Qui di seguito mostriamo una tabella (vedi \ref{trainingSetExampleBio}) contenen
 Blue & Sul \#biotestamento o, meglio, sull'autodeterminazione del malato. Una legge assolutamente positiva, che ha assai poco a che fare con l' \#eutanasia o \#finevita \\ \hline
 Blue & \#eutanasia Tutti parlano di diritto alla vita, ma pochi si preoccupano del diritto a morire in modo dignitoso. Eppure non è difficile immaginare cosa sia peggiore della morte immedesimandosi con partecipazione, e non superficialmente, in certe situazioni.............\\
  \hline
-\end{tabular}
+%\end{tabular}
 \caption{Esempi di tweet del Training Set del biotestamento}
  \label{trainingSetExampleBio}
-\end{table}
+\end{longtable}
 
 Una volta partizionato i dati, l'endorsement graph relativo al biotestamento è stato popolato. La cardinalità del grafo aumentava nel tempo, cioè via via che venivano raccolti i tweet ed i relativi retweet attraverso la raccolta dati effettuata mese per mese. I tweet isolati cioè quelle informazioni, con espressione di idee, che non sono state ripubblicate dagli altri utenti della rete sono stati scartati, ma presi in riesame nel caso in cui nei mesi successivi ci fosse stato qualche utente che avesse retweettato quelle notizie.
 Per meglio rendere l'idea in questione illustriamo una tabella (vedi tabelle: \ref{NoditotaliBio}) contente i dati raccolti nei diversi mesi, e quelli effettivamente utilizzati per il calcolo della polarizzazione.
-\begin{table}
 
-\begin{tabular}{ |p{1.7cm}|p{2cm}|p{1.7cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}| }
- \hline
+\begin{table}[!ht]
+\centering
+\begin{tabular}{ c|c|c|c|c|c|c| }
+
  
- \begin{center}
- \textbf{}
- \end{center} & \begin{center}
- \textbf{Settembre}
- \end{center}& \begin{center}
- \textbf{Ottobre}
- \end{center} &\begin{center}
- \textbf{Novembre}
- \end{center} &\begin{center}
- \textbf{14 Dicembre}
- \end{center} &\begin{center}
- \textbf{Dicembre}
- \end{center}&\begin{center}
- \textbf{Gennaio}
- \end{center}\\
+
+ &\rot{\textbf{Settembre}}&\rot{\textbf{Ottobre}} & \rot{\textbf{Novembre}} &\rot{\textbf{14 Dicembre}} &\rot{\textbf{Dicembre}}&\rot{\textbf{Gennaio}}\\
  \hline
  Utilizzati &1 & 2& 3 &4 & 5& 6 \\ \hline
  Totali  &1 & 2& 3 &4 & 5& 6   \\ 
