@@ -28,7 +28,7 @@ In conclusione potremmo definire la polarizzazione come un processo sociale per 
 
 La formazione di due comunità isolate che non comunicano tra loro, comporta un problema di isolamento delle opinioni
 cioè un utente che appartiene a quel gruppo difficilmente potrà ricevere informazioni o aderire alle idee del gruppo antagonista.
-Otteniamo  la formazione degli \textit{Echo-Chambers}, definita come:
+Otteniamo  la formazione degli \textit{Echo-Chambers}, definiti come:
 \begin{quote} 
 \textit{Una situazione in cui le informazioni, le idee e le credenze vengono rinforzate e amplificate perché espresse all'interno dello stesso ambiente, rimanendo isolato.}
 \end{quote}
@@ -48,7 +48,7 @@ Alla luce di questo grande problema il calcolo di una polarizzazione può consen
 L'obiettivo della mia tesi consiste nell'utilizzare la polarizzazione per poter individuare gli argomenti fortemente polarizzati e comprendere come tali informazioni si diffondano all'interno della rete sociale.
 Lo sviluppo di questo strumento è stato effettuato attraverso due algoritmi, presentati nei seguenti paper:
 \begin{itemize}
-\item \textbf{\textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela}}(\cite{test}:
+\item \textbf{\textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela}}\cite{morales2015polarization}:
 Studia la diffusione delle informazioni all'interno di un \textit{endorsement graph} collezionando i dati relativi alle elezioni in Venezuela all'interno del \textit{social network Twitter}. Viene effettuato uno studio della polarizzazione all'interno di un contesto politico attraverso la diffusione delle opinioni sui candidati politici durante le ultime elezioni presidenziali, l'\textit{endorsement graph} viene costruito partendo da un utente che pubblica nella rete un \textit{Tweet} esprimendo la propria opinione, formando un nuovo nodo, mentre eventuali follower di quell'utente che \textit{retwettano} tale notizia sono nuovi nodi all'interno del grafo con archi uscenti verso il nodo che hanno \textit{retwettato}. In questo modo viene generato un grafo basato sul \textit{retweet}.
 Una volta generato il grafo vengono catalogati i nodi in due categorie:
 \begin{itemize}
@@ -57,7 +57,7 @@ Una volta generato il grafo vengono catalogati i nodi in due categorie:
 \end{itemize}
 Partendo da queste categorie viene calcolata la polarizzazione sfruttando il grado di ogni nodo, tale operazione viene eseguito iterativamente fino ad ottenere una stabilizzazione della polarizzazione.
 
-\item \textbf{\textit{Reducing Controversy by Connecting Opposing Views}}:
+\item \textbf{\textit{Reducing Controversy by Connecting Opposing Views}}\cite{Garimella2015polarization}:
 Identifica la polarizzazione sfruttando la topologia del grafo. Il grafo viene generato utilizzando la medesima tecnica del precedente paper, così come il social network di riferimento \textit{Twitter}. %La differenza principale \'e che non vengono catalogati i nodi in due gruppi in base al loro comportamento nel grafo, bens\'i utilizza la tecninca dei \textit{Random Walk} sfruttando la struttura dell' \textit{endorsement graph} e la probabilit\'a di retweet per ottenere il valore della polarizzazione per ogni nodo. Per la spiegazione relativa al calcolo del valore assoluto della polarizzazione attraverso la tecnina dei \textit{Random Walk} si rimanda al capitolo ??.
 La differenza principale con la soluzione proposta in precedenza, consiste nell'utilizzare la tecnica dei \textit{Random Walk}. La polarizzazione adottando questo approccio dipende fortemente dalla topologia dell'\textit{endorsement graph}. 
 \end{itemize}
@@ -68,7 +68,7 @@ Per meglio comprendere cosa viene effettuato presentiamo la definizione di \text
 \textit{L'Analisi del sentiment o Sentiment analysis (ma anche opinion mining) \'e la maniera a cui ci si riferisce all'uso dell'elaborazione del linguaggio naturale, analisi testuale e linguistica computazionale per identificare ed estrarre informazioni soggettive da diverse fonti.} 
 \end{quote}
 
-In conclusione l'analisi semantica consente di poter catalogare le informazione in base alla loro vicinanza alle opinioni di un gruppo piuttosto che ad un altro, ed eventualmente scartare quelle informazioni che non sono di alcun interesse per il calcolo della polarizzazione. Tale operazione è possibile soltanto se la macchina \'e stata precedentemente istruita sul topic in questione, infatti si definisce \textit{training set} l'insieme delle informazioni di riferimento che consentono alla macchina di poter distinguere le opinioni a seconda del loro contenuto.
+In conclusione l'analisi del sentimento consente di poter catalogare le informazione in base alla loro vicinanza alle opinioni di un gruppo piuttosto che ad un altro, ed eventualmente scartare quelle informazioni che non sono di alcun interesse per il calcolo della polarizzazione. Tale operazione è possibile soltanto se la macchina \'e stata precedentemente istruita sul topic in questione, infatti si definisce \textit{training set} l'insieme delle informazioni di riferimento che consentono alla macchina di poter distinguere le opinioni a seconda del loro contenuto.
 
 Dopo aver effettuato questa separazione o catalogazione delle informazioni \'e possibile identificare quali utenti siano pi\'u o meno vicini ai due poli di un'opinione. Ricapitolando partendo da \textit{post} o \textit{topic} viene effettuata la \textit{Sentiment analysis}, viene costruito l'\textit{endorsement Graph} ed infine calcolata la \textbf{polarizzazione}.
 Diamo ora qualche informazione in pi\'u sulla polarizzazione, a livello matematico la polarizzazione può assumere valori compresi tra $[-1,1$] definendo in questo modo due poli opposti. I nodi che avranno una polarizzazione pari a 0 sono da ritenersi nodi neutrali ovvero che non sono soggetti ad una forte polarizzazione, ma sono l'emblema della democrazia, in quanto ricevono informazioni da entrambi i gruppi.

@@ -178,7 +178,7 @@ Si definisce tale il rapporto che intercorre tra il numero dei retweet che l'ute
  \end{quote}
  Avendo raccolto dati da \textit{hashtag} differenti è possibile che alcuni utenti potessero retwettare lo stesso utente che avesse pubblicato nuovi tweet, per mantenere questa relazione si è incrementato il numero totale di retweet effettuati complessivamente, così come il numero di volte che l'utente ha retwettato le opinioni di quello specifico utente. 
 
-Prima di popolare il grafo sono state effettuate tutte le precedenti operazioni. La realizzazione del grafo è stata ultimata attraverso la libreria \textbf{Networkx}\footnote{NetworkX è una libreria Python per la creazione, manipolazione e studio delle strutture, dinamiche, e delle funzioni di una rete complessa.}, scritta in \textit{Python}.
+Prima di popolare il grafo sono state effettuate tutte le precedenti operazioni. La realizzazione del grafo è stata ultimata attraverso la libreria \textbf{Networkx}\footnote{NetworkX è una libreria Python per la creazione, manipolazione e studio delle strutture, dinamiche, e delle funzioni di una rete complessa.}, scritta in \textit{Python}.\cite{NetworkX}
 Il grafo in questione può essere modificato graficamente, nel nostro caso per meglio far comprendere la polarizzazione si è deciso di adottare i colori: 	\textit{Rosso} e \textit{Blu}; per rappresentare le due partizioni raccolte attraverso la sentiment analysis, successivamente calcolarne la polarizzazione (Vedi fig:\ref{endorsement}).
 %inserire un esempio grafico di un endorsement graph senza lab
 \begin{figure}[!h]
@@ -201,7 +201,7 @@ I valori in questione identificano la vicinanza ad un gruppo piuttosto che ad un
 Di seguito verranno illustrate le due implementazioni realizzate per il calcolo della polarizzazione all'interno di un endorsement graph.
 
 \subsection{Polarizzazione basata sul grado}
-All'interno di questa sezione verrà illustrata l'implementazione della polarizzazione attraverso l'algoritmo illustrato all'interno del paper: \textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela}.
+All'interno di questa sezione verrà illustrata l'implementazione della polarizzazione attraverso l'algoritmo illustrato all'interno del paper: \textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela}.\cite{morales2015polarization}
 
 Come precedentemente spiegato all'interno di questa tesi, il primo passo consiste nell'individuare due tipi di nodi: 
 \begin{itemize}
@@ -299,7 +299,7 @@ Dal punto di vista implementativo l'algoritmo trattato è stato implementato med
 La polarizzazione basata sulla topologia del grafo è un algoritmo definito all'interno di questo paper:\textit{Reducing Controversy by Connecting Opposing Views}.
 L'algoritmo in questione sfrutta la topologia del grafo per poter valutare la polarizzazione di ogni singolo nodo a fronte dell'opinione espressa all'interno del tweet pubblicato.
 Per prima cosa una volta costruito l'\textit{endorsement graph} un ruolo fondamentale lo svolge la scelta delle due partizioni che compongono il grafo.
-Nel paper in questione le partizioni venivano effettuate attraverso una catalogazione degli hashtags, cioè degli elementi testuali che esprimessero in poche parole, o una loro concatenazione, un parere su una determinata notizia.
+Nel paper in questione le partizioni venivano effettuate attraverso una catalogazione degli hashtags, cioè degli elementi testuali che esprimessero in poche parole, o una loro concatenazione, un parere su una determinata notizia.\cite{Garimella2015polarization}
 Per fare un esempio se il topic dell'analisi fosse stata una partita di calcio ed un utente avesse pubblicato un tweet con un hashtag come \textit{\#ForzaBlu}, questo sarebbe stato associato come un parere positivo verso la squadra blu. Però se nel testo ci fosse stata una frase negativa insieme all'hashtag precedente, sarebbe stato un errore perché non più a favore della squadra blu, bensì per il suo avversario. Per risolvere questa problematica la suddivisione è stata effettuata attraverso la \textit{Sentiment Analysis}(vedi sezione n:\ref{Sentiment}, per ulteriori spiegazioni). 
 Tornando alla definizione della polarizzazione anche in questo caso tale strumento può assumere un valore contenuto nel seguente range:
 \begin{equation}
@@ -374,7 +374,7 @@ La predizione è una tecnica che consente di analizzare il comportamento di seri
 Per la realizzazione degli algoritmi che hanno consentito di poter realizzare una tale operazione sono state adottate delle tecniche molto conosciute nell'ambito del \textit{Forecasting}.
 Nello sviluppo di questa tesi queste tecniche sono state implementate per consentire una predizione della polarizzazione di ogni nodo nel mese successivo a quello calcolato. Per mantenere i dati e averli sempre a disposizione, questi sono stati salvati all'interno di file \textit{csv} per poter consentire all'utente di poterli analizzare e consultare nel tempo.
 \subsection{Double Exponential Smoothing}
-Il Double Exponential Smoothing è una tecnica che sfrutta la serie temporale dei dati raccolti, assegnando una crescita esponenziale sui dati nel tempo, tenendo conto anche del trend di crescita o di decrescita nel tempo. In questo modo si cerca di predire il contenuto nel primo instante successivo.
+Il Double Exponential Smoothing è una tecnica che sfrutta la serie temporale dei dati raccolti, assegnando una crescita esponenziale sui dati nel tempo, tenendo conto anche del trend di crescita o di decrescita nel tempo. In questo modo si cerca di predire il contenuto nel primo instante successivo.\cite{DoubleExp}
 Questa tecnica è uno sviluppo della semplice Exponential Smoothing che faceva la previsione del singolo punto senza tenere conto del trend che veniva a generarsi tra i diversi punti. 
 La polarizzazione cambiava in base ai nuovi collegamenti che venivano a generarsi volta per volta nel tempo, per cui avere una cognizione sul trend della serie numerica risulta molto importante.
 Per meglio comprendere il funzionamento di questa tecnica, verrà illustrata la \textit{Exponential Smoothing}:
@@ -412,7 +412,7 @@ La serie di dati in questione risultava contenere al massimo 4 elementi, ovvero 
 \end{itemize}
 In seguito verranno illustrati i risultati ottenuti mediante questo approccio.
 \subsection{Linear Regression}
-La Regressione Lineare formalizza e risolve il problema di una relazione funzionale tra variabili misurate sulla base di dati campionari estratti da un'ipotetica popolazione infinita. In statistica l'analisi della regressione è associata alla risoluzione del modello lineare.
+La Regressione Lineare formalizza e risolve il problema di una relazione funzionale tra variabili misurate sulla base di dati campionari estratti da un'ipotetica popolazione infinita. In statistica l'analisi della regressione è associata alla risoluzione del modello lineare.\cite{LinearReg}
 La regressione consiste nel costruire un modello attraverso cui prevedere i valori di una variabile dipendente o risposta (quantitativa) a partire dai valori di una o più variabili indipendenti o esplicative.
 La relazione tra due o più variabili può essere effettuata attraverso modelli matematici, nel nostro caso quello di una \textit{retta}.
 La definizione di regressione lineare è:
@@ -439,7 +439,7 @@ sostituendo il valore di \textit{x} con l'istante temporale che si voleva calcol
 \subsection{Moving Average}
 \label{moving}
 La moving average  è una tecnica che estende la media aritmetica dei risultati, andando a mediare i risultati all'interno di una finestra mobile.
-Concettualmente vengono prelevati i risultati più recenti all'interno della serie temporale, successivamente questi verranno mediati. Il risultato sarà il valore della predizione dell'istante temporale richiesto.
+Concettualmente vengono prelevati i risultati più recenti all'interno della serie temporale, successivamente questi verranno mediati. Il risultato sarà il valore della predizione dell'istante temporale richiesto.\cite{Moving}
 % Vengono prelevati gli ultimi risultati ottenuti mediati ed infine viene definito come valore futuro questo risultato.
 Viene anche definita \textit{finestra mobile}, proprio perché calcola la media dei valori all'interno di una finestra limitata rispetto alla serie di dati contenuti.
 La definizione matematica è la seguente:

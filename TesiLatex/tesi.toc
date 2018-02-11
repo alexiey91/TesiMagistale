@@ -12,7 +12,7 @@
 \contentsline {subsection}{\numberline {2.1.4}Polarizzazione}{14}
 \contentsline {subsubsection}{Echo-Chambers}{16}
 \contentsline {subsection}{\numberline {2.1.5}Sentiment Analysis}{17}
-\contentsline {subsubsection}{Forecasting}{18}
+\contentsline {subsection}{\numberline {2.1.6}Forecasting}{18}
 \contentsline {chapter}{\numberline {3}Progetto logico della soluzione del problema}{20}
 \contentsline {section}{\numberline {3.1}Raccolta Dati}{20}
 \contentsline {section}{\numberline {3.2}Sentiment Analysis}{22}
@@ -36,5 +36,5 @@
 \contentsline {chapter}{\numberline {5}Test sperimentali e valutazione}{56}
 \contentsline {section}{\numberline {5.1}Elezioni Regionali Sicilia 2017}{58}
 \contentsline {section}{\numberline {5.2}Biotestamento}{71}
-\contentsline {chapter}{\numberline {6}Sviluppi futuri e conclusioni}{76}
-\contentsline {chapter}{Bibliografia}{79}
+\contentsline {chapter}{\numberline {6}Sviluppi futuri e conclusioni}{84}
+\contentsline {chapter}{Bibliografia}{89}

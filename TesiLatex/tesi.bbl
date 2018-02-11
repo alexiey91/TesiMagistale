@@ -1,21 +1,59 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{test}
-Amazon.
+\bibitem{BiotestamentoInfo}
+Biotestamento.
 \newblock
-  \url{https://eu-central-1.console.aws.amazon.com/ec2/v2/home?region=eu-central-1#Instances:sort=instanceId}.
+  \url{http://www.repubblica.it/cronaca/2018/01/31/news/bioestamento_da_oggi_i_desideri_dei_malati_sono_legge-187697062/}.
+
+\bibitem{BiotestamentoCris}
+Biotestamento.
+\newblock
+  \url{http://www.famigliacristiana.it/articolo/legge-sulle-dat-un-occasione-persa.aspx}.
+
+\bibitem{DoubleExp}
+Double exponential smoothing.
+\newblock
+  \url{http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc433.html}.
 
 \bibitem{echo}
 Echo-chambers.
 \newblock \url{https://en.wikipedia.org/wiki/Echo_chamber_(media)}.
 
+\bibitem{Forecasting}
+Forecasting.
+\newblock \url{https://en.wikipedia.org/wiki/Forecasting}.
+
+\bibitem{LinearReg}
+Linear regression.
+\newblock
+  \url{http://www.ecostat.unical.it/Costanzo/Didattica/Probabilit%C3%A0%20ed%20Inferenza%20Statistica/Prob_4.pdf}.
+
+\bibitem{Moving}
+Moving average.
+\newblock
+  \url{https://www.thebalance.com/simple-exponential-and-weighted-moving-averages-1031196}.
+
 \bibitem{Bayes}
 Naive bayes.
 \newblock \url{https://en.wikipedia.org/wiki/Naive_Bayes_classifier}.
 
+\bibitem{NetworkX}
+Networkx.
+\newblock \url{https://networkx.github.io/documentation/stable/index.html}.
+
+\bibitem{ElezioniRisultati}
+Risultati elezioni regionali sicilia 2017.
+\newblock
+  \url{http://www.repubblica.it/static/speciale/2017/elezioni/regionali/sicilia.html}.
+
 \bibitem{sentiment2}
 Sentiment analysis.
 \newblock \url{https://www.celi.it/soluzioni/opinion-mining/}.
+
+\bibitem{ElezioniSondaggi}
+Sondaggi elezioni regionali sicilia 2017.
+\newblock
+  \url{http://www.sondaggipoliticoelettorali.it/GestioneSondaggio.aspx}.
 
 \bibitem{morales2015polarization}
 J.~C.~Losada A.~J.~Morales, J.~Borondo and R.~M. Benito.

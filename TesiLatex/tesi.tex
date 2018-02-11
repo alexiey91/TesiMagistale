@@ -18,6 +18,8 @@
 \usepackage{pgfplots}
 \usepackage{setspace}
 \usepackage[square,numbers]{natbib}
+\usepackage[export]{adjustbox}[2011/08/13]
+
 \renewcommand*{\bibfont}{\raggedright}
 \hyphenation{a-gen-tiz-za-zio-ne}
 \graphicspath{{pictures/}}
@@ -34,6 +36,7 @@
 \renewcommand{\captionfont}{\normalfont \sffamily \itshape \small}
 \newcommand*\rot{\rotatebox{90}}
 \newcommand*\OK{\ding{51}}
+
 
 
 %\pagestyle{empty}
@@ -54,7 +57,7 @@
 \thispagestyle{empty} \vspace*{.75truecm} \cleardoublepage
 
 \begin{comment}
-\include{ringraziamenti}
+%\include{ringraziamenti}
 \thispagestyle{empty} \vspace*{.75truecm} \normalfont \cleardoublepage
 \pagestyle{plain}\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}} 
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}         
@@ -80,7 +83,7 @@
 \include{capitolo5}
 \include{capitolo6}
 \include{capitolo7}
-
+\include{ringraziamenti}
 \cleardoublepage
 % ---- Bibliography ----
 \addcontentsline{toc}{chapter}{Bibliografia}
