@@ -4,18 +4,12 @@ import matplotlib.pyplot as plt
 x = [1,2]
 y = [0.0,0.0] # 10, not 9, so the fit isn't perfect
 
-# fit = np.polyfit(x,y,1)
-# m,q =np.polyfit(x,y,1)
-# print(m)
-# print(fit)
-# fit_fn = np.poly1d(fit)
-# print(fit_fn)
-# fit_fn is now a function which takes in x and returns an estimate for y
+'''
+param serieX: the list of X element
+param serieY: the list of Y element
+return the value predicted with linear regression
 
-# plt.plot(x,y, 'yo', x, fit_fn(x), '--k')
-#
-# plt.show()
-
+'''
 def linear(serieX,serieY):
         predictedvalue=''
         if len(serieX)<=1:

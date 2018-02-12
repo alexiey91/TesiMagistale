@@ -68,9 +68,18 @@ def linear(serieX, serieY):
         return predictedvalue
 
 
+'''
+@param serie: list of data
+@return the value of average of list
+'''
 def average(serie):
     return float(sum(serie))/len(serie)
 
+'''
+@param serie: list of data
+@param n: the lenght of window
+@return the value of moving average
+'''
 def moving_average(serie, n):
     print serie[-n:]
     return average(serie[-n:])

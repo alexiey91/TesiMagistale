@@ -12,7 +12,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import utils.CreateApi as connectApi
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-import SentimentAnalysis.test as sentiment
+import SentimentAnalysis.sentiment as sentiment
 
 class Tweet(object):
     def __init__(self, username, tweetId, numRetweet, text, mentions, hashtags, date, link):
@@ -57,55 +57,7 @@ class Retweet(object):
         self.date = date
 
 
-# OLD
-# def getRetweet(api, listaInput, lenLista, list_ret,dizionario_tweet,dizionario_retweet,query,start,stop,char):
-#     for i in range(0, lenLista):
-#         try:
-#             print("num",listaInput[i].numRetweet)
-#             if listaInput[i].numRetweet == 0 or listaInput[i].numRetweet == '':
-#                 print("ola")
-#                 ret = Retweet(listaInput[i].username, '',listaInput[i].date)
-#                 list_ret.append(ret)
-#                 if listaInput[i].username == "marisaLaDestra":
-#                     print("MARISA NELL'if")
-#                 print("pos=" + str(i))
-#
-#             else:
-#                 results = api.retweets(listaInput[i].tweetId)
-#                 temp = []
-#                 i=0
-#                 if listaInput[i].username == "marisaLaDestra":
-#                     print("MARISA NELL'else")
-#                 for tweet in results:
-#                     if listaInput[i].username == "marisaLaDestra":
-#                         print("MARISA NELL'else")
-#                     temp.append(tweet.user.screen_name)
-#                     print("tweet",i,tweet.user.screen_name,listaInput[i].username)
-#                     if not dizionario_retweet.has_key((tweet.user.screen_name,listaInput[i].username)):
-#                            dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)] = (countOccReTweet((tweet.user.screen_name,listaInput[i].username),
-#                                                                                                                1/dizionario_tweet[listaInput[i].username].count,listaInput[i].date))
-#                            i = i+1
-#
-#                     else:
-#                         Numeratore = (dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)].count/dizionario_tweet[listaInput[i].username].count)+1
-#                         dizionario_retweet[(tweet.user.screen_name,listaInput[i].username)].count = Numeratore/dizionario_tweet[listaInput[i].username].count
-#                         #print (str(dizionario_tweet[listaInput[i].username].count))
-#                         i=i+1
-#
-#                 p = Retweet(listaInput[i].username, temp,listaInput[i].date)
-#                 list_ret.append(p)
-#         except tweepy.TweepError:
-#             print('exception raised, waiting 15 minutes')
-#             print('(until:', dt.datetime.now() + dt.timedelta(minutes=15), ')')
-#             print("check list len" + str(len(list_ret)))
-#             print("check list len dopo scrittura file" + str(len(list_ret)))
-#             time.sleep(15 * 60)
-#
-#     print('scrivo su pickle il dizionario ottenuto'+char)
-#     with open('./pickle/RegionaliSiciliaTest/tweet' + query + '_' + start + '_' + stop + '_dictionaryReTweet'+char+'.pkl', 'wb') as output:
-#         pickle.dump(dizionario_retweet,output, pickle.HIGHEST_PROTOCOL)
-#     print ('fatto')
-#     return list_ret
+
 
 
 def getRetweet(api, listaInput, lenLista, list_ret,dizionario_tweet,dizionario_retweet,query,start,stop,char):

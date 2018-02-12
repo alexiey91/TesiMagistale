@@ -1,6 +1,9 @@
 import pickle
 import csv
 
+'''
+Script for create the Prediction file for ElezioniRegionali
+'''
 with open('../Test/Sicilia/Dicembre/dizionarioPolarizzazioneRandomWalk.pickle', "rb") as input:
     labelPolRand = pickle.load(input)
 

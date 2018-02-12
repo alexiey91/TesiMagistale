@@ -413,12 +413,7 @@ def deleteList(List1,List2):
 
             if i.user == j.user:
 
-                if i.user == u'chiesa_stefano':
-                    print("trovato")
-                    List2.remove(j)
-                else:
-
-                 List2.remove(j)
+                List2.remove(j)
 
 
 def deleteList2( List1,List2):
@@ -483,6 +478,11 @@ def getProbRandomNeighbour(G,node,DizProbRet):
 
     return arrProb;
 
+'''
+    @param G: is a diGraph
+    @param node: is a single node of graph
+    @return the list with the node neighbour
+'''
 
 def getListNeighbour(G,node):
     neigh = G.neighbors(node)
@@ -495,6 +495,11 @@ def getListNeighbour(G,node):
 
     return listNei
 
+'''
+    @param G: is a diGraph
+    @param partition: is a dictionary of partition of graph
+    @return the dictionary with the node with best 5 highdegree
+'''
 def dictDegreeNodePart(G,partition):
     dictDegree ={}
     for i in G.nodes():
@@ -505,6 +510,13 @@ def dictDegreeNodePart(G,partition):
     newA=heapq.nlargest(5, dictDegree, key=dictDegree.get)
     return newA;
 
+
+'''
+    @param G: is a diGraph
+    @param node: is a single node
+    @param partition: is a dictionary of partition of graph
+    @return the dictionary with the node with best 5 highdegree in the partition
+'''
 def dictDegreeDiscendent(G,node,partition):
     dictDegree = {}
     disc= nx.descendants(G,node)
@@ -521,8 +533,15 @@ def release_list(a):
    del a[:]
    del a
 
-#EdgeProb e' il dizionario di ogni nodo con la lista delle probabilita
-#DizProbRet sono gli archi come chiave con le prob di retweet
+'''
+    @param G: is a diGraph
+    @param startnode: the start node
+    @param listNodeBlueDegree: the list of best 5 high degree of Blue partiotion
+    @param listNodeRedDegree: the list of best 5 high degree of Red partiotion
+    @param num_walk: number of max hop to exit from algorithm
+    @param DizProbRet: is a dictionary of retweet probability woth edge as key
+    @return the dictionary with the node as key and its polarization as value
+'''
 def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree,num_walk,Red,Blue,EdgeProb,DizProbRet):
     tempBlue= startnode
     tempRed = startnode
@@ -722,7 +741,11 @@ def performRandomWalkSingleNode(G,startnode,listNodeBlueDegree,listNodeRedDegree
 
     return resultPol
 
-
+'''
+    @param G: is a diGraph
+    @param dizPolarGar: the dictionary with key as node and value its polarization
+    @return the list of color of graph with node position
+'''
 
 def nodeColorGar(G,dizPolarGar,dizMerge):
     list=[]
@@ -741,7 +764,11 @@ def nodeColorGar(G,dizPolarGar,dizMerge):
 
     return list
 
-
+'''
+    @param G: is a diGraph
+    @param dizPolarGar: the dictionary with key as node and value its polarization
+    @return the dictionary of label of graph with node as key and value its polarization
+'''
 def nodeLaberGar(G,dizPolarGar):
     pol={}
 
@@ -766,68 +793,13 @@ def merge_two_dicts(x, y):
     return z
 
 
-def mergeListPartition(hashtag,color):
 
-    with open('../TweetOldSerialization/pickle/#'+hashtag[0]+'/retweet'+color+'#'+hashtag[0]+'_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
-        retweetList = pickle.load(input)
-
-    with open('../TweetOldSerialization/pickle/#'+hashtag[1]+'TestAWS/retweet'+color+'#'+hashtag[1]+'_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
-        retweetList2 = pickle.load(input)
-    for i in retweetList2:
-        retweetList.append(i)
-    release_list(retweetList2)
-
-    with open('../TweetOldSerialization/pickle/#'+hashtag[2]+'TestAWS/retweet' + color + '#'+hashtag[2]+'_2017-09-01_2017-12-20_data.pkl',
-            'rb') as input:
-        retweetList3 = pickle.load(input)
-    for i in retweetList3:
-        retweetList.append(i)
-    release_list(retweetList3)
-    with open('../TweetOldSerialization/pickle/#'+hashtag[3]+'TestAWS/retweet' + color + '#'+hashtag[3]+'_2017-09-01_2017-12-20_data.pkl',
-            'rb') as input:
-        retweetList4 = pickle.load(input)
-    for i in retweetList4:
-        retweetList.append(i)
-    release_list(retweetList4)
-
-    return retweetList
-
-def mergeProbDicPartition(color):
-    probFull={}
-    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweet'+color+'.pkl', 'rb') as input:
-        probRetBlue = pickle.load(input)
-
-    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTwee'+color+'.pkl', 'rb') as input:
-        probRetBlue2 = pickle.load(input)
-    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweet'+color+'.pkl', 'rb') as input:
-        probRetBlue3 = pickle.load(input)
-    with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweet'+color+'.pkl', 'rb') as input:
-        probRetBlue4 = pickle.load(input)
 
 
 def main():
     # Leggo il file pickle dei retweet
     # Costruisco un grafo con networkx partendo dai dati ottenuti
-    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetBlue#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
-    #     retweetList = pickle.load(input)
-    #
-    # #List = retweetList
-    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetRed#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
-    #     retweetListRed = pickle.load(input)
-    # with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetBlue.pkl', 'rb') as input:
-    #     probRetBlue = pickle.load(input)
-    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetRed.pkl','rb') as input:
-    #     probRetRed = pickle.load(input)
-    #
-    # #with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetYellow.pkl','rb') as input:
-    # #    probYellowGraph = pickle.load(input)
-    #
-    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetYellow#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
-    #     retweetListYellow = pickle.load(input)
 
-    #print deleteList2(retweetList,retweetListRed)[0].user
-    #retweetListRed = deleteList2(retweetList,retweetListRed)
-    #deleteList(retweetList,retweetListRed)
 
     with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/5Novembre/retweetListBlue.pkl','rb') as input:
      retweetListBlue = pickle.load(input)
@@ -849,215 +821,61 @@ def main():
     print "Fine Delete"
     List=[]
     for i in retweetListBlue:
-        #ret= Retweet(retweetList[i].user,retweetList[i].retweet, retweetList[i].date)
-       # print("Blue",i.user,i.retweet, i.date)
+
         List.append(i)
     for i in retweetListRed:
-        #print("Red",i.user,i.retweet, i.date)
-        #ret= Retweet(retweetListRed[i].user,retweetListRed[i].retweet, retweetListRed[i].date)
-        #print("RED",retweetListRed[i].user,retweetListRed[i].retweet, retweetListRed[i].date)
+
         List.append(i)
 
-    # for i in retweetListYellow:
-    #     # print("Red",i.user,i.retweet, i.date)
-    #      List.append(i)
+
 
 
     DizPesi={}
 
     for i in  probRetBlue:
-        #print('Blue',i.edge,i.count)
-        #prob = countOccReTweet(probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
-       # print("Blue",probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
-       #  if not DizPesi.has_key(probRetBlue[i].edge):
-       #      DizPesi[probRetBlue[i].edge]= probRetBlue[i].count
-       #  else:
-       #      continue
+
           if not DizPesi.has_key(i):
               DizPesi[i]= probRetBlue[i]
           else:
               continue
 
     for i in probRetRed:
-       # prob = countOccReTweet(probRetRed[i].edge, probRetRed[i].count, probRetRed[i].date)
-        #print("RED",probRetRed[i].edge, probRetRed[i].count, probRetRed[i].date)
-        # if not DizPesi.has_key(probRetRed[i].edge):
-        #     DizPesi[probRetRed[i].edge]= probRetRed[i].count
-        # else:
-        #     continue
+
          if not DizPesi.has_key(i):
           DizPesi[i] = probRetRed[i]
          else:
             continue
 
-    # for i in probYellowGraph:
-    #     if not DizPesi.has_key(probYellowGraph[i].edge):
-    #         DizPesi[probYellowGraph[i].edge]= probYellowGraph[i].count
-    #print(DizPesi)
 
-    #deleteProbDiz(DizPesi)
-    #print("DizPesi",DizPesi,len(DizPesi))
     nodi_Blue= NodeDict(retweetListBlue)
     nodi_Red = NodeDict(retweetListRed)
-    #nodi_Yellow = NodeDict(retweetListYellow)
-   # print ("Blue",nodi_Blue,len(nodi_Blue))
-   # print ("Red", nodi_Red,len(nodi_Blue))
-    #G = createUndirectGraph(List)
+
     DizionarioPesiArchi={}
-    #G = createGraph(List,DizPesi,DizionarioPesiArchi)
+
     G = createDirectNoWeightGraph(List)
     size_node_degree= []
-    #G.add_edge(u'beppevicari', 'claudioreale')
-   # G.add_edge('claudioreale','OpenGDB')
 
-    #DizPesi[(u'beppevicari', 'claudioreale')]=1
-    #DizPesi[('claudioreale','OpenGDB')]=2
     NumberRetweetDiz = getAllWeightEdge(DizPesi)
     #print NumberRetweetDiz
     UpdateNode(retweetListYellow,nodi_Blue)
     UpdateNode(retweetListYellow,nodi_Red)
 
     NodeDictDel(nodi_Blue,nodi_Red)
-    #print ("Blue", nodi_Blue, len(nodi_Blue))
-    #print ("Red", nodi_Red, len(nodi_Blue))
+
 
     setWeightEdge(G, NumberRetweetDiz, DizPesi)
-    #print(test)
+
 
     posizioneBlue = PosNode(G.nodes(),nodi_Blue)
     posizioneRed = PosNode(G.nodes(),nodi_Red)
-    #posizioneYellow = PosNode(G.nodes(),nodi_Yellow)
     dizPosizioneBlue=PosNodeDizionario(G.nodes,nodi_Blue)
     dizPosizioneRed=PosNodeDizionario(G.nodes,nodi_Red)
 
     dizMerge = merge_two_dicts(dizPosizioneBlue, dizPosizioneRed)
-    #dizPosizioneYellow = PosNodeDizionario(G.nodes,nodi_Yellow);
-    # print("Nodi=",G.nodes())
-    #print("DizPosBlue",dizPosizioneBlue)
-    #print("DizPosRed",dizPosizioneRed)
-    #print("DizMerge",dizMerge,len(dizMerge))
-    # print("DizPosYelloq",dizPosizioneYellow)
-    #print("Edge=",G.edges(data='weight'))
-    #print("posRed",posizioneRed)
-    #print ("posBlue",posizioneBlue)
-    #print(G.nodes())
-    #print("Differenze All-blue",G.nodes()-posizioneBlue)
 
-    #matriceProbRetweet= matrixProbRet(DizPesi,dizPosizioneRed,dizPosizioneBlue,List,G)
-
-    #List of Polarization of Elite and Listener
-    #firstPolar= setFirstPolarization(G,dizPosizioneBlue,dizPosizioneRed)
-
-    #print "Passo 0 di polarizzazione ",firstPolar
-
-    # dictFirstPol = {}
-    # x = 0
-    # for i in G.nodes():
-    #
-    #     if not dictFirstPol.has_key(i):
-    #         dictFirstPol[i] = firstPolar[x]
-    #         x = x + 1
-    #
-    #
-    # list = []
-    # for i in G.nodes():
-    #
-    #     list.append(i)
-
-
-    #matrice di adiacenza partendo dalla lista dei nodi
-    #mat_attr=nx.attr_matrix(G,rc_order=list)
-    #print(mat_attr[1])
-
-    # at_array=np.array(mat_attr)
-    #
-    # newPol=opinionPolarization(G,at_array,firstPolar,list)
-    #
-    # dictPol={}
-    # x=0
-    # for i in G.nodes():
-    #
-    #     if not dictPol.has_key(i):
-    #         dictPol[i]=newPol[x]
-    #         x=x+1
-
-   #settare i vertici dangling
-    #matrice=nx.google_matrix(G,alpha=1)
-    #p_array = np.array(matrice)
-
-    #print matrice,len(matrice),matrice[131]
-    # sumBlue=0.
-    # sumRed = 0.
-    # sumYellow =0.
-    # count =0;
-    # for i in range(0,len(p_array)):
-    #     if i in posizioneBlue:
-    #         sumBlue = sumBlue + p_array[15][i]
-    #         count = count+1
-    #
-    #     elif i in posizioneRed:
-    #         sumRed = sumRed +  p_array[15][i]
-    #         # print "sumBlue=",sumBlue,"i=",i,"j",j
-    #     elif i in posizioneYellow:
-    #         sumYellow= sumYellow + p_array[15][i]
-
-    #print p_array[15],"sumBlue",sumBlue,"sumRed",sumRed,"sumYellow",sumYellow,count,len(posizioneBlue),mat_attr
-
-
-    #partition = community.best_partition(G.to_undirected())
-   # print(partition)
-
-    #print(len(G.nodes))
-    #size = float(len(set(partition.values())))
-
-
-    #cambio i colori dei nodi a seconda del loro grado
-    #Polar = Polarization(p_array,posizioneRed,posizioneBlue,len(G.nodes),matriceProbRetweet)
-
-    #funziona con la partizione
-    #node_color= colorNode(G,nodi_Blue,nodi_Red)
-
-    #node_colorPol= colorNodePol(len(G.nodes()),newPol)
-
-
-    #testdict=opinionPolarizationDict(G,at_array,firstPolar,list)
-    #print(testdict)
-    #list_lastPol=testdict.get(len(testdict)-1)
-    #print(list_lastPol)
-    #print(set(testdict[1]))
-   # node_colorPol=colorNodePol(len(G.nodes()),list_lastPol)
-
-    # test = {}
-    # x = 0
-    # for i in G.nodes():
-    #
-    #     if not testdict.has_key(i):
-    #         test[i] = testdict.get(len(testdict)-1)[x]
-    #         x = x + 1
-
-
-    # for i in range(0,len(testdict)):
-    #     if i+1 == (len(testdict)-1):
-    #         break
-    #     print("i",i,"j",i+1," simili=", set(testdict[i])==set(testdict[i+1]))
-    #
-
-    #labels= labelPolarization(Polar,G,nodi_Blue,nodi_Red)
 
     pos = nx.spring_layout(G)
-  #Per la partizione
-    # list_nodes=[]
-    # for com in set(partition.values()):
-    #     count = count + 1.
-    #     x=0
-    #     for nodes in partition.keys():
-    #        # print "nodes",nodes
-    #         if partition[nodes] == com :
-    #             list_nodes.append(nodes)
 
-
-    #con la partizione
-    #nx.draw_networkx_nodes(G, pos ,list_nodes,with_labels=False,node_color=node_color)
     print(len(G.nodes()))
     edgeWeightLabel = nx.get_edge_attributes(G, 'weight')
     print("pesi archi",edgeWeightLabel)
@@ -1070,26 +888,18 @@ def main():
 
     print("dictgetProbRandom",dictTest)
 
-    #dictDegreeBlue= dictDegreeNodePart(G,nodi_Blue)
-   # print "ListaNodiGradiBlu",dictDegreeBlue
 
-    #print len(G.nodes()),math.sqrt(len(G.nodes())) , int(math.sqrt(len(G.nodes())))
-    #dictDegreeRed = dictDegreeNodePart(G,nodi_Red)
     result={}
     nodo=0
     for i in G.nodes():
-         #if i == u'Lovesynethla':
-       # print nx.descendants(G, i)
+
             dictDegreeDiscRed = dictDegreeDiscendent(G,i,nodi_Red)
             dictDegreeDiscBlue = dictDegreeDiscendent(G,i,nodi_Blue)
-            #print dictDegreeDiscRed
-            #print dictDegreeDiscBlue
+
             print nodo
             result[i]= performRandomWalkSingleNode(G,i,dictDegreeDiscBlue,dictDegreeDiscRed,int(math.sqrt(len(G.nodes()))),nodi_Red,"",dictTest,edgeWeightLabel)
             nodo = nodo +1
-         #    break
-         # else:
-         #    continue
+
 
 
     print result,len(result)

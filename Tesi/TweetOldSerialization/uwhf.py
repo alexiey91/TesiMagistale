@@ -18,7 +18,7 @@ import csv
 from dateutil import parser
 import matplotlib.pyplot as plt
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-import SentimentAnalysis.test as sentiment
+import SentimentAnalysis.sentiment as sentiment
 dizionario_hashtag = {}
 
 class Retweet(object):
@@ -52,13 +52,13 @@ class Retweet(object):
 # else:
 #     print('Trovato')
 #
-# stringa = '#Regionali #Sicilia , #Micari :Abbiamo le liste migliori, terrorizzato all\u2019idea di un esecutivo di destra con #Salvini'
+# stringa = '#Regionali #Biotestamento , #Micari :Abbiamo le liste migliori, terrorizzato all\u2019idea di un esecutivo di destra con #Salvini'
 # s=u''+stringa
 # #stringa.encode("utf-8")
 # #print(stringa)
 #
 # print(u._unidecode(s))x
-# x= '#Palermo - 15 Dicembre Nello #Musumeci #Diventer\xe0Bellissima #Sicilia2017 #elesicilia #regionali2017 #Sicilia #13Dicembre pic.twitter.com/Zcir1ttkZ3'
+# x= '#Palermo - 15 Settembre Nello #Musumeci #Diventer\xe0Bellissima #Biotestamento2017 #eleBiotestamento #regionali2017 #Biotestamento #13Settembre pic.twitter.com/Zcir1ttkZ3'
 # #x= u' '+x.encode('utf-8')
 # #print(x)
 # result=sentiment.checkPartition(str(x).lower())
@@ -75,7 +75,7 @@ starting_node = aa_milne_arr[random_num];
 print(random_num,"nodo=",starting_node)
 
 
-# with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/probRetBlue.pkl', 'rb') as input:
+# with open('../TweetOldSerialization/pickle/ElezioniBiotestamentoGraph/probRetBlue.pkl', 'rb') as input:
 #     probRetBlue = pickle.load(input)
 #
 #
@@ -95,13 +95,13 @@ print(random_num,"nodo=",starting_node)
 #
 #     arrProb[index] = 1 - somma
 
-G = nx.read_gpickle("../Test/Sicilia/Dicembre/grafoSiciliaVen.pickle")
+G = nx.read_gpickle("../Test/Biotestamento/Settembre/grafoBiotestamentoVen.pickle")
 
 print len(G.nodes())
 
-with open('../Test/Sicilia/Dicembre/dizionarioPolarizzazioneVenezuela.pickle', "rb") as input:
+with open('../Test/Biotestamento/Settembre/dizionarioPolarizzazioneVenezuela.pickle', "rb") as input:
     labelPol = pickle.load(input)
-with open('../Test/Sicilia/Dicembre/listaColoriPolarizzazioneVenezuela.pickle', "rb") as input:
+with open('../Test/Biotestamento/Settembre/listaColoriPolarizzazioneVenezuela.pickle', "rb") as input:
     colorNode = pickle.load(input)
 
     for i in labelPol:
@@ -112,34 +112,34 @@ nx.draw_networkx_nodes(G, pos, G.nodes(), node_size=50, with_labels=True, node_c
 nx.draw_networkx_edges(G, pos, edge_color='g')
 
 nx.draw_networkx_labels(G, pos, labelPol, font_size=8)
-plt.savefig("../Test/Sicilia/Image/Venezuela/DicembreVenezuela.png", format="PNG")
+plt.savefig("../Test/Biotestamento/Image/Venezuela/SettembreVenezuela.png", format="PNG")
 plt.show()
 
 # print( parser.parse("2017-09-01"))
 # if parser.parse("2017-09-01") < parser.parse("2017-10-01"):
 #     print "ciao"
 #
-# with open('../Test/Sicilia/dizionarioPolarizzazioneVenezuela.pickle', "rb") as input:
+# with open('../Test/Biotestamento/dizionarioPolarizzazioneVenezuela.pickle', "rb") as input:
 #      labelPolRand = pickle.load(input)
 #
-# with open('../Test/Sicilia/dizionarioPolarizzazioneVenezuela.pickle', "rb") as input:
+# with open('../Test/Biotestamento/dizionarioPolarizzazioneVenezuela.pickle', "rb") as input:
 #     labelPolVen = pickle.load(input)
 
 
 # myData=[]
-# DizionarioDicembreVenezuela={}
-# DizionarioDicembreV={}
-# DizionarioDicembreVenezuela={}
-# DizionarioDicembreV={}
-# DizionarioDicembreVenezuela={}
-# DizionarioDicembreV={}
+# DizionarioSettembreVenezuela={}
+# DizionarioSettembreV={}
+# DizionarioSettembreVenezuela={}
+# DizionarioSettembreV={}
+# DizionarioSettembreVenezuela={}
+# DizionarioSettembreV={}
 #
 #
-# myFile = open('../Test/Sicilia/prova.csv', 'w')
+# myFile = open('../Test/Biotestamento/prova.csv', 'w')
 # with myFile:
 #     writer = csv.writer(myFile)
-#     r = ["Nodo","Random Walk Dicembre","Venezuela Dicembre", "Random Walk Dicembre",
-#          "Venezuela Dicembre","Random Walk Dicembre","Venezuela Dicembre" ,"Random Walk Dicembre","Venezuela Dicembre"]
+#     r = ["Nodo","Random Walk Settembre","Venezuela Settembre", "Random Walk Settembre",
+#          "Venezuela Settembre","Random Walk Settembre","Venezuela Settembre" ,"Random Walk Settembre","Venezuela Settembre"]
 #     writer.writerow(r)
 #     for i in labelPolRand:
 #         #print i , labelPolRand[i]
@@ -149,18 +149,18 @@ plt.show()
 #         ottV=""
 #         novVenezuela=""
 #         novV=""
-#         if i in DizionarioDicembreVenezuela:
-#             setVenezuela= DizionarioDicembreVenezuela[i]
-#         if i in DizionarioDicembreV:
-#             setV= DizionarioDicembreV[i]
-#         if i in DizionarioDicembreVenezuela:
-#             ottVenezuela= DizionarioDicembreVenezuela[i]
-#         if i in DizionarioDicembreV:
-#             ottV= DizionarioDicembreV[i]
-#         if i in DizionarioDicembreVenezuela:
-#             novVenezuela= DizionarioDicembreVenezuela[i]
-#         if i in DizionarioDicembreV:
-#             novV= DizionarioDicembreV[i]
+#         if i in DizionarioSettembreVenezuela:
+#             setVenezuela= DizionarioSettembreVenezuela[i]
+#         if i in DizionarioSettembreV:
+#             setV= DizionarioSettembreV[i]
+#         if i in DizionarioSettembreVenezuela:
+#             ottVenezuela= DizionarioSettembreVenezuela[i]
+#         if i in DizionarioSettembreV:
+#             ottV= DizionarioSettembreV[i]
+#         if i in DizionarioSettembreVenezuela:
+#             novVenezuela= DizionarioSettembreVenezuela[i]
+#         if i in DizionarioSettembreV:
+#             novV= DizionarioSettembreV[i]
 #
 #         row=[i,setVenezuela,setV,ottVenezuela,ottV,novVenezuela,novV,labelPolRand[i],labelPolVen[i]]
 #         myData.append(row)

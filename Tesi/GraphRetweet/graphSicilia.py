@@ -340,6 +340,13 @@ def setFirstPolarization(G,dictNodeBlue,dictNodeRed):
     return listPolarization
 
 
+'''
+    @param G: is a diGraph
+    @param attr_mat: is adiajency matrix of diGraph
+    @param firstPol: is the dictionary of first hop of Polarization (Elinte and Listener value)
+    @return the polarizazion of single node
+'''
+
 def opinionPolarization(G,attr_mat,firstPol,nodeList):
     newPol=[]
 
@@ -357,12 +364,18 @@ def opinionPolarization(G,attr_mat,firstPol,nodeList):
 
     return newPol
 
-
+'''
+    @param G: is a diGraph
+    @param attr_mat: is adiajency matrix of diGraph
+    @param firstPol: is the dictionary of first hop of Polarization (Elinte and Listener value)
+    @param nodeList: is the list of node of Graph.
+    @return the dictionary polarizazion of all node
+'''
 def opinionPolarizationDict(G,attr_mat,firstPol,nodeList):
     dict={}
-    #number= divmod(len(nodeList),20)
+
     number=int(math.sqrt(len(G.nodes())))
-    #print(len(nodeList),"div=",number[0])
+
     for i in range(0,number):
         if i ==0:
             dict[i]=firstPol
@@ -375,21 +388,6 @@ def opinionPolarizationDict(G,attr_mat,firstPol,nodeList):
 def main():
     # Leggo il file pickle dei retweet
     # Costruisco un grafo con networkx partendo dai dati ottenuti
-    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetBlue#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
-    #     retweetList = pickle.load(input)
-    # #List = retweetList
-    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetRed#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
-    #     retweetListRed = pickle.load(input)
-    # with open ('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetBlue.pkl', 'rb') as input:
-    #     probRetBlue = pickle.load(input)
-    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetRed.pkl','rb') as input:
-    #     probRetRed = pickle.load(input)
-    #
-    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/tweet#EleSicilia_2017-09-01_2017-12-20_dictionaryReTweetYellow.pkl','rb') as input:
-    #     probYellowGraph = pickle.load(input)
-    #
-    # with open('../TweetOldSerialization/pickle/#EleSiciliaTestAWS/retweetYellow#EleSicilia_2017-09-01_2017-12-20_data.pkl', 'rb') as input:
-    #     retweetListYellow = pickle.load(input)
 
     with open('../TweetOldSerialization/pickle/ElezioniSiciliaGraph/Dicembre/retweetListBlue.pkl', 'rb') as input:
         retweetListBlue = pickle.load(input)
@@ -408,51 +406,34 @@ def main():
     List=[]
 
     for i in retweetListBlue:
-        #ret= Retweet(retweetList[i].user,retweetList[i].retweet, retweetList[i].date)
-        #print("Blue",i.user,i.retweet, i.date)
+
         List.append(i)
     for i in retweetListRed:
-        #print("Red",i.user,i.retweet, i.date)
-        #ret= Retweet(retweetListRed[i].user,retweetListRed[i].retweet, retweetListRed[i].date)
-        #print("RED",retweetListRed[i].user,retweetListRed[i].retweet, retweetListRed[i].date)
+
         List.append(i)
 
-    # for i in retweetListYellow:
-    #      #print("Red",i.user,i.retweet, i.date)
-    #      List.append(i)
+
 
     DizPesi={}
 
     for i in  probRetBlue:
-        #print(i.edge,i.count)
-        #prob = countOccReTweet(probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
-        #print("Blue",probRetBlue[i].edge, probRetBlue[i].count, probRetBlue[i].date)
-        # if not DizPesi.has_key(probRetBlue[i].edge):
-        #     DizPesi[probRetBlue[i].edge]= probRetBlue[i].count
+
         if not DizPesi.has_key(i):
             DizPesi[i] = probRetBlue[i]
         else:
             continue
 
     for i in probRetRed:
-        #prob = countOccReTweet(probRetRed[i].edge, probRetRed[i].count, probRetRed[i].date)
-        #print("RED",probRetRed[i].edge, probRetRed[i].count, probRetRed[i].date)
-        # if not DizPesi.has_key(probRetRed[i].edge):
-        #     DizPesi[probRetRed[i].edge]= probRetRed[i].count
+
         if not DizPesi.has_key(i):
             DizPesi[i] = probRetRed[i]
         else:
             continue
 
-    # for i in probYellowGraph:
-    #     if not DizPesi.has_key(probYellowGraph[i].edge):
-    #         DizPesi[probYellowGraph[i].edge]= probYellowGraph[i].count
-    #print(DizPesi)
+
     nodi_Blue= NodeDict(retweetListBlue)
     nodi_Red = NodeDict(retweetListRed)
-    #nodi_Yellow = NodeDict(retweetListYellow)
-    #print nodi_Blue
-    #G = createUndirectGraph(List)
+
     G = createGraph(List,DizPesi)
 
     size_node_degree= []
@@ -464,26 +445,15 @@ def main():
 
     posizioneBlue = PosNode(G.nodes(),nodi_Blue)
     posizioneRed = PosNode(G.nodes(),nodi_Red)
-    #posizioneYellow = PosNode(G.nodes(),nodi_Yellow)
+
     dizPosizioneBlue=PosNodeDizionario(G.nodes,nodi_Blue)
     dizPosizioneRed=PosNodeDizionario(G.nodes,nodi_Red)
-    #dizPosizioneYellow = PosNodeDizionario(G.nodes,nodi_Yellow);
-    # print("Nodi=",G.nodes())
-    # print("DizPosBlue",dizPosizioneBlue)
-    # print("DizPosRed",dizPosizioneRed)
-    # print("DizPosYelloq",dizPosizioneYellow)
-    #print("Edge=",G.edges(data='weight'))
-    #print("posRed",posizioneRed)
-    #print ("posBlue",posizioneBlue)
-    #print(G.nodes())
-    #print("Differenze All-blue",G.nodes()-posizioneBlue)
 
-    #matriceProbRetweet= matrixProbRet(DizPesi,dizPosizioneRed,dizPosizioneBlue,List,G)
 
     #List of Polarization of Elite and Listener
     firstPolar= setFirstPolarization(G,dizPosizioneBlue,dizPosizioneRed)
 
-    #print "Passo 0 di polarizzazione ",firstPolar
+
 
     dictFirstPol = {}
     x = 0
@@ -502,7 +472,7 @@ def main():
 
     #matrice di adiacenza partendo dalla lista dei nodi
     mat_attr=nx.attr_matrix(G,rc_order=list)
-    #print(mat_attr[1])
+
 
     at_array=np.array(mat_attr)
 
@@ -516,51 +486,19 @@ def main():
             dictPol[i]=newPol[x]
             x=x+1
 
-   #settare i vertici dangling
-    #matrice=nx.google_matrix(G,alpha=1)
-    #p_array = np.array(matrice)
 
-    #print matrice,len(matrice),matrice[131]
-    # sumBlue=0.
-    # sumRed = 0.
-    # sumYellow =0.
-    # count =0;
-    # for i in range(0,len(p_array)):
-    #     if i in posizioneBlue:
-    #         sumBlue = sumBlue + p_array[15][i]
-    #         count = count+1
-    #
-    #     elif i in posizioneRed:
-    #         sumRed = sumRed +  p_array[15][i]
-    #         # print "sumBlue=",sumBlue,"i=",i,"j",j
-    #     elif i in posizioneYellow:
-    #         sumYellow= sumYellow + p_array[15][i]
-
-    #print p_array[15],"sumBlue",sumBlue,"sumRed",sumRed,"sumYellow",sumYellow,count,len(posizioneBlue),mat_attr
-
-
-    #partition = community.best_partition(G.to_undirected())
-    #print(partition)
 
     print(len(G.nodes))
-    #size = float(len(set(partition.values())))
-
-
-    #cambio i colori dei nodi a seconda del loro grado
-    #Polar = Polarization(p_array,posizioneRed,posizioneBlue,len(G.nodes),matriceProbRetweet)
 
     #funziona con la partizione
     node_color= colorNode(G,nodi_Blue,nodi_Red)
-
-    #node_colorPol= colorNodePol(len(G.nodes()),newPol)
 
 
     testdict=opinionPolarizationDict(G,at_array,firstPolar,list)
 
     print("testdict ",testdict)
     list_lastPol=testdict.get(len(testdict)-1)
-    #print(list_lastPol)
-    #print(set(testdict[1]))
+
     node_colorPol=colorNodePol(len(G.nodes()),list_lastPol)
 
     test = {}
@@ -578,22 +516,9 @@ def main():
         print("i",i,"j",i+1," simili=", set(testdict[i])==set(testdict[i+1]))
 
 
-    #labels= labelPolarization(Polar,G,nodi_Blue,nodi_Red)
 
     pos = nx.spring_layout(G)
-  #Per la partizione
-    # list_nodes=[]
-    # for com in set(partition.values()):
-    #     count = count + 1.
-    #     x=0
-    #     for nodes in partition.keys():
-    #        # print "nodes",nodes
-    #         if partition[nodes] == com :
-    #             list_nodes.append(nodes)
 
-
-    #con la partizione
-    #nx.draw_networkx_nodes(G, pos ,list_nodes,with_labels=False,node_color=node_color)
 
     nx.write_gpickle(G, '../Test/Sicilia/Dicembre/grafoSiciliaVen.pickle', protocol=pickle.HIGHEST_PROTOCOL)
     with open('../Test/Sicilia/Dicembre/dizionarioPolarizzazioneVenezuela.pickle', "wb") as output:
