@@ -16,7 +16,7 @@
 
 \section{Raccolta dati}
 \label{raccolta}
-La raccolta dati è la fase iniziale della tesi di laurea. Come precedentemente argomentato il social network di riferimento utilizzato è \textit{Twitter}.Prima di spiegare quanto fatto occorre citare le funzionalità della \textit{Twitter Api}. Successivamente verranno illustrate le tecniche utilizzate per la raccolta dei \textit{Tweet} del passato.
+La raccolta dati è la fase iniziale della tesi di laurea. Come precedentemente argomentato il social network di riferimento utilizzato è \textit{Twitter}. Prima di spiegare quanto fatto occorre citare le funzionalità della \textit{Twitter Api}. Successivamente verranno illustrate le tecniche utilizzate per la raccolta dei \textit{Tweet} del passato.
 \subsection{Twitter Api}
 Sono delle api messe a disposizione dal social network Twitter, per poterle utilizzare occorre necessariamente effettuare l'iscrizione al reparto sviluppatori di Twitter, mettendo a disposizione il proprio account personale, quindi come prima cosa occorre predisporre di un proprio account. La raccolta dei dati può essere effettuata soltanto dopo aver abilitato l'account. Per raccogliere i dati pubblicati dagli utenti all'interno della rete occorre creare una \textit{Twitter Apps}, la quale rilascerà delle credenziali, che dovranno essere utilizzate per poter effettuare le richieste  al server attraverso le Twitter Api. Viene inizializzato un processo di streaming tra il client ed il server che consenta la ricezione dei dati, diamo una definizione delle credenziali, che sono divise in:
 % Tale operazione viene eseguita attraverso un processo di streaming, questa operazione occorre creare una \textit{Twitter Apps} il quale rilascerà una volta creata una serie di codici che dovranno essere utilizzati per poter effettuare le richieste con le Twitter Api al server.
@@ -35,7 +35,7 @@ Sono delle api messe a disposizione dal social network Twitter, per poterle util
 \end{itemize}
 Queste chiavi di accesso possono essere generate più e più volte, una volta creata un'applicazione per lo sviluppo di Twitter.
 Le Api sono disponibili in diversi linguaggi di programmazione tra cui il \textit{Python}, utilizzato per lo sviluppo della tesi.
-Per richiamare tutte le api attraverso il codice è necessario sempre autenticarsi, caricando le credenziali di accesso  fornite attraverso i permessi da sviluppatore precedentemente illustrate.
+Per richiamare tutte le api attraverso il codice è necessario sempre autenticarsi, caricando le credenziali di accesso  fornite attraverso i permessi da sviluppatore precedentemente illustrati.
 Lo streaming per la raccolta dei dati è soggetto a stringenti regole per evitare un uso improprio delle informazioni diffuse dagli utenti all'interno della rete. Infatti c'è un numero massimo di richieste che un utente, con le credenziali da sviluppatore, può effettuare, cioè 100 ogni 15 minuti. Allo scadere di tale tempo potrà ricominciare, altrimenti nel caso in cui un utente non tenesse conto di questa limitazione ed effettuasse una nuova richiesta durante il tempo di pausa le sue credenziali verrebbero bloccate per circa un'ora non potendo più interagire con le api di Twitter.
 La risposta da parte del server sarà un file \textit{JSON} contenente tutti i metadati dell'utente in questione, come il testo del Tweet, il suo id, lo username dell'utente che ha pubblicato il tweet, i mentions gli hashtag ed il numero di retweet con la lista degli utenti che hanno retwettato la notizia in questione.
 
@@ -93,7 +93,7 @@ Il motivo di tale scelta è dettata dai tempi di attesa via via sempre più lung
 La sentiment analysis è l'approccio utilizzato per la divisione dei diversi tweet, raccolti per un determinato topic, all'interno di una determinata finestra temporale, analizzando il "sentimento" espresso nel contenuto del testo pubblicato dagli utenti.
 Questa fase viene effettuata al momento della raccolta dei dati, cioè una volta collezionati l'insieme dei dati vengono sottoposti alla funzione implementata e salvati in due categorie distinte mediante la libreria \textit{pickle}, precedentemente illustrata.
 
-L'implementazione di questo metodo è stata effettuata seguendo un approccio basato su \textit{metodi statistici}: questi metodi si basano su elementi di apprendimento automatico. Per misurare l'opinione nel contesto e trovare la caratteristica che è stata giudicata, sono usate le relazioni grammaticali delle parole utilizzate. Le relazioni di dipendenza grammaticale sono ottenute attraverso la scansione approfondita del testo. Il processo di apprendimento da parte della macchina (anche detto machine learning) non è immediato, devono infatti essere costruiti dei modelli che associano a diverse tipologie di commenti una polarità e se necessario ai fini dell'analisi anche un topic.[\cite{sentiment2}
+L'implementazione di questo metodo è stata effettuata seguendo un approccio basato su \textit{metodi statistici}: questi metodi si basano su elementi di apprendimento automatico. Per misurare l'opinione nel contesto e trovare la caratteristica che è stata giudicata, sono usate le relazioni grammaticali delle parole utilizzate. Le relazioni di dipendenza grammaticale sono ottenute attraverso la scansione approfondita del testo. Il processo di apprendimento da parte della macchina (anche detto machine learning) non è immediato, devono infatti essere costruiti dei modelli che associano a diverse tipologie di commenti una polarità e se necessario ai fini dell'analisi anche un topic.\cite{sentiment2}
 
 Si può riassumere quanto sviluppato attraverso la seguente immagine:
 \begin{figure}[!h]
@@ -167,7 +167,7 @@ Definiamo gli elementi costituenti:
 \item \textit{Arco}: per ogni arco è stata associata una relazione tra il tweet pubblicato da un nodo ed il retweet effettuato da un altro utente. Questi archi sono possono essere pesati, cioè avere una probabilità che una qualsiasi coppia di nodi sia adiacente. Nel nostro caso tale valore viene definito dalla \textit{probabilità di retweet}.
 \end{itemize}
 
-La creazione di questo grafo diretto dipende strettamente dai risultati ottenuti durante la raccolta dati. Nel dettaglio sono stati collezionati tutti i tweet che contenessero i 5 \textit{hashtag} più utilizzati per l'espressione del topic scelto, una volta raccolta tutti i dati in questione questi sono stati fusi ed utilizzati per la definizione del grafo. I dati sono stati salvati in tre gruppi differenti grazie ai risultati ottenuti durante la \textit{Sentiment Analysis}, questa classificazione risulta necessaria per la colorazione ed il calcolo della polarizzazione sul grafo. Tornando alla creazione è stata applicata una limitazione e cioè che i nodi isolati non venissero considerati all'interno del grafo. La motivazione che ha spinto nell'adottare tale politica è dettata dall'esigenza di ricercare quanto un idea espressa attraverso un tweet venga diffusa in un grafo e quanto questa sia polarizzata, quindi un nodo isolato che non viene ripubblicato dagli utenti risulta inutile ai fini dell'analisi in questione.
+La creazione di questo grafo diretto dipende strettamente dai risultati ottenuti durante la raccolta dati. Nel dettaglio sono stati collezionati tutti i tweet che contenessero i 5 \textit{hashtag} più utilizzati per l'espressione del topic scelto, una volta raccolta tutti i dati in questione questi sono stati fusi ed utilizzati per la definizione del grafo. I dati sono stati salvati in tre gruppi differenti grazie ai risultati ottenuti durante la \textit{Sentiment Analysis}, questa classificazione risulta necessaria per la colorazione ed il calcolo della polarizzazione sul grafo. Tornando alla creazione è stata applicata una limitazione e cioè che i nodi isolati non vengano considerati all'interno del grafo. La motivazione che ha spinto nell'adottare tale politica è dettata dall'esigenza di ricercare quanto un idea espressa attraverso un tweet venga diffusa in un grafo e quanto questa sia polarizzata, quindi un nodo isolato che non viene ripubblicato dagli utenti risulta inutile ai fini dell'analisi in questione.
 In precedenza nella definizione di Arco si è definita la probabilità di retweet:
 \begin{quote}
 Si definisce tale il rapporto che intercorre tra il numero dei retweet che l'utente ha effettuato su un nodo\footnote{Per nodo ci si riferisce ad un tweet pubblicato da un utente} con il numero di retweet totali effettuati dall'utente stesso.
@@ -183,7 +183,7 @@ Il grafo in questione può essere modificato graficamente, nel nostro caso per m
 %inserire un esempio grafico di un endorsement graph senza lab
 \begin{figure}[!h]
     \begin{center}
-      \includegraphics[scale= 0.8]{esempio.png}
+      \includegraphics[scale= 0.7]{esempio.png}
 		\caption{esempio di Endorsement Graph}
 	\label{endorsement}
     \end{center}
@@ -260,7 +260,7 @@ Successivamente è stata applicata la formula precedentemente illustrata (vedi \
 \caption{Matrice di adiacenza}
 \label{matrice}
 \end{table}
-Come possibile notare dall'esempio assistiamo ad un cambiamento di polarizzazione poiché mentre in un primo momento i nodi C e D che erano di un colore Blu (risultato ottenuto attraverso la sentiment analysis) possiamo notare come il valore cambi drasticamente in funzione del grado del nodo e agli archi,conseguentemente cambia il colore del nodo stesso. In questo modo risulta evidente come un grafo cambi drasticamente la propria polarizzazione. L'algoritmo come si evince dall'esempio termina nel momento in cui l'algoritmo converge stabilizzando i valori della polarizzazione nei nodi (vedi fig:\ref{Passo3}).
+Come possibile notare dall'esempio assistiamo ad un cambiamento di polarizzazione poiché mentre in un primo momento i nodi C e D che erano di un colore Blu (risultato ottenuto attraverso la sentiment analysis) possiamo notare come il valore cambi drasticamente in funzione del grado del nodo e agli archi, conseguentemente cambia il colore del nodo stesso. In questo modo risulta evidente come un grafo cambi drasticamente la propria polarizzazione. L'algoritmo come si evince dall'esempio termina nel momento in cui l'algoritmo converge stabilizzando i valori della polarizzazione nei nodi (vedi fig:\ref{Passo3}).
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[c]{.40\textwidth}
@@ -300,7 +300,7 @@ La polarizzazione basata sulla topologia del grafo è un algoritmo definito all'
 L'algoritmo in questione sfrutta la topologia del grafo per poter valutare la polarizzazione di ogni singolo nodo a fronte dell'opinione espressa all'interno del tweet pubblicato.
 Per prima cosa una volta costruito l'\textit{endorsement graph} un ruolo fondamentale lo svolge la scelta delle due partizioni che compongono il grafo.
 Nel paper in questione le partizioni venivano effettuate attraverso una catalogazione degli hashtags, cioè degli elementi testuali che esprimessero in poche parole, o una loro concatenazione, un parere su una determinata notizia.\cite{Garimella2015polarization}
-Per fare un esempio se il topic dell'analisi fosse stata una partita di calcio ed un utente avesse pubblicato un tweet con un hashtag come \textit{\#ForzaBlu}, questo sarebbe stato associato come un parere positivo verso la squadra blu. Però se nel testo ci fosse stata una frase negativa insieme all'hashtag precedente, sarebbe stato un errore perché non più a favore della squadra blu, bensì per il suo avversario. Per risolvere questa problematica la suddivisione è stata effettuata attraverso la \textit{Sentiment Analysis}(vedi sezione n:\ref{Sentiment}, per ulteriori spiegazioni). 
+Per fare un esempio se il topic dell'analisi fosse stata una partita di calcio ed un utente avesse pubblicato un tweet con un hashtag come \textit{\#ForzaBlu}, questo sarebbe stato associato come un parere positivo verso la squadra blu. Però se nel testo ci fosse stata una frase negativa insieme all'hashtag precedente, sarebbe stato un errore perché non più a favore della squadra blu, bensì per il suo avversario. Per risolvere questa problematica la suddivisione è stata effettuata attraverso la \textit{Sentiment Analysis} (vedi sezione:\ref{Sentiment}, per ulteriori spiegazioni). 
 Tornando alla definizione della polarizzazione anche in questo caso tale strumento può assumere un valore contenuto nel seguente range:
 \begin{equation}
 [-1,1]
@@ -398,7 +398,7 @@ Il \textit{trend} indica la pendenza della funzione, dal punto di vista matemati
 \begin{equation}
 m=\dfrac{\Delta_{y}}{\Delta_{x}}
 \end{equation}
-Dove $\Delta_{y}$ e $\Delta_{x}$ sono rispettivamente le differenze delle ordinate e delle ascisse tra due punti. Però dal punto di vista del Double Exponential Smoothing, possiamo assumere come la differenze tra le ascisse sia pari ad uno essendo una serie temporale, la differenza tra l'istante attuale e quello precedente è un 1. in conclusione avremo che 
+Dove $\Delta_{y}$ e $\Delta_{x}$ sono rispettivamente le differenze delle ordinate e delle ascisse tra due punti. Però dal punto di vista del Double Exponential Smoothing, possiamo assumere come la differenze tra le ascisse sia pari ad uno essendo una serie temporale, la differenza tra l'istante attuale e quello precedente è 1. in conclusione avremo che 
 \begin{equation}
 m=\dfrac{\Delta_{y}}{1}= y_{x}-y_{x-1}
 \end{equation}

@@ -1,0 +1,182 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[italian]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{Analisi della polarizzazione di Endorsement Graph, attraverso sentiment analysis}
+\date{}
+\author{Alessandro Valenti}
+
+\begin{document}
+\maketitle
+\vspace{30pt}
+
+La diffusione delle informazioni e di opinioni sin dai tempi antichi ha generato conflitti di ogni genere. Tali problematiche sono sempre più evidenti all'interno delle reti sociali che si vengono a creare mettendo in contatto individui con pensieri ed idee differenti tra loro. I conflitti vengono generati in base al tipo di argomento e quanto tale è "caldo" per gli utenti in questione. 
+La polarizzazione è un utilissimo strumento per lo studio e l'analisi delle opinioni in differenti aree di ricerca all'interno di una rete sociale. Generalmente, la polarizzazione può essere applicata all'interno di contesti politici, sociali e culturali permettendo di comprendere al meglio quali siano  gli schieramenti delle persone riguardo tali argomenti. La possiamo definire come:
+\begin{quote}
+ \textit{Divisione in due gruppi fortemente contrastanti per una serie di opinioni o credenze.}
+\end{quote}
+
+Questo processo di analisi può assumere diversi significati a seconda dello scenario studiato. Come ad esempio:
+\textit{Polarizzazione Politica} (divergenza di opinione su estremi ideologici) o \textit{Polarizzazione Sociale} (differenza di opinione all'interno delle società che possono nascere da disuguaglianze sociali ed economiche).
+
+Un problema che sta affliggendo i social media è la formazione degli \textit{Echo-chambers}, cioè quelle comunità che condividono le stesse opinioni rafforzando il proprio punto di vista senza cercare di verificare la presenza o meno di altre opinioni. La polarizzazione è uno strumento che può essere utilizzato per identificare questi gruppi di utenti, ma può assumere anche altri compiti come lo studio delle opinioni e la loro diffusione all'interno della rete.
+Questa tesi è stata sviluppata per cercare di studiare il comportamento delle informazioni espresse nei social media, in questo caso si è scelto \textit{Twitter}. 
+I dati, ovvero i \textit{Tweet}, sono stati raccolti attraverso una ricerca per \textit{hashtag} e classificati in due gruppi di pensiero distinti rispetto all'argomento analizzato.
+La raccolta dei dati è stata effettuata all'interno di una finestra temporale per poter studiare la polarizzazione e la sua evoluzione nel tempo.
+
+Il primo problema che si è cercato di risolvere è stato quello di classificare le notizie attraverso una comprensione testuale. Tale operazione è stata resa possibile attraverso la tecnica della \textit{Sentiment Analysis}, che consente di classificare i messaggi degli utenti attraverso un'analisi del sentimento. 
+Una volta suddivise le opinioni all'interno della rete è stato costruito un grafo contenente i tweet ed i relativi retweet, questo viene definito \textit{endorsement graph}.
+Partendo dal grafo sono stati applicati due algoritmi per il calcolo della polarizzazione definiti come segue:
+\begin{itemize}
+\item \textit{Algoritmo basato sul grado del grafo}: Una volta generato il grafo vengono catalogati i nodi in due categorie:
+\begin{itemize}
+\item \textit{Elite}: l'utente che ha \textit{tweettato} un'opinione.
+\item \textit{Listener}: l'utente che ha \textit{retwettato} il tweet di uno o più nodi \textit{Elite}.
+\end{itemize}
+Partendo da queste categorie viene calcolata la polarizzazione sfruttando il grado di ogni nodo, assegnando un valore numerico, in base al gruppo di appartenenza (\textit{Elite}) e poi calcolare la polarizzazione attraverso la formula espressa nel paper \textit{Measuring Political Polarization: Twitter shows the two sides of Venezuela}.
+\item \textit{Algoritmo basato sulla topologia}: La differenza principale con il precedente algoritmo, consiste nell'utilizzare la tecnica dei \textit{Random Walk}. La polarizzazione dipende fortemente dalla topologia dell'\textit{endorsement graph} e dalla probabilità sugli archi. Questa è definita probabilità di \textit{retweet}, ed è pari al rapporto tra il numero di retweet fatti da un utente su un certo tweet sul numero totale di retweet che l'utente ha effettuato su quel topic. Anche questo algoritmo si basa su un paper: \textit{Reducing Controversy by Connecting Opposing Views}
+\end{itemize}
+Una volta calcolata la polarizzazione sono stati utilizzate tecniche di \textit{Forecasting} come: \textit{Double exponential smoothing}, \textit{linear regression} e \textit{moving average}. Queste tecniche consento di poter predire il comportamento della rete nel futuro e quindi potrebbe essere utile in ottica di prevenzione di \textit{Echo-chamber}. Tutte queste funzionalità sono state realizzate mediante librerie \textit{Python}, mentre la raccolta dei dati è stata effettuata all'interno di una istanza \textit{EC2}.
+
+I topic utilizzati per sperimentare il comportamento della polarizzazione sono stati due cioè: \textit{elezioni regionali in Sicilia} ed il \textit{Biotestamento}. Il motivo di tale scelta è dettata dalla curiosità di testare queste funzionalità per due argomenti che ricoprissero due contesti differenti tra loro; anche perché molto dibattuti. I risulti ottenuti per entrambi i topic sono stati molto soddisfacenti perché la polarizzazione ha assunto un comportamento in linea con la realtà. 
+Per il primo il trend della diffusione delle opinioni ha rispecchiato quanto osservato nei risultati delle elezioni, infatti attraverso la raccolta dei tweet è stato possibile notare come nel mese di Novembre (mese in cui ci sono state le elezioni), prima del giorno delle elezioni gli utenti che si schieravano verso la coalizione del centro-destra fosse simile a quelle del Movimento 5 Stelle. Subito dopo il giorno delle elezioni in conformità con i risultati ottenuti si è potuto constatare come gli utenti aderenti al centro-destra superassero quelli del Movimento 5 Stelle. Per sperimentare tale topic attraverso la polarizzazione è stato necessario considerare solo due forze politiche, in questo caso quelle che hanno ottenuto il maggior numero di voti.
+
+Per quanto riguarda il  biotestamento si è potuto notare come il retaggio culturale e religioso di un paese avessero una forte influenza anche nei social-media, infatti la polarizzazione della coalizione degli utenti contrari era di gran lunga superiore a quella dei favorevoli. 
+La studio di questo topic si può definire \textit{hot}, perché ancora di attualità e lo si è potuto riscontrare raccogliendo i dati nel mese successivo al 14 Dicembre (giorno in cui è stata emanata la legge sul Biotestamento) notando come il numero dei tweet aumentava.
+Da questo progetto è possibile effettuare nuove ricerche per risolvere il problema delle comunità fortemente polarizzate attraverso una analisi basata sulla \textit{controversia} cioè cercare di far comunicare le comunità isolate in qualche modo. Altri spunti potrebbero essere quello di raffinare la classificazione dei tweet attraverso uno studio delle immagini, media e link pubblicati all'interno dei tweet, perchè la sentiment analysis per quanto possa essere raffinata non consente di poter percepire l'ironia all'interno del testo, ironia che può essere espressa attraverso elementi multimediali.
+
+%
+%\section{Introduction 5 lines to max 1/2 page}
+%\label{sec:introduction}
+%
+%
+%Explain the context of the experiment here. Why is condensed matter physics interesting or important?
+%Optional things you could talk about (but don't have to -- this is up to you): transistors, computers, Quantum computers, fundamental knowledge (e.g. the resistance quantum).
+%
+%Briefly explain what methods you will use in the experiment, and what values you will extract from the data.
+%
+%For this section and all following sections: If you refer to an equation, previous result or theory that is not regarded as common knowledge, then cite the source (article or book) where you found this. For example, you can cite the Nano 3 Lecture notes \cite{nano3}.
+%
+%\section{Theory 2-3 pages}
+%\label{sec:theory}
+%
+%\subsection{Two-dimensional Electron Gas}
+%Here, explain the concept of a 2-DEG in GaAs/AlGaAs. What is a 2-DEG and why does it arise?
+%
+%\subsection{Hall Effect}
+%Explain the classical Hall effect in your own words. What do I measure at $B=0$? And what happens if $B>0$? Which effect gives rise to the voltage drop in the vertical direction?
+%
+%\subsection{Quantum Hall Effect}
+%Explain the IQHE in your own words. What does the density of states look like in a 2-DEG when $B=0$? What are Landau levels and how do they arise? What are edge states? What does the electron transport look like when you change the magnetic field? What do you expect to measure?
+%
+%\section{Experiment 1-2 pages}
+%\subsection{Fabrication}
+%Explain a step-by-step recipe for fabrication here. How long did you etch and why? What is an Ohmic contact?
+%\subsection{Experimental set-up}
+%Explain the experimental set-up here. Use a schematic picture (make it yourself in photoshop, paint, ...) to show how the components are connected. Briefly explain how a lock-in amplifier works.
+%
+%\section{Results and interpretation 2-3 pages}
+%Show a graph of the longitudinal resistivity ($\rho_{xx}$) and Hall resistivity ($\rho_{xy}$) versus magnetic field, extracted from the raw data shown in figure \ref{fig:data}. You will have the link to the data in your absalon messages, if not e-mail Guen (guen@nbi.dk). Explain how you calculated these values, and refer to the theory.
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=1\textwidth]{raw_data}
+%\caption{\label{fig:data}Raw (unprocessed) data. Replace this figure with the one you've made, that shows the resistivity.}
+%\end{figure}
+%
+%\subsection{Classical regime}
+%Calculate the sheet electron density $n_{s}$ and electron mobility $\mu$ from the data in the low-field regime, and refer to the theory in section \ref{sec:theory}. Explain how you retrieved the values from the data (did you use a linear fit?).
+%Round values off to 1 or 2 significant digits: 8.1643 ~= 8.2. Also, 5e-6 is easier to read than 0.000005.
+%
+%!OBS: This part is optional (only if you have time left).
+%Calculate the uncertainty as follows: \newline $u(f(x, y, z)) = \sqrt{(\frac{\delta f}{\delta{x}} u(x))^{2} + (\frac{\delta f}{\delta{y}} u(y))^{2} + (\frac{\delta f}{\delta{z}} u(z))^{2}}$, where $f$ is the calculated value ($n_{s}$ or $\mu$), $x, y, z$ are the variables taken from the measurement and $u(x)$ is the uncertainty in x (and so on).
+%
+%\subsection{Quantum regime}
+%Calculate $n_{s}$ for the high-field regime.
+%Show a graph of the longitudinal conductivity ($\rho_{xx}$) and Hall conductivity($\rho_{xy}$) \textbf{in units of the resistance quantum} ($\frac{h}{e^{2}}$), depicting the integer filling factors for each plateau.
+%Show a graph of the plateau number versus its corresponding value of $1/B$. From this you can determine the slope, which you use to calculate the electron density.
+%Again, calculate the uncertainty for your obtained values.
+%
+%\section{Discussion 1/2-1 page}
+%Discuss your results. Compare the two values of $n_{s}$ that you've found in the previous section. Compare your results with literature and comment on the difference. If you didn't know the value of the resistance quantum, would you be able to deduce it from your measurements? If yes/no, why?
+%
+%\newpage
+%\section{Some LaTeX tips}
+%\label{sec:latex}
+%\subsection{How to Include Figures}
+%
+%First you have to upload the image file (JPEG, PNG or PDF) from your computer to writeLaTeX using the upload link the project menu. Then use the includegraphics command to include it in your document. Use the figure environment and the caption command to add a number and a caption to your figure. See the code for Figure \ref{fig:frog} in this section for an example.
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.3\textwidth]{frog}
+%\caption{\label{fig:frog}This frog was uploaded to writeLaTeX via the project menu.}
+%\end{figure}
+%
+%\subsection{How to Make Tables}
+%
+%Use the table and tabular commands for basic tables --- see Table~\ref{tab:widgets}, for example.
+%
+%\begin{table}
+%\centering
+%\begin{tabular}{l|r}
+%Item & Quantity \\\hline
+%Widgets & 42 \\
+%Gadgets & 13
+%\end{tabular}
+%\caption{\label{tab:widgets}An example table.}
+%\end{table}
+%
+%\subsection{How to Write Mathematics}
+%
+%\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
+%
+%\begin{equation}
+%S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
+%      = \frac{1}{n}\sum_{i}^{n} X_i
+%\label{eq:sn}
+%\end{equation}
+%
+%denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
+%
+%The equation \ref{eq:sn} is very nice.
+%
+%\subsection{How to Make Sections and Subsections}
+%
+%Use section and subsection commands to organize your document. \LaTeX{} handles all the formatting and numbering automatically. Use ref and label commands for cross-references.
+%
+%\subsection{How to Make Lists}
+%
+%You can make lists with automatic numbering \dots
+%
+%\begin{enumerate}
+%\item Like this,
+%\item and like this.
+%\end{enumerate}
+%\dots or bullet points \dots
+%\begin{itemize}
+%\item Like this,
+%\item and like this.
+%\end{itemize}
+%\dots or with words and descriptions \dots
+%\begin{description}
+%\item[Word] Definition
+%\item[Concept] Explanation
+%\item[Idea] Text
+%\end{description}
+%
+%We hope you find write\LaTeX\ useful, and please let us know if you have any feedback using the help menu above.
+%
+%\begin{thebibliography}{9}
+%\bibitem{nano3}
+%  K. Grove-Rasmussen og Jesper Nygaard,
+%  \emph{Kvantefaenomener i Nanosystemer}.
+%  Niels Bohr Institute \& Nano-Science Center, Københavns Universitet
+%
+%\end{thebibliography}
+\end{document}

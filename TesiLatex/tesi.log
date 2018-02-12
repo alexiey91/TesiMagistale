@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  11 FEB 2018 19:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.31)  12 FEB 2018 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -832,12 +832,6 @@ LaTeX Warning: Label `Passo3' multiply defined.
 
 LaTeX Warning: Label `Passo3' multiply defined.
 
-
-LaTeX Warning: Label `grafoGrado' multiply defined.
-
-
-LaTeX Warning: Label `predizioneSicilia1' multiply defined.
-
 ) (./capitolo7.aux) (./ringraziamenti.aux))
 \openout1 = `tesi.aux'.
 
@@ -1108,12 +1102,8 @@ File: pictures/esempio.png Graphic file (type png)
 
 <use pictures/esempio.png>
 Package pdftex.def Info: pictures/esempio.png used on input line 186.
-(pdftex.def)             Requested size: 370.02289pt x 277.51717pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[40] [41 <./pictures/esempio.png>] [42] [43]
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+ [40 <./pictures/esempio.png>] [41] [42] [43]
 <pictures/Passo0.png, id=193, 432.61626pt x 362.35374pt>
 File: pictures/Passo0.png Graphic file (type png)
 
@@ -1406,12 +1396,7 @@ Package pdftex.def Info: pictures/VarianzaErrSicilia.png used on input line 251
 Underfull \vbox (badness 10000) detected at line 308
  []
 
-[74]
-
-LaTeX Warning: Reference `grafoGradoBio' on page 75 undefined on input line 334
-.
-
-[75]
+[74] [75]
 <pictures//GrafoBio/RandomWalk/SettembreRandomWalk.png, id=333, 462.528pt x 346
 .896pt>
 File: pictures//GrafoBio/RandomWalk/SettembreRandomWalk.png Graphic file (type 
@@ -1624,7 +1609,8 @@ LaTeX Warning: Text page 79 contains only floats.
 
 [79 <./pictures//GrafoBio/Diagrammi/RW/Gennaio.png> <./pictures//GrafoBio/Diagr
 ammi/Venezuela/Gennaio.png>] [80] [81 <./pictures//GrafoBio/Diagrammi/RW/Dicemb
-re.png>] <pictures/ErroreBiotestamento.png, id=377, 801.99625pt x 495.8525pt>
+re.png>] [82]
+<pictures/ErroreBiotestamento.png, id=380, 801.99625pt x 495.8525pt>
 File: pictures/ErroreBiotestamento.png Graphic file (type png)
 
 <use pictures/ErroreBiotestamento.png>
@@ -1636,15 +1622,15 @@ Overfull \hbox (10.99713pt too wide) in paragraph at lines 471--472
  [][] 
  []
 
-<pictures/VarianzaBiotestamento.png, id=378, 742.775pt x 458.71375pt>
+<pictures/VarianzaBiotestamento.png, id=381, 742.775pt x 458.71375pt>
 File: pictures/VarianzaBiotestamento.png Graphic file (type png)
 
 <use pictures/VarianzaBiotestamento.png>
 Package pdftex.def Info: pictures/VarianzaBiotestamento.png used on input line 
-477.
+478.
 (pdftex.def)             Requested size: 371.38658pt x 229.35631pt.
-) [82 <./pictures/ErroreBiotestamento.png (PNG copy)>] [83 <./pictures/Varianza
-Biotestamento.png (PNG copy)>]
+) [83 <./pictures/ErroreBiotestamento.png (PNG copy)> <./pictures/VarianzaBiote
+stamento.png (PNG copy)>]
 \openout2 = `capitolo7.aux'.
 
 
@@ -1684,20 +1670,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 (./capitolo2.aux) (./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux)
 (./capitolo7.aux) (./ringraziamenti.aux))
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 26557 strings out of 493029
- 633232 string characters out of 6136234
- 783605 words of memory out of 5000000
- 29449 multiletter control sequences out of 15000+600000
+ 26558 strings out of 493029
+ 633258 string characters out of 6136234
+ 782605 words of memory out of 5000000
+ 29450 multiletter control sequences out of 15000+600000
  16299 words of font info for 61 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 62i,15n,89p,1088b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,15n,89p,1086b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
@@ -1713,7 +1696,7 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tesi.pdf (97 pages, 3448157 bytes).
+Output written on tesi.pdf (97 pages, 3447344 bytes).
 PDF statistics:
  464 PDF objects out of 1000 (max. 8388607)
  268 compressed objects within 3 object streams
